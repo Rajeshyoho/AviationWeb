@@ -15,6 +15,7 @@ const Navigation =()=>{
             <Route path="/" element={<AboutUs/>}/>
             <Route path="/Home" element={<Home/>}/> 
             <Route path="/Accademic" element={<Accademic/>}/>
+            
             </Routes>
         </>
     )
