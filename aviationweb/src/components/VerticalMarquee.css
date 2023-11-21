@@ -1,0 +1,30 @@
+/* VerticalMarquee.css */
+
+.marquee-container {
+    height: 850px; /* Adjust the height as needed */
+    overflow: hidden;
+  }
+  
+  .marquee {
+    display: flex;
+    flex-direction: column;
+    animation: marqueeAnimation 40s linear infinite; /* Adjust the animation duration as needed */
+  }
+  
+  @keyframes marqueeAnimation {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+  
+  /* Additional styles for better visibility */
+  .marquee p {
+    margin: 0;
+    /* padding: 10px; */
+    font-size: 18px;
+    color: #333;
+  }
+  

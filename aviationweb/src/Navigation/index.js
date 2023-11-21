@@ -12,8 +12,8 @@ const Navigation =()=>{
     return(
         <>
             <Routes>
-            <Route path="/" element={<AboutUs/>}/>
-            <Route path="/Home" element={<Home/>}/> 
+            <Route path="/" element={<Home/>}/> 
+            <Route path="/AboutUs" element={<AboutUs/>}/>
             <Route path="/Accademic" element={<Accademic/>}/>
             
             </Routes>
