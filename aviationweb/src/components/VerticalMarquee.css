@@ -1,30 +1,50 @@
 /* VerticalMarquee.css */
 
 .marquee-container {
-    height: 850px; /* Adjust the height as needed */
+    height: 708px; /* Adjust the height as needed */
     overflow: hidden;
+   
   }
   
   .marquee {
     display: flex;
     flex-direction: column;
-    animation: marqueeAnimation 40s linear infinite; /* Adjust the animation duration as needed */
+    animation: marqueeAnimation 20s linear infinite;
+    
   }
   
   @keyframes marqueeAnimation {
     0% {
-      transform: translateY(0);
+      transform: translateY(10%);
     }
     100% {
-      transform: translateY(-100%);
+      transform: translateY(-100% );
     }
   }
   
-  /* Additional styles for better visibility */
-  .marquee p {
+ 
+  .marquee a {
     margin: 0;
-    /* padding: 10px; */
-    font-size: 18px;
-    color: #333;
+    padding-left: 13px;
+    padding-right:13px;
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    
   }
+  .marquee img   {
+    max-width: 50px;
+    height: auto;
+    
+    
+  }
+
+  .marquee-container:hover .marquee {
+    animation-play-state: paused;
+  }
+
+
   

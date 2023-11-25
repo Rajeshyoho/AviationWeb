@@ -1,289 +1,182 @@
-import React from 'react';
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Image } from 'react-bootstrap';
-import { Grid } from '@mui/material';
-function NavBar() {
-  const logo = require('../Images/asdhec-final-01.jpg');
+import React from "react";
+import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
+import {Image} from "react-bootstrap";
+// import "./NavBar.css";
+import SvgIcon from '@mui/material/SvgIcon';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
+
+
+
+const NavBar = () => {
+  const logo = require("../Images/logo3.png");
   return (
-//     <Navbar expand="lg" className="bg-dark">
-//     <Container fluid>
-//       <Navbar.Brand href="#" style={{ color: 'black' }}>
-//         <Image className='img-fluid' style={{ height: 75, width: 150 }} src={logo} />
-//       </Navbar.Brand>
-//       <Navbar.Toggle aria-controls="navbarScroll" />
-//       <Navbar.Collapse id="navbarScroll">
-//         <Nav
-//           className="me-auto my-2 my-lg-0"
-//           // style={{ maxHeight: '100px' }}
-//           navbarScroll
-//         >
-//            <NavDropdown
-//             title="About Us"
-//             id="nav-dropdown"
-             
-//           >
-//             <Grid style={{width:500,height:350}}>
-//             <NavDropdown.Item
-//               href="#action3"
-//               style={{ color: 'black', backgroundColor: 'white' }}
-//             >
-//               About ASDHEC
-//             </NavDropdown.Item>
-//             <NavDropdown.Item
-//               href="#action4"
-//               style={{ color: 'black', backgroundColor: 'white' }}
-//             >
-//               Vission & Mission
-//             </NavDropdown.Item>
-//             <NavDropdown.Divider />
-//             <NavDropdown.Item
-//               href="#action5"
-//               style={{ color: 'black', backgroundColor: 'white' }}
-//             >
-//               Acts & Status
-//             </NavDropdown.Item>
-//             <NavDropdown.Item
-//               href="#action5"
-//               style={{ color: 'black', backgroundColor: 'white' }}
-//             >
-//               ASDHEC Logo
-//             </NavDropdown.Item>
-//             <NavDropdown.Item
-//               href="#action5"
-//               style={{ color: 'black', backgroundColor: 'white' }}
-//             >
-//               Associate Institute Colleges
-//             </NavDropdown.Item>
-//             <NavDropdown.Item
-//               href="#action5"
-//               style={{ color: 'black', backgroundColor: 'white' }}
-//             >
-//               Training Placement
-//             </NavDropdown.Item>
-// </Grid>
-//           </NavDropdown>
-//           <NavDropdown
-//             title="Academic"
-//             id="nav-dropdown"
-//           >
-//             <NavDropdown.Item
-//               href="#action3"
-//               style={{ color: 'black', backgroundColor: 'white' }}
-//             >
-//               Academic Council
-//             </NavDropdown.Item>
-//             <NavDropdown.Item
-//               href="#action4"
-//               style={{ color: 'black', backgroundColor: 'white' }}
-//             >
-//               Department
-//             </NavDropdown.Item>
-//             <NavDropdown.Divider />
-//             <NavDropdown.Item
-//               href="#action5"
-//               style={{ color: 'black', backgroundColor: 'white' }}
-//             >
-//               Associate Regulations
-//             </NavDropdown.Item>
-//             <NavDropdown.Item
-//               href="#action5"
-//               style={{ color: 'black', backgroundColor: 'white' }}
-//             >
-//               Certification Courses
-//             </NavDropdown.Item>
-//             <NavDropdown.Item
-//               href="#action5"
-//               style={{ color: 'black', backgroundColor: 'white' }}
-//             >
-//               Diplom Courses
-//             </NavDropdown.Item>
-//             <NavDropdown.Item
-//               href="#action5"
-//               style={{ color: 'black', backgroundColor: 'white' }}
-//             >
-//               UG Degrees
-//             </NavDropdown.Item>
-//             <NavDropdown.Item
-//               href="#action5"
-//               style={{ color: 'black', backgroundColor: 'white' }}
-//             >
-//               PG Degrees
-//             </NavDropdown.Item>
-//             <NavDropdown.Item
-//               href="#action5"
-//               style={{ color: 'black', backgroundColor: 'white' }}
-//             >
-//               Training Programs
-//             </NavDropdown.Item>
-//           </NavDropdown>
-//           <NavDropdown
-//             title="Carrear Guidance"
-//             id="nav-dropdown"
-//           >
-//             <NavDropdown.Item
-//               href="#action3"
-//               style={{ color: 'black', backgroundColor: 'white' }}
-//             >
-//               Eligiblity
-//             </NavDropdown.Item>
-//             <NavDropdown.Item
-//               href="#action4"
-//               style={{ color: 'black', backgroundColor: 'white' }}
-//             >
-//               Colleges
-//             </NavDropdown.Item>
-//             <NavDropdown.Divider />
-//             <NavDropdown.Item
-//               href="#action5"
-//               style={{ color: 'black', backgroundColor: 'white' }}
-//             >
-//               Job Oppurtunity
-//             </NavDropdown.Item>
-//             <NavDropdown.Item
-//               href="#action5"
-//               style={{ color: 'black', backgroundColor: 'white' }}
-//             >
-//               How To Join The Course ?
-//             </NavDropdown.Item>
-//           </NavDropdown>
-//           <Nav.Link href="#action2" style={{ color: 'white' }}>
-//             Students
-//           </Nav.Link>
-//           <Nav.Link href="#action2" style={{ color: 'white' }}>
-//             Job Vacancies
-//           </Nav.Link>
-//         </Nav>
-//         {/* <Form className="d-flex">
-//           <Form.Control
-//             type="search"
-//             placeholder="Search"
-//             className="me-2"
-//             aria-label="Search"
-//           />
-//           <Button variant="outline-success">Search</Button>
-//         </Form> */}
-//       </Navbar.Collapse>
-//     </Container>
-//   </Navbar>
-
-<header>
-	<nav>
-		<ul class="navigation-menu">
-			<li><a href="#"><i ></i> About Us</a>
-      <ul>
-					<li><a href="#">About ASDHEC</a>
-						{/* <ul>
-							<li><a href="#">Food & Treats</a></li>
-							<li><a href="#">Toys</a></li>
-							<li><a href="#">Beds & Furniture</a></li>
-							<li><a href="#">Outdoor Supplies</a></li>
-							<li><a href="#">Clothing</a></li>
-						</ul> */}
-					</li>
-					<li><a href="#">Vision & Mission</a>
-						
-					</li>
-					<li><a href="#">Acts & Status</a>
-						
-					</li>
-					<li><a href="#">ASDHEC Logo</a>
-						
-					</li> 
-
-          <li><a href="#">Associate Institute / Colleges</a>
-						
-					</li>
-
-          <li><a href="#">Training Partners</a>
-						
-					</li>
-
-
+    <nav>
+    <div class="wrapper">
+      {/* <div class="logo">
+        <a href="#">Logo</a>
+      </div> */}
+      <input type="radio" name="slide" id="menu_btn" />
+        <input type="radio" name="slide" id="cancel_btn" />
+      <ul class="nav_links">
+        <label for="cancel_btn" class="btn cancel_btn">
+        <FontAwesomeIcon icon={faTimes} />
+        </label>
+          {/* <Button htmlFor="cancel_btn" className="btn cancel_btn" style={{ backgroundColor: "white", color: "black" }}>Close</Button> */}
+          <li>
+          <a href="#" class="desktop_item">About Us</a>
+          <input type="checkbox" id="showMega" />
+          <label for="showMega" class="mobile_item">About Us</label>
+          <div class="mega_box">
+            <div class="content">
+        
+              <div class="row img_row">
+                <header>Our Services</header> 
+                <div class="services_img"></div>
+              </div>
           
-				</ul>
+              <div class="row">
+                
+                <ul class="mega_links first_links">
+                  <li><a href="#">About ASDHEC</a></li>
+                  <li><a href="#">Vision & Mission</a></li>
+                  <li><a href="#">Acts & Statues</a></li>
+                  <li><a href="#">ASHEC logo</a></li>
+                </ul>
+              </div>
+              
+              <div class="row">
+               
+                <ul class="mega_links">
+                  <li><a href="#">Associate Institute / Colleges</a></li>
+                  <li><a href="#">Training Patners</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="desktop_item">Academic</a>
+          <input type="checkbox" id="showMega" />
+          <label for="showMega" class="mobile_item">Academic</label>
+          <div class="mega_box">
+            <div class="content">
+        
+              <div class="row img_row">
+                <header>Our Services</header> 
+                <div class="services_img"></div>
+              </div>
+          
+              <div class="row">
+                <ul class="mega_links first_links">
+                  <li><a href="#">Academic Council</a></li>
+                  <li><a href="#">Department</a></li>
+                  <li><a href="#">Associate & Regulations</a></li>
+                  <li><a href="#">Certification Courses</a></li>
+                </ul>
+              </div>
+              
+              <div class="row">
+                <ul class="mega_links">
+                  <li><a href="#">Diploma Courses</a></li>
+                  <li><a href="#">UG Degrees</a></li>
+                  <li><a href="#">PG Degrees</a></li>
+                  <li><a href="#">Training Programs</a></li>
+                </ul>
+              </div>
+              
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="desktop_item">Carrer Guidance</a>
+          <input type="checkbox" id="showMega" />
+          <label for="showMega" class="mobile_item">Carrer Guidance</label>
+          <div class="mega_box">
+            <div class="content">
+        
+              <div class="row img_row">
+                <header>Our Services</header> 
+                <div class="services_img"></div>
+              </div>
+          
+              <div class="row">
+                <ul class="mega_links first_links">
+                  <li><a href="#">Eligiblity</a></li>
+                  <li><a href="#">Colleges</a></li>
+                  <li><a href="#">Job Oppurtunity</a></li>
+                  <li><a href="#">How To Join This Courses?</a></li>
+                </ul>
+              </div>
+     
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="desktop_item">Students</a>
+          <input type="checkbox" id="showMega" />
+          <label for="showMega" class="mobile_item">Students</label>
+          <div class="mega_box">
+            <div class="content">
+        
+              <div class="row img_row">
+                <header>Our Services</header> 
+                <div class="services_img"></div>
+              </div>
+          
+              <div class="row">
+                <ul class="mega_links first_links">
+                  <li><a href="#">Membership Registration</a></li>
+                  <li><a href="#">Carrer Guidance Registration</a></li>
+                  <li><a href="#">Academic Counselling Registration</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
       
-      </li>
-			<li><a href="#"><i ></i>Academic </a>
-				<ul>
-					<li><a href="#">Academic Council</a>
-						{/* <ul>
-							<li><a href="#">Food & Treats</a></li>
-							<li><a href="#">Toys</a></li>
-							<li><a href="#">Beds & Furniture</a></li>
-							<li><a href="#">Outdoor Supplies</a></li>
-							<li><a href="#">Clothing</a></li>
-						</ul> */}
-					</li>
-					<li><a href="#">Department</a>
-						
-					</li>
-					<li><a href="#">Associate Regulations</a>
-						
-					</li>
-					<li><a href="#">Certification Courses</a>
-						
-					</li> 
-
-          <li><a href="#">Diploma Courses</a>
-						
-					</li>
-
-          <li><a href="#">UG Degrees</a>
-						
-					</li>
-
-          <li><a href="#">PG Degrees</a>
-						
-					</li>
-
-          <li><a href="#">Training Programs</a>
-						
-					</li>
-
+        <li>
+          <a href="#" class="desktop_item">Job Vaccancies</a>
+          <input type="checkbox" id="showMega" />
+          <label for="showMega" class="mobile_item">Job Vaccancies</label>
+          <div class="mega_box">
+            <div class="content">
+        
+              <div class="row img_row">
+                <header>Our Services</header> 
+                <div class="services_img"></div>
+              </div>
           
-				</ul>
-			</li>
-			<li><a href="#"><i ></i> career Guidance</a>
-				<ul>
-					<li><a href="#">Eligiblity</a>
-					
-					</li>
-					<li><a href="#">Colleges</a>
-						
-					</li>
+              <div class="row">
+                <ul class="mega_links first_links">
+                  <li><a href="#">Experience / Features</a></li>
+                  <li><a href="#">Company Name</a></li>
+                  <li><a href="#">Interview Date</a></li>
+                  <li><a href="#">Location</a></li>
+                  <li><a href="#">Job Description</a></li>
+                </ul>
+              </div>
 
-          <li><a href="#">Job Oppurtunity</a>
-						
-					</li>
+              <div class="row">
+                <ul class="mega_links first_links">
+                  <li><a href="#">Eligiblity</a></li>
+                  <li><a href="#">Designation / Position</a></li>
+                  <li><a href="#">Department</a></li>
+                  <li><a href="#">Role & Responsiblites</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <label for="menu_btn" class="btn menu_btn">
+      <FontAwesomeIcon icon={faBars} />
+      </label>
+        {/* <Button htmlFor="menu_btn" className="btn menu_btn" style={{ backgroundColor: "white", color: "black" }}>Open</Button> */}
 
-          <li><a href="#">How to Join the Course</a>
-						
-					</li>
-				</ul>
-			</li>
-			<li><a href="#"><i ></i> Students</a>
-				<ul>
-					<li><a href="#">Membership Registration</a></li>
-					<li><a href="#">career Guidance</a></li>
-					<li><a href="#">Academic Counselling Registration</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#"><i ></i> Job Vacancies</a>
-				<ul>
-					<li><a href="#">Our Team</a></li>
-					<li><a href="#">Contact Us</a></li>
-				</ul>
-			</li>
-		</ul>
-	</nav>
-</header>
+    </div>
+  </nav>
   );
-}
+};
 
 export default NavBar;

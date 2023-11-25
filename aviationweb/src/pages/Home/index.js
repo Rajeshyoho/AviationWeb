@@ -1,64 +1,78 @@
 import React, { useState, useEffect } from "react";
-import {
-  Box,
-  Card,
-  Grid,
-  Typography,
-  Link, 
-} from "@mui/material";
+import { Box, Card, Grid, Typography, Link } from "@mui/material";
 import Slider from "react-slick";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import NavBar from "../../components/NavBar";
 import SliderCarousel from "../../components/SliderCarousel";
 import styled from "@emotion/styled";
 import MarqueeContainer from "../../components/Marquee";
-import { Image } from 'react-bootstrap';
-
-
-const StyledButton = styled(Card)(({ theme, color = 'primary' }) => ({
-  ':hover': {
+import { Image } from "react-bootstrap";
+import Footer from "../../components/Footer";
+const StyledButton = styled(Card)(({ theme, color = "primary" }) => ({
+  ":hover": {
     color: theme.palette[color].main,
-    backgroundColor: 'white',
+    backgroundColor: "white",
   },
 }));
 
 const Home = () => {
   const settings = {
     infinite: true,
-    vertical: true,
-    verticalSwiping: true,
     speed: 5000,
     slidesToShow: 4,
     slidesToScroll: 4,
   };
-  const logo = require('../../Images/asdhec1.png');
+  const logo = require("../../Images/logo3.png");
   return (
-    <Grid sx={{mx:1}}>
-      <Grid sx={{justifyContent:"center",alignItems:"center",display:"flex",my:1}}>
-      <Image className='img-fluid' style={{ height: 180, width: 320 }} src={logo} />
+    <Grid sx={{ 
+      // background: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+    //  background: 'linear-gradient(360deg, #f5b2edf0 0%, #ddeef7f5 100%)'
+    background:" #ddeef7f5"
+       }}>
+      <Grid sx={{display:"flex",my:1}}>
+      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
       </Grid>
-      <NavBar/>
-      <SliderCarousel/>
-      <Grid container spacing={4} sx={{ marginTop: 0, padding: 5 }}>
-        <Grid lg={3} xs={12}>
-          <Box sx={{ marginRight: 3 }}>
-            <Grid item sx={{ padding: 0.5 }}>
+      <NavBar />
+      <SliderCarousel />
+      
+      <Grid
+        container
+        sx={{
+          marginTop: 0,
+          padding: 5,
+          
+       
+        }}
+      >
+        <Grid lg={3} xs={12} >
+          <Box sx={{ marginRight: 3 ,textAlign:"justify"}}>
+            <Grid item sx={{ padding: 0.5, marginTop: 0 }}>
               <a href="#" style={{ textDecoration: "none" }}>
                 <Card
-                 sx={{
-                  ':hover': {
-                    bgcolor: 'primary.main',
-                    color: 'white',
-                  },
-                }}
                   variant="outlined"
-                  style={{
+                  sx={{
                     padding: "15px 10px",
-                    fontsize: "16px",
                     textAlign: "start",
+                    background:
+                      "linear-gradient(to top, #f5f2f0 0%, #62d884 100%)",
+                    borderRadius: 2,
+                    ":hover": {
+                      boxShadow:3
+                    },
                   }}
                 >
-                  Associate Portal
+                  <Typography
+                    sx={{
+                      ":hover": {
+                        color: "white",
+                      },
+
+                      color: "#03254c",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Associate Portal &#8594;
+                  </Typography>
                 </Card>
               </a>
             </Grid>
@@ -67,19 +81,29 @@ const Home = () => {
               <a href="#" style={{ textDecoration: "none" }}>
                 <Card
                   sx={{
-                    ':hover': {
-                      bgcolor: 'primary.main',
-                      color: 'white',
-                    },
-                    minWidth: 200,
-                    // margintop: "10px"
                     padding: "15px 10px",
-                    fontsize: "16px",
                     textAlign: "start",
+                    background:
+                      "linear-gradient(to top, rgb(245, 242, 240) 0%, rgb(210, 98, 216) 100%)",
+                    borderRadius: 2,
+                    ":hover": {
+                      boxShadow:3
+                    },
                   }}
                   variant="outlined"
                 >
-                  Online Payment- Portal
+                  <Typography
+                    sx={{
+                      ":hover": {
+                        color: "white",
+                      },
+
+                      color: "#03254c",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Online Payment- Portal &#8594;
+                  </Typography>
                 </Card>
               </a>
             </Grid>
@@ -88,40 +112,29 @@ const Home = () => {
               <a href="#" style={{ textDecoration: "none" }}>
                 <Card
                   sx={{
-                    ':hover': {
-                      bgcolor: 'primary.main',
-                      color: 'white',
-                    },
-                    minWidth: 200,
-                    // margintop: "10px"
                     padding: "15px 10px",
-                    fontsize: "16px",
                     textAlign: "start",
+                    background:
+                      "linear-gradient(to top, rgb(245, 242, 240) 0%, rgb(217 217 70) 100%)",
+                    borderRadius: 2,
+                    ":hover": {
+                      boxShadow:3
+                    },
                   }}
                   variant="outlined"
                 >
-                  E- Content
-                </Card>
-              </a>
-            </Grid>
+                  <Typography
+                    sx={{
+                      ":hover": {
+                        color: "white",
+                      },
 
-            <Grid item sx={{ padding: 0.5 }}>
-              <a href="#" style={{ textDecoration: "none" }}>
-                <Card
-                 sx={{
-                  ':hover': {
-                    bgcolor: 'primary.main',
-                    color: 'white',
-                  },
-                  minWidth: 200,
-                  // margintop: "10px"
-                  padding: "15px 10px",
-                  fontsize: "16px",
-                  textAlign: "start",
-                }}
-                  variant="outlined"
-                >
-                  E- Certification
+                      color: "#03254c",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    E- Content &#8594;
+                  </Typography>
                 </Card>
               </a>
             </Grid>
@@ -130,61 +143,29 @@ const Home = () => {
               <a href="#" style={{ textDecoration: "none" }}>
                 <Card
                   sx={{
-                    ':hover': {
-                      bgcolor: 'primary.main',
-                      color: 'white',
-                    },
-                    minWidth: 200,
-                    // margintop: "10px"
                     padding: "15px 10px",
-                    fontsize: "16px",
                     textAlign: "start",
+                    background:
+                      "linear-gradient(to top, rgb(245, 242, 240) 0%, rgb(98 198 216) 100%)",
+                    borderRadius: 2,
+                    ":hover": {
+                      boxShadow:3
+                    },
                   }}
                   variant="outlined"
                 >
-                  Student Portal
-                </Card>
-              </a>
-            </Grid>
+                  <Typography
+                    sx={{
+                      ":hover": {
+                        color: "white",
+                      },
 
-            <Grid item sx={{ padding: 0.5 }}>
-              <a href="#" style={{ textDecoration: "none" }}>
-                <Card
-                 sx={{
-                  ':hover': {
-                    bgcolor: 'primary.main',
-                    color: 'white',
-                  },
-                  minWidth: 200,
-                  // margintop: "10px"
-                  padding: "15px 10px",
-                  fontsize: "16px",
-                  textAlign: "start",
-                }}
-                  variant="outlined"
-                >
-                  Online - Registration
-                </Card>
-              </a>
-            </Grid>
-
-            <Grid item sx={{ padding: 0.5 }}>
-              <a href="#" style={{ textDecoration: "none" }}>
-                <Card
-                   sx={{
-                    ':hover': {
-                      bgcolor: 'primary.main',
-                      color: 'white',
-                    },
-                    minWidth: 200,
-                    // margintop: "10px"
-                    padding: "15px 10px",
-                    fontsize: "16px",
-                    textAlign: "start",
-                  }}
-                  variant="outlined"
-                >
-                  Certificate Verfication
+                      color: "#03254c",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    E- Certification &#8594;
+                  </Typography>
                 </Card>
               </a>
             </Grid>
@@ -193,19 +174,29 @@ const Home = () => {
               <a href="#" style={{ textDecoration: "none" }}>
                 <Card
                   sx={{
-                    ':hover': {
-                      bgcolor: 'primary.main',
-                      color: 'white',
-                    },
-                    minWidth: 200,
-                    // margintop: "10px"
                     padding: "15px 10px",
-                    fontsize: "16px",
                     textAlign: "start",
+                    background:
+                      "linear-gradient(to top, rgb(245, 242, 240) 0%,  rgb(216 98 98) 100%)",
+                    borderRadius: 2,
+                    ":hover": {
+                      boxShadow:3
+                    },
                   }}
                   variant="outlined"
                 >
-                  Aviation Career Gudience
+                  <Typography
+                    sx={{
+                      ":hover": {
+                        color: "white",
+                      },
+
+                      color: "#03254c",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Student Portal &#8594;
+                  </Typography>
                 </Card>
               </a>
             </Grid>
@@ -213,20 +204,30 @@ const Home = () => {
             <Grid item sx={{ padding: 0.5 }}>
               <a href="#" style={{ textDecoration: "none" }}>
                 <Card
-                   sx={{
-                    ':hover': {
-                      bgcolor: 'primary.main',
-                      color: 'white',
-                    },
-                    minWidth: 200,
-                    // margintop: "10px"
+                  sx={{
                     padding: "15px 10px",
-                    fontsize: "16px",
                     textAlign: "start",
+                    background:
+                      "linear-gradient(to top, rgb(245, 242, 240) 0%, rgb(229 9 139) 100%)",
+                    borderRadius: 2,
+                    ":hover": {
+                      boxShadow:3
+                    }
                   }}
                   variant="outlined"
                 >
-                  Aviation Accademic Year Counselling
+                  <Typography
+                    sx={{
+                      ":hover": {
+                        color: "white",
+                      },
+
+                      color: "#03254c",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Online - Registration &#8594;
+                  </Typography>
                 </Card>
               </a>
             </Grid>
@@ -234,36 +235,139 @@ const Home = () => {
             <Grid item sx={{ padding: 0.5 }}>
               <a href="#" style={{ textDecoration: "none" }}>
                 <Card
-                   sx={{
-                    ':hover': {
-                      bgcolor: 'primary.main',
-                      color: 'white',
-                    },
-                    minWidth: 200,
-                    // margintop: "10px"
+                  sx={{
                     padding: "15px 10px",
-                    fontsize: "16px",
                     textAlign: "start",
+                    background:
+                      "linear-gradient(to top, rgb(245, 242, 240) 0%,  rgb(239 185 88) 100%)",
+                    borderRadius: 2,
+                    ":hover": {
+                      boxShadow:3
+                    },
                   }}
                   variant="outlined"
                 >
-                  Aviation job Portal
+                  <Typography
+                    sx={{
+                      ":hover": {
+                        color: "white",
+                      },
+
+                      color: "#03254c",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Certificate Verfication &#8594;
+                  </Typography>
+                </Card>
+              </a>
+            </Grid>
+
+            <Grid item sx={{ padding: 0.5 }}>
+              <a href="#" style={{ textDecoration: "none" }}>
+                <Card
+                  sx={{
+                    padding: "15px 10px",
+                    textAlign: "start",
+                    background:
+                      "linear-gradient(to top, rgb(245, 242, 240) 0%,  rgb(251 44 44) 100%)",
+                    borderRadius: 2,
+                    ":hover": {
+                      boxShadow:3
+                    },
+                  }}
+                  variant="outlined"
+                >
+                  <Typography
+                    sx={{
+                      ":hover": {
+                        color: "white",
+                      },
+
+                      color: "#03254c",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Aviation Career Gudience &#8594;
+                  </Typography>
+                </Card>
+              </a>
+            </Grid>
+
+            <Grid item sx={{ padding: 0.5 }}>
+              <a href="#" style={{ textDecoration: "none" }}>
+                <Card
+                  sx={{
+                    padding: "15px 10px",
+                    textAlign: "start",
+                    background:
+                      "linear-gradient(to top, rgb(245, 242, 240) 0%, rgb(44 52 251) 100%)",
+                    borderRadius: 2,
+                    ":hover": {
+                      boxShadow:3
+                    },
+                  }}
+                  variant="outlined"
+                >
+                  <Typography
+                    sx={{
+                      ":hover": {
+                        color: "white",
+                      },
+
+                      color: "#03254c",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Aviation Accademic Year Counselling &#8594;
+                  </Typography>
+                </Card>
+              </a>
+            </Grid>
+
+            <Grid item sx={{ padding: 0.5 }}>
+              <a href="#" style={{ textDecoration: "none" }}>
+                <Card
+                  sx={{
+                    padding: "15px 10px",
+                    textAlign: "start",
+                    background:
+                      "linear-gradient(to top, rgb(245, 242, 240) 0%, rgb(240 147 19) 100%)",
+                    borderRadius: 2,
+                    ":hover": {
+                      boxShadow:3
+                    },
+                  }}
+                  variant="outlined"
+                >
+                  <Typography
+                    sx={{
+                      ":hover": {
+                        color: "white",
+                      },
+
+                      color: "#03254c",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Aviation job Portal &#8594;
+                  </Typography>
                 </Card>
               </a>
             </Grid>
           </Box>
         </Grid>
 
-        <Grid lg={3} sx={12}>
-          <Card sx={{ marginRight: 3 }}>
+        <Grid lg={3} xs={12} sx={{ marginTop:{xs:3,lg:0.5} }}>
+          <Card
+            sx={{ marginRight: 3, backgroundColor: "#FFFFFF", boxShadow: 3 }}
+          >
             <Box
               sx={{
-                border: "0.5 px",
-                backgroundColor: "grey",
-                borderBottomRightRadius: 30,
-                width: { xs: "100%", lg: "90%" },
-                borderTopWidth: "3 px",
-                borderTopColor: "blue",
+                backgroundColor: "#03254c",
+                borderBottomRightRadius: 50,
+                width: { xs: "100%", lg: "100%" },
+                borderTop: "3px solid #09f",
               }}
             >
               <Typography color="white" padding={1}>
@@ -280,6 +384,9 @@ const Home = () => {
                   textAlign: "center",
                   cursor: "pointer",
                   marginTop: 2,
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -296,6 +403,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -312,6 +423,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -328,6 +443,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -344,6 +463,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -360,6 +483,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -376,6 +503,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -392,6 +523,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -408,6 +543,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -424,6 +563,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -440,6 +583,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -456,6 +603,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -466,15 +617,20 @@ const Home = () => {
             </Link>
           </Card>
 
-          <Card sx={{ marginRight: 3, marginTop: 3 }}>
+          <Card
+            sx={{
+              marginRight: 3,
+              marginTop: 3,
+              backgroundColor: "#FFFFFF",
+              boxShadow: 3,
+            }}
+          >
             <Box
               sx={{
-                border: "0.5 px",
-                backgroundColor: "grey",
-                borderBottomRightRadius: 30,
-                width: { xs: "100%", lg: "90%" },
-                borderTopWidth: "3 px",
-                borderTopColor: "blue",
+                backgroundColor: "#03254c",
+                borderBottomRightRadius: 50,
+                width: { xs: "100%", lg: "100%" },
+                borderTop: "3px solid #F90",
               }}
             >
               <Typography color="white" padding={1}>
@@ -491,6 +647,9 @@ const Home = () => {
                   textAlign: "center",
                   cursor: "pointer",
                   marginTop: 2,
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -507,6 +666,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -523,6 +686,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -539,6 +706,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -555,6 +726,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -571,6 +746,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -587,6 +766,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -598,16 +781,16 @@ const Home = () => {
           </Card>
         </Grid>
 
-        <Grid lg={3} xs={12}>
-          <Card sx={{ marginRight: 3 }}>
+        <Grid lg={3} xs={12} sx={{ marginTop: {xs:3,lg:0.5}}}>
+          <Card
+            sx={{ marginRight: 3, backgroundColor: "#FFFFFF", boxShadow: 3 }}
+          >
             <Box
               sx={{
-                border: "0.5 px",
-                backgroundColor: "grey",
-                borderBottomRightRadius: 30,
-                width: { xs: "100%", lg: "90%" },
-                borderTopWidth: "3 px",
-                borderTopColor: "blue",
+                backgroundColor: "#03254c",
+                borderBottomRightRadius: 50,
+                width: { xs: "100%", lg: "100%" },
+                borderTop: "3px solid #C09",
               }}
             >
               <Typography color="white" padding={1}>
@@ -624,6 +807,9 @@ const Home = () => {
                   textAlign: "center",
                   cursor: "pointer",
                   marginTop: 2,
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -638,6 +824,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -654,6 +844,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -670,6 +864,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -686,6 +884,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -696,15 +898,21 @@ const Home = () => {
             </Link>
           </Card>
 
-          <Card sx={{ marginRight: 3, marginTop: 3 }}>
+          <Card
+            sx={{
+              marginRight: 3,
+              marginTop: 3,
+              backgroundColor: "#FFFFFF",
+              boxShadow: 3,
+            }}
+          >
             <Box
               sx={{
                 border: "0.5 px",
-                backgroundColor: "grey",
-                borderBottomRightRadius: 30,
-                width: { xs: "100%", lg: "90%" },
-                borderTopWidth: "3 px",
-                borderTopColor: "blue",
+                backgroundColor: "#03254c",
+                borderBottomRightRadius: 50,
+                width: { xs: "100%", lg: "100%" },
+                borderTop: "3px solid #FF0000",
               }}
             >
               <Typography color="white" padding={1}>
@@ -721,6 +929,9 @@ const Home = () => {
                   textAlign: "center",
                   cursor: "pointer",
                   marginTop: 2,
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -735,6 +946,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -751,6 +966,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -767,6 +986,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -783,6 +1006,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -799,6 +1026,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -815,6 +1046,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -831,6 +1066,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -847,6 +1086,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -863,6 +1106,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -879,6 +1126,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -895,6 +1146,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -911,6 +1166,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -927,6 +1186,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -936,13 +1199,17 @@ const Home = () => {
               </Box>
             </Link>
 
-            <Link to="" sx={{ textDecoration: "none", color: "black" }}>
+            {/* <Link to="" sx={{ textDecoration: "none", color: "black" }}>
               <Box
                 sx={{
                   display: "flex",
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -959,6 +1226,10 @@ const Home = () => {
                   padding: 0.5,
                   alignItems: "center",
                   textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
                 }}
               >
                 <ArrowRightIcon />
@@ -966,14 +1237,16 @@ const Home = () => {
                   FAQs
                 </Typography>
               </Box>
-            </Link>
+            </Link> */}
           </Card>
         </Grid>
 
-        <Grid item lg={3} xs={12}>
-   <MarqueeContainer/>
+        <Grid lg={3} xs={12} sx={{ marginTop:{xs:3,lg:0.3} }}>
+          <MarqueeContainer />
         </Grid>
       </Grid>
+
+      <Footer/>
     </Grid>
   );
 };
