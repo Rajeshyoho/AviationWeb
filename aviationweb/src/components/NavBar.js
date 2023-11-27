@@ -31,7 +31,7 @@ const NavBar = () => {
           <li>
           <a href="#" class="desktop_item">About Us</a>
           <input type="checkbox" id="showMegaAboutUs" />
-          <label htmlFor="showMegaAboutUs" class="mobile_item" onClick={() => document.getElementById("menu_btn").checked = true}>About Us</label>
+          <label htmlFor="showMegaAboutUs"  class="mobile_item" onClick={() => document.getElementById("menu_btn").checked = true}>About Us</label>
           <div class="mega_box1">
             <div class="content">
         
