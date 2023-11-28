@@ -10,14 +10,19 @@ import { faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = () => {
   const logo = require("../Images/logo3.png");
+  const [megaMenuOpen, setMegaMenuOpen] = React.useState(false);
+
+  const handleToggleMegaMenu = () => {
+    setMegaMenuOpen(!megaMenuOpen);
+  };
   return (
     <nav>
     <div class="wrapper">
       {/* <div class="logo">
         <a href="#">Logo</a>
       </div> */}
-      <input type="radio" name="slide" id="menu_btn" />
-        <input type="radio" name="slide" id="cancel_btn" />
+     <input type="checkbox" id="menu_btn" checked={megaMenuOpen} onChange={handleToggleMegaMenu} />
+        <input type="checkbox" id="cancel_btn" checked={megaMenuOpen} onChange={handleToggleMegaMenu} />
       <ul class="nav_links">
         <label for="cancel_btn" class="btn cancel_btn">
         <FontAwesomeIcon icon={faTimes} />
@@ -25,13 +30,13 @@ const NavBar = () => {
           {/* <Button htmlFor="cancel_btn" className="btn cancel_btn" style={{ backgroundColor: "white", color: "black" }}>Close</Button> */}
           <li>
           <a href="#" class="desktop_item">About Us</a>
-          <input type="checkbox" id="showMega" />
-          <label for="showMega" class="mobile_item">About Us</label>
-          <div class="mega_box">
+          <input type="checkbox" id="showMegaAboutUs" />
+          <label htmlFor="showMegaAboutUs"  class="mobile_item" onClick={() => document.getElementById("menu_btn").checked = true}>About Us</label>
+          <div class="mega_box1">
             <div class="content">
         
               <div class="row img_row">
-                <header>Our Services</header> 
+                {/* <header>Our Services</header>  */}
                 <div class="services_img"></div>
               </div>
           
@@ -57,13 +62,13 @@ const NavBar = () => {
         </li>
         <li>
           <a href="#" class="desktop_item">Academic</a>
-          <input type="checkbox" id="showMega" />
-          <label for="showMega" class="mobile_item">Academic</label>
-          <div class="mega_box">
+          <input type="checkbox" id="showMegaAcademic" />
+          <label for="showMegaAcademic" class="mobile_item">Academic</label>
+          <div class="mega_box2">
             <div class="content">
         
               <div class="row img_row">
-                <header>Our Services</header> 
+                {/* <header>Our Services</header>  */}
                 <div class="services_img"></div>
               </div>
           
@@ -90,13 +95,13 @@ const NavBar = () => {
         </li>
         <li>
           <a href="#" class="desktop_item">Carrer Guidance</a>
-          <input type="checkbox" id="showMega" />
-          <label for="showMega" class="mobile_item">Carrer Guidance</label>
-          <div class="mega_box">
+          <input type="checkbox" id="showMegaCarrerGuidance" />
+          <label for="showMegaCarrerGuidance" class="mobile_item">Carrer Guidance</label>
+          <div class="mega_box3">
             <div class="content">
         
               <div class="row img_row">
-                <header>Our Services</header> 
+                {/* <header>Our Services</header>  */}
                 <div class="services_img"></div>
               </div>
           
@@ -114,13 +119,13 @@ const NavBar = () => {
         </li>
         <li>
           <a href="#" class="desktop_item">Students</a>
-          <input type="checkbox" id="showMega" />
-          <label for="showMega" class="mobile_item">Students</label>
-          <div class="mega_box">
+          <input type="checkbox" id="showMegaStudents" />
+          <label for="showMegaStudents" class="mobile_item">Students</label>
+          <div class="mega_box4">
             <div class="content">
         
               <div class="row img_row">
-                <header>Our Services</header> 
+                {/* <header>Our Services</header>  */}
                 <div class="services_img"></div>
               </div>
           
@@ -137,13 +142,13 @@ const NavBar = () => {
       
         <li>
           <a href="#" class="desktop_item">Job Vaccancies</a>
-          <input type="checkbox" id="showMega" />
-          <label for="showMega" class="mobile_item">Job Vaccancies</label>
-          <div class="mega_box">
+          <input type="checkbox" id="showMegaJobVaccancies" />
+          <label for="showMegaJobVaccancies" class="mobile_item">Job Vaccancies</label>
+          <div class="mega_box5">
             <div class="content">
         
               <div class="row img_row">
-                <header>Our Services</header> 
+                {/* <header>Our Services</header>  */}
                 <div class="services_img"></div>
               </div>
           
@@ -169,7 +174,7 @@ const NavBar = () => {
           </div>
         </li>
       </ul>
-      <label for="menu_btn" class="btn menu_btn">
+      <label for="menu_btn" class="btn menu_btn" style={{padding:1,justifyContent:"center",alignItems:"center",Right:"10px"}}>
       <FontAwesomeIcon icon={faBars} />
       </label>
         {/* <Button htmlFor="menu_btn" className="btn menu_btn" style={{ backgroundColor: "white", color: "black" }}>Open</Button> */}
