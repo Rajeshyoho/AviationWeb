@@ -13,8 +13,8 @@ const Navigation =()=>{
         <>
             <Routes>
             <Route path="/Home" element={<Home/>}/> 
-            <Route path="/" element={<AboutUs/>}/>
-            <Route path="/Accademic" element={<Accademic/>}/>
+            <Route path="/AboutUs" element={<AboutUs/>}/>
+            <Route path="/" element={<Accademic/>}/>
             
             </Routes>
         </>
