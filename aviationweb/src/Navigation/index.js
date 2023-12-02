@@ -1,6 +1,7 @@
 import { Home ,
 AboutUs,
-Accademic
+Accademic,
+ActsStatus,
 } from "../pages";
 
 
@@ -14,8 +15,8 @@ const Navigation =()=>{
             <Routes>
             <Route path="/Home" element={<Home/>}/> 
             <Route path="/AboutUs" element={<AboutUs/>}/>
-            <Route path="/" element={<Accademic/>}/>
-            
+            <Route path="/Accademic" element={<Accademic/>}/>
+            <Route path="/" element={<ActsStatus/>}/>
             </Routes>
         </>
     )

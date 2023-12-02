@@ -8,6 +8,11 @@ import styled from "@emotion/styled";
 import MarqueeContainer from "../../components/Marquee";
 import { Image } from "react-bootstrap";
 import Footer from "../../components/Footer";
+import CallEndIcon from "@mui/icons-material/CallEnd";
+import HorizontalMarquee from "../../components/HorizontalMarquee";
+import FlishNews from "../../components/FlishNews";
+import WeatherWidget from "../../components/Weather";
+
 const StyledButton = styled(Card)(({ theme, color = "primary" }) => ({
   ":hover": {
     color: theme.palette[color].main,
@@ -15,37 +20,78 @@ const StyledButton = styled(Card)(({ theme, color = "primary" }) => ({
   },
 }));
 
+
+
 const Home = () => {
+
+
+  const [parentWidth, setParentWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setParentWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+
   const settings = {
     infinite: true,
+    vertical: true,
+    verticalSwiping: true,
     speed: 5000,
     slidesToShow: 4,
     slidesToScroll: 4,
   };
-  const logo = require("../../Images/logo3.png");
+  const logo = require('../../Images/logo3.png');
+  const slides = [
+    { url: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sbGVnZSUyMGNhbXB1c3xlbnwwfHwwfHx8MA%3D%3D", title: "beach" },
+    { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBW1TbkfDSuicfILo2MGpQ9EL9yRm6Niul8kAoVvCa&s", title: "boat" },
+    { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5_1a_FiD8PTPidf2tOyKiNNKOFUU7M0DxaF0Uu4Sp&s", title: "forest" },
+    { url: "https://i.pinimg.com/originals/24/d7/9f/24d79f3329b466ede30d3b0e7d0d9116.jpg", title: "city" },
+    { url: "https://wallpapercave.com/uwp/uwp3844886.jpeg", title: "italy" },
+  ];
+  const containerStyles = {
+    width: "100%",
+    height: "400px",
+    margin: "0 auto",
+  };
+  // const logo = require("../../Images/logo3.png");
   return (
-    <Grid sx={{ 
-      // background: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
-    //  background: 'linear-gradient(360deg, #f5b2edf0 0%, #ddeef7f5 100%)'
-    background:" #ddeef7f5"
-       }}>
-      <Grid sx={{display:"flex",my:1}}>
+    <Grid
+      sx={{
+        // background: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+        //  background: 'linear-gradient(360deg, #f5b2edf0 0%, #ddeef7f5 100%)'
+        background: " #ddeef7f5",
+        overflowX:"hidden"
+      }}
+    >
+   <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
       <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
+      <WeatherWidget/>
+
       </Grid>
       <NavBar />
       <SliderCarousel />
-      
+
+      <Grid>
+        <FlishNews />
+      </Grid>
+
       <Grid
         container
         sx={{
-          marginTop: 0,
-          padding: 5,
-          
-       
+          paddingLeft: 3,
+          paddingRight: 3,
         }}
       >
-        <Grid lg={3} xs={12} >
-          <Box sx={{ marginRight: 3 ,textAlign:"justify"}}>
+        <Grid lg={3} xs={12}>
+          <Box sx={{ marginRight: 3, textAlign: "justify" }}>
             <Grid item sx={{ padding: 0.5, marginTop: 0 }}>
               <a href="#" style={{ textDecoration: "none" }}>
                 <Card
@@ -57,7 +103,7 @@ const Home = () => {
                       "linear-gradient(to top, #f5f2f0 0%, #62d884 100%)",
                     borderRadius: 2,
                     ":hover": {
-                      boxShadow:3
+                      boxShadow: 3,
                     },
                   }}
                 >
@@ -87,7 +133,7 @@ const Home = () => {
                       "linear-gradient(to top, rgb(245, 242, 240) 0%, rgb(210, 98, 216) 100%)",
                     borderRadius: 2,
                     ":hover": {
-                      boxShadow:3
+                      boxShadow: 3,
                     },
                   }}
                   variant="outlined"
@@ -118,7 +164,7 @@ const Home = () => {
                       "linear-gradient(to top, rgb(245, 242, 240) 0%, rgb(217 217 70) 100%)",
                     borderRadius: 2,
                     ":hover": {
-                      boxShadow:3
+                      boxShadow: 3,
                     },
                   }}
                   variant="outlined"
@@ -149,7 +195,7 @@ const Home = () => {
                       "linear-gradient(to top, rgb(245, 242, 240) 0%, rgb(98 198 216) 100%)",
                     borderRadius: 2,
                     ":hover": {
-                      boxShadow:3
+                      boxShadow: 3,
                     },
                   }}
                   variant="outlined"
@@ -180,7 +226,7 @@ const Home = () => {
                       "linear-gradient(to top, rgb(245, 242, 240) 0%,  rgb(216 98 98) 100%)",
                     borderRadius: 2,
                     ":hover": {
-                      boxShadow:3
+                      boxShadow: 3,
                     },
                   }}
                   variant="outlined"
@@ -211,8 +257,8 @@ const Home = () => {
                       "linear-gradient(to top, rgb(245, 242, 240) 0%, rgb(229 9 139) 100%)",
                     borderRadius: 2,
                     ":hover": {
-                      boxShadow:3
-                    }
+                      boxShadow: 3,
+                    },
                   }}
                   variant="outlined"
                 >
@@ -242,7 +288,7 @@ const Home = () => {
                       "linear-gradient(to top, rgb(245, 242, 240) 0%,  rgb(239 185 88) 100%)",
                     borderRadius: 2,
                     ":hover": {
-                      boxShadow:3
+                      boxShadow: 3,
                     },
                   }}
                   variant="outlined"
@@ -273,7 +319,7 @@ const Home = () => {
                       "linear-gradient(to top, rgb(245, 242, 240) 0%,  rgb(251 44 44) 100%)",
                     borderRadius: 2,
                     ":hover": {
-                      boxShadow:3
+                      boxShadow: 3,
                     },
                   }}
                   variant="outlined"
@@ -304,7 +350,7 @@ const Home = () => {
                       "linear-gradient(to top, rgb(245, 242, 240) 0%, rgb(44 52 251) 100%)",
                     borderRadius: 2,
                     ":hover": {
-                      boxShadow:3
+                      boxShadow: 3,
                     },
                   }}
                   variant="outlined"
@@ -335,7 +381,7 @@ const Home = () => {
                       "linear-gradient(to top, rgb(245, 242, 240) 0%, rgb(240 147 19) 100%)",
                     borderRadius: 2,
                     ":hover": {
-                      boxShadow:3
+                      boxShadow: 3,
                     },
                   }}
                   variant="outlined"
@@ -356,9 +402,45 @@ const Home = () => {
               </a>
             </Grid>
           </Box>
+
+          <Grid sx={{ marginRight: 3, textAlign: "justify", padding: 0.5 }}>
+            <Box
+              variant="outlined"
+              sx={{
+                padding: "15px 10px",
+                textAlign: "start",
+                // background: "linear-gradient(to top, #f5f2f0 0%, #62d884 100%)",
+                borderRadius: 2,
+                border: "1px solid grey",
+              }}
+            >
+              <Typography variant="h6" color={"red"}>
+                EXAMINATION HELPDESK
+              </Typography>
+              <Box sx={{ display: "flex",marginTop: 1, }}>
+                <CallEndIcon />
+
+                <a href="" style={{ textDecoration: "none" }}>
+                  <Typography sx={{ marginLeft: 1,color: "#03254c", }}>9188526670,</Typography>
+                </a>
+                <a href="" style={{ textDecoration: "none" }}>
+                  <Typography sx={{color: "#03254c",}} >9188526671</Typography>
+                </a>
+              </Box>
+
+              <Box sx={{ display: "flex" }}>
+                <a href="#" style={{ textDecoration: "none" }}>
+                  <Typography sx={{ marginLeft: 4,color: "#03254c", }}>9188526674,</Typography>
+                </a>
+                <a href="" style={{ textDecoration: "none" }}>
+                  <Typography sx={{color: "#03254c",}} > 9188526675</Typography>
+                </a>
+              </Box>
+            </Box>
+          </Grid>
         </Grid>
 
-        <Grid lg={3} xs={12} sx={{ marginTop:{xs:3,lg:0.5} }}>
+        <Grid lg={3} xs={12} sx={{ marginTop: { xs: 3, lg: 0.5 } }}>
           <Card
             sx={{ marginRight: 3, backgroundColor: "#FFFFFF", boxShadow: 3 }}
           >
@@ -778,10 +860,30 @@ const Home = () => {
                 </Typography>
               </Box>
             </Link>
+
+            <Link to="" sx={{ textDecoration: "none", color: "black" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  padding: 0.5,
+                  alignItems: "center",
+                  textAlign: "center",
+                  cursor: "pointer",
+                  ":hover": {
+                    color: "blue",
+                  },
+                }}
+              >
+                <ArrowRightIcon />
+                <Typography sx={{ fontSize: 13 }} href="">
+                Annual Reports
+                </Typography>
+              </Box>
+            </Link>
           </Card>
         </Grid>
 
-        <Grid lg={3} xs={12} sx={{ marginTop: {xs:3,lg:0.5}}}>
+        <Grid lg={3} xs={12} sx={{ marginTop: { xs: 3, lg: 0.5 } }}>
           <Card
             sx={{ marginRight: 3, backgroundColor: "#FFFFFF", boxShadow: 3 }}
           >
@@ -1199,7 +1301,7 @@ const Home = () => {
               </Box>
             </Link>
 
-            {/* <Link to="" sx={{ textDecoration: "none", color: "black" }}>
+            {/* {/* <Link to="" sx={{ textDecoration: "none", color: "black" }}>
               <Box
                 sx={{
                   display: "flex",
@@ -1217,7 +1319,7 @@ const Home = () => {
                   CMO Portal
                 </Typography>
               </Box>
-            </Link>
+            </Link> */}
 
             <Link to="" sx={{ textDecoration: "none", color: "black" }}>
               <Box
@@ -1237,16 +1339,21 @@ const Home = () => {
                   FAQs
                 </Typography>
               </Box>
-            </Link> */}
+            </Link> 
           </Card>
         </Grid>
 
-        <Grid lg={3} xs={12} sx={{ marginTop:{xs:3,lg:0.3} }}>
+        <Grid lg={3} xs={12} sx={{ marginTop: { xs: 3, lg: 0.3 } }}>
           <MarqueeContainer />
         </Grid>
       </Grid>
 
-      <Footer/>
+      <Grid sx={{ marginTop: 3, marginBottom: 3 }}>
+      
+        <HorizontalMarquee /> 
+      
+      </Grid>
+      <Footer />
     </Grid>
   );
 };

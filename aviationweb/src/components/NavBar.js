@@ -5,6 +5,7 @@ import {Image} from "react-bootstrap";
 import SvgIcon from '@mui/material/SvgIcon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
+import { Link } from "react-router-dom";
 
 
 
@@ -29,7 +30,7 @@ const NavBar = () => {
         </label>
           {/* <Button htmlFor="cancel_btn" className="btn cancel_btn" style={{ backgroundColor: "white", color: "black" }}>Close</Button> */}
           <li>
-          <a href="#" class="desktop_item">About Us</a>
+          <a  class="desktop_item"><Link to="/AboutUs" >About Us</Link></a>
           <input type="checkbox" id="showMegaAboutUs" />
           <label htmlFor="showMegaAboutUs"  class="mobile_item" onClick={() => document.getElementById("menu_btn").checked = true}>About Us</label>
           <div class="mega_box1">
@@ -37,13 +38,13 @@ const NavBar = () => {
         
               <div class="row img_row">
                 {/* <header>Our Services</header>  */}
-                <div class="services_img"></div>
+                <div ></div>
               </div>
           
               <div class="row">
                 
                 <ul class="mega_links first_links">
-                  <li><a href="#">About ASDHEC</a></li>
+                  <li><a href="#AboutUs">About ASDHEC</a></li>
                   <li><a href="#">Vision & Mission</a></li>
                   <li><a href="#">Acts & Statues</a></li>
                   <li><a href="#">ASHEC logo</a></li>
@@ -69,7 +70,7 @@ const NavBar = () => {
         
               <div class="row img_row">
                 {/* <header>Our Services</header>  */}
-                <div class="services_img"></div>
+                <div ></div>
               </div>
           
               <div class="row">
