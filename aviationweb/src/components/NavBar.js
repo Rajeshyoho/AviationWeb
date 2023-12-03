@@ -45,9 +45,9 @@ const NavBar = () => {
                 
                 <ul class="mega_links first_links">
                   <li><a href="#AboutUs">About ASDHEC</a></li>
-                  <li><a href="#">Vision & Mission</a></li>
-                  <li><a href="#">Acts & Statues</a></li>
-                  <li><a href="#">ASHEC logo</a></li>
+                  <li><a href="#VisionMission">Vision & Mission</a></li>
+                  <li><a href="#ActsStatus">Acts & Statues</a></li>
+                  <li><a href="AboutLogo">ASHEC logo</a></li>
                 </ul>
               </div>
               
@@ -55,7 +55,7 @@ const NavBar = () => {
                
                 <ul class="mega_links">
                   <li><a href="#">Associate Institute / Colleges</a></li>
-                  <li><a href="#">Training Patners</a></li>
+                  <li><a href="#TrainingProgram">Training programmes</a></li>
                 </ul>
               </div>
             </div>

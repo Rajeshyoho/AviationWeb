@@ -1,0 +1,32 @@
+
+  
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   }
+ 
+  h3 li a:hover {
+     color:black !important; 
+    text-decoration:underline black !important;
+ }
+   
+ .accordianHeader {
+    color: #0e2246 !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+ }
+ 
+ .accordianText{
+   font-size: 16px !important;
+ 
+ }
+ 
+ .accordianBorder{
+     background: linear-gradient(white, white) padding-box,
+     linear-gradient(to right,  #0e2246, darkorchid) border-box;
+ border-left: 8px solid transparent;
+ }
+ 
+ .StyledCard:hover .StyledCardContent:hover a {
+     text-decoration: underline !important;
+   }
+ 

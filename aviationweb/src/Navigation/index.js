@@ -2,6 +2,9 @@ import { Home ,
 AboutUs,
 Accademic,
 ActsStatus,
+AboutLogo,
+VisionMission,
+TrainingProgram,
 } from "../pages";
 
 
@@ -16,7 +19,10 @@ const Navigation =()=>{
             <Route path="/Home" element={<Home/>}/> 
             <Route path="/AboutUs" element={<AboutUs/>}/>
             <Route path="/Accademic" element={<Accademic/>}/>
-            <Route path="/" element={<ActsStatus/>}/>
+            <Route path="/ActsStatus" element={<ActsStatus/>}/>
+            <Route path="/" element={<AboutLogo/>}/>
+            <Route path="/VisionMission" element={<VisionMission/>}/>
+            <Route path="/TrainingProgram" element={<TrainingProgram/>}/>
             </Routes>
         </>
     )

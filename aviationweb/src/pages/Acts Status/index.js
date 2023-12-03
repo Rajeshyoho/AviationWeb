@@ -12,7 +12,6 @@ import Breadcrumb from "react-bootstrap/Breadcrumb";
 
 const ActsStatus = () => {
   const logo = require("../../Images/logo3.png");
-  const fast = require("../../Images/Screen.png");
 
   return (
     <>
@@ -54,7 +53,7 @@ const ActsStatus = () => {
           <Breadcrumb.Item href="#">Acts & Status</Breadcrumb.Item>
         </Breadcrumb>
       </Grid>
-
+ 
  
       <Grid>
         <Container
