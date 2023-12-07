@@ -5,6 +5,9 @@ ActsStatus,
 AboutLogo,
 VisionMission,
 TrainingProgram,
+Associate,
+DiplomaCourse,
+AcademicsCouncil,
 } from "../pages";
 
 
@@ -20,9 +23,12 @@ const Navigation =()=>{
             <Route path="/AboutUs" element={<AboutUs/>}/>
             <Route path="/Accademic" element={<Accademic/>}/>
             <Route path="/ActsStatus" element={<ActsStatus/>}/>
-            <Route path="/" element={<AboutLogo/>}/>
+            <Route path="/AboutLogo" element={<AboutLogo/>}/>
             <Route path="/VisionMission" element={<VisionMission/>}/>
             <Route path="/TrainingProgram" element={<TrainingProgram/>}/>
+            <Route path="/Associate" element={<Associate/>}/>
+            <Route path="/DiplomaCourse" element={<DiplomaCourse/>}/>
+            <Route path="/AcademicsCouncil" element={<AcademicsCouncil/>}/>
             </Routes>
         </>
     )

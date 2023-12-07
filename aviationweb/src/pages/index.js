@@ -5,6 +5,9 @@ import ActsStatus from "./Acts Status";
 import AboutLogo from "./About Logo";
 import VisionMission from "./About Vission&Mission";
 import TrainingProgram from "./About Traning";
+import Associate from "./About Assoicate Institute";
+import DiplomaCourse from "./Academic Diploma";
+import AcademicsCouncil from "./Academic Council";
 export {
     Home,
     AboutUs,
@@ -13,4 +16,7 @@ export {
     AboutLogo,
     VisionMission,
     TrainingProgram,
+    Associate,
+    DiplomaCourse,
+    AcademicsCouncil,
 }

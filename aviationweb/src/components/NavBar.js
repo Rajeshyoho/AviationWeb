@@ -47,14 +47,14 @@ const NavBar = () => {
                   <li><a href="#AboutUs">About ASDHEC</a></li>
                   <li><a href="#VisionMission">Vision & Mission</a></li>
                   <li><a href="#ActsStatus">Acts & Statues</a></li>
-                  <li><a href="AboutLogo">ASHEC logo</a></li>
+                  <li><a href="#AboutLogo">ASHEC logo</a></li>
                 </ul>
               </div>
               
               <div class="row">
                
                 <ul class="mega_links">
-                  <li><a href="#">Associate Institute / Colleges</a></li>
+                  <li><a href="#Associate">Associate Institute / Colleges</a></li>
                   <li><a href="#TrainingProgram">Training programmes</a></li>
                 </ul>
               </div>
@@ -75,7 +75,7 @@ const NavBar = () => {
           
               <div class="row">
                 <ul class="mega_links first_links">
-                  <li><a href="#">Academic Council</a></li>
+                  <li><a href="#AcademicsCouncil">Academic Council</a></li>
                   <li><a href="#">Department</a></li>
                   <li><a href="#">Associate & Regulations</a></li>
                   <li><a href="#">Certification Courses</a></li>
@@ -84,7 +84,7 @@ const NavBar = () => {
               
               <div class="row">
                 <ul class="mega_links">
-                  <li><a href="#">Diploma Courses</a></li>
+                  <li><a href="#DiplomaCourse">Diploma Courses</a></li>
                   <li><a href="#">UG Degrees</a></li>
                   <li><a href="#">PG Degrees</a></li>
                   <li><a href="#">Training Programs</a></li>

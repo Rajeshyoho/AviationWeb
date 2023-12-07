@@ -7,10 +7,13 @@ import {
   CardMedia,
   CardContent,
   CardActionArea,
+  Box,
 } from "@mui/material";
 import React from "react";
 import { Image } from "react-bootstrap";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
+import { styled } from "@mui/material/styles";
+import Paper from "@mui/material/Paper";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -19,6 +22,14 @@ import Col from "react-bootstrap/Col";
 import Footer from "../../components/Footer";
 
 const AboutLogo = () => {
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  }));
+
   const logo = require("../../Images/logo3.png");
 
   return (
@@ -64,219 +75,182 @@ const AboutLogo = () => {
         </Breadcrumb>
       </Grid>
 
-      <div style={{ padding: 12 }}>
-        <Row xs={1} md={2} style={{ backgroundColor: "#007aff" }}>
-          <Col>
-            <div
-              style={{
-                backgroundColor: "#007aff",
-                display: "flex",
-                padding: 0,
-                textAlign: "center",
-                backgroundPosition: "center",
-              }}
-            >
-              <Image
-                src="https://www.academyofaviation.com/images/aoa-logo-plain-white.png"
-                style={{
-                  backgroundColor: "#007aff",
-                }}
-                alt="Aviation"
-                fluid
-              />
-            </div>
-          </Col>
-
-          <Col
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Typography style={{ fontSize: 20, fontWeight: "bold" }}>
-              Aviation Skill Development And Higher Educational Council
-              <br />
-              Best Pilot Training Institutes in the World
-            </Typography>
-          </Col>
-        </Row>
-      </div>
+      <Grid style={{ textAlign: "center" }}>
+        <h1>CSR</h1>
+      </Grid>
 
       <Grid>
         <Container>
-          <Row>
-            <Typography
-              style={{
-                fontSize: "1.125rem",
-                textAlign: "center",
-                textAlign: "justify",
-                marginTop: 10,
-              }}
-            >
-              WELCOME TO ACADEMY OF AVIATION'S INTERNATIONAL VISA CONTACT PAGE
-              FOR STUDY-ABROAD COMMERCIAL PILOT STUDENTS.
-            </Typography>
-          </Row>
+          <Typography>
+            The Global Group of Companies, a pan India conglomerate in its 48th
+            year, is the first General Sales Agent in India, with the core
+            business of airline representation for passenger & cargo and other
+            allied businesses. Besides servicing the travel trade industry all
+            through these years, the Founder Chairman, Mr H K Vithalani & the
+            Group have been involved in philanthropic activities since four
+            decades. Focus has been education, healthcare, environment,
+            inclusion with special focus on women & girls. They have done
+            several projects with Shivanand Mission at Virnagar. First was to
+            construct a girls school BHAKTI SADAN in 1991 for young girls from
+            neighbouring villages. Second was to construct and set up a hostel
+            for boarding & lodging hostel for girls in 1996 – called Dayaben
+            Karsandas Vithalani and also donated to set up a complete Eye Ward
+            under the name of Karsandas Raghavjee Vithalani at the 400 bed
+            hospital on campus of the Shivanand Mission. Free medical check ups
+            and cataract surgeries take place here for residents of 100
+            neighbouring villages by highly qualified doctors. Chaiman & Group
+            Companies are also affiliated with many works of social service and
+            charity. Notable among them are some of the charities &
+            organisations the Group is associated with on regular basis:
+          </Typography>
+          <br />
+          <Typography>
+            <h3>Best Pilot Training Institutes in the World 2023</h3>
+            <p>
+              While there are many good flying clubs in India but these days
+              there is a growing trend of people opting to complete their flying
+              and gain their licenses from abroad. Captain U.S. Tiwari, a senior
+              pilot of Air India (narrow-body) promptly confirmed this by
+              saying, “Enrolling into a flying school abroad can prove to be an
+              expensive affair but young aspiring pilots prefer it as it is a
+              quicker option to complete their flying hours”.
+            </p>
+          </Typography>
         </Container>
       </Grid>
 
+      {/* <div>
+        <Container fluid >
+          <Row xs={1} md={2}>
+            <Col xs={6}>
+              <Image src="https://www.faa.gov/sites/faa.gov/files/images/ato/by-the-numbers/flights-handled.jpg" />
+            </Col>
+
+            <Col xs={6}>
+              <Image src="https://www.faa.gov/sites/faa.gov/files/images/ato/by-the-numbers/avg-flights.jpg" />
+            </Col>
+          </Row>
+        </Container>
+      </div> */}
+
       <Container>
-        <Divider style={{ backgroundColor: "gray" }} />
+        <Grid sx={{ flexDirection: { xs: "column", lg: "row" } }}>
+          <Box
+            sx={{
+              flexDirection: { xs: "column", lg: "row" },
+              display: "flex",
+              justifyContent: "space-around",
+            }}
+          >
+            <Grid>
+              <img
+                src="https://www.faa.gov/sites/faa.gov/files/images/ato/by-the-numbers/flights-handled.jpg"
+                style={{ height: 300, width: "100%" }}
+              />
+            </Grid>
+            <Grid sx={{ marginTop: { xs: 3, lg: 0 } }}>
+              <img
+                src="https://www.faa.gov/sites/faa.gov/files/images/ato/by-the-numbers/avg-flights.jpg"
+                style={{ height: 300, width: "100%" }}
+              />
+            </Grid>
+          </Box>
+          <Box
+            sx={{
+              flexDirection: { xs: "column", lg: "row" },
+              display: "flex",
+              justifyContent: "space-around",
+              marginTop: 3,
+            }}
+          >
+            <Grid>
+              <img
+                src="https://www.faa.gov/sites/faa.gov/files/images/ato/by-the-numbers/sched-pax-flights.jpg"
+                style={{ height: 300, width: "100%" }}
+              />
+            </Grid>
+            <Grid sx={{ marginTop: { xs: 3, lg: 0 } }}>
+              <img
+                src="https://www.faa.gov/sites/faa.gov/files/images/ato/by-the-numbers/peak-ops.jpg"
+                style={{ height: 300, width: "100%" }}
+              />
+            </Grid>
+          </Box>
+          <Box
+            sx={{
+              flexDirection: { xs: "column", lg: "row" },
+              display: "flex",
+              justifyContent: "space-around",
+              marginTop: 3,
+            }}
+          >
+            <Grid>
+              <img
+                src="https://www.faa.gov/sites/faa.gov/files/images/ato/by-the-numbers/controllers.jpg"
+                style={{ height: 300, width: "100%" }}
+              />
+            </Grid>
+            <Grid sx={{ marginTop: { xs: 3, lg: 0 } }}>
+              <img
+                src="https://www.faa.gov/sites/faa.gov/files/images/ato/by-the-numbers/ga.jpg"
+                style={{ height: 300, width: "100%" }}
+              />
+            </Grid>
+          </Box>
+        </Grid>
       </Container>
 
-      <div style={{ textAlign: "center", marginTop: 20 }}>
-        <Typography
-          style={{ fontFamily: "inherit", fontSize: 30, fontWeight: "bold" }}
-        >
-          Comprehensive solutions to elevate your aviation experience
+      <div
+        style={{
+          marginTop: 30,
+          display: "flex",
+          textAlign: "center",
+          justifyContent: "center",
+          alignItems: "center",
+          textAlign: "justify",
+        }}
+      >
+        <Typography>
+          <h2> Aviation Testimonial</h2>
+          <Divider style={{ backgroundColor: "gray" }} />
         </Typography>
       </div>
-
-      <Container style={{ marginTop: 30 }}>
-        <Row>
-          <Col>
-            <Card
-              sx={{
-                maxWidth: 360,
-                transition: "transform 0.2s",
-                "&:hover": {
-                  transform: "scale(1.05)", // You can adjust the scale factor
-                },
-              }}
-            >
-              <CardMedia
-                component="img"
-                height="80"
-                image="https://wallpapercave.com/dwp2x/wp12488409.jpg"
-                alt="green iguana"
-              />
-            </Card>
-            <Typography
-              gutterBottom
-              variant="h5"
-              component="div"
-              style={{ textAlign: "center", marginTop: 10 }}
-            >
-              Airlines
-            </Typography>
-          </Col>
-
-          <Col>
-            <Card
-              sx={{
-                maxWidth: 360,
-                transition: "transform 0.2s",
-                "&:hover": {
-                  transform: "scale(1.05)", // You can adjust the scale factor
-                },
-              }}
-            >
-              <CardMedia
-                component="img"
-                height="80"
-                image="https://img.freepik.com/free-photo/jumbo-jet-flying-sky_23-2150895681.jpg?t=st=1701500725~exp=1701504325~hmac=d6e499f4c90da7c026d00b38562bde168f0deaa83b77fa91dde6136b4e037c00&w=1060"
-                alt="green iguana"
-              />
-            </Card>
-            <Typography
-              gutterBottom
-              variant="h5"
-              component="div"
-              style={{ textAlign: "center", marginTop: 10 }}
-            >
-              Airlines
-            </Typography>
-          </Col>
-
-          <Col>
-            <Card
-              sx={{
-                maxWidth: 345,
-                transition: "transform 0.2s",
-                "&:hover": {
-                  transform: "scale(1.05)", // You can adjust the scale factor
-                },
-              }}
-            >
-              <CardMedia
-                component="img"
-                height="80"
-                image="https://img.freepik.com/premium-photo/airplane-landing-airport-rays-setting-sun-with-copyspace_766625-11904.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1697500800&semt=ais"
-                alt="green iguana"
-              />
-            </Card>
-            <Typography
-              gutterBottom
-              variant="h5"
-              component="div"
-              style={{ textAlign: "center", marginTop: 10 }}
-            >
-              Airlines
-            </Typography>
-          </Col>
-
-          <Col>
-            <Card
-              sx={{
-                maxWidth: 345,
-                transition: "transform 0.2s",
-                "&:hover": {
-                  transform: "scale(1.05)", // You can adjust the scale factor
-                },
-              }}
-            >
-              <CardMedia
-                component="img"
-                height="80"
-                image="https://img.freepik.com/free-photo/travel-background-with-toy-plane-map_23-2147828038.jpg?w=900&t=st=1701519746~exp=1701520346~hmac=0234cf19973cf555c89f6ebf3e3192420e85ca739f2d0b6e27a687ae0a0bb026"
-                alt="green iguana"
-              />
-            </Card>
-            <Typography
-              gutterBottom
-              variant="h5"
-              component="div"
-              style={{ textAlign: "center", marginTop: 10 }}
-            >
-              Airlines
-            </Typography>
-          </Col>
-        </Row>
-      </Container>
-
-      <div style={{ marginTop: 30 }}>
-        <Container>
+      <div>
+        <Container style={{ backgroundColor: "#c7d4e3", marginTop:10 ,borderRadius:5}}>
           <Row>
-            <Col>
-              <Typography
-                style={{
-                  fontFamily: "inherit",
-                  fontSize: 30,
-                  fontWeight: "bold",
-                }}
-              >
-                Passenger Airlines GSSA
-              </Typography>
-              <Typography style={{ marginTop: 20 }}>
-                Global Aviation is a comprehensive full-service provider for an
-                international airline, offering a range of services that include
-                reservations and ticketing, revenue projections, optimal route
-                recommendations, and government approvals. With the right
-                partner, Global Aviation can be a great way to provide the best
-                customer experience and represent their brand on a global scale.
-              </Typography>
-            </Col>
-
-            <Col style={{ marginTop: 20 }}>
-              <Image className="img-fluid" style={{ height: 130 }} src={logo} />
-            </Col>
+            <Typography style={{ marginTop: 20 }}>
+              <p>
+                Montair’s experienced instructors and advanced aircraft were an
+                integral part in preparing me for a career as a professional
+                pilot. Their drive for perfection equipped me with the
+                fundamental skills and attitude required to take on just about
+                any job in the aviation industry. The meticulous standards to
+                which they maintain their aircraft always gave me peace-of-mind
+                knowing that I was safe, while the well-equipped classroom and
+                training facilities created an excellent environment in which to
+                learn. The camaraderie created by this welcoming environment led
+                to relationships and memories that will last a lifetime. I take
+                the skills and experience that I gained during my time at
+                Montair with me every day I go to work, making me a better and
+                safer pilot.
+              </p>
+              <div style={{display:"flex"}}>
+              <img
+                src="https://e7.pngegg.com/pngimages/901/285/png-clipart-airplane-computer-icons-avatar-pilot-smiley-airplane-thumbnail.png"
+                style={{ borderRadius: 300, height: 50, width: 50 }}
+              />
+              <p style={{marginTop:14, marginLeft:20}}>
+                The New Streamlined Launch and Reentry Licensing Process
+                Advisory Circulars and Guidance
+              </p>
+              </div>
+            </Typography>
           </Row>
         </Container>
       </div>
 
-      <div style={{ marginTop: 30 }}>
-        <Footer />
+      <div style={{marginTop:10}}>
+        <Footer/>
       </div>
     </>
   );

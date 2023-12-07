@@ -3,12 +3,13 @@ import "./HorizontalMarquee.css"
 // import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'; 
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { Container } from 'react-bootstrap';
 
 const BreakingNews = () => {
   const [news, setNews] = useState([
-    { title: 'News 1', url: '#1' },
-    { title: 'News 2', url: '#2' },
-    { title: 'News 3', url: '#3' },
+    { title: 'Featured Air Transport News', url: '#1' },
+    { title: 'Aviation Week Knowledge Center', url: '#2' },
+    { title: 'Featured Defense & Space News', url: '#3' },
     // Add more dummy news items as needed
   ]);
 
@@ -37,9 +38,10 @@ const BreakingNews = () => {
   };
 
   return (
+    <Container fluid style={{marginLeft:20,marginTop:5}}>
     <div className="breaking-news-section section">
       <div className="breaking-news-wrapper">
-        <h5 className="breaking-news-title">Flish News</h5>
+        <h5 className="breaking-news-title">Flash News</h5>
         <div className="breaking-news-content">
           <a
             href={news[currentNewsIndex].url}
@@ -59,6 +61,7 @@ const BreakingNews = () => {
         </div>
       </div>
     </div>
+    </Container>
   );
 };
 
