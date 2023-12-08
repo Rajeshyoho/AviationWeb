@@ -76,18 +76,17 @@ const NavBar = () => {
               <div class="row">
                 <ul class="mega_links first_links">
                   <li><a href="#AcademicsCouncil">Academic Council</a></li>
-                  <li><a href="#">Department</a></li>
-                  <li><a href="#">Associate & Regulations</a></li>
-                  <li><a href="#">Certification Courses</a></li>
+                  <li><a href="#Department">Department</a></li>
+                  <li><a href="#AssociateRegulations">Associate & Regulations</a></li>
+                  <li><a href="#Certificate">Certification Courses</a></li>
                 </ul>
               </div>
               
               <div class="row">
                 <ul class="mega_links">
                   <li><a href="#DiplomaCourse">Diploma Courses</a></li>
-                  <li><a href="#">UG Degrees</a></li>
-                  <li><a href="#">PG Degrees</a></li>
-                  <li><a href="#">Training Programs</a></li>
+                  <li><a href="#UGDegrees">UG Degrees</a></li>
+                  <li><a href="#PGDegrees">PG Degrees</a></li>
                 </ul>
               </div>
               
@@ -109,8 +108,8 @@ const NavBar = () => {
               <div class="row">
                 <ul class="mega_links first_links">
                   <li><a href="#">Eligiblity</a></li>
-                  <li><a href="#">Colleges</a></li>
-                  <li><a href="#">Job Oppurtunity</a></li>
+                  <li><a href="#Colleges">Colleges</a></li>
+                  <li><a href="#JobOpportunities">Job Oppurtunity</a></li>
                   <li><a href="#">How To Join This Courses?</a></li>
                 </ul>
               </div>

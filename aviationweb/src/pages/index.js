@@ -8,6 +8,13 @@ import TrainingProgram from "./About Traning";
 import Associate from "./About Assoicate Institute";
 import DiplomaCourse from "./Academic Diploma";
 import AcademicsCouncil from "./Academic Council";
+import Certificate from "./Academic Certification";
+import Department from "./Academic Department";
+import AssociateRegulations from "./Academic Assoicate & Regulation";
+import UGDegrees from "./Academic UG Degree";
+import PGDegrees from "./Academic PG Degrees";
+import JobOpportunities from "./Carrer Job opportunities";
+import Colleges from "./Carrer Colleage";
 export {
     Home,
     AboutUs,
@@ -19,4 +26,11 @@ export {
     Associate,
     DiplomaCourse,
     AcademicsCouncil,
+    Certificate,
+    Department,
+    AssociateRegulations,
+    UGDegrees,
+    PGDegrees,
+    JobOpportunities,
+    Colleges,
 }
