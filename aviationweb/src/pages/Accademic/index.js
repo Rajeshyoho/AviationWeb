@@ -10,6 +10,8 @@ import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import PropTypes from "prop-types";
 import Footer from "../../components/Footer";
+import NavBar from "../../components/NavBar";
+import WeatherWidget from "../../components/Weather";
 
 const Accademic = () => {
   const logo = require("../../Images/logo3.png");
@@ -60,21 +62,14 @@ const Accademic = () => {
           background: " #ddeef7f5",
         }}
       >
-        <Grid sx={{ display: "flex", my: 1 }}>
-          <Image className="img-fluid" style={{ height: 130 }} src={logo} />
-        </Grid>
+          <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
+      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
+      <WeatherWidget/>
+
+      </Grid>
 
         <Grid>
-          <Navbar bg="dark" data-bs-theme="dark">
-            <Container>
-              <Navbar.Brand href="#Academic">Academic</Navbar.Brand>
-              <Nav>
-                <Nav.Link href="#Home">Home</Nav.Link>
-                <Nav.Link href="#Aboutus">About</Nav.Link>
-                <Nav.Link href="#pricing">Pricing</Nav.Link>
-              </Nav>
-            </Container>
-          </Navbar>
+       <NavBar />
         </Grid>
       </Grid>
 

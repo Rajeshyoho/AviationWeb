@@ -19,6 +19,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Footer from "../../components/Footer";
 import { Box } from "@mui/system";
+import NavBar from "../../components/NavBar";
+import WeatherWidget from "../../components/Weather";
 
 const DiplomaCourse = () => {
   const logo = require("../../Images/logo3.png");
@@ -31,32 +33,18 @@ const DiplomaCourse = () => {
       overflowX: "hidden",
     }}
   >
-    <Grid
-      className="linearHeader"
-      sx={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}
-    >
-      <Image className="img-fluid" style={{ height: 130 }} src={logo} />
-    </Grid>
+    <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
+      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
+      <WeatherWidget/>
+
+      </Grid>
   </Grid>
 
   <Grid>
-    <Navbar bg="dark" data-bs-theme="dark">
-      <Container>
-        <Navbar.Brand href="#home">Diploma Course</Navbar.Brand>
-        <Nav>
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#features">About</Nav.Link>
-          <Nav.Link href="#pricing">pricing</Nav.Link>
-        </Nav>
-      </Container>
-    </Navbar>
+<NavBar />
   </Grid>
 
-  <Grid>
+  {/* <Grid>
     <Breadcrumb
       style={{ backgroundColor: "#FFFFFF", textDecoration: "none" }}
     >
@@ -64,7 +52,8 @@ const DiplomaCourse = () => {
       <Breadcrumb.Item href="#">AboutUs</Breadcrumb.Item>
       <Breadcrumb.Item href="#">ASDHEC Logo</Breadcrumb.Item>
     </Breadcrumb>
-  </Grid>
+  </Grid> */}
+
 <div>
   <Row>
     <Col>
@@ -192,6 +181,7 @@ const DiplomaCourse = () => {
 <div style={{ height: "40px" }}></div>
 
 <Container style={{ padding: "16px" }}>
+  <Card style={{padding:"20px",borderRadius:"10px"}}>
   <Row>
     <Col>
       <h3 style={{
@@ -216,7 +206,7 @@ const DiplomaCourse = () => {
     </Col>
   </Row>
 
-<div style={{marginTop:"20px",marginBottom:"20px"}}>
+<div style={{marginTop:"20px"}}>
   <Row>
     <Col>
       <span style={{
@@ -245,6 +235,7 @@ const DiplomaCourse = () => {
     </Col>
   </Row>
   </div>
+  </Card>
 </Container>
 
 <Container style={{ padding: "16px" }}>

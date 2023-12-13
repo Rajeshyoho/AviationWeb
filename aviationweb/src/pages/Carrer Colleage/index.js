@@ -13,6 +13,8 @@ import Navbar from "react-bootstrap/Navbar";
 import InputGroup from "react-bootstrap/InputGroup";
 import Typography from "@mui/material/Typography";
 import Footer from "../../components/Footer";
+import NavBar from "../../components/NavBar";
+import WeatherWidget from "../../components/Weather";
 
 const Colleges = () => {
   const logo = require("../../Images/logo3.png");
@@ -111,32 +113,18 @@ const Colleges = () => {
           overflowX: "hidden",
         }}
       >
-        <Grid
-          className="linearHeader"
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <Image className="img-fluid" style={{ height: 130 }} src={logo} />
-        </Grid>
+          <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
+      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
+      <WeatherWidget/>
+
+      </Grid>
       </Grid>
 
       <Grid>
-        <Navbar bg="dark" data-bs-theme="dark">
-          <Container>
-            <Navbar.Brand href="#home">Colleage</Navbar.Brand>
-            <Nav>
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#about">About</Nav.Link>
-              <Nav.Link href="#academic">Academic</Nav.Link>
-            </Nav>
-          </Container>
-        </Navbar>
+       <NavBar/>
       </Grid>
 
-      <Grid style={{ padding: 10 }}>
+      {/* <Grid style={{ padding: 10 }}>
         <Breadcrumb
           style={{ backgroundColor: "#FFFFFF", textDecoration: "none" }}
         >
@@ -144,7 +132,7 @@ const Colleges = () => {
           <Breadcrumb.Item href="#">AboutUs</Breadcrumb.Item>
           <Breadcrumb.Item href="#">ASDHEC Logo</Breadcrumb.Item>
         </Breadcrumb>
-      </Grid>
+      </Grid> */}
 
       <div>
         <Row

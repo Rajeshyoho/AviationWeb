@@ -1,0 +1,48 @@
+#header {
+    background: url("https://www.karunya.edu/themes/porto/img/parallax-3.jpg") no-repeat center center fixed;
+    height: 55vh; 
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
+    object-fit: cover; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .headerText {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+    /* text-shadow: 2px 2px 2px black; */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 100px;
+  }
+  
+  @media (max-width: 768px) {
+    .head-text h2 {
+      font-size: 200%;
+    }
+    
+    #header {
+      background: url("https://www.karunya.edu/themes/porto/img/parallax-3.jpg") no-repeat center center scroll;
+      background-size: cover;
+    }
+  
+    .responsiveBox {
+      display: none; /* Hide the content on small devices */
+    }
+  }
+    
+  @media screen and (min-width: 768px) {
+    .responsiveBox {
+      flex: 1;
+      max-width: 200px; /* Limit the width for larger screens */
+      margin: 10px;
+    }
+  }

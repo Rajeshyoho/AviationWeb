@@ -19,6 +19,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Image } from "react-bootstrap";
 import Footer from "../../components/Footer";
+import NavBar from "../../components/NavBar";
+import WeatherWidget from "../../components/Weather";
 
 const images = [
   "https://wallpapercave.com/dwp2x/wp12041609.jpg",
@@ -28,8 +30,7 @@ const images = [
 ];
 
 const VisionMission = () => {
-
-    const logo = require("../../Images/logo3.png");
+  const logo = require("../../Images/logo3.png");
 
   const [selectedImage, setSelectedImage] = useState(1);
   const [isHovered, setIsHovered] = useState(false);
@@ -91,71 +92,67 @@ const VisionMission = () => {
   };
   return (
     <Grid>
-      
       <Grid
-    sx={{
-      background: " #ddeef7f5",
-      overflowX: "hidden",
-    }}
-  >
-    <Grid
-      className="linearHeader"
-      sx={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}
-    >
-      <Image className="img-fluid" style={{ height: 130 }} src={logo} />
-    </Grid>
-  </Grid>
+        sx={{
+          background: " #ddeef7f5",
+          overflowX: "hidden",
+        }}
+      >
+  <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
+      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
+      <WeatherWidget/>
 
-  <Grid >
-    <Navbar bg="dark" data-bs-theme="dark">
-      <Container>
-        <Navbar.Brand href="#home">Vision & Mission</Navbar.Brand>
-        <Nav>
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#features">About</Nav.Link>
-          <Nav.Link href="#pricing">pricing</Nav.Link>
-        </Nav>
-      </Container>
-    </Navbar>
-  </Grid>
+      </Grid>
+      </Grid>
 
-      <Grid container sx={{ padding:3}}>
+      <Grid>
+        <NavBar />
+      </Grid>
+
+      <Grid container sx={{ padding: 3 }}>
         <Grid item xs={12} md={6} sx={{ paddingX: { xs: 1, sm: 2, md: 3 } }}>
           <div>
             <h3>
               <li
                 style={{
                   listStyle: "none",
-                  textDecoration: "underline",
-                  color: "#5236ab",
-                  fontSize: "20px",
+                  textDecoration: "none",
+                  fontSize: "30px",
                   marginBottom: "15px",
                   padding: "0px",
+                  fontFamily: "initial",
+                  fontWeight: "bold",
+                  color: "black",
                 }}
               >
-                <a>Company overview</a>
+                <a href="#">Company overview</a>
               </li>
             </h3>
             <h1
-              style={{ color: "#200a58", marginBottom: "15px", padding: "0px" }}
+              style={{
+                marginBottom: "15px",
+                padding: "0px",
+                fontSize: "30px",
+                fontFamily: "initial",
+                fontWeight: "bold",
+              }}
             >
               The CGI Constitution
             </h1>
             <h2
               style={{
-                color: "#200a58",
-                fontWeight: 400,
                 marginBottom: "15px",
                 padding: "0px",
+                fontSize: "20px",
+                fontFamily: "initial",
+                fontWeight: "bold",
               }}
             >
               Defining the essence of who we are
             </h2>
-            <p style={{ fontSize: "18px", lineHeight: "32px", padding: "0px" }}>
+            <p
+              style={{ padding: "0px", textAlign: "justify", fontSize: "19px" }}
+            >
               CGI's Constitution is a reflection of our Culture. The
               Constitution is made up of the common Dream, Vision, Mission and
               Values that drive us as we strive together to build a global IT
@@ -163,7 +160,8 @@ const VisionMission = () => {
               programs founded upon this Constitution, CGI's consultants and
               professionals have the opportunity to participate in the life and
               development of their company, which, in turn, results in client
-              loyalty and shareholder growth.
+              loyalty and shareholder growth, like a road map of how to achieve
+              the goals set in your vision statement.
             </p>
           </div>
         </Grid>
@@ -190,24 +188,24 @@ const VisionMission = () => {
         </Grid>
       </Grid>
 
-      <Grid container sx={{ padding:"30px" }}>
+      <Grid container sx={{ padding: "30px" }}>
         <Grid item xs={12} md={6} sx={{ paddingX: { xs: 1, sm: 2, md: 3 } }}>
           <div>
-            <h3 style={{ color: " #0e2246", fontSize: "19px" }}>Our Dream</h3>
+            <h3 style={{ fontWeight:"bold",fontFamily:"initial", fontSize: "19px" }}>Our Dream</h3>
             <p style={{ margin: "3px 0px 20px", fontSize: "17px" }}>
               To create an environment in which we enjoy working together and,
               as owners, contribute to building a company we can be proud of.
             </p>
           </div>
           <div>
-            <h3 style={{ color: " #0e2246", fontSize: "19px" }}>Our Vision</h3>
+            <h3 style={{ fontWeight:"bold",fontFamily:"initial", fontSize: "19px" }}>Our Vision</h3>
             <p style={{ margin: "3px 0px 20px", fontSize: "17px" }}>
               To create an environment in which we enjoy working together and,
               as owners, contribute to building a company we can be proud of.
             </p>
           </div>
           <div>
-            <h3 style={{ color: " #0e2246", fontSize: "19px" }}>Our Mission</h3>
+            <h3 style={{ fontWeight:"bold",fontFamily:"initial", fontSize: "19px" }}>Our Mission</h3>
             <p style={{ margin: "3px 0px 20px", fontSize: "17px" }}>
               To help our clients succeed through outstanding quality,
               competence and objectivity, providing thought leadership and
@@ -221,7 +219,7 @@ const VisionMission = () => {
         </Grid>
         <Grid item xs={12} md={6}>
           <h3
-            style={{ paddingLeft: "10px", color: " #0e2246", fontSize: "19px" }}
+            style={{ paddingLeft: "10px", fontWeight:"bold",fontFamily:"initial", fontSize: "19px" }}
           >
             Our Values
           </h3>
@@ -313,13 +311,13 @@ const VisionMission = () => {
         </Grid>
       </Grid>
 
-      <Grid container sx={{ padding:"30px" }}>
+      <Grid container sx={{ padding: "30px" }}>
         <Grid item xs={12} md={6} sx={{ paddingX: { xs: 1, sm: 2, md: 3 } }}>
           <div>
-            <h3 style={{ color: " #0e2246", fontSize: "19px" }}>
+            <h3 style={{ fontWeight:"bold",fontFamily:"initial", fontSize: "19px"}}>
               The CGI Culture through the adherence of our Constitution
             </h3>
-            <p style={{ margin: "3px 0px 10px", fontSize: "17px" }}>
+            <p style={{ margin: "3px 0px 10px", fontSize: "17px" ,textAlign:"justify"}}>
               Our Constitution is the foundation of our Culture, expressed in
               words. To learn more—and to read a Word from Our Founder—visit the
               CGI Culture page. This document explains the rationale of our
@@ -327,7 +325,7 @@ const VisionMission = () => {
               guide all CGI consultants and professionals, whom we call members,
               in their day-to-day actions to live the Dream.
             </p>
-            <p style={{ margin: "3px 0px 10px", fontSize: "17px" }}>
+            <p style={{ margin: "3px 0px 10px", fontSize: "17px",textAlign:"justify" }}>
               The world will continue to change. CGI will have to remain close
               to its clients and continue to evolve. Correspondingly, CGI
               members will have to continue to evolve our Constitution through
@@ -355,11 +353,10 @@ const VisionMission = () => {
           </div>
         </Grid>
       </Grid>
- 
-    <div>
-        <Footer/>
-    </div>
 
+      <div>
+        <Footer />
+      </div>
     </Grid>
   );
 };

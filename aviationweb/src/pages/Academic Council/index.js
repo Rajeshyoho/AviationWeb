@@ -7,6 +7,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "../../components/Accademic.css";
 import Footer from "../../components/Footer";
+import NavBar from "../../components/NavBar";
+import WeatherWidget from "../../components/Weather";
 
 const AcademicsCouncil = () => {
   const logo = require("../../Images/logo3.png");
@@ -19,34 +21,18 @@ const AcademicsCouncil = () => {
           overflowX: "hidden",
         }}
       >
-        <Grid
-          className="linearHeader"
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <Image className="img-fluid" style={{ height: 130 }} src={logo} />
-        </Grid>
+          <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
+      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
+      <WeatherWidget/>
+
+      </Grid>
       </Grid>
 
       <Grid>
-        <Navbar bg="dark" data-bs-theme="dark">
-          <Container>
-            <Navbar.Brand href="#home">
-              Associate Institute /Colleges{" "}
-            </Navbar.Brand>
-            <Nav>
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#features">About</Nav.Link>
-              <Nav.Link href="#pricing">pricing</Nav.Link>
-            </Nav>
-          </Container>
-        </Navbar>
+      <NavBar />
       </Grid>
 
-      <Grid style={{ padding: 5 }}>
+      {/* <Grid style={{ padding: 5 }}>
         <Breadcrumb
           style={{ backgroundColor: "#FFFFFF", textDecoration: "none" }}
         >
@@ -54,7 +40,7 @@ const AcademicsCouncil = () => {
           <Breadcrumb.Item href="#">AboutUs</Breadcrumb.Item>
           <Breadcrumb.Item href="#">ASDHEC Logo</Breadcrumb.Item>
         </Breadcrumb>
-      </Grid>
+      </Grid> */}
 
       <div>
         <div

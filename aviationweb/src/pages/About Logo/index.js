@@ -20,6 +20,8 @@ import Navbar from "react-bootstrap/Navbar";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Footer from "../../components/Footer";
+import NavBar from "../../components/NavBar";
+import WeatherWidget from "../../components/Weather";
 
 const AboutLogo = () => {
   const Item = styled(Paper)(({ theme }) => ({
@@ -40,32 +42,18 @@ const AboutLogo = () => {
           overflowX: "hidden",
         }}
       >
-        <Grid
-          className="linearHeader"
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <Image className="img-fluid" style={{ height: 130 }} src={logo} />
-        </Grid>
+         <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
+      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
+      <WeatherWidget/>
+
+      </Grid>
       </Grid>
 
       <Grid>
-        <Navbar bg="dark" data-bs-theme="dark">
-          <Container>
-            <Navbar.Brand href="#home">ASDHEC Logo</Navbar.Brand>
-            <Nav>
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#features">About</Nav.Link>
-              <Nav.Link href="#pricing">pricing</Nav.Link>
-            </Nav>
-          </Container>
-        </Navbar>
+      <NavBar />
       </Grid>
 
-      <Grid style={{ padding: 5 }}>
+      {/* <Grid style={{ padding: 5 }}>
         <Breadcrumb
           style={{ backgroundColor: "#FFFFFF", textDecoration: "none" }}
         >
@@ -73,7 +61,7 @@ const AboutLogo = () => {
           <Breadcrumb.Item href="#">AboutUs</Breadcrumb.Item>
           <Breadcrumb.Item href="#">ASDHEC Logo</Breadcrumb.Item>
         </Breadcrumb>
-      </Grid>
+      </Grid> */}
 
       <Grid style={{ textAlign: "center" }}>
         <h1>CSR</h1>

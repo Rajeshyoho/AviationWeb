@@ -9,6 +9,8 @@ import Row from "react-bootstrap/Row";
 import Marquee from "react-fast-marquee";
 import Footer from "../../components/Footer";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
+import NavBar from "../../components/NavBar";
+import WeatherWidget from "../../components/Weather";
 
 const ActsStatus = () => {
   const logo = require("../../Images/logo3.png");
@@ -21,38 +23,24 @@ const ActsStatus = () => {
           overflowX: "hidden",
         }}
       >
-        <Grid
-          className="linearHeader"
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <Image className="img-fluid" style={{ height: 130 }} src={logo} />
-        </Grid>
+         <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
+      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
+      <WeatherWidget/>
+
+      </Grid>
       </Grid>
 
       <Grid>
-        <Navbar bg="dark" data-bs-theme="dark">
-          <Container>
-            <Navbar.Brand href="#home">Acts & Status</Navbar.Brand>
-            <Nav>
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#features">ASDHEC</Nav.Link>
-              <Nav.Link href="#pricing">pricing</Nav.Link>
-            </Nav>
-          </Container>
-        </Navbar>
+       <NavBar/>
       </Grid>
 
-      <Grid style={{ padding: 5}}>
+      {/* <Grid style={{ padding: 5}}>
         <Breadcrumb style={{backgroundColor: "#FFFFFF",textDecoration:"none"}}>
           <Breadcrumb.Item href="Home">Home</Breadcrumb.Item>
           <Breadcrumb.Item href="#">AboutUs</Breadcrumb.Item>
           <Breadcrumb.Item href="#">Acts & Status</Breadcrumb.Item>
         </Breadcrumb>
-      </Grid>
+      </Grid> */}
  
  
       <Grid>
@@ -78,10 +66,12 @@ const ActsStatus = () => {
                   fontSize: 30,
                   fontFamily: "initial",
                   marginTop: 4,
+                  textAlign:"justify"
                 }}
               >
                 Acts & Status
               </Typography>
+              <p style={{textAlign:"justify",padding:2}}>
               A firm believer in the power of people, Mr. Vithalani fosters a
               familial environment within the company, cultivating a dynamic
               team where relationships flourish and excellence is a way of life.
@@ -103,6 +93,7 @@ const ActsStatus = () => {
               dedication is directed towards providing a seamless customer
               experience, ensuring that each client’s requirements are not just
               met, but exceeded.
+              </p>
             </Col>
           </Row>
         </Container>
@@ -114,10 +105,10 @@ const ActsStatus = () => {
             <Typography
               sx={{
                 fontWeight: "bold",
-                fontSize: 20,
+                fontSize: "25px",
                 fontFamily: "initial",
                 textAlign: "center",
-                marginTop: 5,
+                marginTop: 2,
               }}
             >
               Regulatory Framework
@@ -157,9 +148,9 @@ const ActsStatus = () => {
                 <br />
                 (d) address issues relating to the import, registration, safety
                 and certification of aircraft operations.
-                <br />
+                {/* <br />
                 (e) Other legislation relevant to Indian civil aviation
-                includes.
+                includes. */}
               </Typography>
             </Col>
             <Col xs={12} md={6} style={{ marginTop: 25 }}>

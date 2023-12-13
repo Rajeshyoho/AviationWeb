@@ -1,0 +1,45 @@
+/* *{
+    font-family:"Raleway, serif"
+} */
+
+.containerwithbackground {
+    position: relative;
+    background-image: url('https://wallpapercave.com/dwp2x/wp12435861.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff; 
+    padding: 20px;
+    height: 50vh;
+    object-fit: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.containerwithbackground::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3); 
+}
+.headingTitle{
+    color: #4c4a4a;
+    font-weight: 700;
+    font-size: 15px;
+}
+.content{
+    color: #6b6b6b;
+    font-weight: 400;
+}
+.subTitle{
+    color: #4c4a4a ;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+li{
+    list-style: none;
+}

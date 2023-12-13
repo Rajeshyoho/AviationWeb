@@ -12,6 +12,8 @@ import Row from "react-bootstrap/Row";
 import Marquee from "react-fast-marquee";
 import Footer from "../../components/Footer";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
+import NavBar from "../../components/NavBar";
+import WeatherWidget from "../../components/Weather";
 
 const AboutUs = () => {
   const logo = require("../../Images/logo3.png");
@@ -24,29 +26,15 @@ const AboutUs = () => {
           overflowX: "hidden",
         }}
       >
-        <Grid
-          className="linearHeader"
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <Image className="img-fluid" style={{ height: 130 }} src={logo} />
-        </Grid>
+         <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
+      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
+      <WeatherWidget/>
+
+      </Grid>
       </Grid>
 
       <Grid>
-        <Navbar bg="dark" data-bs-theme="dark">
-          <Container>
-            <Navbar.Brand href="#home">About US</Navbar.Brand>
-            <Nav>
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#features">Features</Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
-            </Nav>
-          </Container>
-        </Navbar>
+     <NavBar />
       </Grid>
 
       {/* <Marquee
@@ -59,13 +47,13 @@ const AboutUs = () => {
         aircraft industry.
       </Marquee> */}
 
-      <Grid style={{ padding: 5}}>
+      {/* <Grid style={{ padding: 5}}>
         <Breadcrumb style={{backgroundColor: "#FFFFFF",textDecoration:"none"}}>
           <Breadcrumb.Item href="Home" >Home</Breadcrumb.Item>
           <Breadcrumb.Item href="#">AboutUs</Breadcrumb.Item>
           <Breadcrumb.Item href="#">About ASDHEC</Breadcrumb.Item>
         </Breadcrumb>
-      </Grid>
+      </Grid> */}
 
       <div>
         <Container>
@@ -133,7 +121,7 @@ const AboutUs = () => {
                   a major form of transport throughout the world.
                 </Typography>
                 <br />
-                <Typography>
+                <Typography style={{ textAlign: "justify" }}>
                   For Native Americans, music is more than just sound, and each
                   dance move has meaning. Art in every form whether totem poles,
                   pottery, or literature—is a fact of life, ingrained into the
@@ -175,7 +163,7 @@ const AboutUs = () => {
         <Container>
           <Row xs={1} md={2}>
             <Col style={{ marginTop: 20 }}>
-              <Box sx={{ padding: 1 }}>
+              <Box sx={{ padding: 1 ,textAlign:"justify"}}>
                 <Typography
                   sx={{
                     fontWeight: "bold",

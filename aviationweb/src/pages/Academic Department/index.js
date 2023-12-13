@@ -11,6 +11,8 @@ import Col from "react-bootstrap/Col";
 import "../../components/Department.css"; // Make sure to provide the correct path to your CSS file
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import NavBar from "../../components/NavBar";
+import WeatherWidget from "../../components/Weather";
 
 const Department = () => {
   const logo = require("../../Images/logo3.png");
@@ -22,32 +24,18 @@ const Department = () => {
           overflowX: "hidden",
         }}
       >
-        <Grid
-          className="linearHeader"
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <Image className="img-fluid" style={{ height: 130 }} src={logo} />
-        </Grid>
+         <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
+      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
+      <WeatherWidget/>
+
+      </Grid>
       </Grid>
 
       <Grid>
-        <Navbar bg="dark" data-bs-theme="dark">
-          <Container>
-            <Navbar.Brand href="#home">Departments</Navbar.Brand>
-            <Nav>
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#features">About</Nav.Link>
-              <Nav.Link href="#pricing">pricing</Nav.Link>
-            </Nav>
-          </Container>
-        </Navbar>
+      <NavBar/>
       </Grid>
 
-      <Grid style={{ padding: 5 }}>
+      {/* <Grid style={{ padding: 5 }}>
         <Breadcrumb
           style={{ backgroundColor: "#FFFFFF", textDecoration: "none" }}
         >
@@ -55,13 +43,17 @@ const Department = () => {
           <Breadcrumb.Item href="#">AboutUs</Breadcrumb.Item>
           <Breadcrumb.Item href="#">ASDHEC Logo</Breadcrumb.Item>
         </Breadcrumb>
-      </Grid>
+      </Grid> */}
 
       <>
-        <div id="header" className="header container-fluid">
+        {/* <div id="header" className="header container-fluid">
           <div className="headerText">
-            {/* <h1>Welcome to Our Website</h1> */}
+      
           </div>
+        </div> */}
+        <div style={{padding:0,margin:0}}>
+          <img src="https://www.lamar.edu/_files/images/academics/academics-at-lamar-university.jpg" 
+          style={{width:"100%"}}/>
         </div>
 
         <Container>
@@ -69,11 +61,11 @@ const Department = () => {
             <Col>
               <h2
                 style={{
-                  fontSize: "2rem",
+                  fontSize: "30px",
                   marginTop: "1rem",
                   marginBottom: "1rem",
                   fontWeight: "bold",
-                  fontFamily: "sans-serif",
+                  fontFamily: "initial",
                 }}
               >
                 Divisions and Departments
@@ -85,7 +77,7 @@ const Department = () => {
         <Container>
           <Row>
             <Col>
-              <p>
+              <p style={{textAlign:"justify"}}>
                 As the academic core of The University of Alabama, the College
                 of Arts and Sciences is a forward-thinking leader in the arts,
                 humanities, and natural and social sciences. With guidance from
@@ -97,7 +89,7 @@ const Department = () => {
           </Row>
           <Row>
             <Col>
-              <p>
+              <p style={{textAlign:"justify"}}>
                 Here, we’ve organized our 22 departments according to four areas
                 of emphasis: fine and performing arts, humanities, social
                 sciences, and natural sciences and math. Visit our department
@@ -114,12 +106,12 @@ const Department = () => {
           <Col>
             <h2
               style={{
-                fontSize: "2rem",
+                fontSize: "30px",
                 marginTop: "1rem",
                 marginBottom: "1rem",
                 fontWeight: "bold",
                 textAlign: "center",
-                fontFamily: "sans-serif",
+                fontFamily: "initial",
               }}
             >
               Fine & Performing Arts
@@ -128,7 +120,7 @@ const Department = () => {
 
           <Row>
             <Col>
-              <p>
+              <p style={{textAlign:"justify"}}>
                 Our fine and performing arts departments advance the study and
                 practice of art, theatre, dance, and music through programs that
                 encompass classical, contemporary, and experimental styles.
@@ -215,12 +207,12 @@ const Department = () => {
           <Col>
             <h2
               style={{
-                fontSize: "2rem",
+                fontSize: "30px",
                 marginTop: "1rem",
                 marginBottom: "1rem",
                 fontWeight: "bold",
                 textAlign: "center",
-                fontFamily: "sans-serif",
+                fontFamily: "initial",
               }}
             >
               Social Sciences
@@ -229,7 +221,7 @@ const Department = () => {
 
           <Row>
             <Col>
-              <p>
+              <p style={{textAlign:"justify"}}>
                 Our fine and performing arts departments advance the study and
                 practice of art, theatre, dance, and music through programs that
                 encompass classical, contemporary, and experimental styles.

@@ -8,6 +8,8 @@ import Navbar from "react-bootstrap/Navbar";
 import Footer from "../../components/Footer";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import NavBar from "../../components/NavBar";
+import WeatherWidget from "../../components/Weather";
 
 const PGDegrees = () => {
 
@@ -21,32 +23,18 @@ const PGDegrees = () => {
           overflowX: "hidden",
         }}
       >
-        <Grid
-          className="linearHeader"
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <Image className="img-fluid" style={{ height: 130 }} src={logo} />
-        </Grid>
+        <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
+      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
+      <WeatherWidget/>
+
+      </Grid>
       </Grid>
 
       <Grid>
-        <Navbar bg="dark" data-bs-theme="dark">
-          <Container>
-            <Navbar.Brand href="#home">PG Degrees</Navbar.Brand>
-            <Nav>
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#features">About</Nav.Link>
-              <Nav.Link href="#pricing">pricing</Nav.Link>
-            </Nav>
-          </Container>
-        </Navbar>
+    <NavBar />
       </Grid>
 
-      <Grid>
+      {/* <Grid>
         <Breadcrumb
           style={{ backgroundColor: "#FFFFFF", textDecoration: "none" }}
         >
@@ -54,7 +42,7 @@ const PGDegrees = () => {
           <Breadcrumb.Item href="#">AboutUs</Breadcrumb.Item>
           <Breadcrumb.Item href="#">ASDHEC Logo</Breadcrumb.Item>
         </Breadcrumb>
-      </Grid>
+      </Grid> */}
     <div>
       <Row>
         <Col>
