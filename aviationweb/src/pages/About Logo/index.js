@@ -153,7 +153,7 @@ const AboutLogo = () => {
 
       <Grid>
         <Container fluid style={{padding:20,textAlign:"justify"}}>
-          <Typography style={{ textAlign: "justify" }}>
+          {/* <Typography style={{ textAlign: "justify" }}>
             The Global Group of Companies, a pan India conglomerate in its 48th
             year, is the first General Sales Agent in India, with the core
             business of airline representation for passenger & cargo and other
@@ -174,8 +174,7 @@ const AboutLogo = () => {
             Companies are also affiliated with many works of social service and
             charity. Notable among them are some of the charities &
             organisations the Group is associated with on regular basis:
-          </Typography>
-          <br />
+          </Typography> */}
           <Typography style={{ textAlign: "justify" }}>
             <h3
               style={{
@@ -197,6 +196,10 @@ const AboutLogo = () => {
         </Container>
       </Grid>
 
+              <img src={logo} style={{width:"100%",height:"auto",textAlign:"center"}}/>
+
+
+
       {/* <div>
         <Container fluid >
           <Row xs={1} md={2}>
@@ -211,7 +214,7 @@ const AboutLogo = () => {
         </Container>
       </div> */}
 
-      <Container>
+      {/* <Container>
         <Grid sx={{ flexDirection: { xs: "column", lg: "row" } ,marginTop:2}}>
           <Box
             sx={{
@@ -276,7 +279,7 @@ const AboutLogo = () => {
             </Grid>
           </Box>
         </Grid>
-      </Container>
+      </Container> */}
 
       {/* <div
         style={{

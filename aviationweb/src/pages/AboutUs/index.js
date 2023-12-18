@@ -27,12 +27,46 @@ const AboutUs = () => {
   const logo = require("../../Images/logo3.png");
 
 
-  const [animationClass, setAnimationClass] = useState('');
+  const animationClassLeft = 'slide-in-left';
+  const animationClassRight = 'slide-in-right';
+
+
+  const [isLeftColumnVisible, setLeftColumnVisible] = useState(false);
+  const [isRightColumnVisible, setRightColumnVisible] = useState(false);
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+
+    // Adjust the threshold value based on your needs
+    const threshold = 300;
+
+    setLeftColumnVisible(scrollPosition > threshold);
+    setRightColumnVisible(scrollPosition > threshold);
+  };
 
   useEffect(() => {
-    // Trigger the animation after the component has mounted
-    setAnimationClass('active');
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
+
+  
+
+
+  // const [animationClass, setAnimationClass] = useState('');
+
+  // useEffect(() => {
+  //   // Trigger the animation after the component has mounted
+  //   setAnimationClass('active');
+  // }, []);
+
+  // const [animationClass, setAnimationClass] = useState('');
+
+  // useEffect(() => {
+  //   // Trigger animation after component mounts
+  //   setAnimationClass('slide-in-left');
+  // }, []);
 
 
 
@@ -366,6 +400,50 @@ const AboutUs = () => {
       </div>
 
       <div>
+    <Container style={{ marginTop: 30 }}>
+      <Row>
+      <Col className={`slide-in-left ${isLeftColumnVisible ? 'visible' : ''}`} style={{ marginLeft: 10 }}>
+            <Image
+              src="https://cdn-fdkig.nitrocdn.com/AywaxOjUfFsIziAItTGgLIIuUTWWuYxf/assets/images/optimized/rev-298d1aa/riainstitute.co.in/wp-content/uploads/2021/10/illustration-2.png"
+              style={{ height: "500px", width: "auto" }}
+            />
+          </Col>
+
+          <Col className={`slide-in-right ${isRightColumnVisible ? 'visible' : ''}`}>
+            <Typography style={{ marginTop: 20, fontWeight: "bold" }}>
+              Take A Step Towards Reaching Your Goals
+            </Typography>
+
+          <Typography style={{ marginTop: 10 }}>
+            RIA Institute of Technology is a leader in providing Job oriented IT, non IT, Academic and Language training
+            courses in Bangalore. Our Institute has helped 1000s of aspirants to get the right job based on their career
+            requirements.
+          </Typography>
+
+          <Typography style={{ marginTop: 10 }}>
+            Our course curriculum is robustly designed to make students ready for their dream job. All modules within
+            each course are carefully chosen and shortlisted to match respective industry standards to ensure our
+            students have higher chances of getting access to online & offline courses, learn any skill and gain
+            knowledge the job.
+          </Typography>
+
+          <Typography style={{ marginTop: 10 }}>
+            Whether it is gain knowledge or to enhance existing skill to increase your credibility with a view to grow
+            in your career, choosing the right training institute is essential. You need a Training Institute that will
+            be a good investment for your money, time, and reputation. In short, you need a Best IT & Non IT Training
+            Institute in Bangalore that will make you time spent a safe proposition and RIA Institute of Technology is
+            that name.
+          </Typography>
+        </Col>
+      </Row>
+    </Container>
+  </div>
+
+
+
+
+
+      {/* <div>
         <Container style={{ marginTop: 30 }}>
           <Row>
             <Col className={`slide-in ${animationClass}`} style={{ marginLeft: 10 }}>
@@ -411,7 +489,28 @@ const AboutUs = () => {
             
           </Row>
         </Container>
-      </div>
+      </div> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       {/* <div
         style={{

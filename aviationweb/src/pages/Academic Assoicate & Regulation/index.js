@@ -22,113 +22,128 @@ import Col from "react-bootstrap/Col";
 import NavBar from "../../components/NavBar";
 import WeatherWidget from "../../components/Weather";
 import Header from "../../components/Header";
-import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Link from '@mui/material/Link';
-import HomeIcon from '@mui/icons-material/Home';
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+import Link from "@mui/material/Link";
+import HomeIcon from "@mui/icons-material/Home";
+import { TbCertificate } from "react-icons/tb";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGift,
+  faGraduationCap,
+  faPeopleGroup,
+  faBuildingColumns,
+} from "@fortawesome/free-solid-svg-icons";
 
 const AssociateRegulations = () => {
   const logo = require("../../Images/logo3.png");
 
   return (
     <>
-       <Grid>
-      <Header />
-      <NavBar />
+      <Grid>
+        <Header />
+        <NavBar />
       </Grid>
 
-
       <Row
-  style={{
-    position: "relative",
-    backgroundImage:
-      'url("https://viracresearch.com/wp-content/uploads/2022/03/NEC-Biometric_Aviation.jpg")',
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    minHeight: "60vh", // Set the height to 100% of the viewport height
-    paddingLeft: "40px",
-    paddingRight: "40px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center", 
-    width: "100%"
-  }}
->
-  <div
-    style={{
-      position: "absolute",
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: "rgba(0, 0, 0, 0.8)",
-      zIndex: 1,
-    }}
-  ></div>
-  <Col
-    md={6}
-    xs={12}
-    style={{
-      position: "relative",
-      zIndex: 2,
-      // textAlign: "center", 
-    }}
-  >
-    <div>
-      <h3
         style={{
-          color: "white",
-          fontSize: "36px",
-          fontWeight: "bold",
-        }}
-      >
-       Associate & Regulations
-      </h3>
-    </div>
-  </Col>
-
-  <Col
-    className="banner"
-    md={6}
-    xs={12}
-    style={{
-      position: "relative",
-      zIndex: 2,
-      textAlign: "center", 
-    }}
-  >
-    <div role="presentation" >
-      <Breadcrumbs
-        aria-label="breadcrumb"
-        style={{
-          zIndex: 900,
+          position: "relative",
+          backgroundImage:
+            'url("https://viracresearch.com/wp-content/uploads/2022/03/NEC-Biometric_Aviation.jpg")',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          minHeight: "60vh", // Set the height to 100% of the viewport height
+          paddingLeft: "40px",
+          paddingRight: "40px",
           display: "flex",
           alignItems: "center",
-          margin: "10px",
-          fontSize: "20px",
-          color: "#ffffff",
-          justifyContent: "flex-end",
-          alignItems:"center"
+          justifyContent: "center",
+          width: "100%",
         }}
       >
-         <Link underline="hover" color="inherit" href="Home" style={{display:"flex",alignItems:"center"}}>
-          <HomeIcon fontSize="medium" style={{marginRight:"5px",marginBottom:"2px"}}/>
-         Home
-        </Link>
-        <Link underline="none"  color="inherit" href="/">
-          Accademic
-        </Link>
-        <Link
-          underline="none"
-          color="inherit"
-          href="/material-ui/getting-started/installation/"
-          style={{color:"rgba(161,225,229,1)"}}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.8)",
+            zIndex: 1,
+          }}
+        ></div>
+        <Col
+          md={6}
+          xs={12}
+          style={{
+            position: "relative",
+            zIndex: 2,
+            // textAlign: "center",
+          }}
         >
-          Associate & Regulations
-        </Link>
-      </Breadcrumbs>
-    </div>
-  </Col>
-</Row>
+          <div>
+            <h3
+              style={{
+                color: "white",
+                fontSize: "36px",
+                fontWeight: "bold",
+              }}
+            >
+              Associate & Regulations
+            </h3>
+          </div>
+        </Col>
+
+        <Col
+          className="banner"
+          md={6}
+          xs={12}
+          style={{
+            position: "relative",
+            zIndex: 2,
+            textAlign: "center",
+          }}
+        >
+          <div role="presentation">
+            <Breadcrumbs
+              aria-label="breadcrumb"
+              style={{
+                zIndex: 900,
+                display: "flex",
+                alignItems: "center",
+                margin: "10px",
+                fontSize: "20px",
+                color: "#ffffff",
+                justifyContent: "flex-end",
+                alignItems: "center",
+              }}
+            >
+              <Link
+                underline="hover"
+                color="inherit"
+                href="Home"
+                style={{ display: "flex", alignItems: "center" }}
+              >
+                <HomeIcon
+                  fontSize="medium"
+                  style={{ marginRight: "5px", marginBottom: "2px" }}
+                />
+                Home
+              </Link>
+              <Link underline="none" color="inherit" href="/">
+                Accademic
+              </Link>
+              <Link
+                underline="none"
+                color="inherit"
+                href="/material-ui/getting-started/installation/"
+                style={{ color: "rgba(161,225,229,1)" }}
+              >
+                Associate & Regulations
+              </Link>
+            </Breadcrumbs>
+          </div>
+        </Col>
+      </Row>
 
       <div style={{ backgroundColor: "#cfc6f1" }}>
         <Typography
@@ -177,7 +192,6 @@ const AssociateRegulations = () => {
           <Typography
             style={{
               fontWeight: "bold",
-
             }}
           >
             ACADEMY OF AVIATION'S INTERNATIONAL STUDENT NETWORK
@@ -193,31 +207,90 @@ const AssociateRegulations = () => {
             in class 12 exam. The admission to the course is done on the basis
             of score in 10+2, followed by a personal interview. The average fee
             for the diploma in Aviation course ranges from INR 60,000 to INR
-            85,000 in a year depending on colleges. 
-            </Typography>
-            <Typography style={{marginTop:20,textAlign:"justify"}}>Some of the top colleges are
-            Vasundhara Aviation Academy, VAA, Bhopal, Trade Wings Institution of
-            Management- TIM, Mumbai, Trade Wings Institution of Management- TIM,
-            Kolkata, Institute of Logistics and Aviation Management, Bangalore,
-            etc. Check: Diploma in Aviation Top Colleges Candidates are taught
-            16 different subjects through this one year program, such as
-            Mathematics, Cognitive Process and Problem Solving, Organizational
-            Behavior, Operations Planning, Distribution and Transportation, etc.
-            Diploma in Aviation is a popular course for the candidates who want
-            their career in the management and operations in the Aviation
-            industry. The jobs available to the candidates after a Diploma in
-            Aviation are Aircraft dispatcher, air station manager, cabin crew,
-            Airline executive/manager, Air Traffic control officer etc. The
-            average salary offered to professional ranges between INR 3 to INR 6
-            LPA. Some of the top recruiting companies are British Airways, DHL,
-            Essar Shipping, GMR, Indigo etc.
+            85,000 in a year depending on colleges.
+          </Typography>
+          <Typography style={{ marginTop: 20, textAlign: "justify" }}>
+            <ul>
+              <li>
+                (1) Walking away from Paris Orly would be a lost opportunity
+              </li>
+              <li>(2) Air France-KLM chief on Transavia plan</li>
+              <li>
+                (3) Lufthansa Group carriers plan Tel Aviv return in January
+              </li>
+              <li>
+                (4) Heathrow airport braced for revenue hit in 2024 despite new
+                passenger high
+              </li>
+              <li>
+                (5) Air France-KLM chief sees flexibility to limit impact of any
+                Schiphol slot losses
+              </li>
+              <li>(6) WestJet plans to launch Calgary-Seoul flights in 2024</li>
+              <li>
+                (7) Cityflyer to re-open British Airways services from London
+                Stansted
+              </li>
+            </ul>
           </Typography>
         </Container>
       </div>
 
+      <div
+        style={{
+          marginTop: 20,
+          display: "flex",
+          textAlign: "center",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <div className="responsiveBox">
+          <h3 style={{ margin: "0px" }}>
+            {" "}
+            <FontAwesomeIcon icon={faGift} />
+          </h3>
+          <h1 style={{ margin: "0px", fontWeight: "bolder" }}>1644</h1>
+          <p style={{ margin: "0px", fontWeight: "bold" }}>Offers</p>
+        </div>
+
+        <div className="responsiveBox">
+          <h3 style={{ margin: "0px" }}>
+            <FontAwesomeIcon icon={faGraduationCap} />
+          </h3>
+          <h1 style={{ margin: "0px", fontWeight: "bolder" }}>1156</h1>
+          <p style={{ margin: "0px", fontWeight: "bold" }}>Placement</p>
+        </div>
+
+        <div className="responsiveBox">
+          <h3 style={{ margin: "0px" }}>
+            <FontAwesomeIcon icon={faPeopleGroup} />
+          </h3>
+          <h1 style={{ margin: "0px", fontWeight: "bolder" }}>488</h1>
+          <p style={{ margin: "0px", fontWeight: "bold" }}>
+            Multiple Offer Holders
+          </p>
+        </div>
+
+        <div className="responsiveBox">
+          <h3 style={{ margin: "0px" }}>
+            <FontAwesomeIcon icon={faBuildingColumns} />
+          </h3>
+          <h1 style={{ margin: "0px", fontWeight: "bolder" }}>593</h1>
+          <p style={{ margin: "0px", fontWeight: "bold" }}>Companies</p>
+        </div>
+
+        <div className="responsiveBox">
+          <h3 style={{ margin: "0px", fontWeight: "bold" }}>
+            <TbCertificate />
+          </h3>
+          <h1 style={{ margin: "0px", fontWeight: "bolder" }}>8501</h1>
+          <p style={{ margin: "0px", fontWeight: "bold" }}>Students</p>
+        </div>
+      </div>
       <Grid
         columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-        style={{ marginTop: 20, display: "flex" }}
+        style={{ marginTop: 25, display: "flex" }}
       >
         <Container style={{ display: "flex" }}>
           <Row>
@@ -237,7 +310,7 @@ const AssociateRegulations = () => {
                   >
                     BEYOND INDIA
                   </Typography>
-                  <Typography variant="body2" style={{textAlign:"justify"}}>
+                  <Typography variant="body2" style={{ textAlign: "justify" }}>
                     Former AOA trainees and CFIs, Capt. Rejaul Rajib and First
                     Officer Eric Riker, share the cockpit of a Republic Airways
                     flight out of LaGuardia on Jan. 14, 2022.
@@ -261,7 +334,7 @@ const AssociateRegulations = () => {
                   >
                     THE ROTARY CLUB
                   </Typography>
-                  <Typography variant="body2" style={{textAlign:"justify"}}>
+                  <Typography variant="body2" style={{ textAlign: "justify" }}>
                     Former AOA trainees and CFIs, Capt. Rejaul Rajib and First
                     Officer Eric Riker, share the cockpit of a Republic Airways
                     flight out of LaGuardia on Jan. 14, 2022.
@@ -285,7 +358,7 @@ const AssociateRegulations = () => {
                   >
                     UNITED AIRLINES
                   </Typography>
-                  <Typography variant="body2" style={{textAlign:"justify"}}>
+                  <Typography variant="body2" style={{ textAlign: "justify" }}>
                     Former AOA trainees and CFIs, Capt. Rejaul Rajib and First
                     Officer Eric Riker, share the cockpit of a Republic Airways
                     flight out of LaGuardia on Jan. 14, 2022.
@@ -309,7 +382,7 @@ const AssociateRegulations = () => {
                   >
                     AOA CERTIFIED
                   </Typography>
-                  <Typography variant="body2" style={{textAlign:"justify"}}>
+                  <Typography variant="body2" style={{ textAlign: "justify" }}>
                     Former AOA trainees and CFIs, Capt. Rejaul Rajib and First
                     Officer Eric Riker, share the cockpit of a Republic Airways
                     flight out of LaGuardia on Jan. 14, 2022.
@@ -317,14 +390,14 @@ const AssociateRegulations = () => {
                 </CardContent>
               </Card>
             </Col>
-          </Row>     
+          </Row>
         </Container>
       </Grid>
 
-      <Grid style={{marginTop:10}}>
+      <Grid style={{ marginTop: 10 }}>
         <Container>
-        <Row>
-          <Col>
+          <Row>
+            <Col>
               <Card sx={{ maxWidth: 345 }}>
                 <CardMedia
                   sx={{ height: 140 }}
@@ -340,7 +413,7 @@ const AssociateRegulations = () => {
                   >
                     BEYOND INDIA
                   </Typography>
-                  <Typography variant="body2" style={{textAlign:"justify"}}>
+                  <Typography variant="body2" style={{ textAlign: "justify" }}>
                     Former AOA trainees and CFIs, Capt. Rejaul Rajib and First
                     Officer Eric Riker, share the cockpit of a Republic Airways
                     flight out of LaGuardia on Jan. 14, 2022.
@@ -364,7 +437,7 @@ const AssociateRegulations = () => {
                   >
                     THE ROTARY CLUB
                   </Typography>
-                  <Typography variant="body2" style={{textAlign:"justify"}}>
+                  <Typography variant="body2" style={{ textAlign: "justify" }}>
                     Former AOA trainees and CFIs, Capt. Rejaul Rajib and First
                     Officer Eric Riker, share the cockpit of a Republic Airways
                     flight out of LaGuardia on Jan. 14, 2022.
@@ -388,7 +461,7 @@ const AssociateRegulations = () => {
                   >
                     BEYOND INDIA
                   </Typography>
-                  <Typography variant="body2" style={{textAlign:"justify"}}>
+                  <Typography variant="body2" style={{ textAlign: "justify" }}>
                     Former AOA trainees and CFIs, Capt. Rejaul Rajib and First
                     Officer Eric Riker, share the cockpit of a Republic Airways
                     flight out of LaGuardia on Jan. 14, 2022.
@@ -412,7 +485,7 @@ const AssociateRegulations = () => {
                   >
                     THE ROTARY CLUB
                   </Typography>
-                  <Typography variant="body2" style={{textAlign:"justify"}}>
+                  <Typography variant="body2" style={{ textAlign: "justify" }}>
                     Former AOA trainees and CFIs, Capt. Rejaul Rajib and First
                     Officer Eric Riker, share the cockpit of a Republic Airways
                     flight out of LaGuardia on Jan. 14, 2022.

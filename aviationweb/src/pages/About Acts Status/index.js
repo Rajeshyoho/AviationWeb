@@ -262,7 +262,7 @@ const ActsStatus = () => {
 
       <Grid style={{marginTop:30}}>
         <Container >
-          <Row style={{ display: "flex", justifyContent: "space-between" }}>
+          <Row style={{ display: "flex", justifyContent: "space-between",marginTop:25 }}>
             <Typography
               sx={{
                 fontWeight: "bold",
@@ -270,21 +270,22 @@ const ActsStatus = () => {
                 textAlign: "center",
               }}
             >
-              Regulatory Framework
+              Regulatory Key Changes
             </Typography>
-            <Col xs={12} md={6} style={{ marginTop: 25 }}>
+            {/* <Col xs={12} md={6} style={{ marginTop: 25 }}> */}
               <Typography
                 sx={{
                   fontWeight: "bold",
                   fontSize: 20,
                 }}
               >
-                Domestic Law
+                Independent statutory organisations :
               </Typography>
               <Typography style={{ textAlign: "justify" ,marginTop:10}}>
                 The primary domestic legislations governing the aviation
                 industry:
                 <br />
+                <Typography style={{marginTop:10}}>
                 (1) The Aircraft Act, 1934 empowers the federal government to
                 make rules for regulating the manufacture, sale, use, operation,
                 export, import and safety of all civil aircraft.
@@ -295,27 +296,27 @@ const ActsStatus = () => {
                 (3) The Civil Aviation Requirements set out detailed
                 requirements and compliance procedures in order to
                 <br />
-                (a) fulfil the duties and obligations of India under the Chicago
+                (4) Fulfil the duties and obligations of India under the Chicago
                 Convention relating to international civil aviation;
                 <br />
-                (b) standardize and harmonies requirements, taking into account
+                (5) Standardize and harmonies requirements, taking into account
                 the rules and regulations of other regulatory authorities;
                 <br />
-                (c) implement the recommendations of the courts of inquiry or
-                any other committee constituted by the federal government; and
+                (6) Implement the recommendations of the courts of inquiry or
+                any other committee constituted by the federal government.
                 <br />
-                (d) address issues relating to the import, registration, safety
+                (7) Address issues relating to the import, registration, safety
                 and certification of aircraft.
-          
+                </Typography>
               </Typography>
-            </Col>
-            <Col xs={12} md={6} style={{ marginTop: 30 }}>
+            {/* </Col> */}
+            {/* <Col xs={12} md={6} style={{ marginTop: 30 }}>
               <Image
                 src="https://static.vecteezy.com/system/resources/previews/027/747/050/non_2x/airplane-taking-off-at-dusk-flying-towards-a-beautiful-sunset-generated-by-ai-free-photo.jpg"
                 alt="Aviation"
                 fluid
               />
-            </Col>
+            </Col> */}
           </Row>
         </Container>
       </Grid>
