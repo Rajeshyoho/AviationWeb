@@ -19,7 +19,7 @@ const SliderCarousel = () => {
                 <Carousel.Item interval={500}>
                     <img
                         className="d-block w-100"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDg_qoSyTL8Q92Mgva2zN2IuPJedoy10cccjswE_7G&s"
+                        src="https://images.squarespace-cdn.com/content/v1/5ea8788f81c9eb298ba83835/1588366108719-K42H0HBIX4SRG1CRS5SE/phoenix_architectural_photographer_8850.jpg"
                         alt="Second slide"
                     />
                     <Carousel.Caption>

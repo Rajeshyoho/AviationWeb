@@ -21,6 +21,10 @@ import {
   import { Box } from "@mui/system";
 import NavBar from "../../components/NavBar";
 import WeatherWidget from "../../components/Weather";
+import Header from "../../components/Header";
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+import HomeIcon from '@mui/icons-material/Home';
 
 
 const UGDegrees = () => {
@@ -28,43 +32,103 @@ const UGDegrees = () => {
  
     return (
     <>
-        <Grid
-        sx={{
-          background: " #ddeef7f5",
-          overflowX: "hidden",
+      <Grid>
+      <Header />
+      <NavBar />
+      </Grid>
+
+      <Row
+  style={{
+    position: "relative",
+    backgroundImage:
+      'url("https://www.pilotcareernews.com/wp-content/uploads/2020/02/new-classes-one-air.jpg")',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    minHeight: "60vh", // Set the height to 100% of the viewport height
+    paddingLeft: "40px",
+    paddingRight: "40px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center", 
+    width: "100%"
+  }}
+>
+  <div
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: "rgba(0, 0, 0, 0.8)",
+      zIndex: 1,
+    }}
+  ></div>
+  <Col
+    md={6}
+    xs={12}
+    style={{
+      position: "relative",
+      zIndex: 2,
+      // textAlign: "center", 
+    }}
+  >
+    <div>
+      <h3
+        style={{
+          color: "white",
+          fontSize: "36px",
+          fontWeight: "bold",
         }}
       >
-     <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
-      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
-      <WeatherWidget/>
-
-      </Grid>
-      </Grid>
-
-      <Grid>
-      <NavBar/>
-      </Grid>
-{/* 
-      <Grid style={{padding:2}}>
-        <Breadcrumb
-          style={{ backgroundColor: "#FFFFFF", textDecoration: "none" }}
-        >
-          <Breadcrumb.Item href="Home">Home</Breadcrumb.Item>
-          <Breadcrumb.Item href="#">AboutUs</Breadcrumb.Item>
-          <Breadcrumb.Item href="#">ASDHEC Logo</Breadcrumb.Item>
-        </Breadcrumb>
-      </Grid> */}
-      
-    <div>
-      <Row>
-        <Col>
-          <img
-            style={{ height: "500px", width: "100%",padding:0,margin:0 }}
-            src="https://www.ilamindia.in/assets/images/pg-mba-b3.webp"
-          />
-        </Col>
-      </Row>
+       UG Degrees
+      </h3>
     </div>
+  </Col>
+
+  <Col
+    className="banner"
+    md={6}
+    xs={12}
+    style={{
+      position: "relative",
+      zIndex: 2,
+      textAlign: "center", 
+    }}
+  >
+    <div role="presentation" >
+      <Breadcrumbs
+        aria-label="breadcrumb"
+        style={{
+          zIndex: 900,
+          display: "flex",
+          alignItems: "center",
+          margin: "10px",
+          fontSize: "20px",
+          color: "#ffffff",
+          justifyContent: "flex-end",
+          alignItems:"center"
+        }}
+      >
+         <Link underline="hover" color="inherit" href="Home" style={{display:"flex",alignItems:"center"}}>
+          <HomeIcon fontSize="medium" style={{marginRight:"5px",marginBottom:"2px"}}/>
+         Home
+        </Link>
+        <Link underline="none"  color="inherit" href="/">
+          Academic
+        </Link>
+        <Link
+          underline="none"
+          color="inherit"
+          href="/material-ui/getting-started/installation/"
+          style={{color:"rgba(161,225,229,1)"}}
+        >
+          UG Degrees
+        </Link>
+      </Breadcrumbs>
+    </div>
+  </Col>
+</Row>
 
     <Container
       style={{ textAlign: "center", marginTop: "50px", marginBottom: "50px" }}
@@ -74,7 +138,7 @@ const UGDegrees = () => {
           <h5
             style={{
               opacity: 0.8,
-              fontFamily: "sans-serif",
+
               fontSize: "16px",
               fontWeight: "bold",
             }}
@@ -90,7 +154,7 @@ const UGDegrees = () => {
             style={{
               opacity: 0.8,
               fontWeight: "bold",
-              fontFamily: "sans-serif",
+
             }}
           >
             UG PROGRAMS
@@ -182,292 +246,364 @@ const UGDegrees = () => {
     <div style={{ height: "40px" }}></div>
 
     <Container style={{ padding: "16px" }}>
-      <Row>
-        <Col>
-          <h3 style={{
-              color:"black",
-              opacity:0.5,
-              fontWeight: "bold"}}>BACHELOR OF SCIENCE IN AVIATION</h3>
-        </Col>
-      </Row>
+  <Card style={{padding:"20px",borderRadius:"10px"}}>
+  <Row>
+    <Col>
+      <h3 style={{
+          color:"black",
+          opacity:0.5,
+          fontWeight: "bold"}}>Paavai Engineering College</h3>
+    </Col>
+  </Row>
 
-      <Row>
-        <Col>
-          <span style={{
-              fontSize:"14px",
+  <Row>
+    <Col>
+      <span style={{
+          fontSize:"14px",
+          letterSpacing: "0.5px",
+          color: "rgb(112 112 109)",
+          fontWeight: "500"}}>3 Years</span> <span style={{
+          fontSize:"14px",
+              marginLeft:"20px",
               letterSpacing: "0.5px",
               color: "rgb(112 112 109)",
-              fontWeight: "500"}}>3 Years</span> <span style={{
-              fontSize:"14px",
-                  marginLeft:"20px",
-                  letterSpacing: "0.5px",
-                  color: "rgb(112 112 109)",
-                  fontWeight: "500"}}>Chennai, Bangalore, Hyderabad</span>
-        </Col>
-      </Row>
+              fontWeight: "500"}}>Chennai, Bangalore, Hyderabad</span>
+    </Col>
+  </Row>
 
-<div style={{marginTop:"20px",marginBottom:"20px"}}>
-      <Row>
-        <Col>
-          <span style={{
-              letterSpacing: "0.5px",
-              color: "black",
-              opacity:0.7,
-              fontWeight: "600"}}>University</span> <span style={{
-                  marginLeft:"20px",
-                  letterSpacing: "0.5px",
-                  color: "rgb(112 112 109)",
-                  fontWeight: "500"}}>Alagappa University</span>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col>
-          <span style={{
-              letterSpacing: "0.5px",
-              opacity:0.7,    
-              color: "black",
-              fontWeight: "600"}}>Eligibility</span> <span style={{
-                  marginLeft:"20px",
-                  letterSpacing: "0.5px",
-                  color: "rgb(112 112 109)",
-                  fontWeight: "500"}}>10 th Regular Schooling</span>
-        </Col>
-      </Row>
-      </div>
-    </Container>
-
-    <Container style={{ padding: "16px" }}>
-      <Row>
-        <Col>
-          <h3 style={{
-              // letterSpacing: "0.5px",
-              // color: "rgb(112 112 109)",
-              color:"black",
-              opacity:0.5,
-              fontWeight: "bold"}}>Bachelor in Hotel Management & Catering Science</h3>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col>
-          <span style={{
-              fontSize:"14px",
+<div style={{marginTop:"20px"}}>
+  <Row>
+    <Col>
+      <span style={{
+          letterSpacing: "0.5px",
+          color: "black",
+          opacity:0.7,
+          fontWeight: "600"}}>University</span> <span style={{
+              marginLeft:"20px",
               letterSpacing: "0.5px",
               color: "rgb(112 112 109)",
-              fontWeight: "500"}}>3 Years</span> <span style={{
-              fontSize:"14px",
-                  marginLeft:"20px",
-                  letterSpacing: "0.5px",
-                  color: "rgb(112 112 109)",
-                  fontWeight: "500"}}>Chennai, Bangalore, Hyderabad</span>
-        </Col>
-      </Row>
+              fontWeight: "500"}}>Alagappa University</span>
+    </Col>
+  </Row>
 
-<div style={{marginTop:"20px",marginBottom:"20px"}}>
-      <Row>
-        <Col>
-          <span style={{
-              letterSpacing: "0.5px",
-              color: "black",
-              opacity:0.7,
-              fontWeight: "600"}}>University</span> <span style={{
-                  marginLeft:"20px",
-                  letterSpacing: "0.5px",
-                  color: "rgb(112 112 109)",
-                  fontWeight: "500"}}>Alagappa University</span>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col>
-          <span style={{
-              letterSpacing: "0.5px",
-              opacity:0.7,    
-              color: "black",
-              fontWeight: "600"}}>Eligibility</span> <span style={{
-                  marginLeft:"20px",
-                  letterSpacing: "0.5px",
-                  color: "rgb(112 112 109)",
-                  fontWeight: "500"}}>10 th Regular Schooling</span>
-        </Col>
-      </Row>
-      </div>
-    </Container>
-
-    <Container style={{ padding: "16px" }}>
-      <Row>
-        <Col>
-          <h3 style={{
-              // letterSpacing: "0.5px",
-              // color: "rgb(112 112 109)",
-              color:"black",
-              opacity:0.5,
-              fontWeight: "bold"}}>Executive Diploma in Hotel Management & Catering Science</h3>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col>
-          <span style={{
-              fontSize:"14px",
+  <Row>
+    <Col>
+      <span style={{
+          letterSpacing: "0.5px",
+          opacity:0.7,    
+          color: "black",
+          fontWeight: "600"}}>Eligibility</span> <span style={{
+              marginLeft:"20px",
               letterSpacing: "0.5px",
               color: "rgb(112 112 109)",
-              fontWeight: "500"}}>3 Years</span> <span style={{
-              fontSize:"14px",
-                  marginLeft:"20px",
-                  letterSpacing: "0.5px",
-                  color: "rgb(112 112 109)",
-                  fontWeight: "500"}}>Chennai, Bangalore, Hyderabad</span>
-        </Col>
-      </Row>
+              fontWeight: "500"}}>10 th Regular Schooling</span>
+    </Col>
+  </Row>
 
-<div style={{marginTop:"20px",marginBottom:"20px"}}>
-      <Row>
-        <Col>
-          <span style={{
-              letterSpacing: "0.5px",
-              color: "black",
-              opacity:0.7,
-              fontWeight: "600"}}>University</span> <span style={{
-                  marginLeft:"20px",
-                  letterSpacing: "0.5px",
-                  color: "rgb(112 112 109)",
-                  fontWeight: "500"}}>Alagappa University</span>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col>
-          <span style={{
-              letterSpacing: "0.5px",
-              opacity:0.7,    
-              color: "black",
-              fontWeight: "600"}}>Eligibility</span> <span style={{
-                  marginLeft:"20px",
-                  letterSpacing: "0.5px",
-                  color: "rgb(112 112 109)",
-                  fontWeight: "500"}}>10 th Regular Schooling</span>
-        </Col>
-      </Row>
-      </div>
-    </Container>
-
-    <Container style={{ padding: "16px" }}>
-      <Row>
-        <Col>
-          <h3 style={{
-              // letterSpacing: "0.5px",
-              // color: "rgb(112 112 109)",
-              color:"black",
-              opacity:0.5,
-              fontWeight: "bold"}}>Bachelor in Hotel Operations</h3>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col>
-          <span style={{
-              fontSize:"14px",
+  <Row>
+    <Col>
+      <span style={{
+          letterSpacing: "0.5px",
+          opacity:0.7,    
+          color: "black",
+          fontWeight: "600",paddingRight:"22px"}}>Course</span> <span style={{
+              marginLeft:"20px",
               letterSpacing: "0.5px",
               color: "rgb(112 112 109)",
-              fontWeight: "500"}}>3 Years</span> <span style={{
-              fontSize:"14px",
-                  marginLeft:"20px",
-                  letterSpacing: "0.5px",
-                  color: "rgb(112 112 109)",
-                  fontWeight: "500"}}>Chennai, Bangalore, Hyderabad</span>
-        </Col>
-      </Row>
+              fontWeight: "500"}}>Professional Diploma in Hotel Management & Catering Science</span>
+    </Col>
+  </Row>
+  </div>
+  </Card>
+</Container>
 
-<div style={{marginTop:"20px",marginBottom:"20px"}}>
-      <Row>
-        <Col>
-          <span style={{
-              letterSpacing: "0.5px",
-              color: "black",
-              opacity:0.7,
-              fontWeight: "600"}}>University</span> <span style={{
-                  marginLeft:"20px",
-                  letterSpacing: "0.5px",
-                  color: "rgb(112 112 109)",
-                  fontWeight: "500"}}>Alagappa University</span>
-        </Col>
-      </Row>
+<Container style={{ padding: "16px" }}>
+  <Card style={{padding:"20px",borderRadius:"10px"}}>
+  <Row>
+    <Col>
+      <h3 style={{
+          color:"black",
+          opacity:0.5,
+          fontWeight: "bold"}}>Paavai Engineering College</h3>
+    </Col>
+  </Row>
 
-      <Row>
-        <Col>
-          <span style={{
-              letterSpacing: "0.5px",
-              opacity:0.7,    
-              color: "black",
-              fontWeight: "600"}}>Eligibility</span> <span style={{
-                  marginLeft:"20px",
-                  letterSpacing: "0.5px",
-                  color: "rgb(112 112 109)",
-                  fontWeight: "500"}}>10 th Regular Schooling</span>
-        </Col>
-      </Row>
-      </div>
-    </Container>
-
-    <Container style={{ padding: "16px" }}>
-      <Row>
-        <Col>
-          <h3 style={{
-              // letterSpacing: "0.5px",
-              // color: "rgb(112 112 109)",
-              color:"black",
-              opacity:0.5,
-              fontWeight: "bold"}}>Bachelor in Food Production</h3>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col>
-          <span style={{
-              fontSize:"14px",
+  <Row>
+    <Col>
+      <span style={{
+          fontSize:"14px",
+          letterSpacing: "0.5px",
+          color: "rgb(112 112 109)",
+          fontWeight: "500"}}>3 Years</span> <span style={{
+          fontSize:"14px",
+              marginLeft:"20px",
               letterSpacing: "0.5px",
               color: "rgb(112 112 109)",
-              fontWeight: "500"}}>3 Years</span> <span style={{
-              fontSize:"14px",
-                  marginLeft:"20px",
-                  letterSpacing: "0.5px",
-                  color: "rgb(112 112 109)",
-                  fontWeight: "500"}}>Chennai, Bangalore, Hyderabad</span>
-        </Col>
-      </Row>
+              fontWeight: "500"}}>Chennai, Bangalore, Hyderabad</span>
+    </Col>
+  </Row>
 
-<div style={{marginTop:"20px",marginBottom:"20px"}}>
-      <Row>
-        <Col>
-          <span style={{
+<div style={{marginTop:"20px"}}>
+  <Row>
+    <Col>
+      <span style={{
+          letterSpacing: "0.5px",
+          color: "black",
+          opacity:0.7,
+          fontWeight: "600"}}>University</span> <span style={{
+              marginLeft:"20px",
               letterSpacing: "0.5px",
-              color: "black",
-              opacity:0.7,
-              fontWeight: "600"}}>University</span> <span style={{
-                  marginLeft:"20px",
-                  letterSpacing: "0.5px",
-                  color: "rgb(112 112 109)",
-                  fontWeight: "500"}}>Alagappa University</span>
-        </Col>
-      </Row>
+              color: "rgb(112 112 109)",
+              fontWeight: "500"}}>Alagappa University</span>
+    </Col>
+  </Row>
 
-      <Row>
-        <Col>
-          <span style={{
+  <Row>
+    <Col>
+      <span style={{
+          letterSpacing: "0.5px",
+          opacity:0.7,    
+          color: "black",
+          fontWeight: "600"}}>Eligibility</span> <span style={{
+              marginLeft:"20px",
               letterSpacing: "0.5px",
-              opacity:0.7,    
-              color: "black",
-              fontWeight: "600"}}>Eligibility</span> <span style={{
-                  marginLeft:"20px",
-                  letterSpacing: "0.5px",
-                  color: "rgb(112 112 109)",
-                  fontWeight: "500"}}>10 th Regular Schooling</span>
-        </Col>
-      </Row>
-      </div>
-    </Container>
+              color: "rgb(112 112 109)",
+              fontWeight: "500"}}>10 th Regular Schooling</span>
+    </Col>
+  </Row>
+
+  <Row>
+    <Col>
+      <span style={{
+          letterSpacing: "0.5px",
+          opacity:0.7,    
+          color: "black",
+          fontWeight: "600",paddingRight:"22px"}}>Course</span> <span style={{
+              marginLeft:"20px",
+              letterSpacing: "0.5px",
+              color: "rgb(112 112 109)",
+              fontWeight: "500"}}>Professional Diploma in Hotel Management & Catering Science</span>
+    </Col>
+  </Row>
+  </div>
+  </Card>
+</Container>
+
+<Container style={{ padding: "16px" }}>
+  <Card style={{padding:"20px",borderRadius:"10px"}}>
+  <Row>
+    <Col>
+      <h3 style={{
+          color:"black",
+          opacity:0.5,
+          fontWeight: "bold"}}>Paavai Engineering College</h3>
+    </Col>
+  </Row>
+
+  <Row>
+    <Col>
+      <span style={{
+          fontSize:"14px",
+          letterSpacing: "0.5px",
+          color: "rgb(112 112 109)",
+          fontWeight: "500"}}>3 Years</span> <span style={{
+          fontSize:"14px",
+              marginLeft:"20px",
+              letterSpacing: "0.5px",
+              color: "rgb(112 112 109)",
+              fontWeight: "500"}}>Chennai, Bangalore, Hyderabad</span>
+    </Col>
+  </Row>
+
+<div style={{marginTop:"20px"}}>
+  <Row>
+    <Col>
+      <span style={{
+          letterSpacing: "0.5px",
+          color: "black",
+          opacity:0.7,
+          fontWeight: "600"}}>University</span> <span style={{
+              marginLeft:"20px",
+              letterSpacing: "0.5px",
+              color: "rgb(112 112 109)",
+              fontWeight: "500"}}>Alagappa University</span>
+    </Col>
+  </Row>
+
+  <Row>
+    <Col>
+      <span style={{
+          letterSpacing: "0.5px",
+          opacity:0.7,    
+          color: "black",
+          fontWeight: "600"}}>Eligibility</span> <span style={{
+              marginLeft:"20px",
+              letterSpacing: "0.5px",
+              color: "rgb(112 112 109)",
+              fontWeight: "500"}}>10 th Regular Schooling</span>
+    </Col>
+  </Row>
+
+  <Row>
+    <Col>
+      <span style={{
+          letterSpacing: "0.5px",
+          opacity:0.7,    
+          color: "black",
+          fontWeight: "600",paddingRight:"22px"}}>Course</span> <span style={{
+              marginLeft:"20px",
+              letterSpacing: "0.5px",
+              color: "rgb(112 112 109)",
+              fontWeight: "500"}}>Professional Diploma in Hotel Management & Catering Science</span>
+    </Col>
+  </Row>
+  </div>
+  </Card>
+</Container>
+
+<Container style={{ padding: "16px" }}>
+  <Card style={{padding:"20px",borderRadius:"10px"}}>
+  <Row>
+    <Col>
+      <h3 style={{
+          color:"black",
+          opacity:0.5,
+          fontWeight: "bold"}}>Paavai Engineering College</h3>
+    </Col>
+  </Row>
+
+  <Row>
+    <Col>
+      <span style={{
+          fontSize:"14px",
+          letterSpacing: "0.5px",
+          color: "rgb(112 112 109)",
+          fontWeight: "500"}}>3 Years</span> <span style={{
+          fontSize:"14px",
+              marginLeft:"20px",
+              letterSpacing: "0.5px",
+              color: "rgb(112 112 109)",
+              fontWeight: "500"}}>Chennai, Bangalore, Hyderabad</span>
+    </Col>
+  </Row>
+
+<div style={{marginTop:"20px"}}>
+  <Row>
+    <Col>
+      <span style={{
+          letterSpacing: "0.5px",
+          color: "black",
+          opacity:0.7,
+          fontWeight: "600"}}>University</span> <span style={{
+              marginLeft:"20px",
+              letterSpacing: "0.5px",
+              color: "rgb(112 112 109)",
+              fontWeight: "500"}}>Alagappa University</span>
+    </Col>
+  </Row>
+
+  <Row>
+    <Col>
+      <span style={{
+          letterSpacing: "0.5px",
+          opacity:0.7,    
+          color: "black",
+          fontWeight: "600"}}>Eligibility</span> <span style={{
+              marginLeft:"20px",
+              letterSpacing: "0.5px",
+              color: "rgb(112 112 109)",
+              fontWeight: "500"}}>10 th Regular Schooling</span>
+    </Col>
+  </Row>
+
+  <Row>
+    <Col>
+      <span style={{
+          letterSpacing: "0.5px",
+          opacity:0.7,    
+          color: "black",
+          fontWeight: "600",paddingRight:"22px"}}>Course</span> <span style={{
+              marginLeft:"20px",
+              letterSpacing: "0.5px",
+              color: "rgb(112 112 109)",
+              fontWeight: "500"}}>Professional Diploma in Hotel Management & Catering Science</span>
+    </Col>
+  </Row>
+  </div>
+  </Card>
+</Container>
+
+<Container style={{ padding: "16px" }}>
+  <Card style={{padding:"20px",borderRadius:"10px"}}>
+  <Row>
+    <Col>
+      <h3 style={{
+          color:"black",
+          opacity:0.5,
+          fontWeight: "bold"}}>Paavai Engineering College</h3>
+    </Col>
+  </Row>
+
+  <Row>
+    <Col>
+      <span style={{
+          fontSize:"14px",
+          letterSpacing: "0.5px",
+          color: "rgb(112 112 109)",
+          fontWeight: "500"}}>3 Years</span> <span style={{
+          fontSize:"14px",
+              marginLeft:"20px",
+              letterSpacing: "0.5px",
+              color: "rgb(112 112 109)",
+              fontWeight: "500"}}>Chennai, Bangalore, Hyderabad</span>
+    </Col>
+  </Row>
+
+<div style={{marginTop:"20px"}}>
+  <Row>
+    <Col>
+      <span style={{
+          letterSpacing: "0.5px",
+          color: "black",
+          opacity:0.7,
+          fontWeight: "600"}}>University</span> <span style={{
+              marginLeft:"20px",
+              letterSpacing: "0.5px",
+              color: "rgb(112 112 109)",
+              fontWeight: "500"}}>Alagappa University</span>
+    </Col>
+  </Row>
+
+  <Row>
+    <Col>
+      <span style={{
+          letterSpacing: "0.5px",
+          opacity:0.7,    
+          color: "black",
+          fontWeight: "600"}}>Eligibility</span> <span style={{
+              marginLeft:"20px",
+              letterSpacing: "0.5px",
+              color: "rgb(112 112 109)",
+              fontWeight: "500"}}>10 th Regular Schooling</span>
+    </Col>
+  </Row>
+
+  <Row>
+    <Col>
+      <span style={{
+          letterSpacing: "0.5px",
+          opacity:0.7,    
+          color: "black",
+          fontWeight: "600",paddingRight:"22px"}}>Course</span> <span style={{
+              marginLeft:"20px",
+              letterSpacing: "0.5px",
+              color: "rgb(112 112 109)",
+              fontWeight: "500"}}>Professional Diploma in Hotel Management & Catering Science</span>
+    </Col>
+  </Row>
+  </div>
+  </Card>
+</Container>
 
 <Container>
   <Row>
@@ -486,7 +622,7 @@ const UGDegrees = () => {
       <Col style={{textAlign:"center"}}>
       <h2   style={{ opacity: 0.8,
               fontWeight: "bold",
-              fontFamily: "sans-serif"}}>ADMISSION PROCEDURE</h2>
+       }}>ADMISSION PROCEDURE</h2>
       </Col>
   </Row>
 

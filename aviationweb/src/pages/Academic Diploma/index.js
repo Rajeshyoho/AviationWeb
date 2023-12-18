@@ -21,49 +21,115 @@ import Footer from "../../components/Footer";
 import { Box } from "@mui/system";
 import NavBar from "../../components/NavBar";
 import WeatherWidget from "../../components/Weather";
+import Header from "../../components/Header";
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+import HomeIcon from '@mui/icons-material/Home';
 
 const DiplomaCourse = () => {
   const logo = require("../../Images/logo3.png");
 
   return (
     <>
-    <Grid
-    sx={{
-      background: " #ddeef7f5",
-      overflowX: "hidden",
+    <Grid>
+      <Header />
+      <NavBar />
+      </Grid>
+
+
+      <Row
+  style={{
+    position: "relative",
+    backgroundImage:
+      'url("https://chennaisamirta.com/wp-content/uploads/2019/05/chennais-amirta-affiliation1.jpg")',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    minHeight: "60vh", // Set the height to 100% of the viewport height
+    paddingLeft: "40px",
+    paddingRight: "40px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center", 
+    width: "100%"
+  }}
+>
+  <div
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: "rgba(0, 0, 0, 0.8)",
+      zIndex: 1,
+    }}
+  ></div>
+  <Col
+    md={6}
+    xs={12}
+    style={{
+      position: "relative",
+      zIndex: 2,
+      // textAlign: "center", 
     }}
   >
-    <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
-      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
-      <WeatherWidget/>
+    <div>
+      <h3
+        style={{
+          color: "white",
+          fontSize: "36px",
+          fontWeight: "bold",
+        }}
+      >
+       Diploma Course
+      </h3>
+    </div>
+  </Col>
 
-      </Grid>
-  </Grid>
+  <Col
+    className="banner"
+    md={6}
+    xs={12}
+    style={{
+      position: "relative",
+      zIndex: 2,
+      textAlign: "center", 
+    }}
+  >
+    <div role="presentation" >
+      <Breadcrumbs
+        aria-label="breadcrumb"
+        style={{
+          zIndex: 900,
+          display: "flex",
+          alignItems: "center",
+          margin: "10px",
+          fontSize: "20px",
+          color: "#ffffff",
+          justifyContent: "flex-end",
+          alignItems:"center"
+        }}
+      >
+         <Link underline="hover" color="inherit" href="Home" style={{display:"flex",alignItems:"center"}}>
+          <HomeIcon fontSize="medium" style={{marginRight:"5px",marginBottom:"2px"}}/>
+         Home
+        </Link>
+        <Link underline="none"  color="inherit" href="/">
+          Academic
+        </Link>
+        <Link
+          underline="none"
+          color="inherit"
+          href="/material-ui/getting-started/installation/"
+          style={{color:"rgba(161,225,229,1)"}}
+        >
+          Diploma Course
+        </Link>
+      </Breadcrumbs>
+    </div>
+  </Col>
+</Row>
 
-  <Grid>
-<NavBar />
-  </Grid>
-
-  {/* <Grid>
-    <Breadcrumb
-      style={{ backgroundColor: "#FFFFFF", textDecoration: "none" }}
-    >
-      <Breadcrumb.Item href="Home">Home</Breadcrumb.Item>
-      <Breadcrumb.Item href="#">AboutUs</Breadcrumb.Item>
-      <Breadcrumb.Item href="#">ASDHEC Logo</Breadcrumb.Item>
-    </Breadcrumb>
-  </Grid> */}
-
-<div>
-  <Row>
-    <Col>
-      <img
-        style={{ height: "500px", width: "100%" }}
-        src="https://chennaisamirta.com/wp-content/uploads/2019/05/chennais-amirta-affiliation1.jpg"
-      />
-    </Col>
-  </Row>
-</div>
 
 <Container
   style={{ textAlign: "center", marginTop: "50px", marginBottom: "50px" }}
@@ -73,7 +139,6 @@ const DiplomaCourse = () => {
       <h5
         style={{
           opacity: 0.8,
-          fontFamily: "sans-serif",
           fontSize: "16px",
           fontWeight: "bold",
         }}
@@ -89,7 +154,7 @@ const DiplomaCourse = () => {
         style={{
           opacity: 0.8,
           fontWeight: "bold",
-          fontFamily: "sans-serif",
+
         }}
       >
         DIPLOMA PROGRAMS
@@ -118,15 +183,17 @@ const DiplomaCourse = () => {
   </Row>
 </Container>
 
-<Container>
+<Container fluid>
   <Row>
     <Col>
-      <p
+      <Typography
         style={{
           fontSize: "16px",
           letterSpacing: "0.5px",
-          color: "rgb(112 112 109)",
+          // color: "rgb(112 112 109)",
           fontWeight: "500",
+          textAlign:"justify"
+
         }}
       >
         In today’s competitive world, every student wants to secure a
@@ -136,17 +203,17 @@ const DiplomaCourse = () => {
         placed in a star hotel within a short span of time. Based on the
         caliber and talent of the students, these courses help the student
         secure a suitable job in their career.
-      </p>
+      </Typography>
     </Col>
   </Row>
 
   <Row>
     <Col>
-      <p
+      <Typography
         style={{
           fontSize: "16px",
           letterSpacing: "0.5px",
-          color: "rgb(112 112 109)",
+          // color: "rgb(112 112 109)",
           fontWeight: "500",
         }}
       >
@@ -157,23 +224,23 @@ const DiplomaCourse = () => {
         and interests of every aspiring hotel management student, Chennais
         Amirta offers a wide range of courses ranging from one-year
         duration to three-years duration.
-      </p>
+      </Typography>
     </Col>
   </Row>
 
   <Row>
     <Col>
-      <p
+      <Typography
         style={{
           fontSize: "16px",
           letterSpacing: "0.5px",
-          color: "rgb(112 112 109)",
+          // color: "rgb(112 112 109)",
           fontWeight: "500",
         }}
       >
         Below are the courses offered by our institution for the current
         academic year admissions.
-      </p>
+      </Typography>
     </Col>
   </Row>
 </Container>
@@ -187,7 +254,7 @@ const DiplomaCourse = () => {
       <h3 style={{
           color:"black",
           opacity:0.5,
-          fontWeight: "bold"}}>Diploma in Catering and Hotel Administration</h3>
+          fontWeight: "bold"}}>Paavai Engineering College</h3>
     </Col>
   </Row>
 
@@ -234,19 +301,32 @@ const DiplomaCourse = () => {
               fontWeight: "500"}}>10 th Regular Schooling</span>
     </Col>
   </Row>
+
+  <Row>
+    <Col>
+      <span style={{
+          letterSpacing: "0.5px",
+          opacity:0.7,    
+          color: "black",
+          fontWeight: "600",paddingRight:"22px"}}>Course</span> <span style={{
+              marginLeft:"20px",
+              letterSpacing: "0.5px",
+              color: "rgb(112 112 109)",
+              fontWeight: "500"}}>Professional Diploma in Hotel Management & Catering Science</span>
+    </Col>
+  </Row>
   </div>
   </Card>
 </Container>
 
 <Container style={{ padding: "16px" }}>
+  <Card style={{padding:"20px",borderRadius:"10px"}}>
   <Row>
     <Col>
       <h3 style={{
-          // letterSpacing: "0.5px",
-          // color: "rgb(112 112 109)",
           color:"black",
           opacity:0.5,
-          fontWeight: "bold"}}>Professional Diploma in Hotel Management & Catering Science</h3>
+          fontWeight: "bold"}}>Paavai Engineering College</h3>
     </Col>
   </Row>
 
@@ -265,7 +345,7 @@ const DiplomaCourse = () => {
     </Col>
   </Row>
 
-<div style={{marginTop:"20px",marginBottom:"20px"}}>
+<div style={{marginTop:"20px"}}>
   <Row>
     <Col>
       <span style={{
@@ -293,18 +373,32 @@ const DiplomaCourse = () => {
               fontWeight: "500"}}>10 th Regular Schooling</span>
     </Col>
   </Row>
+
+  <Row>
+    <Col>
+      <span style={{
+          letterSpacing: "0.5px",
+          opacity:0.7,    
+          color: "black",
+          fontWeight: "600",paddingRight:"22px"}}>Course</span> <span style={{
+              marginLeft:"20px",
+              letterSpacing: "0.5px",
+              color: "rgb(112 112 109)",
+              fontWeight: "500"}}>Professional Diploma in Hotel Management & Catering Science</span>
+    </Col>
+  </Row>
   </div>
+  </Card>
 </Container>
 
 <Container style={{ padding: "16px" }}>
+  <Card style={{padding:"20px",borderRadius:"10px"}}>
   <Row>
     <Col>
       <h3 style={{
-          // letterSpacing: "0.5px",
-          // color: "rgb(112 112 109)",
           color:"black",
           opacity:0.5,
-          fontWeight: "bold"}}>Executive Diploma in Hotel Management & Catering Science</h3>
+          fontWeight: "bold"}}>Paavai Engineering College</h3>
     </Col>
   </Row>
 
@@ -323,7 +417,7 @@ const DiplomaCourse = () => {
     </Col>
   </Row>
 
-<div style={{marginTop:"20px",marginBottom:"20px"}}>
+<div style={{marginTop:"20px"}}>
   <Row>
     <Col>
       <span style={{
@@ -351,18 +445,32 @@ const DiplomaCourse = () => {
               fontWeight: "500"}}>10 th Regular Schooling</span>
     </Col>
   </Row>
+
+  <Row>
+    <Col>
+      <span style={{
+          letterSpacing: "0.5px",
+          opacity:0.7,    
+          color: "black",
+          fontWeight: "600",paddingRight:"22px"}}>Course</span> <span style={{
+              marginLeft:"20px",
+              letterSpacing: "0.5px",
+              color: "rgb(112 112 109)",
+              fontWeight: "500"}}>Professional Diploma in Hotel Management & Catering Science</span>
+    </Col>
+  </Row>
   </div>
+  </Card>
 </Container>
 
 <Container style={{ padding: "16px" }}>
+  <Card style={{padding:"20px",borderRadius:"10px"}}>
   <Row>
     <Col>
       <h3 style={{
-          // letterSpacing: "0.5px",
-          // color: "rgb(112 112 109)",
           color:"black",
           opacity:0.5,
-          fontWeight: "bold"}}>Diploma in Hotel Operations</h3>
+          fontWeight: "bold"}}>Paavai Engineering College</h3>
     </Col>
   </Row>
 
@@ -381,7 +489,7 @@ const DiplomaCourse = () => {
     </Col>
   </Row>
 
-<div style={{marginTop:"20px",marginBottom:"20px"}}>
+<div style={{marginTop:"20px"}}>
   <Row>
     <Col>
       <span style={{
@@ -409,18 +517,32 @@ const DiplomaCourse = () => {
               fontWeight: "500"}}>10 th Regular Schooling</span>
     </Col>
   </Row>
+
+  <Row>
+    <Col>
+      <span style={{
+          letterSpacing: "0.5px",
+          opacity:0.7,    
+          color: "black",
+          fontWeight: "600",paddingRight:"22px"}}>Course</span> <span style={{
+              marginLeft:"20px",
+              letterSpacing: "0.5px",
+              color: "rgb(112 112 109)",
+              fontWeight: "500"}}>Professional Diploma in Hotel Management & Catering Science</span>
+    </Col>
+  </Row>
   </div>
+  </Card>
 </Container>
 
 <Container style={{ padding: "16px" }}>
+  <Card style={{padding:"20px",borderRadius:"10px"}}>
   <Row>
     <Col>
       <h3 style={{
-          // letterSpacing: "0.5px",
-          // color: "rgb(112 112 109)",
           color:"black",
           opacity:0.5,
-          fontWeight: "bold"}}>Diploma in Food Production</h3>
+          fontWeight: "bold"}}>Paavai Engineering College</h3>
     </Col>
   </Row>
 
@@ -439,7 +561,7 @@ const DiplomaCourse = () => {
     </Col>
   </Row>
 
-<div style={{marginTop:"20px",marginBottom:"20px"}}>
+<div style={{marginTop:"20px"}}>
   <Row>
     <Col>
       <span style={{
@@ -467,7 +589,22 @@ const DiplomaCourse = () => {
               fontWeight: "500"}}>10 th Regular Schooling</span>
     </Col>
   </Row>
+
+  <Row>
+    <Col>
+      <span style={{
+          letterSpacing: "0.5px",
+          opacity:0.7,    
+          color: "black",
+          fontWeight: "600",paddingRight:"22px"}}>Course</span> <span style={{
+              marginLeft:"20px",
+              letterSpacing: "0.5px",
+              color: "rgb(112 112 109)",
+              fontWeight: "500"}}>Professional Diploma in Hotel Management & Catering Science</span>
+    </Col>
+  </Row>
   </div>
+  </Card>
 </Container>
 
 <Container>
@@ -487,7 +624,7 @@ const DiplomaCourse = () => {
   <Col style={{textAlign:"center"}}>
   <h2   style={{ opacity: 0.8,
           fontWeight: "bold",
-          fontFamily: "sans-serif"}}>ADMISSION PROCEDURE</h2>
+        }}>ADMISSION PROCEDURE</h2>
   </Col>
 </Row>
 

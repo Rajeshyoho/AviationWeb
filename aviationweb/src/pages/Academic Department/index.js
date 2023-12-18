@@ -13,27 +13,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import NavBar from "../../components/NavBar";
 import WeatherWidget from "../../components/Weather";
+import Header from "../../components/Header";
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+import HomeIcon from '@mui/icons-material/Home';
 
 const Department = () => {
   const logo = require("../../Images/logo3.png");
   return (
     <>
-      <Grid
-        sx={{
-          background: " #ddeef7f5",
-          overflowX: "hidden",
-        }}
-      >
-         <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
-      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
-      <WeatherWidget/>
-
-      </Grid>
+       <Grid>
+      <Header />
+      <NavBar />
       </Grid>
 
-      <Grid>
-      <NavBar/>
-      </Grid>
 
       {/* <Grid style={{ padding: 5 }}>
         <Breadcrumb
@@ -46,17 +39,103 @@ const Department = () => {
       </Grid> */}
 
       <>
-        {/* <div id="header" className="header container-fluid">
-          <div className="headerText">
-      
-          </div>
-        </div> */}
-        <div style={{padding:0,margin:0}}>
-          <img src="https://www.lamar.edu/_files/images/academics/academics-at-lamar-university.jpg" 
-          style={{width:"100%"}}/>
-        </div>
+     
+      <Row
+  style={{
+    position: "relative",
+    backgroundImage:
+      'url("https://www.lamar.edu/_files/images/academics/academics-at-lamar-university.jpg")',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    minHeight: "60vh", // Set the height to 100% of the viewport height
+    paddingLeft: "40px",
+    paddingRight: "40px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center", 
+    width: "100%"
+  }}
+>
+  <div
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: "rgba(0, 0, 0, 0.8)",
+      zIndex: 1,
+    }}
+  ></div>
+  <Col
+    md={6}
+    xs={12}
+    style={{
+      position: "relative",
+      zIndex: 2,
+      // textAlign: "center", 
+    }}
+  >
+    <div>
+      <h3
+        style={{
+          color: "white",
+          fontSize: "36px",
+          fontWeight: "bold",
+        }}
+      >
+       Departments
+      </h3>
+    </div>
+  </Col>
 
-        <Container>
+  <Col
+    className="banner"
+    md={6}
+    xs={12}
+    style={{
+      position: "relative",
+      zIndex: 2,
+      textAlign: "center", 
+    }}
+  >
+    <div role="presentation" >
+      <Breadcrumbs
+        aria-label="breadcrumb"
+        style={{
+          zIndex: 900,
+          display: "flex",
+          alignItems: "center",
+          margin: "10px",
+          fontSize: "20px",
+          color: "#ffffff",
+          justifyContent: "flex-end",
+          alignItems:"center"
+        }}
+      >
+         <Link underline="hover" color="inherit" href="Home" style={{display:"flex",alignItems:"center"}}>
+          <HomeIcon fontSize="medium" style={{marginRight:"5px",marginBottom:"2px"}}/>
+         Home
+        </Link>
+        <Link underline="none"  color="inherit" href="/">
+          About Us
+        </Link>
+        <Link
+          underline="none"
+          color="inherit"
+          href="/material-ui/getting-started/installation/"
+          style={{color:"rgba(161,225,229,1)"}}
+        >
+          Departments
+        </Link>
+      </Breadcrumbs>
+    </div>
+  </Col>
+</Row>
+
+
+
+        <Container fluid>
           <Row>
             <Col>
               <h2
@@ -65,7 +144,7 @@ const Department = () => {
                   marginTop: "1rem",
                   marginBottom: "1rem",
                   fontWeight: "bold",
-                  fontFamily: "initial",
+                  textAlign:"center"
                 }}
               >
                 Divisions and Departments
@@ -74,22 +153,23 @@ const Department = () => {
           </Row>
         </Container>
 
-        <Container>
+        <Container fluid>
           <Row>
             <Col>
-              <p style={{textAlign:"justify"}}>
+              <Typography style={{ textAlign: "justify" }}>
                 As the academic core of The University of Alabama, the College
                 of Arts and Sciences is a forward-thinking leader in the arts,
                 humanities, and natural and social sciences. With guidance from
                 our award-winning faculty, our students graduate prepared to
                 make transformative impacts in their chosen fields and the world
                 around them.
-              </p>
+              </Typography>
             </Col>
           </Row>
+          <br/>
           <Row>
             <Col>
-              <p style={{textAlign:"justify"}}>
+              <Typography style={{ textAlign: "justify" }}>
                 Here, we’ve organized our 22 departments according to four areas
                 of emphasis: fine and performing arts, humanities, social
                 sciences, and natural sciences and math. Visit our department
@@ -97,12 +177,12 @@ const Department = () => {
                 up a department’s contact information in our Directory, or visit
                 our Majors, Minors & Concentrations page for a full list of the
                 undergraduate and graduate programs we offer.
-              </p>
+              </Typography>
             </Col>
           </Row>
         </Container>
 
-        <Container style={{ marginTop: "40px", marginBottom: "40px" }}>
+        <Container fluid style={{ marginTop: "40px", marginBottom: "40px" }}>
           <Col>
             <h2
               style={{
@@ -111,7 +191,7 @@ const Department = () => {
                 marginBottom: "1rem",
                 fontWeight: "bold",
                 textAlign: "center",
-                fontFamily: "initial",
+
               }}
             >
               Fine & Performing Arts
@@ -120,13 +200,13 @@ const Department = () => {
 
           <Row>
             <Col>
-              <p style={{textAlign:"justify"}}>
+              <Typography style={{ textAlign: "justify" }}>
                 Our fine and performing arts departments advance the study and
                 practice of art, theatre, dance, and music through programs that
                 encompass classical, contemporary, and experimental styles.
                 Renowned faculty inspire our students to achieve meaningful,
                 creative accomplishments locally, nationally, and globally.
-              </p>
+              </Typography>
             </Col>
           </Row>
 
@@ -203,7 +283,7 @@ const Department = () => {
           </Row>
         </Container>
 
-        <Container style={{ marginTop: "50px", marginBottom: "50px" }}>
+        <Container fluid style={{ marginTop: "50px", marginBottom: "50px" }}>
           <Col>
             <h2
               style={{
@@ -212,7 +292,7 @@ const Department = () => {
                 marginBottom: "1rem",
                 fontWeight: "bold",
                 textAlign: "center",
-                fontFamily: "initial",
+
               }}
             >
               Social Sciences
@@ -221,13 +301,13 @@ const Department = () => {
 
           <Row>
             <Col>
-              <p style={{textAlign:"justify"}}>
+              <Typography style={{ textAlign: "justify" }}>
                 Our fine and performing arts departments advance the study and
                 practice of art, theatre, dance, and music through programs that
                 encompass classical, contemporary, and experimental styles.
                 Renowned faculty inspire our students to achieve meaningful,
                 creative accomplishments locally, nationally, and globally.
-              </p>
+              </Typography>
             </Col>
           </Row>
 

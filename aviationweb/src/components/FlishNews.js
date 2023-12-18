@@ -4,6 +4,7 @@ import "./HorizontalMarquee.css"
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Container } from 'react-bootstrap';
+import { Grid } from '@mui/material';
 
 const BreakingNews = () => {
   const [news, setNews] = useState([
@@ -38,10 +39,11 @@ const BreakingNews = () => {
   };
 
   return (
-    <Container fluid style={{marginLeft:20,marginTop:5}}>
+    <Grid style={{padding:2}}>
+    <div  style={{marginTop:5,}}>
     <div className="breaking-news-section section">
-      <div className="breaking-news-wrapper">
-        <h5 className="breaking-news-title">Flash News</h5>
+      <div className="breaking-news-wrapper" >
+        <h6 className="breaking-news-title" style={{textAlign:"center"}}>Flash News</h6>
         <div className="breaking-news-content">
           <a
             href={news[currentNewsIndex].url}
@@ -61,7 +63,8 @@ const BreakingNews = () => {
         </div>
       </div>
     </div>
-    </Container>
+    </div>
+    </Grid>
   );
 };
 

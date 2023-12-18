@@ -22,6 +22,10 @@ import Col from "react-bootstrap/Col";
 import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
 import WeatherWidget from "../../components/Weather";
+import Header from "../../components/Header";
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+import HomeIcon from '@mui/icons-material/Home';
 
 const AboutLogo = () => {
   const Item = styled(Paper)(({ theme }) => ({
@@ -36,40 +40,120 @@ const AboutLogo = () => {
 
   return (
     <>
-      <Grid
-        sx={{
-          background: " #ddeef7f5",
-          overflowX: "hidden",
+      <Grid>
+        <Header />
+        <NavBar />
+      </Grid>
+
+      <Row
+  style={{
+    position: "relative",
+    backgroundImage:
+      'url("https://wallpapercave.com/wp/wp12435900.jpg")',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    minHeight: "60vh", // Set the height to 100% of the viewport height
+    paddingLeft: "40px",
+    paddingRight: "40px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center", 
+    width: "100%"
+  }}
+>
+  <div
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: "rgba(0, 0, 0, 0.8)",
+      zIndex: 1,
+    }}
+  ></div>
+  <Col
+    md={6}
+    xs={12}
+    style={{
+      position: "relative",
+      zIndex: 2,
+      // textAlign: "center", 
+    }}
+  >
+    <div>
+      <h3
+        style={{
+          color: "white",
+          fontSize: "36px",
+          fontWeight: "bold",
         }}
       >
-         <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
-      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
-      <WeatherWidget/>
+        About Logo
+      </h3>
+    </div>
+  </Col>
 
-      </Grid>
-      </Grid>
-
-      <Grid>
-      <NavBar />
-      </Grid>
-
-      {/* <Grid style={{ padding: 5 }}>
-        <Breadcrumb
-          style={{ backgroundColor: "#FFFFFF", textDecoration: "none" }}
+  <Col
+    className="banner"
+    md={6}
+    xs={12}
+    style={{
+      position: "relative",
+      zIndex: 2,
+      textAlign: "center", 
+    }}
+  >
+    <div role="presentation" >
+      <Breadcrumbs
+        aria-label="breadcrumb"
+        style={{
+          zIndex: 900,
+          display: "flex",
+          alignItems: "center",
+          margin: "10px",
+          fontSize: "20px",
+          color: "#ffffff",
+          justifyContent: "flex-end",
+          alignItems:"center"
+        }}
+      >
+         <Link underline="hover" color="inherit" href="Home" style={{display:"flex",alignItems:"center"}}>
+          <HomeIcon fontSize="medium" style={{marginRight:"5px",marginBottom:"2px"}}/>
+         Home
+        </Link>
+        <Link underline="none"  color="inherit" href="/">
+          About Us
+        </Link>
+        <Link
+          underline="none"
+          color="inherit"
+          href="/material-ui/getting-started/installation/"
+          style={{color:"rgba(161,225,229,1)"}}
         >
-          <Breadcrumb.Item href="Home">Home</Breadcrumb.Item>
-          <Breadcrumb.Item href="#">AboutUs</Breadcrumb.Item>
-          <Breadcrumb.Item href="#">ASDHEC Logo</Breadcrumb.Item>
-        </Breadcrumb>
-      </Grid> */}
+          About Logo
+        </Link>
+      </Breadcrumbs>
+    </div>
+  </Col>
+</Row>
 
-      <Grid style={{ textAlign: "center" }}>
-        <h1>CSR</h1>
+      <Grid
+        style={{
+          textAlign: "center",
+          marginTop: 20,
+          fontSize: "30px",
+          fontWeight: "bold",
+          textDecoration:"underline",
+          color:"#114379"
+        }}
+      >
+        <h1>OUR POLICIES</h1>
       </Grid>
 
       <Grid>
-        <Container>
-          <Typography>
+        <Container fluid style={{padding:20,textAlign:"justify"}}>
+          <Typography style={{ textAlign: "justify" }}>
             The Global Group of Companies, a pan India conglomerate in its 48th
             year, is the first General Sales Agent in India, with the core
             business of airline representation for passenger & cargo and other
@@ -92,17 +176,23 @@ const AboutLogo = () => {
             organisations the Group is associated with on regular basis:
           </Typography>
           <br />
-          <Typography>
-            <h3>Best Pilot Training Institutes in the World 2023</h3>
-            <p>
-              While there are many good flying clubs in India but these days
-              there is a growing trend of people opting to complete their flying
-              and gain their licenses from abroad. Captain U.S. Tiwari, a senior
-              pilot of Air India (narrow-body) promptly confirmed this by
-              saying, “Enrolling into a flying school abroad can prove to be an
-              expensive affair but young aspiring pilots prefer it as it is a
-              quicker option to complete their flying hours”.
-            </p>
+          <Typography style={{ textAlign: "justify" }}>
+            <h3
+              style={{
+                fontSize: "30px",
+                fontWeight: "bold",
+
+              }}
+            >
+              Best Pilot Training Institutes in the World 2023
+            </h3>
+            While there are many good flying clubs in India but these days there
+            is a growing trend of people opting to complete their flying and
+            gain their licenses from abroad. Captain U.S. Tiwari, a senior pilot
+            of Air India (narrow-body) promptly confirmed this by saying,
+            “Enrolling into a flying school abroad can prove to be an expensive
+            affair but young aspiring pilots prefer it as it is a quicker option
+            to complete their flying hours”.
           </Typography>
         </Container>
       </Grid>
@@ -122,7 +212,7 @@ const AboutLogo = () => {
       </div> */}
 
       <Container>
-        <Grid sx={{ flexDirection: { xs: "column", lg: "row" } }}>
+        <Grid sx={{ flexDirection: { xs: "column", lg: "row" } ,marginTop:2}}>
           <Box
             sx={{
               flexDirection: { xs: "column", lg: "row" },
@@ -188,7 +278,7 @@ const AboutLogo = () => {
         </Grid>
       </Container>
 
-      <div
+      {/* <div
         style={{
           marginTop: 30,
           display: "flex",
@@ -204,9 +294,11 @@ const AboutLogo = () => {
         </Typography>
       </div>
       <div>
-        <Container style={{ backgroundColor: "#c7d4e3", marginTop:10 ,borderRadius:5}}>
+        <Container 
+          style={{ backgroundColor: "#c7d4e3", marginTop: 10, borderRadius: 5 }}
+        >
           <Row>
-            <Typography style={{ marginTop: 20 }}>
+            <Typography style={{ marginTop: 20, textAlign: "justify" }}>
               <p>
                 Montair’s experienced instructors and advanced aircraft were an
                 integral part in preparing me for a career as a professional
@@ -222,23 +314,23 @@ const AboutLogo = () => {
                 Montair with me every day I go to work, making me a better and
                 safer pilot.
               </p>
-              <div style={{display:"flex"}}>
-              <img
-                src="https://e7.pngegg.com/pngimages/901/285/png-clipart-airplane-computer-icons-avatar-pilot-smiley-airplane-thumbnail.png"
-                style={{ borderRadius: 300, height: 50, width: 50 }}
-              />
-              <p style={{marginTop:14, marginLeft:20}}>
-                The New Streamlined Launch and Reentry Licensing Process
-                Advisory Circulars and Guidance
-              </p>
+              <div style={{ display: "flex" }}>
+                <img
+                  src="https://e7.pngegg.com/pngimages/901/285/png-clipart-airplane-computer-icons-avatar-pilot-smiley-airplane-thumbnail.png"
+                  style={{ borderRadius: 300, height: 50, width: 50 }}
+                />
+                <p style={{ marginTop: 14, marginLeft: 20 }}>
+                  The New Streamlined Launch and Reentry Licensing Process
+                  Advisory Circulars and Guidance
+                </p>
               </div>
             </Typography>
           </Row>
         </Container>
-      </div>
+      </div> */}
 
-      <div style={{marginTop:10}}>
-        <Footer/>
+      <div style={{ marginTop: 15 }}>
+        <Footer />
       </div>
     </>
   );

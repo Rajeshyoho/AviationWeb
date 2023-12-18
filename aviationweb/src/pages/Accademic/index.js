@@ -12,6 +12,7 @@ import PropTypes from "prop-types";
 import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
 import WeatherWidget from "../../components/Weather";
+import Header from "../../components/Header";
 
 const Accademic = () => {
   const logo = require("../../Images/logo3.png");
@@ -57,21 +58,11 @@ const Accademic = () => {
 
   return (
     <>
-      <Grid
-        sx={{
-          background: " #ddeef7f5",
-        }}
-      >
-          <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
-      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
-      <WeatherWidget/>
-
+       <Grid>
+      <Header />
+      <NavBar />
       </Grid>
 
-        <Grid>
-       <NavBar />
-        </Grid>
-      </Grid>
 
       <Grid>
         <Image
@@ -181,7 +172,6 @@ const Accademic = () => {
                 sx={{
                   fontWeight: "bold",
                   fontSize: 40,
-                  fontFamily: "initial",
                 }}
               >
                 Academics
@@ -274,7 +264,6 @@ const Accademic = () => {
                   sx={{
                     fontWeight: "bold",
                     fontSize: 20,
-                    fontFamily: "initial",
                     marginTop: 2,
                   }}
                 >
@@ -319,7 +308,6 @@ const Accademic = () => {
                   sx={{
                     fontWeight: "bold",
                     fontSize: 30,
-                    fontFamily: "initial",
                     marginTop:2
                   }}
                 >

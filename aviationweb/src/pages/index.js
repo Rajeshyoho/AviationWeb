@@ -1,7 +1,7 @@
 import Home from "./Home";
 import AboutUs from "./AboutUs";
 import Accademic from "./Accademic";
-import ActsStatus from "./Acts Status";
+import ActsStatus from "./About Acts Status";
 import AboutLogo from "./About Logo";
 import VisionMission from "./About Vission&Mission";
 import TrainingProgram from "./About Traning";
@@ -21,8 +21,9 @@ import MembershipRegistration from "./Students Membership Resgistration";
 import CarrerGuidanceRegistration from "./Students Carrer Guidance Registration";
 import AcademicCounsellingRegistration from "./Student Academic Counselling Registration";
 import JobDescription from "./JobVaccanies JobDescription";
-import CompanyName from "./CompanyName";
-import InterviewDate from "./InterviewDate";
+import CompanyName from "./JobVaccanies CompanyName";
+import InterviewDate from "./JobVaccanies InterviewDate";
+import ExperienceFeatures from "./JobVaccanies Experiences";
 export {
     Home,
     AboutUs,
@@ -48,5 +49,6 @@ export {
     AcademicCounsellingRegistration,
     JobDescription,
     CompanyName,
-    InterviewDate
+    InterviewDate,
+    ExperienceFeatures
 }

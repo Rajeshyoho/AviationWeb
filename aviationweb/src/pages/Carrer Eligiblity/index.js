@@ -12,6 +12,11 @@ import { Image } from "react-bootstrap";
 import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
 import WeatherWidget from "../../components/Weather";
+import Header from "../../components/Header";
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+import HomeIcon from '@mui/icons-material/Home';
+
 
 const AccordionItem = ({ title, content, expanded, onToggle }) => {
   const borderColor = expanded ? "solid 2px #ee495c" : "solid 2px #ddd";
@@ -23,7 +28,7 @@ const AccordionItem = ({ title, content, expanded, onToggle }) => {
         <div
           style={{
             cursor: "pointer",
-            fontFamily: "cursive",
+
             fontSize: "20px",
             display: "flex",
             justifyContent: "space-between",
@@ -48,7 +53,7 @@ const AccordionItem = ({ title, content, expanded, onToggle }) => {
               fontSize: "15px",
               fontWeight: "400",
               opacity: 0.8,
-              fontFamily: "sans-serif",
+
             }}
           >
             {content}
@@ -126,34 +131,107 @@ const Eligibility = () => {
   const logo = require("../../Images/logo3.png");
   return (
     <>
-      <Grid
-        sx={{
-          background: " #ddeef7f5",
-          overflowX: "hidden",
+
+     <Grid>
+      <Header />
+      <NavBar />
+      </Grid>
+
+
+      <Row
+  style={{
+    position: "relative",
+    backgroundImage:
+      'url("https://th.bing.com/th/id/R.8c4e67b17c0705ec3cb77dcc64798f70?rik=63zv%2fLAxwhssLQ&riu=http%3a%2f%2fwww.wallpapers4u.org%2fwp-content%2fuploads%2fboeing_777_aircraft_runway_sky_64287_1920x1080.jpg&ehk=yjWnVnS6dpDi66kXq9wI5WX9mMtDqkWBYAR%2bm388t2I%3d&risl=&pid=ImgRaw&r=0")',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    minHeight: "60vh", // Set the height to 100% of the viewport height
+    paddingLeft: "40px",
+    paddingRight: "40px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center", 
+    width: "100%"
+  }}
+>
+  <div
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: "rgba(0, 0, 0, 0.8)",
+      zIndex: 1,
+    }}
+  ></div>
+  <Col
+    md={6}
+    xs={12}
+    style={{
+      position: "relative",
+      zIndex: 2,
+      // textAlign: "center", 
+    }}
+  >
+    <div>
+      <h3
+        style={{
+          color: "white",
+          fontSize: "36px",
+          fontWeight: "bold",
         }}
       >
-         <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
-      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
-      <WeatherWidget/>
+       Eligiblity
+      </h3>
+    </div>
+  </Col>
 
-      </Grid>
-      </Grid>
-
-      <Grid>
-       <NavBar/>
-      </Grid>
-
-      {/* <Grid style={{ marginLeft:5}}>
-        <Breadcrumb
-          style={{ backgroundColor: "#FFFFFF", textDecoration: "none" }}
+  <Col
+    className="banner"
+    md={6}
+    xs={12}
+    style={{
+      position: "relative",
+      zIndex: 2,
+      textAlign: "center", 
+    }}
+  >
+    <div role="presentation" >
+      <Breadcrumbs
+        aria-label="breadcrumb"
+        style={{
+          zIndex: 900,
+          display: "flex",
+          alignItems: "center",
+          margin: "10px",
+          fontSize: "20px",
+          color: "#ffffff",
+          justifyContent: "flex-end",
+          alignItems:"center"
+        }}
+      >
+         <Link underline="hover" color="inherit" href="Home" style={{display:"flex",alignItems:"center"}}>
+          <HomeIcon fontSize="medium" style={{marginRight:"5px",marginBottom:"2px"}}/>
+         Home
+        </Link>
+        <Link underline="none"  color="inherit" href="/">
+          Carrer
+        </Link>
+        <Link
+          underline="none"
+          color="inherit"
+          href="/material-ui/getting-started/installation/"
+          style={{color:"rgba(161,225,229,1)"}}
         >
-          <Breadcrumb.Item href="Home">Home</Breadcrumb.Item>
-          <Breadcrumb.Item href="#">AboutUs</Breadcrumb.Item>
-          <Breadcrumb.Item href="#">ASDHEC Logo</Breadcrumb.Item>
-        </Breadcrumb>
-      </Grid> */}
+          Eligiblity
+        </Link>
+      </Breadcrumbs>
+    </div>
+  </Col>
+</Row>
 
-      <div style={{ padding: 12 }}>
+      {/* <div style={{ padding: 12 }}>
         <Row style={{ backgroundColor: "black" }}>
           <Col
             style={{
@@ -186,11 +264,13 @@ const Eligibility = () => {
             />
           </Col>
         </Row>
-      </div>
+      </div> */}
+
+
       <Container>
         <Row style={{ padding: "50px 0px" }}>
           <Col>
-            <p
+            <Typography
               style={{
                 marginBottom: "1rem",
                 color: "#5d5d5d",
@@ -199,8 +279,8 @@ const Eligibility = () => {
             >
               We are delighted that you have chosen to join our community of the
               best and brightest students from India and around the world.
-            </p>
-            <p
+            </Typography>
+            <Typography
               style={{
                 marginBottom: "1rem",
                 color: "#5d5d5d",
@@ -213,8 +293,8 @@ const Eligibility = () => {
               doctoral programs. If you have any questions about your
               eligibility, please contact us at admissions@woxsen.edu.in or get
               in touch with one of our admission counsellors.
-            </p>
-            <p
+            </Typography>
+            <Typography
               style={{
                 marginBottom: "1rem",
                 color: "#5d5d5d",
@@ -224,7 +304,7 @@ const Eligibility = () => {
               The following are the minimum eligibility requirements for
               applying to Woxsen University's academic programs commencing in
               August 2023:
-            </p>
+            </Typography>
           </Col>
         </Row>
       </Container>
@@ -237,7 +317,7 @@ const Eligibility = () => {
                 fontWeight: "bold",
                 margin: "0 0 10px",
                 color: "#ee495c",
-                fontFamily: "revert-layer",
+
               }}
             >
               UNDERGRADUATE
@@ -256,7 +336,6 @@ const Eligibility = () => {
                 fontWeight: "bold",
                 margin: "0 0 10px",
                 color: "#ee495c",
-                fontFamily: "revert-layer",
               }}
             >
               POSTGRADUATE

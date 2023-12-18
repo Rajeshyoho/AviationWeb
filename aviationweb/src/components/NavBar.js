@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
 import { Image } from "react-bootstrap";
-// import "./NavBar.css";
+import "./NavBar.css";
 import SvgIcon from "@mui/material/SvgIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
@@ -15,7 +15,7 @@ const NavBar = () => {
     setMegaMenuOpen(!megaMenuOpen);
   };
   return (
-    <nav>
+    <nav className="navpage">
       <div class="wrapper">
         {/* <div class="logo">
         <a href="#">Logo</a>
@@ -140,11 +140,11 @@ const NavBar = () => {
           </li>
           <li>
             <a href="#" class="desktop_item">
-              Carrer Guidance
+            Carrier Guidance
             </a>
             <input type="checkbox" id="showMegaCarrerGuidance" />
             <label for="showMegaCarrerGuidance" class="mobile_item">
-              Carrer Guidance
+            carrier Guidance
             </label>
             <div class="mega_box3">
               <div class="content">
@@ -196,7 +196,7 @@ const NavBar = () => {
                     </li>
                     <li>
                       <a href="#CarrerGuidanceRegistration">
-                        Carrer Guidance Registration
+                      carrier Guidance Registration
                       </a>
                     </li>
                     <li>
@@ -228,13 +228,13 @@ const NavBar = () => {
                 <div class="row">
                   <ul class="mega_links first_links">
                     <li>
-                      <a href="#">Experience / Features</a>
+                      <a href="#ExperienceFeatures">Experience / Features</a>
                     </li>
                     <li>
-                      <a href="#">Company Name</a>
+                      <a href="#CompanyName">Company Name</a>
                     </li>
                     <li>
-                      <a href="#">Interview Date</a>
+                      <a href="#InterviewDate">Interview Date</a>
                     </li>
 
                     <li>

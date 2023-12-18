@@ -4,7 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Footer from "../../components/Footer";
-import {Grid} from "@mui/material";
+import {Grid, Typography} from "@mui/material";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -12,6 +12,10 @@ import Navbar from "react-bootstrap/Navbar";
 import { Image } from "react-bootstrap";
 import NavBar from "../../components/NavBar";
 import WeatherWidget from "../../components/Weather";
+import Header from "../../components/Header";
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+import HomeIcon from '@mui/icons-material/Home';
 
 const TrainingProgram = () => {
 
@@ -131,42 +135,113 @@ const TrainingProgram = () => {
   return (
     <>
 
-<Grid
-        sx={{
-          background: " #ddeef7f5",
-          overflowX: "hidden",
+<Grid>
+      <Header />
+      <NavBar />
+      </Grid>
+
+      <Row
+  style={{
+    position: "relative",
+    backgroundImage:
+      'url("https://www.pilotcareernews.com/wp-content/uploads/2018/11/Photo-1-scaled.jpg")',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    minHeight: "60vh", // Set the height to 100% of the viewport height
+    paddingLeft: "40px",
+    paddingRight: "40px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center", 
+    width: "100%"
+  }}
+>
+  <div
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: "rgba(0, 0, 0, 0.8)",
+      zIndex: 1,
+    }}
+  ></div>
+  <Col
+    md={6}
+    xs={12}
+    style={{
+      position: "relative",
+      zIndex: 2,
+      // textAlign: "center", 
+    }}
+  >
+    <div>
+      <h3
+        style={{
+          color: "white",
+          fontSize: "36px",
+          fontWeight: "bold",
         }}
       >
-         <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
-      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
-      <WeatherWidget/>
+        About Training
+      </h3>
+    </div>
+  </Col>
 
-      </Grid>
-      </Grid>
-
-      <Grid>
-     <NavBar />
-      </Grid>
-
-      {/* <Grid style={{ padding: 5 }}>
-        <Breadcrumb
-          style={{ backgroundColor: "#FFFFFF", textDecoration: "none" }}
+  <Col
+    className="banner"
+    md={6}
+    xs={12}
+    style={{
+      position: "relative",
+      zIndex: 2,
+      textAlign: "center", 
+    }}
+  >
+    <div role="presentation" >
+      <Breadcrumbs
+        aria-label="breadcrumb"
+        style={{
+          zIndex: 900,
+          display: "flex",
+          alignItems: "center",
+          margin: "10px",
+          fontSize: "20px",
+          color: "#ffffff",
+          justifyContent: "flex-end",
+          alignItems:"center"
+        }}
+      >
+         <Link underline="hover" color="inherit" href="Home" style={{display:"flex",alignItems:"center"}}>
+          <HomeIcon fontSize="medium" style={{marginRight:"5px",marginBottom:"2px"}}/>
+         Home
+        </Link>
+        <Link underline="none"  color="inherit" href="/">
+          About Us
+        </Link>
+        <Link
+          underline="none"
+          color="inherit"
+          href="/material-ui/getting-started/installation/"
+          style={{color:"rgba(161,225,229,1)"}}
         >
-          <Breadcrumb.Item href="Home">Home</Breadcrumb.Item>
-          <Breadcrumb.Item href="#">AboutUs</Breadcrumb.Item>
-          <Breadcrumb.Item href="#">ASDHEC Logo</Breadcrumb.Item>
-        </Breadcrumb>
-      </Grid> */}
+          About Training
+        </Link>
+      </Breadcrumbs>
+    </div>
+  </Col>
+</Row>
 
-      <Container>
+      <Container fluid style={{textAlign:"justify",padding:20}}>
         <Row>
           <Col>
             <h2
               style={{
                 textAlign: "center",
-                fontFamily: "sans-serif",
-                opacity: 0.8,
-                marginTop:"20px",
+                // opacity: 0.8,
+                marginTop:"25px",
+                fontWeight:"bold"
 
               }}
             >
@@ -177,13 +252,11 @@ const TrainingProgram = () => {
 
         <Row>
           <Col>
-            <p
+            <Typography
               style={{
                 textAlign: "center",
-                fontFamily: "sans-serif",
-                opacity: 0.8,
                 marginTop:"20px",
-
+                textAlign:"justify"
               }}
             >
               It is a long established fact that a reader will be distracted by
@@ -196,19 +269,18 @@ const TrainingProgram = () => {
               uncover many web sites still in their infancy. Various versions
               have evolved over the years, sometimes by accident, sometimes on
               purpose (injected humour and the like).
-            </p>
+            </Typography>
           </Col>
         </Row>
 
         <Row>
           <Col>
-            <p
-              style={{
-                marginTop:"20px",
-                textAlign: "center",
-                fontFamily: "sans-serif",
-                opacity: 0.8,
-              }}
+            <Typography
+                style={{
+                  textAlign: "center",
+                  marginTop:"20px",
+                  textAlign:"justify"
+                }}
             >
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -216,18 +288,17 @@ const TrainingProgram = () => {
               type and scrambled it to make a type specimen book. It has
               survived not only five centuries, but also the leap into
               electronic typesetting, remaining essentially unchanged.{" "}
-            </p>
+            </Typography>
           </Col>
         </Row>
 
         <Row>
           <Col>
-            <p
-              style={{
-                marginTop:"20px",
+            <Typography
+               style={{
                 textAlign: "center",
-                fontFamily: "sans-serif",
-                opacity: 0.8,
+                marginTop:"20px",
+                textAlign:"justify"
               }}
             >
               Contrary to popular belief, Lorem Ipsum is not simply random text.
@@ -236,7 +307,7 @@ const TrainingProgram = () => {
               professor at Hampden-Sydney College in Virginia, looked up one of
               the more obscure Latin words, consectetur, from a Lorem Ipsum
               passage{" "}
-            </p>
+            </Typography>
           </Col>
         </Row>
       </Container>

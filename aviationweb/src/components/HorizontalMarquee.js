@@ -1,85 +1,3 @@
-// import React from "react";
-// import "./HorizontalMarquee.css";
-// const HorizontalMarquee = () => {
-//   return (
-//     <div>
-//       <div class="container">
-//         <h2>Our Partners</h2>
-//         <section class="customer-logos slider">
-//           <div class="slide">
-//             <img src="https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg" />
-//           </div>
-//           <div class="slide">
-//             <img src="https://image.freepik.com/free-vector/3d-box-logo_1103-876.jpg" />
-//           </div>
-//           <div class="slide">
-//             <img src="https://image.freepik.com/free-vector/blue-tech-logo_1103-822.jpg" />
-//           </div>
-//           <div class="slide">
-//             <img src="https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg" />
-//           </div>
-//           <div class="slide">
-//             <img src="https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg" />
-//           </div>
-//           <div class="slide">
-//             <img src="https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg" />
-//           </div>
-//           <div class="slide">
-//             <img src="https://image.freepik.com/free-vector/background-of-spots-halftone_1035-3847.jpg" />
-//           </div>
-//         </section>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default HorizontalMarquee;
-
-// import { Box } from "@mui/material";
-// import React, { Component } from "react";
-// import Slider from "react-slick";
-
-// export default class SimpleSlider extends Component {
-//   render() {
-//     const settings = {
-//       dots: true,
-//       infinite: true,
-//       speed: 500,
-//       slidesToShow: 1,
-//       slidesToScroll: 1,
-//       autoplay: true,
-//       vertical: false,
-//     };
-
-//     return (
-//       <div>
-//         <Slider {...settings}>
-//           <div style={{ display: "flex" }}>
-//             <div>
-//               <h3>1</h3>
-//             </div>
-//             <div>
-//               <h3>2</h3>
-//             </div>
-//             <div>
-//               <h3>3</h3>
-//             </div>
-//             <div>
-//               <h3>4</h3>
-//             </div>
-//             <div>
-//               <h3>5</h3>
-//             </div>
-//             <div>
-//               <h3>6</h3>
-//             </div>
-//           </div>
-//         </Slider>
-//       </div>
-//     );
-//   }
-// }
-
 import React, { useRef } from "react";
 import { Button, Box, Typography, Grid, Card } from "@mui/material";
 import Slider from "react-slick";
@@ -117,26 +35,26 @@ const HorizontalMarquee = () => {
         <Slider {...settings}>
           <div>
             <img
-              src="https://flyairaviationacademy.in/images/z/3.png"
+              src="https://dirigeants-entreprise.com/content/uploads/jet-airways-600x600.jpg"
               style={{ height: 150, width: "auto" }}
             />
           </div>
 
           <div>
             <img
-              src="https://flyairaviationacademy.in/images/z/4.png"
+              src="https://4.bp.blogspot.com/-T7Hk67wuS_k/TtTRAli90iI/AAAAAAAAA80/APct16Mk1x0/s1600/AirAsia-logo-7751ECFAAE-seeklogo.com.gif"
               style={{ height: 150, width: "auto" }}
             />
           </div>
           <div>
             <img
-              src="https://1000logos.net/wp-content/uploads/2020/03/Emirates-Logo.png"
+              src="https://p.kindpng.com/picc/s/792-7920745_emirates-hd-png-download.png"
               style={{ height: 150, width: "auto" }}
             />
           </div>
           <div>
             <img
-              src="https://download.logo.wine/logo/IndiGo/IndiGo-Logo.wine.png"
+              src="https://s28477.pcdn.co/wp-content/uploads/2020/07/Indigo_logo.png"
               style={{ height: 150, width: "auto" }}
             />
           </div>
@@ -149,14 +67,14 @@ const HorizontalMarquee = () => {
           </div>
           <div>
             <img
-              src="https://logowik.com/content/uploads/images/delta-airlines3986.logowik.com.webp"
+              src="https://th.bing.com/th/id/R.4492c0639fb0d2fd6cd616512d522c67?rik=40Aq%2fY%2b5C2%2buGg&riu=http%3a%2f%2fwww.logotypes101.com%2flogos%2f762%2f13B808CB3427A3DA07F6970292F522DD%2fMalaysia_Airlines110.png&ehk=UzjD6rxqi4QhX338Qk799PpK3BePfQZ3bVr9j%2fzWov4%3d&risl=&pid=ImgRaw&r=0"
               style={{ height: 150, width: "auto" }}
             />
           </div>
          
           <div>
             <img
-              src="https://assets.stickpng.com/images/587b511a44060909aa603a81.png"
+              src="https://th.bing.com/th/id/R.5f9be5876eda5d373d7f91a8faf5e659?rik=AMH8TOMKrK2Y6w&riu=http%3a%2f%2flofrev.net%2fwp-content%2fphotos%2f2017%2f03%2fair_india_logo_download.jpg&ehk=zFeqOgOta8nERxJ4botm2uV5IJp4BKKlHJic8HtkLMo%3d&risl=&pid=ImgRaw&r=0"
               style={{ height: 150, width: "auto" }}
             />
           </div>

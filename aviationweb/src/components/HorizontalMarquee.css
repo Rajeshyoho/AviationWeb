@@ -10,17 +10,19 @@
     justify-content:space-between;
     align-items: center;
     text-align: center;
-    width: 98%;
+    width: 100%;
   }
   
   .breaking-news-title {
     background-color: #ff0000;
-    padding: 8px;
+    padding: 12px;
     margin: 0;
     color: #FFFFFF;
-    height: 50px;
+    height: 45px;
+    align-items: center;
+    text-align: center;
   }
-  
+
   .breaking-news-content {
     padding: 10px;
     
@@ -55,4 +57,11 @@
     transition: background-color 0.3s ease;
   }
   
-  
+
+  /* Media query for smaller screens (e.g., mobile devices) */
+@media (max-width: 768px) {
+  .breaking-news-wrapper {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    align-items: stretch;
+  }
+}

@@ -12,6 +12,7 @@ import CallEndIcon from "@mui/icons-material/CallEnd";
 import HorizontalMarquee from "../../components/HorizontalMarquee";
 import FlishNews from "../../components/FlishNews";
 import WeatherWidget from "../../components/Weather";
+import Header from "../../components/Header";
 
 const StyledButton = styled(Card)(({ theme, color = "primary" }) => ({
   ":hover": {
@@ -20,11 +21,7 @@ const StyledButton = styled(Card)(({ theme, color = "primary" }) => ({
   },
 }));
 
-
-
 const Home = () => {
-
-
   const [parentWidth, setParentWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -39,7 +36,6 @@ const Home = () => {
     };
   }, []);
 
-
   const settings = {
     infinite: true,
     vertical: true,
@@ -48,12 +44,24 @@ const Home = () => {
     slidesToShow: 4,
     slidesToScroll: 4,
   };
-  const logo = require('../../Images/logo3.png');
+  const logo = require("../../Images/logo3.png");
   const slides = [
-    { url: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sbGVnZSUyMGNhbXB1c3xlbnwwfHwwfHx8MA%3D%3D", title: "beach" },
-    { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBW1TbkfDSuicfILo2MGpQ9EL9yRm6Niul8kAoVvCa&s", title: "boat" },
-    { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5_1a_FiD8PTPidf2tOyKiNNKOFUU7M0DxaF0Uu4Sp&s", title: "forest" },
-    { url: "https://i.pinimg.com/originals/24/d7/9f/24d79f3329b466ede30d3b0e7d0d9116.jpg", title: "city" },
+    {
+      url: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sbGVnZSUyMGNhbXB1c3xlbnwwfHwwfHx8MA%3D%3D",
+      title: "beach",
+    },
+    {
+      url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBW1TbkfDSuicfILo2MGpQ9EL9yRm6Niul8kAoVvCa&s",
+      title: "boat",
+    },
+    {
+      url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5_1a_FiD8PTPidf2tOyKiNNKOFUU7M0DxaF0Uu4Sp&s",
+      title: "forest",
+    },
+    {
+      url: "https://i.pinimg.com/originals/24/d7/9f/24d79f3329b466ede30d3b0e7d0d9116.jpg",
+      title: "city",
+    },
     { url: "https://wallpapercave.com/uwp/uwp3844886.jpeg", title: "italy" },
   ];
   const containerStyles = {
@@ -68,15 +76,22 @@ const Home = () => {
         // background: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
         //  background: 'linear-gradient(360deg, #f5b2edf0 0%, #ddeef7f5 100%)'
         background: " #ddeef7f5",
-        overflowX:"hidden"
+        overflowX: "hidden",
       }}
     >
-   <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
+      {/* <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
       <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
       <WeatherWidget/>
 
       </Grid>
-      <NavBar />
+      <NavBar /> */}
+
+      <Grid>
+        <Header />
+        <NavBar />
+      </Grid>
+
+
       <SliderCarousel />
 
       <Grid>
@@ -86,8 +101,8 @@ const Home = () => {
       <Grid
         container
         sx={{
-          paddingLeft: 3,
-          paddingRight: 3,
+          // paddingLeft: 1,
+          // paddingRight: 1,
         }}
       >
         <Grid lg={3} xs={12}>
@@ -417,23 +432,27 @@ const Home = () => {
               <Typography variant="h6" color={"red"}>
                 EXAMINATION HELPDESK
               </Typography>
-              <Box sx={{ display: "flex",marginTop: 1, }}>
+              <Box sx={{ display: "flex", marginTop: 1 }}>
                 <CallEndIcon />
 
                 <a href="" style={{ textDecoration: "none" }}>
-                  <Typography sx={{ marginLeft: 1,color: "#03254c", }}>9188526670,</Typography>
+                  <Typography sx={{ marginLeft: 1, color: "#03254c" }}>
+                    9188526670,
+                  </Typography>
                 </a>
                 <a href="" style={{ textDecoration: "none" }}>
-                  <Typography sx={{color: "#03254c",}} >9188526671</Typography>
+                  <Typography sx={{ color: "#03254c" }}>9188526671</Typography>
                 </a>
               </Box>
 
               <Box sx={{ display: "flex" }}>
                 <a href="#" style={{ textDecoration: "none" }}>
-                  <Typography sx={{ marginLeft: 4,color: "#03254c", }}>9188526674,</Typography>
+                  <Typography sx={{ marginLeft: 4, color: "#03254c" }}>
+                    9188526674,
+                  </Typography>
                 </a>
                 <a href="" style={{ textDecoration: "none" }}>
-                  <Typography sx={{color: "#03254c",}} > 9188526675</Typography>
+                  <Typography sx={{ color: "#03254c" }}> 9188526675</Typography>
                 </a>
               </Box>
             </Box>
@@ -876,7 +895,7 @@ const Home = () => {
               >
                 <ArrowRightIcon />
                 <Typography sx={{ fontSize: 13 }} href="">
-                Annual Reports
+                  Annual Reports
                 </Typography>
               </Box>
             </Link>
@@ -1339,7 +1358,7 @@ const Home = () => {
                   FAQs
                 </Typography>
               </Box>
-            </Link> 
+            </Link>
           </Card>
         </Grid>
 
@@ -1349,9 +1368,7 @@ const Home = () => {
       </Grid>
 
       <Grid sx={{ marginTop: 3, marginBottom: 3 }}>
-      
-        <HorizontalMarquee /> 
-      
+        <HorizontalMarquee />
       </Grid>
       <Footer />
     </Grid>

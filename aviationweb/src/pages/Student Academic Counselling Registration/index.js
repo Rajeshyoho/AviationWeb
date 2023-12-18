@@ -15,6 +15,7 @@ import * as yup from "yup";
 import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
 import WeatherWidget from "../../components/Weather";
+import Header from "../../components/Header";
 
 const { Formik } = formik;
 
@@ -49,22 +50,11 @@ const AcademicCounsellingRegistration = () => {
 
   return (
     <>
-    <Grid
-      sx={{
-        background: " #ddeef7f5",
-        overflowX: "hidden",
-      }}
-    >
-        <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
-      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
-      <WeatherWidget/>
-
+     <Grid>
+      <Header />
+      <NavBar />
       </Grid>
-    </Grid>
 
-    <Grid>
-     <NavBar />
-    </Grid>
 
     {/* <Grid style={{ marginLeft: 5 }}>
       <Breadcrumb
@@ -81,7 +71,7 @@ const AcademicCounsellingRegistration = () => {
         <Col>
           <h1
             style={{
-              fontFamily: "initial",
+    
               fontSize: "35px",
               color: "white",
               height: "100px",
@@ -90,7 +80,7 @@ const AcademicCounsellingRegistration = () => {
               alignItems: "center",
             }}
           >
-            Airline Academic Counselling Registration Application Form
+          Academic Counselling Registration Application Form
           </h1>
         </Col>
       </Row>
@@ -396,13 +386,13 @@ const AcademicCounsellingRegistration = () => {
       </Formik>
     </Container>
 
-    <div>
+    {/* <div>
       <Container>
         <Typography
           style={{
             fontWeight: "bold",
             fontSize: "20px",
-            fontFamily: "initial",
+  
             marginTop: 20,
           }}
         >
@@ -422,7 +412,7 @@ const AcademicCounsellingRegistration = () => {
           style={{
             fontWeight: "bold",
             fontSize: "20px",
-            fontFamily: "initial",
+  
             marginTop: 20,
           }}
         >
@@ -442,7 +432,7 @@ const AcademicCounsellingRegistration = () => {
           style={{
             fontWeight: "bold",
             fontSize: "20px",
-            fontFamily: "initial",
+  
             marginTop: 20,
           }}
         >
@@ -461,7 +451,7 @@ const AcademicCounsellingRegistration = () => {
           style={{
             fontWeight: "bold",
             fontSize: "20px",
-            fontFamily: "initial",
+  
             marginTop: 20,
           }}
         >
@@ -489,10 +479,10 @@ const AcademicCounsellingRegistration = () => {
     <Button style={{marginBottom:5}} onClick={handleSave}>Save</Button>
     </div>
     </Container>
-  </div>
+  </div> */}
 
 
-    <div style={{marginTop:10}}>
+    <div style={{marginTop:30}}>
       <Footer />
     </div>
   </>

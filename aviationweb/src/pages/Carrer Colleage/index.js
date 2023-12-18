@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Card, Grid } from "@mui/material";
-import Breadcrumb from "react-bootstrap/Breadcrumb";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -15,6 +14,16 @@ import Typography from "@mui/material/Typography";
 import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
 import WeatherWidget from "../../components/Weather";
+import Header from "../../components/Header";
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+import HomeIcon from '@mui/icons-material/Home';
+
+
+// function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+//   event.preventDefault();
+//   console.info('You clicked a breadcrumb.');
+// }
 
 const Colleges = () => {
   const logo = require("../../Images/logo3.png");
@@ -107,21 +116,10 @@ const Colleges = () => {
 
   return (
     <>
-      <Grid
-        sx={{
-          background: " #ddeef7f5",
-          overflowX: "hidden",
-        }}
-      >
-          <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
-      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
-      <WeatherWidget/>
 
-      </Grid>
-      </Grid>
-
-      <Grid>
-       <NavBar/>
+       <Grid>
+      <Header />
+      <NavBar style={{ zIndex: 1000 }}/>
       </Grid>
 
       {/* <Grid style={{ padding: 10 }}>
@@ -134,34 +132,103 @@ const Colleges = () => {
         </Breadcrumb>
       </Grid> */}
 
-      <div>
-        <Row
-          style={{
-            position: "relative",
-            backgroundImage:
-              'url("https://heis-rusa.assam.gov.in/website/img/banner/bradcam.png")',
-            backgroundSize: "cover",
-            minHeight: "300px",
-          }}
+{/* breadcrumb Row */}
+
+
+<Row
+  style={{
+    position: "relative",
+    backgroundImage:
+      'url("https://heis-rusa.assam.gov.in/website/img/banner/bradcam.png")',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    minHeight: "60vh", // Set the height to 100% of the viewport height
+    paddingLeft: "40px",
+    paddingRight: "40px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center", 
+    width: "100%"
+  }}
+>
+  <div
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: "rgba(0, 0, 0, 0.8)",
+      zIndex: 1,
+    }}
+  ></div>
+  <Col
+    md={6}
+    xs={12}
+    style={{
+      position: "relative",
+      zIndex: 2,
+      // textAlign: "center", 
+    }}
+  >
+    <div>
+      <h3
+        style={{
+          color: "white",
+          fontSize: "36px",
+          fontWeight: "bold",
+        }}
+      >
+        Colleges
+      </h3>
+    </div>
+  </Col>
+
+  <Col
+    className="banner"
+    md={6}
+    xs={12}
+    style={{
+      position: "relative",
+      zIndex: 2,
+      textAlign: "center", 
+    }}
+  >
+    <div role="presentation" >
+      <Breadcrumbs
+        aria-label="breadcrumb"
+        style={{
+          zIndex: 900,
+          display: "flex",
+          alignItems: "center",
+          margin: "10px",
+          fontSize: "20px",
+          color: "#ffffff",
+          justifyContent: "flex-end",
+          alignItems:"center"
+        }}
+      >
+         <Link underline="hover" color="inherit" href="#Home" style={{display:"flex",alignItems:"center"}}>
+          <HomeIcon fontSize="medium" style={{marginRight:"5px",marginBottom:"2px"}}/>
+         Home
+        </Link>
+        <Link underline="none"  color="inherit" href="/">
+          Carrer Guidance
+        </Link>
+        <Link
+          underline="none"
+          color="inherit"
+          href="/material-ui/getting-started/installation/"
+          style={{color:"rgba(161,225,229,1)"}}
         >
-          <Col
-            className="overlay-text"
-            style={{ display: "flex", alignItems: "center" }}
-          >
-            <h1
-              style={{
-                color: "white",
-                fontFamily: "cursive",
-                fontSize: "50px",
-                fontWeight: "bold",
-                paddingLeft: "50px",
-              }}
-            >
-              Colleges
-            </h1>
-          </Col>
-        </Row>
-      </div>
+          Colleges
+        </Link>
+      </Breadcrumbs>
+    </div>
+  </Col>
+</Row>
+
+
 
       <Container>
         <Row style={{ marginTop: "40px" }}>

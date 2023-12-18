@@ -15,6 +15,7 @@ import * as yup from "yup";
 import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
 import WeatherWidget from "../../components/Weather";
+import Header from "../../components/Header";
 
 const { Formik } = formik;
 
@@ -47,22 +48,11 @@ const MembershipRegistration = () => {
 
   return (
     <>
-      <Grid
-        sx={{
-          background: " #ddeef7f5",
-          overflowX: "hidden",
-        }}
-      >
-     <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
-      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
-      <WeatherWidget/>
-
-      </Grid>
+       <Grid>
+      <Header />
+      <NavBar />
       </Grid>
 
-      <Grid>
-    <NavBar />
-      </Grid>
 
       {/* <Grid style={{ marginLeft: 5 }}>
         <Breadcrumb
@@ -79,7 +69,7 @@ const MembershipRegistration = () => {
           <Col>
             <h1
               style={{
-                fontFamily: "initial",
+                
                 fontSize: "35px",
                 color: "white",
                 height: "100px",
@@ -88,7 +78,7 @@ const MembershipRegistration = () => {
                 alignItems: "center",
               }}
             >
-              Airline Membership Application Form
+             Membership Application Form
             </h1>
           </Col>
         </Row>
@@ -394,13 +384,13 @@ const MembershipRegistration = () => {
         </Formik>
       </Container>
 
-      <div>
+      {/* <div>
         <Container>
           <Typography
             style={{
               fontWeight: "bold",
               fontSize: "20px",
-              fontFamily: "initial",
+              
               marginTop: 20,
             }}
           >
@@ -412,15 +402,15 @@ const MembershipRegistration = () => {
             officiant will participate in rehearsals, if applicable.
           </p>
         </Container>
-      </div>
+      </div> */}
 
-      <div>
+      {/* <div>
         <Container>
           <Typography
             style={{
               fontWeight: "bold",
               fontSize: "20px",
-              fontFamily: "initial",
+              
               marginTop: 20,
             }}
           >
@@ -432,15 +422,15 @@ const MembershipRegistration = () => {
             the ceremony (if required by local laws).
           </p>
         </Container>
-      </div>
+      </div> */}
 
-      <div>
+      {/* <div>
         <Container>
           <Typography
             style={{
               fontWeight: "bold",
               fontSize: "20px",
-              fontFamily: "initial",
+              
               marginTop: 20,
             }}
           >
@@ -451,23 +441,23 @@ const MembershipRegistration = () => {
             Responsibility for damages or injury during the ceremony.
           </p>
         </Container>
-      </div>
+      </div> */}
 
-      <div>
+      {/* <div>
         <Container>
           <Typography
             style={{
               fontWeight: "bold",
               fontSize: "20px",
-              fontFamily: "initial",
+              
               marginTop: 20,
             }}
           >
             Terms of Agreement 
           </Typography>
         </Container>
-      </div>
-
+      </div> */}
+{/* 
             <div>
                 <Container>
                     <Typography>
@@ -487,10 +477,10 @@ const MembershipRegistration = () => {
       <Button style={{marginBottom:5}} onClick={handleSave}>Save</Button>
       </div>
       </Container>
-    </div>
+    </div> */}
 
 
-      <div style={{marginTop:10}}>
+      <div style={{marginTop:30}}>
         <Footer />
       </div>
     </>

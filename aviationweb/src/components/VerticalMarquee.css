@@ -1,9 +1,8 @@
 /* VerticalMarquee.css */
 
 .marquee-container {
-    height: 708px; /* Adjust the height as needed */
+    height: 739px; /* Adjust the height as needed */
     overflow: hidden;
-   
   }
   
   .marquee {

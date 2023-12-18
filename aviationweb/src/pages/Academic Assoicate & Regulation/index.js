@@ -21,38 +21,114 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import NavBar from "../../components/NavBar";
 import WeatherWidget from "../../components/Weather";
+import Header from "../../components/Header";
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+import HomeIcon from '@mui/icons-material/Home';
 
 const AssociateRegulations = () => {
   const logo = require("../../Images/logo3.png");
 
   return (
     <>
-      <Grid
-        sx={{
-          background: " #ddeef7f5",
-          overflowX: "hidden",
+       <Grid>
+      <Header />
+      <NavBar />
+      </Grid>
+
+
+      <Row
+  style={{
+    position: "relative",
+    backgroundImage:
+      'url("https://viracresearch.com/wp-content/uploads/2022/03/NEC-Biometric_Aviation.jpg")',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    minHeight: "60vh", // Set the height to 100% of the viewport height
+    paddingLeft: "40px",
+    paddingRight: "40px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center", 
+    width: "100%"
+  }}
+>
+  <div
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: "rgba(0, 0, 0, 0.8)",
+      zIndex: 1,
+    }}
+  ></div>
+  <Col
+    md={6}
+    xs={12}
+    style={{
+      position: "relative",
+      zIndex: 2,
+      // textAlign: "center", 
+    }}
+  >
+    <div>
+      <h3
+        style={{
+          color: "white",
+          fontSize: "36px",
+          fontWeight: "bold",
         }}
       >
-         <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
-      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
-      <WeatherWidget/>
+       Associate & Regulations
+      </h3>
+    </div>
+  </Col>
 
-      </Grid>
-      </Grid>
-
-      <Grid>
-        <NavBar/>
-      </Grid>
-
-      {/* <Grid style={{ padding: 5 }}>
-        <Breadcrumb
-          style={{ backgroundColor: "#FFFFFF", textDecoration: "none" }}
+  <Col
+    className="banner"
+    md={6}
+    xs={12}
+    style={{
+      position: "relative",
+      zIndex: 2,
+      textAlign: "center", 
+    }}
+  >
+    <div role="presentation" >
+      <Breadcrumbs
+        aria-label="breadcrumb"
+        style={{
+          zIndex: 900,
+          display: "flex",
+          alignItems: "center",
+          margin: "10px",
+          fontSize: "20px",
+          color: "#ffffff",
+          justifyContent: "flex-end",
+          alignItems:"center"
+        }}
+      >
+         <Link underline="hover" color="inherit" href="Home" style={{display:"flex",alignItems:"center"}}>
+          <HomeIcon fontSize="medium" style={{marginRight:"5px",marginBottom:"2px"}}/>
+         Home
+        </Link>
+        <Link underline="none"  color="inherit" href="/">
+          Accademic
+        </Link>
+        <Link
+          underline="none"
+          color="inherit"
+          href="/material-ui/getting-started/installation/"
+          style={{color:"rgba(161,225,229,1)"}}
         >
-          <Breadcrumb.Item href="Home">Home</Breadcrumb.Item>
-          <Breadcrumb.Item href="#">AboutUs</Breadcrumb.Item>
-          <Breadcrumb.Item href="#">ASDHEC Logo</Breadcrumb.Item>
-        </Breadcrumb>
-      </Grid> */}
+          Associate & Regulations
+        </Link>
+      </Breadcrumbs>
+    </div>
+  </Col>
+</Row>
 
       <div style={{ backgroundColor: "#cfc6f1" }}>
         <Typography
@@ -61,7 +137,7 @@ const AssociateRegulations = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            padding: 10,
+            padding: 20,
             fontWeight: "bold",
           }}
         >
@@ -100,14 +176,13 @@ const AssociateRegulations = () => {
         <Container>
           <Typography
             style={{
-              color: "#122F90",
               fontWeight: "bold",
-              fontFamily: "initial",
+
             }}
           >
             ACADEMY OF AVIATION'S INTERNATIONAL STUDENT NETWORK
           </Typography>
-          <Divider style={{ borderBottom: "2px solid #122F90" }} />
+          <Divider style={{ borderBottom: "2px solid gray" }} />
 
           <Typography sx={{ textAlign: "justify", marginTop: 2 }}>
             Diploma in Aviation is a full time diploma level course for a
@@ -118,7 +193,9 @@ const AssociateRegulations = () => {
             in class 12 exam. The admission to the course is done on the basis
             of score in 10+2, followed by a personal interview. The average fee
             for the diploma in Aviation course ranges from INR 60,000 to INR
-            85,000 in a year depending on colleges. Some of the top colleges are
+            85,000 in a year depending on colleges. 
+            </Typography>
+            <Typography style={{marginTop:20,textAlign:"justify"}}>Some of the top colleges are
             Vasundhara Aviation Academy, VAA, Bhopal, Trade Wings Institution of
             Management- TIM, Mumbai, Trade Wings Institution of Management- TIM,
             Kolkata, Institute of Logistics and Aviation Management, Bangalore,
@@ -160,7 +237,7 @@ const AssociateRegulations = () => {
                   >
                     BEYOND INDIA
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography variant="body2" style={{textAlign:"justify"}}>
                     Former AOA trainees and CFIs, Capt. Rejaul Rajib and First
                     Officer Eric Riker, share the cockpit of a Republic Airways
                     flight out of LaGuardia on Jan. 14, 2022.
@@ -184,7 +261,7 @@ const AssociateRegulations = () => {
                   >
                     THE ROTARY CLUB
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography variant="body2" style={{textAlign:"justify"}}>
                     Former AOA trainees and CFIs, Capt. Rejaul Rajib and First
                     Officer Eric Riker, share the cockpit of a Republic Airways
                     flight out of LaGuardia on Jan. 14, 2022.
@@ -208,7 +285,7 @@ const AssociateRegulations = () => {
                   >
                     UNITED AIRLINES
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography variant="body2" style={{textAlign:"justify"}}>
                     Former AOA trainees and CFIs, Capt. Rejaul Rajib and First
                     Officer Eric Riker, share the cockpit of a Republic Airways
                     flight out of LaGuardia on Jan. 14, 2022.
@@ -220,7 +297,7 @@ const AssociateRegulations = () => {
               <Card sx={{ maxWidth: 345 }}>
                 <CardMedia
                   sx={{ height: 140 }}
-                  image="https://www.academyofaviation.com/images/site-images/aoa-graduate-pilots-2.jpg"
+                  image="https://kaimah.co.nz/imgs/study-in-new-zealand-or-australia/pilot-training.jpg"
                   title="green iguana"
                 />
                 <CardContent>
@@ -232,7 +309,7 @@ const AssociateRegulations = () => {
                   >
                     AOA CERTIFIED
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography variant="body2" style={{textAlign:"justify"}}>
                     Former AOA trainees and CFIs, Capt. Rejaul Rajib and First
                     Officer Eric Riker, share the cockpit of a Republic Airways
                     flight out of LaGuardia on Jan. 14, 2022.
@@ -263,7 +340,7 @@ const AssociateRegulations = () => {
                   >
                     BEYOND INDIA
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography variant="body2" style={{textAlign:"justify"}}>
                     Former AOA trainees and CFIs, Capt. Rejaul Rajib and First
                     Officer Eric Riker, share the cockpit of a Republic Airways
                     flight out of LaGuardia on Jan. 14, 2022.
@@ -287,7 +364,7 @@ const AssociateRegulations = () => {
                   >
                     THE ROTARY CLUB
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography variant="body2" style={{textAlign:"justify"}}>
                     Former AOA trainees and CFIs, Capt. Rejaul Rajib and First
                     Officer Eric Riker, share the cockpit of a Republic Airways
                     flight out of LaGuardia on Jan. 14, 2022.
@@ -311,7 +388,7 @@ const AssociateRegulations = () => {
                   >
                     BEYOND INDIA
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography variant="body2" style={{textAlign:"justify"}}>
                     Former AOA trainees and CFIs, Capt. Rejaul Rajib and First
                     Officer Eric Riker, share the cockpit of a Republic Airways
                     flight out of LaGuardia on Jan. 14, 2022.
@@ -335,7 +412,7 @@ const AssociateRegulations = () => {
                   >
                     THE ROTARY CLUB
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography variant="body2" style={{textAlign:"justify"}}>
                     Former AOA trainees and CFIs, Capt. Rejaul Rajib and First
                     Officer Eric Riker, share the cockpit of a Republic Airways
                     flight out of LaGuardia on Jan. 14, 2022.

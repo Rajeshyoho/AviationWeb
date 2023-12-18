@@ -3,39 +3,156 @@ import Table from "react-bootstrap/Table";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import "../../components/InterviewDate.css"
-import { Grid } from "@mui/material";
+import "../../components/InterviewDate.css";
+import { Grid, Typography } from "@mui/material";
 import Footer from "../../components/Footer";
 import { Image } from "react-bootstrap";
 import NavBar from "../../components/NavBar";
 import WeatherWidget from "../../components/Weather";
+import Header from "../../components/Header";
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+import HomeIcon from '@mui/icons-material/Home';
+
 const InterviewDate = () => {
   const logo = require("../../Images/logo3.png");
   return (
     <>
-        <Grid
-        sx={{
-          background: " #ddeef7f5",
+      <Grid>
+        <Header />
+        <NavBar />
+      </Grid>
+
+
+      <Row
+  style={{
+    position: "relative",
+    backgroundImage:
+      'url("https://i.ytimg.com/vi/46RuAJHrSmk/maxresdefault.jpg")',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    minHeight: "60vh", // Set the height to 100% of the viewport height
+    paddingLeft: "40px",
+    paddingRight: "40px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center", 
+    width: "100%"
+  }}
+>
+  <div
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: "rgba(0, 0, 0, 0.8)",
+      zIndex: 1,
+    }}
+  ></div>
+  <Col
+    md={6}
+    xs={12}
+    style={{
+      position: "relative",
+      zIndex: 2,
+      // textAlign: "center", 
+    }}
+  >
+    <div>
+      <h3
+        style={{
+          color: "white",
+          fontSize: "36px",
+          fontWeight: "bold",
         }}
       >
-          <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
-      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
-      <WeatherWidget/>
+       Interview Date
+      </h3>
+    </div>
+  </Col>
 
+  <Col
+    className="banner"
+    md={6}
+    xs={12}
+    style={{
+      position: "relative",
+      zIndex: 2,
+      textAlign: "center", 
+    }}
+  >
+    <div role="presentation" >
+      <Breadcrumbs
+        aria-label="breadcrumb"
+        style={{
+          zIndex: 900,
+          display: "flex",
+          alignItems: "center",
+          margin: "10px",
+          fontSize: "20px",
+          color: "#ffffff",
+          justifyContent: "flex-end",
+          alignItems:"center"
+        }}
+      >
+         <Link underline="hover" color="inherit" href="Home" style={{display:"flex",alignItems:"center"}}>
+          <HomeIcon fontSize="medium" style={{marginRight:"5px",marginBottom:"2px"}}/>
+         Home
+        </Link>
+        <Link underline="none"  color="inherit" href="/">
+          Job Vaccanies
+        </Link>
+        <Link
+          underline="none"
+          color="inherit"
+          href="/material-ui/getting-started/installation/"
+          style={{color:"rgba(161,225,229,1)"}}
+        >
+          Interview Date
+        </Link>
+      </Breadcrumbs>
+    </div>
+  </Col>
+</Row>
+
+
+      <Grid style={{ backgroundColor: "#f8f8f8" }}>
+        <Container>
+          <Typography style={{textAlign:"center",padding:20}}>
+            <h1 style={{color:"#114379" ,fontWeight:"bold",fontSize:"50px"}}>
+              GET PREPARED FOR YOUR AIRLINE PILOT INTERVIEW!
+            </h1>
+            <h2 style={{fontWeight:"bold",fontSize:"25px"}}>
+              WE'VE HELPED 200,000+ AVIATION PROFESSIONALS PREPARE FOR THEIR
+              INTERVIEWS!
+            </h2>
+            <h5 style={{fontWeight:"bold"}}>
+              Increase your chances of being hired! Read what employers are
+              asking in their interviews..!
+            </h5>
+          </Typography>
+        </Container>
       </Grid>
 
-        <Grid>
-       <NavBar />
-        </Grid>
-      </Grid>
       <Container>
-        <Row style={{marginTop:"30px"}}>
-        <Col>
-            <h2 style={{fontSize:"48px",color:"#002F87",fontWeight:"bold",fontFamily:"sans-serif"}}>Tips for a Successful Interview</h2>
-            </Col>
-        </Row>
-        <Row style={{marginTop:"15px"}}>
+        <Row style={{ marginTop: "30px" }}>
           <Col>
+            <h2
+              style={{
+                fontSize: "48px",
+                color: "#002F87",
+                fontWeight: "bold",
+              
+              }}
+            >
+              Tips for a Successful Interview
+            </h2>
+          </Col>
+        </Row>
+        <Row style={{ marginTop: "15px" }}>
+          <Col style={{ textAlign: "justify" }}>
             <div>
               <h5>Be on time.</h5>
               <p>
@@ -108,7 +225,7 @@ const InterviewDate = () => {
               </p>
             </div>
           </Col>
-          <Col>
+          <Col style={{ textAlign: "justify" }}>
             <div>
               <h5>Tell the truth.</h5>
               <p>Lies and exaggeration will come back to haunt you.</p>
@@ -178,15 +295,30 @@ const InterviewDate = () => {
           </Col>
         </Row>
       </Container>
-      <Container >
-      <Row style={{marginTop:"30px"}}>
-        <Col>
-            <h2 style={{fontSize:"48px",color:"#002F87",fontWeight:"bold",fontFamily:"sans-serif"}}>Interview Schedule</h2>
-            </Col>
-        </Row>
-        <Row style={{marginTop:"20px"}}>
+      <Container>
+        <Row style={{ marginTop: "30px" }}>
           <Col>
-            <Table striped bordered hover responsive="lg" className="text-center table-design">
+            <h2
+              style={{
+                fontSize: "48px",
+                color: "#002F87",
+                fontWeight: "bold",
+              
+              }}
+            >
+              Interview Schedule
+            </h2>
+          </Col>
+        </Row>
+        <Row style={{ marginTop: "20px" }}>
+          <Col>
+            <Table
+              striped
+              bordered
+              hover
+              responsive="lg"
+              className="text-center table-design"
+            >
               <thead>
                 <tr>
                   <th>Schedule Date</th>
@@ -206,14 +338,6 @@ const InterviewDate = () => {
                   <td>Research Associate</td>
                   <td>John Foe</td>
                 </tr>
-                <tr >
-                  <td>02.01.2023</td>
-                  <td>10.35 am</td>
-                  <td>11.40 am</td>
-                  <td>Candiate</td>
-                  <td>Research Associate</td>
-                  <td>John Foe</td>
-                </tr>
                 <tr>
                   <td>02.01.2023</td>
                   <td>10.35 am</td>
@@ -254,14 +378,21 @@ const InterviewDate = () => {
                   <td>Research Associate</td>
                   <td>John Foe</td>
                 </tr>
-                
+                <tr>
+                  <td>02.01.2023</td>
+                  <td>10.35 am</td>
+                  <td>11.40 am</td>
+                  <td>Candiate</td>
+                  <td>Research Associate</td>
+                  <td>John Foe</td>
+                </tr>
               </tbody>
             </Table>
           </Col>
         </Row>
       </Container>
       <Grid style={{ paddingTop: 20 }}>
-        <Footer/>
+        <Footer />
       </Grid>
     </>
   );

@@ -12,6 +12,10 @@ import { Grid } from "@mui/material";
 import Footer from "../../components/Footer";
 import { Image } from "react-bootstrap";
 import WeatherWidget from "../../components/Weather";
+import Header from "../../components/Header";
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+import HomeIcon from '@mui/icons-material/Home';
 
 const CompanyName = () => {
   const imageUrls = [
@@ -124,29 +128,114 @@ const CompanyName = () => {
 
   return (
     <>
-        <Grid
-        sx={{
-          background: " #ddeef7f5",
+      
+      <Grid>
+      <Header />
+      <NavBar />
+      </Grid>
+
+
+      <Row
+  style={{
+    position: "relative",
+    backgroundImage:
+      'url("https://www.vsbcetc.com/wp-content/uploads/2023/09/placement-banner.png")',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    minHeight: "60vh", // Set the height to 100% of the viewport height
+    paddingLeft: "40px",
+    paddingRight: "40px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center", 
+    width: "100%"
+  }}
+>
+  <div
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: "rgba(0, 0, 0, 0.8)",
+      zIndex: 1,
+    }}
+  ></div>
+  <Col
+    md={6}
+    xs={12}
+    style={{
+      position: "relative",
+      zIndex: 2,
+      // textAlign: "center", 
+    }}
+  >
+    <div>
+      <h3
+        style={{
+          color: "white",
+          fontSize: "36px",
+          fontWeight: "bold",
         }}
       >
-          <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
-      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
-      <WeatherWidget/>
-
-      </Grid>
-
-        <Grid>
-       <NavBar />
-        </Grid>
-      </Grid>
-    <div>
-      <img src="https://www.vsbcetc.com/wp-content/uploads/2023/09/placement-banner.png" style={{height:"80vh",width:"100%",objectFit:"cover"}}/>
+       Company Name
+      </h3>
     </div>
+  </Col>
+
+  <Col
+    className="banner"
+    md={6}
+    xs={12}
+    style={{
+      position: "relative",
+      zIndex: 2,
+      textAlign: "center", 
+    }}
+  >
+    <div role="presentation" >
+      <Breadcrumbs
+        aria-label="breadcrumb"
+        style={{
+          zIndex: 900,
+          display: "flex",
+          alignItems: "center",
+          margin: "10px",
+          fontSize: "20px",
+          color: "#ffffff",
+          justifyContent: "flex-end",
+          alignItems:"center"
+        }}
+      >
+         <Link underline="hover" color="inherit" href="Home" style={{display:"flex",alignItems:"center"}}>
+          <HomeIcon fontSize="medium" style={{marginRight:"5px",marginBottom:"2px"}}/>
+         Home
+        </Link>
+        <Link underline="none"  color="inherit" href="/">
+          Job Vaccanies
+        </Link>
+        <Link
+          underline="none"
+          color="inherit"
+          href="/material-ui/getting-started/installation/"
+          style={{color:"rgba(161,225,229,1)"}}
+        >
+           Company Name
+        </Link>
+      </Breadcrumbs>
+    </div>
+  </Col>
+</Row>
+
+    {/* <div>
+      <img src="https://www.vsbcetc.com/wp-content/uploads/2023/09/placement-banner.png" style={{height:"80vh",width:"100%",objectFit:"cover"}}/>
+    </div> */}
     <Container style={{marginTop:"30px"}}>
         <Row>
             <Col>
-            <h1 style={{textAlign:"center"}}>Placements</h1>
-            <p style={{fontFamily:"sans-serif",fontWeight:"500",opacity:0.8,marginTop:"20px"}}>
+            <h1 style={{textAlign:"center",fontWeight:"bold"}}>Placements</h1>
+            <p style={{fontWeight:"500",opacity:0.8,marginTop:"20px",textAlign:"justify"}}>
             Karunya has a creditable record of placement of its final year students and graduates. A good number of final year students plan to go for higher studies in India or abroad or turn entrepreneurs. As per recent trends about 80% of eligible final year students, who seek a placement, are placed with reputed organizations at the initiative of the institution prior to their leaving the campus.
             </p>
             </Col>
@@ -187,7 +276,7 @@ const CompanyName = () => {
     <Container>
         <Row>
             <Col>
-           <p style={{fontWeight:"600",fontSize:"25px",fontFamily:"sans-serif",color:"#034da2 ",textAlign:"center",marginTop:"30px",marginBottom:"30px"}}>OUR RECRUITERS</p>
+           <p style={{fontWeight:"600",fontSize:"25px",color:"#034da2 ",textAlign:"center",marginTop:"30px",marginBottom:"30px"}}>OUR RECRUITERS</p>
             </Col>
         </Row>
     </Container>

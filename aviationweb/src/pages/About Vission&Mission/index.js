@@ -21,6 +21,12 @@ import { Image } from "react-bootstrap";
 import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
 import WeatherWidget from "../../components/Weather";
+import Header from "../../components/Header";
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+import Link from "@mui/material/Link";
+import HomeIcon from "@mui/icons-material/Home";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 const images = [
   "https://wallpapercave.com/dwp2x/wp12041609.jpg",
@@ -81,7 +87,6 @@ const VisionMission = () => {
     color: "#FEF5DF",
     opacity: isHovered ? 0.8 : 0,
     transition: "all 0.5s",
-    fontFamily: "'Playfair Display', serif",
   };
 
   const headStyle = {
@@ -92,7 +97,7 @@ const VisionMission = () => {
   };
   return (
     <Grid>
-      <Grid
+      {/* <Grid
         sx={{
           background: " #ddeef7f5",
           overflowX: "hidden",
@@ -103,52 +108,136 @@ const VisionMission = () => {
       <WeatherWidget/>
 
       </Grid>
-      </Grid>
+      </Grid> */}
 
       <Grid>
+        <Header />
         <NavBar />
       </Grid>
+
+      <Row
+        style={{
+          position: "relative",
+          backgroundImage: 'url("https://wallpapercave.com/wp/wp12643319.jpg")',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          minHeight: "60vh", // Set the height to 100% of the viewport height
+          paddingLeft: "40px",
+          paddingRight: "40px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "100%",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.8)",
+            zIndex: 1,
+          }}
+        ></div>
+        <Col
+          md={6}
+          xs={12}
+          style={{
+            position: "relative",
+            zIndex: 2,
+            // textAlign: "center",
+          }}
+        >
+          <div>
+            <h3
+              style={{
+                color: "white",
+                fontSize: "36px",
+                fontWeight: "bold",
+              }}
+            >
+              Vision Mission
+            </h3>
+          </div>
+        </Col>
+
+        <Col
+          className="banner"
+          md={6}
+          xs={12}
+          style={{
+            position: "relative",
+            zIndex: 2,
+            textAlign: "center",
+          }}
+        >
+          <div role="presentation">
+            <Breadcrumbs
+              aria-label="breadcrumb"
+              style={{
+                zIndex: 900,
+                display: "flex",
+                alignItems: "center",
+                margin: "10px",
+                fontSize: "20px",
+                color: "#ffffff",
+                justifyContent: "flex-end",
+                alignItems: "center",
+              }}
+            >
+              <Link
+                underline="hover"
+                color="inherit"
+                href="Home"
+                style={{ display: "flex", alignItems: "center" }}
+              >
+                <HomeIcon
+                  fontSize="medium"
+                  style={{ marginRight: "5px", marginBottom: "2px" }}
+                />
+                Home
+              </Link>
+              <Link underline="none" color="inherit" href="/">
+                About Us
+              </Link>
+              <Link
+                underline="none"
+                color="inherit"
+                href="/material-ui/getting-started/installation/"
+                style={{ color: "rgba(161,225,229,1)" }}
+              >
+                Vision Mission
+              </Link>
+            </Breadcrumbs>
+          </div>
+        </Col>
+      </Row>
 
       <Grid container sx={{ padding: 3 }}>
         <Grid item xs={12} md={6} sx={{ paddingX: { xs: 1, sm: 2, md: 3 } }}>
           <div>
-            <h3>
-              <li
-                style={{
-                  listStyle: "none",
-                  textDecoration: "none",
-                  fontSize: "30px",
-                  marginBottom: "15px",
-                  padding: "0px",
-                  fontFamily: "initial",
-                  fontWeight: "bold",
-                  color: "black",
-                }}
-              >
-                <a href="#">Company overview</a>
-              </li>
-            </h3>
             <h1
               style={{
                 marginBottom: "15px",
                 padding: "0px",
                 fontSize: "30px",
-                fontFamily: "initial",
                 fontWeight: "bold",
+                marginTop: "15px",
               }}
             >
-              The CGI Constitution
+              Vision and Mission 
             </h1>
             <h2
               style={{
                 marginBottom: "15px",
                 padding: "0px",
                 fontSize: "20px",
-                fontFamily: "initial",
                 fontWeight: "bold",
               }}
             >
-              Defining the essence of who we are
+              Defining the essence
             </h2>
             <p
               style={{ padding: "0px", textAlign: "justify", fontSize: "19px" }}
@@ -188,24 +277,26 @@ const VisionMission = () => {
         </Grid>
       </Grid>
 
-      <Grid container sx={{ padding: "30px" }}>
+      <Grid container sx={{ padding: "30px", textAlign: "justify" }}>
         <Grid item xs={12} md={6} sx={{ paddingX: { xs: 1, sm: 2, md: 3 } }}>
           <div>
-            <h3 style={{ fontWeight:"bold",fontFamily:"initial", fontSize: "19px" }}>Our Dream</h3>
+            <h3 style={{ fontWeight: "bold", fontSize: "19px" }}>Our Dream</h3>
             <p style={{ margin: "3px 0px 20px", fontSize: "17px" }}>
               To create an environment in which we enjoy working together and,
               as owners, contribute to building a company we can be proud of.
             </p>
           </div>
           <div>
-            <h3 style={{ fontWeight:"bold",fontFamily:"initial", fontSize: "19px" }}>Our Vision</h3>
+            <h3 style={{ fontWeight: "bold", fontSize: "19px" }}>Our Vision</h3>
             <p style={{ margin: "3px 0px 20px", fontSize: "17px" }}>
               To create an environment in which we enjoy working together and,
               as owners, contribute to building a company we can be proud of.
             </p>
           </div>
           <div>
-            <h3 style={{ fontWeight:"bold",fontFamily:"initial", fontSize: "19px" }}>Our Mission</h3>
+            <h3 style={{ fontWeight: "bold", fontSize: "19px" }}>
+              Our Mission
+            </h3>
             <p style={{ margin: "3px 0px 20px", fontSize: "17px" }}>
               To help our clients succeed through outstanding quality,
               competence and objectivity, providing thought leadership and
@@ -219,7 +310,11 @@ const VisionMission = () => {
         </Grid>
         <Grid item xs={12} md={6}>
           <h3
-            style={{ paddingLeft: "10px", fontWeight:"bold",fontFamily:"initial", fontSize: "19px" }}
+            style={{
+              paddingLeft: "10px",
+              fontWeight: "bold",
+              fontSize: "19px",
+            }}
           >
             Our Values
           </h3>
@@ -311,27 +406,49 @@ const VisionMission = () => {
         </Grid>
       </Grid>
 
-      <Grid container sx={{ padding: "30px" }}>
+      <Grid container sx={{ padding: "30px", textAlign: "justify" }}>
         <Grid item xs={12} md={6} sx={{ paddingX: { xs: 1, sm: 2, md: 3 } }}>
           <div>
-            <h3 style={{ fontWeight:"bold",fontFamily:"initial", fontSize: "19px"}}>
+            <h3 style={{ fontWeight: "bold", fontSize: "19px" }}>
               The CGI Culture through the adherence of our Constitution
             </h3>
-            <p style={{ margin: "3px 0px 10px", fontSize: "17px" ,textAlign:"justify"}}>
+            <Typography
+              style={{
+                margin: "3px 0px 10px",
+                fontSize: "17px",
+                textAlign: "justify",
+              }}
+            >
               Our Constitution is the foundation of our Culture, expressed in
               words. To learn more—and to read a Word from Our Founder—visit the
               CGI Culture page. This document explains the rationale of our
               Constitution and how it is a reflection of our Culture. It aims to
               guide all CGI consultants and professionals, whom we call members,
               in their day-to-day actions to live the Dream.
-            </p>
-            <p style={{ margin: "3px 0px 10px", fontSize: "17px",textAlign:"justify" }}>
+            </Typography>
+            <Typography
+              style={{
+                margin: "3px 0px 10px",
+                fontSize: "17px",
+                textAlign: "justify",
+              }}
+            >
               The world will continue to change. CGI will have to remain close
               to its clients and continue to evolve. Correspondingly, CGI
               members will have to continue to evolve our Constitution through
               the coming decades to support the continuous success of CGI and
               ensure its perenniality.
-            </p>
+            </Typography>
+            <Typography
+              style={{
+                margin: "3px 0px 10px",
+                fontSize: "17px",
+                textAlign: "justify",
+              }}
+            >
+              All existing EOIs in the pool as on 12 October 2022 meeting the
+              old policy requirements were eligible for selection.The first EOI selection round under the new policy will be held in August 2023 and every three months thereafter
+            </Typography>
           </div>
         </Grid>
         <Grid

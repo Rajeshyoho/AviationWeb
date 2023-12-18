@@ -24,8 +24,8 @@ const Footer = () => {
             "radial-gradient(circle, rgba(161,225,229,1) 43%, rgba(237,220,238,1) 95%)",
           color: " #0e2246",
           alignItems: "center",
-          border: "3px solid  #0e2246",
-          borderRadius: 3,
+          // border: "3px solid  #0e2246",
+          // borderRadius: 3,
         }}
       >
         <Grid
@@ -52,10 +52,10 @@ const Footer = () => {
             textAlign: "center",
           }}
         >
-          <Box>
+          <Box style={{marginRight:20}}>
             <Typography variant="h5">“Educate to Elevate”</Typography>
-            <Typography variant="h6">
-              “பலகல்வி தந்து இந்தப்பாரை உயர்த்திட வேண்டும்”
+            <Typography variant="h5">
+              Best Aviation Academy In Council
             </Typography>
           </Box>
         </Grid>
@@ -66,13 +66,15 @@ const Footer = () => {
         sx={{
           background: "#0e2246",
           color: "white",
-          padding: 5,
-          textAlign: { xs: "center", lg: "start" },
+          // padding:2,
+          // marginTop:5,
+          
+          textAlign: { xs: "center", lg: "center" },
           alignItems: "center",
           justifyContent: "center",
         }}
       >
-        <Grid sx={{ marginTop: { xs: 3, md: 0 }}} item lg={2} xs={6}>
+        <Grid sx={{ marginTop: { xs: 3, md: 0 },textAlign:"start",marginTop:3,marginBottom:3}} item lg={2} xs={6}>
           <Box>
             <Typography sx={{ color: " #ded283", fontSize: 15 }}>
               UNIVERSITY
@@ -136,14 +138,14 @@ const Footer = () => {
           </Box>
         </Grid>
 
-        <Divider
+        {/* <Divider
           orientation="vertical"
           flexItem
           sx={{ width: 3, marginRight: 5 }}
           color="#ffffff"
-        />
+        /> */}
 
-        <Grid sx={{ marginTop: { xs: 3, md: 0 }}} item lg={2} xs={6}>
+        <Grid sx={{ marginTop: { xs: 3, md: 0 },textAlign:"start",marginTop:3,marginBottom:3}} item lg={2} xs={6}>
           <Box>
             <Typography sx={{ color: " #ded283", fontSize: 15 }}>
               CENTERS
@@ -207,14 +209,14 @@ const Footer = () => {
           </Box>
         </Grid>
 
-        <Divider
+        {/* <Divider
           orientation="vertical"
           flexItem
           sx={{ width: 3, marginRight: 5 }}
           color="#ffffff"
-        />
+        /> */}
 
-        <Grid  sx={{ marginTop: { xs: 3, md: 0 }}} item lg={2} xs={6}>
+        <Grid  sx={{ marginTop: { xs: 3, md: 0 },textAlign:"start",marginTop:3,marginBottom:3}} item lg={2} xs={6}>
           <Box>
             <Typography sx={{ color: " #ded283", fontSize: 15 }}>
               CELLS
@@ -278,14 +280,14 @@ const Footer = () => {
           </Box>
         </Grid>
 
-        <Divider
+        {/* <Divider
           orientation="vertical"
           flexItem
           sx={{ width: 3, marginRight: 5 }}
           color="#ffffff"
-        />
+        /> */}
 
-        <Grid sx={{ marginTop: { xs: 3, md: 0 }}} item lg={2} xs={6}>
+        <Grid sx={{ marginTop: { xs: 3, md: 0 },textAlign:"start",marginTop:3,marginBottom:3}} item lg={2} xs={6}>
           <Box>
             <Typography sx={{ color: " #ded283", fontSize: 15 }}>
               STUDENTS
@@ -349,14 +351,14 @@ const Footer = () => {
           </Box>
         </Grid>
 
-        <Divider
+        {/* <Divider
           orientation="vertical"
           flexItem
           sx={{ width: 3, marginRight: 5 }}
           color="#ffffff"
-        />
+        /> */}
 
-        <Grid sx={{ marginTop: { xs: 3, md: 0 }}} item lg={2} xs={12}>
+        <Grid sx={{ marginTop: { xs: 3, md: 0 },textAlign:"start",marginTop:3,marginBottom:3}} item lg={2} xs={12}>
           <Box>
             <Typography sx={{ color: " #ded283", fontSize: 15 }}>
               OTHER LINKS
@@ -431,11 +433,13 @@ const Footer = () => {
               alignItems: "center",
               justifyContent: "center",
               marginRight: 5,
-              backgroundColor:"#0e2246"
+              backgroundColor:"#0e2246",
+              width:"100%",
+              padding:1
             }}
           >
-            <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/payment-method_69e7ec.svg" style={{height:"auto",width:450}}/>
-            <img src={payment} style={{height:"auto",width:450}}/>
+            <img  className="img-fluid col-sm-12" src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/payment-method_69e7ec.svg" style={{height:"30px",maxWidth:"100%",display:"flex",justifyContent:"center",marginTop:4}}/>
+            {/* <img className="img-fluid col-sm-12" src={payment} style={{height:"30px",maxWidth:"100%",display:"flex",justifyContent:"center"}}/> */}
           </Box>
         </Grid>
 
@@ -478,7 +482,7 @@ const Footer = () => {
                 }}
               >
                 {" "}
-                YOHO TECHNOLOGIES PVT LID.{" "}
+                YOHO TECHNOLOGIES PVT LTD.{" "}
               </Typography>
             </a>
           </Box>

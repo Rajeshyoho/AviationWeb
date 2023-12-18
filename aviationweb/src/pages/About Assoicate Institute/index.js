@@ -19,27 +19,19 @@ import Col from "react-bootstrap/Col";
 import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
 import WeatherWidget from "../../components/Weather";
+import Header from "../../components/Header";
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+import HomeIcon from '@mui/icons-material/Home';
 
 const Associate = () => {
   const logo = require("../../Images/logo3.png");
 
   return (
     <>
-      <Grid
-        sx={{
-          background: " #ddeef7f5",
-          overflowX: "hidden",
-        }}
-      >
-          <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
-      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
-      <WeatherWidget/>
-
-      </Grid>
-      </Grid>
-
       <Grid>
-        <NavBar />
+      <Header />
+      <NavBar />
       </Grid>
 
       {/* <Grid style={{ padding: 5 }}>
@@ -52,47 +44,101 @@ const Associate = () => {
       </Breadcrumb>
     </Grid> */}
 
-      <div style={{ padding: 12 }}>
-        <Row xs={1} md={2} style={{ backgroundColor: "#007aff" }}>
-          <Col>
-            <div
-              style={{
-                backgroundColor: "#007aff",
-                display: "flex",
-                padding: 0,
-                textAlign: "center",
-                backgroundPosition: "center",
-              }}
-            >
-              <Image
-                src="https://www.academyofaviation.com/images/aoa-logo-plain-white.png"
-                style={{
-                  backgroundColor: "#007aff",
-                }}
-                alt="Aviation"
-                fluid
-              />
-            </div>
-          </Col>
+<Row
+  style={{
+    position: "relative",
+    backgroundImage:
+      'url("https://i2.wp.com/pilotstories.net/wp-content/uploads/2018/01/cockpit2-3-01.jpeg?resize=980%2C654&ssl=1")',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    minHeight: "60vh", // Set the height to 100% of the viewport height
+    paddingLeft: "40px",
+    paddingRight: "40px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center", 
+    width: "100%"
+  }}
+>
+  <div
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: "rgba(0, 0, 0, 0.8)",
+      zIndex: 1,
+    }}
+  ></div>
+  <Col
+    md={6}
+    xs={12}
+    style={{
+      position: "relative",
+      zIndex: 2,
+      // textAlign: "center", 
+    }}
+  >
+    <div>
+      <h3
+        style={{
+          color: "white",
+          fontSize: "36px",
+          fontWeight: "bold",
+        }}
+      >
+        About Associate Institute
+      </h3>
+    </div>
+  </Col>
 
-          <Col
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Typography style={{ fontSize: 20, fontWeight: "bold" }}>
-              Aviation Skill Development And Higher Educational Council
-              <br />
-              Best Pilot Training Institutes in the World
-            </Typography>
-          </Col>
-        </Row>
-      </div>
+  <Col
+    className="banner"
+    md={6}
+    xs={12}
+    style={{
+      position: "relative",
+      zIndex: 2,
+      textAlign: "center", 
+    }}
+  >
+    <div role="presentation" >
+      <Breadcrumbs
+        aria-label="breadcrumb"
+        style={{
+          zIndex: 900,
+          display: "flex",
+          alignItems: "center",
+          margin: "10px",
+          fontSize: "20px",
+          color: "#ffffff",
+          justifyContent: "flex-end",
+          alignItems:"center"
+        }}
+      >
+         <Link underline="hover" color="inherit" href="Home" style={{display:"flex",alignItems:"center"}}>
+          <HomeIcon fontSize="medium" style={{marginRight:"5px",marginBottom:"2px"}}/>
+         Home
+        </Link>
+        <Link underline="none"  color="inherit" href="/">
+          About Us
+        </Link>
+        <Link
+          underline="none"
+          color="inherit"
+          href="/material-ui/getting-started/installation/"
+          style={{color:"rgba(161,225,229,1)"}}
+        >
+          About Associate Institute
+        </Link>
+      </Breadcrumbs>
+    </div>
+  </Col>
+</Row>
 
       <Grid>
-        <Container>
+        <Container style={{marginTop:20}}>
           <Row>
             <Typography
               style={{
@@ -100,10 +146,12 @@ const Associate = () => {
                 textAlign: "center",
                 textAlign: "justify",
                 marginTop: 10,
+                color:"GrayText",
+               
               }}
             >
               WELCOME TO ACADEMY OF AVIATION'S INTERNATIONAL VISA CONTACT PAGE
-              FOR STUDY-ABROAD COMMERCIAL PILOT STUDENTS.
+              FOR ASSOCIATE STUDY-ABROAD COMMERCIAL PILOT STUDENTS
             </Typography>
           </Row>
         </Container>
@@ -115,7 +163,7 @@ const Associate = () => {
 
       <div style={{ textAlign: "center", marginTop: 20 }}>
         <Typography
-          style={{ fontFamily: "inherit", fontSize: 30, fontWeight: "bold" }}
+          style={{  fontSize: 30, fontWeight: "bold" }}
         >
           Comprehensive solutions to elevate your aviation experience
         </Typography>
@@ -239,14 +287,14 @@ const Associate = () => {
             <Col>
               <Typography
                 style={{
-                  fontFamily: "inherit",
+
                   fontSize: 30,
                   fontWeight: "bold",
                 }}
               >
                 Passenger Airlines GSSA
               </Typography>
-              <Typography style={{ marginTop: 20 }}>
+              <Typography style={{ marginTop: 20,textAlign:"justify" }}>
                 Global Aviation is a comprehensive full-service provider for an
                 international airline, offering a range of services that include
                 reservations and ticketing, revenue projections, optimal route
