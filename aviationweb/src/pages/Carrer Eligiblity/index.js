@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import Container from "react-bootstrap/Container";
+import { Button } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
@@ -16,47 +17,388 @@ import Header from "../../components/Header";
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import HomeIcon from '@mui/icons-material/Home';
+// import Link from '@mui/material/Link';
+// import HomeIcon from '@mui/icons-material/Home';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 
-const AccordionItem = ({ title, content, expanded, onToggle }) => {
-  const borderColor = expanded ? "solid 2px #ee495c" : "solid 2px #ddd";
-  const titleColor = expanded ? "#ee495c" : "inherit";
+// const AccordionItem = ({ title, content, expanded, onToggle }) => {
+//   const borderColor = expanded ? "solid 2px #ee495c" : "solid 2px #ddd";
+//   const titleColor = expanded ? "#ee495c" : "inherit";
+
+//   return (
+//     <Container>
+//       <div>
+//         <div
+//           style={{
+//             cursor: "pointer",
+
+//             fontSize: "20px",
+//             display: "flex",
+//             justifyContent: "space-between",
+//             marginBottom: "10px",
+//             marginTop: "17px",
+//             borderBottom: borderColor,
+//             color: titleColor,
+//             opacity: 0.8,
+//           }}
+//           onClick={onToggle}
+//         >
+//           {title}{" "}
+//           {expanded ? (
+//             <FontAwesomeIcon icon={faMinus} size={"1x"} />
+//           ) : (
+//             <FontAwesomeIcon icon={faPlus} size={"1x"} />
+//           )}
+//         </div>
+//         {expanded && (
+//           <div
+//             style={{
+//               fontSize: "15px",
+//               fontWeight: "400",
+//               opacity: 0.8,
+
+//             }}
+//           >
+//             {content}
+//           </div>
+//         )}
+//       </div>
+//     </Container>
+//   );
+// };
+
+// const CustomAccordion = ({ items }) => {
+//   const [expandedItems, setExpandedItems] = useState([]);
+
+//   const handleToggle = (index) => {
+//     setExpandedItems((prevExpanded) => {
+//       const isItemExpanded = prevExpanded.includes(index);
+//       if (isItemExpanded) {
+//         return prevExpanded.filter((item) => item !== index);
+//       } else {
+//         return [...prevExpanded, index];
+//       }
+//     });
+//   };
+
+//   return (
+//     <div>
+//       {items.map((item, index) => (
+//         <AccordionItem
+//           key={index}
+//           title={item.title}
+//           content={item.content}
+//           expanded={expandedItems.includes(index)}
+//           onToggle={() => handleToggle(index)}
+//         />
+//       ))}
+//     </div>
+//   );
+// };
+
+// const items = [
+//   {
+//     title: "Bachelor of Technology - B.Tech",
+//     content:
+//       "Applicants to BA (Hons.) program at Woxsen University must have completed 12th Grade or 10+2 in any discipline from CBSE, ISC, State Boards, IB, Cambridge, other Government Recognized Boards or Equivalent with a minimum 60% aggregate For all specializations, must have English Language as a compulsory subject in 12th Grade",
+//   },
+//   {
+//     title: "Bachelor of Business Administration - BBA (Hons.)",
+//     content: "Content for Item 2",
+//   },
+//   { title: "Bachelor of Architecture (B.Arch)", content: "Content for Item 3" },
+//   {
+//     title: "Bachelor of Arts - BA (Hons.)",
+//     content:
+//       "Applicants to BA (Hons.) program at Woxsen University must have completed 12th Grade or 10+2 in any discipline from CBSE, ISC, State Boards, IB, Cambridge, other Government Recognized Boards or Equivalent with a minimum 60% aggregate For all specializations, must have English Language as a compulsory subject in 12th Grade",
+//   },
+//   {
+//     title: "Bachelor of Arts & Bachelor of Legislative Law - BA-LLB (Hons.)",
+//     content:
+//       "Applicants to BA (Hons.) program at Woxsen University must have completed 12th Grade or 10+2 in any discipline from CBSE, ISC, State Boards, IB, Cambridge, other Government Recognized Boards or Equivalent with a minimum 60% aggregate For all specializations, must have English Language as a compulsory subject in 12th Grade",
+//   },
+//   {
+//     title:
+//       "Bachelor of Business Administration & Bachelor of Legislative Law - BBA-LLB (Hons.)",
+//     content:
+//       "Applicants to BA (Hons.) program at Woxsen University must have completed 12th Grade or 10+2 in any discipline from CBSE, ISC, State Boards, IB, Cambridge, other Government Recognized Boards or Equivalent with a minimum 60% aggregate For all specializations, must have English Language as a compulsory subject in 12th Grade",
+//   },
+//   {
+//     title: "Bachelor of Science - B.Sc (Hons.)",
+//     content:
+//       "Applicants to BA (Hons.) program at Woxsen University must have completed 12th Grade or 10+2 in any discipline from CBSE, ISC, State Boards, IB, Cambridge, other Government Recognized Boards or Equivalent with a minimum 60% aggregate For all specializations, must have English Language as a compulsory subject in 12th Grade",
+//   },
+// ];
+
+
+const AccordionItem = ({ title, content ,index}) => {
+
+
+  
+
+
+
+
+
+
+  const [isHovered, setIsHovered] = useState(false);
+  const [isSelected, setIsSelected] = useState(false);
+
+  const handleHover = (hoverState) => {
+    setIsHovered(hoverState);
+  };
+
+  const handleSelection = () => {
+    setIsSelected(!isSelected);
+  };
+
+  const isGrayBackground = index === 2 || index === 4 || index === 6;
+
+  const borderColor = isSelected ? "solid 2px white" : "solid 2px #ddd";
+  const titleColor = isSelected ? "#ee495c" : "inherit";
 
   return (
     <Container>
       <div>
         <div
-          style={{
-            cursor: "pointer",
+            className="row"
+            style={{
+              width: "100%",
+              cursor: "pointer",
 
-            fontSize: "20px",
-            display: "flex",
-            justifyContent: "space-between",
-            marginBottom: "10px",
-            marginTop: "17px",
-            borderBottom: borderColor,
-            color: titleColor,
-            opacity: 0.8,
-          }}
-          onClick={onToggle}
+              fontSize: "15px",
+              display: "flex",
+              justifyContent: "space-between",
+              paddingBottom: "20px",
+              paddingTop: "20px",
+              borderBottom: borderColor,
+              color: titleColor,
+              display: "flex",
+              justifyContent: "space-evenly",
+              alignItems: "center",
+              transition: "background-color 0.3s, color 0.3s",
+              backgroundColor: isSelected
+                ? "#0e2246"
+                : isHovered
+                ? "#0e2246"
+                : isGrayBackground
+                ? "gray"  
+                : "initial",
+              color: isSelected ? "white" : isHovered ? "white" : "#848494",
+            }}
+            onClick={handleSelection}
+            onMouseEnter={() => handleHover(true)}
+            onMouseLeave={() => handleHover(false)}
         >
-          {title}{" "}
-          {expanded ? (
-            <FontAwesomeIcon icon={faMinus} size={"1x"} />
-          ) : (
-            <FontAwesomeIcon icon={faPlus} size={"1x"} />
-          )}
+          <div
+            className="col-12 col-md-4"
+            style={{ fontWeight: "700" }}
+          >
+            {title}
+          </div>
+          <div
+            style={{ textAlign: "end" }}
+            className="col-12 col-md-3"
+          >
+            <span style={{ fontWeight: "700" }}>Date of Posting:</span> 3rd
+            July,2023
+          </div>
+          <div
+            style={{ textAlign: "end" }}
+            className="col-12 col-md-3"
+          >
+            <span style={{ fontWeight: "700" }}>Location:</span> Bangalore
+          </div>
+          <div style={{ textAlign: "end" }} className="col-12 col-md-2">
+            {isSelected ? (
+              <FontAwesomeIcon icon={faMinus} size={"1x"} />
+            ) : (
+              <FontAwesomeIcon icon={faPlus} size={"1x"} />
+            )}
+          </div>
         </div>
-        {expanded && (
+
+        {isSelected && (
           <div
             style={{
-              fontSize: "15px",
-              fontWeight: "400",
-              opacity: 0.8,
-
+              paddingBottom: "10px",
+              paddingTop: "10px",
             }}
           >
-            {content}
+            <div>
+              <div>
+                <span className="headingTitle">Job Title:</span>
+                <span className="content">
+                  {" "}
+                  Asst Manager – Flight Operations (Crew Rostering)
+                </span>
+              </div>
+              <div>
+                <span className="headingTitle">Location:</span>
+                <span className="content"> Bengaluru</span>
+              </div>
+              <div>
+                <div className="headingTitle">Education Qualifications:</div>
+                <div className="content">
+                  <span>
+                  <ChevronRightIcon/>
+                  </span>
+                  Preferably Engineering Graduate
+                </div>
+              </div>
+            </div>
+
+            <div style={{ marginTop: "20px" }}>
+              <div className="headingTitle">Work Experience:</div>
+              <div className="content">
+                <span>
+                <ChevronRightIcon/>
+                </span>
+                2-5 years of Finance related experience– preferably from an
+                airline.
+              </div>
+            </div>
+
+            <div style={{ marginTop: "20px" }}>
+              <div className="headingTitle">Skills/ Special Requirements:</div>
+              <div className="content">
+                <span>
+                <ChevronRightIcon/>
+                </span>
+                Well versed with usage of various types of MS software, business
+                analysis and financial applications tools.
+              </div>
+            </div>
+
+            <div style={{ marginTop: "20px" }}>
+              <div className="headingTitle">JOB DESCRIPTION</div>
+              <div className="content">
+                We are seeking a skilled and quick-learning individual who has
+                basic knowledge of Marketing and Sales. This position will
+                primarily focus on commercial activities, including invoice
+                reconciliation, communication management, record keeping, report
+                preparation, and expense tracking. Additionally, the Commercial
+                Executive will be responsible for maintaining brand integrity,
+                managing digital platforms, and supporting marketing and sales
+                efforts.
+              </div>
+            </div>
+
+            <div style={{ marginTop: "20px" }}>
+              <div className="headingTitle">RESPONSIBILITIES:</div>
+              <div>
+                <div className="subTitle">Commercial:</div>
+                <div className="content">
+                  <li>
+                    <span>
+                      <ChevronRightIcon/>
+                    </span>
+                    Periodic invoice reconciliation related to customer
+                    invoices.
+                  </li>
+                  <li>
+                    <span>
+                    <ChevronRightIcon/>
+                    </span>
+                    Receiving invoices and processing the payments.
+                  </li>
+                  <li>
+                    <span>
+                    <ChevronRightIcon/>
+                    </span>
+                    Record all expenses and review those expenses & keep the
+                    track of expenses every month..
+                  </li>
+                  <li>
+                    <span>
+                    <ChevronRightIcon/>
+                    </span>
+                    Prepare and submit weekly/monthly reports.
+                  </li>
+                </div>
+              </div>
+
+              <div style={{ marginTop: "20px" }}>
+                <div className="subTitle">Digital:</div>
+                <div className="content">
+                  <li>
+                    <span>
+                    <ChevronRightIcon/>
+                    </span>
+                    Periodic invoice reconciliation related to customer
+                    invoices.
+                  </li>
+                  <li>
+                    <span>
+                    <ChevronRightIcon/>
+                    </span>
+                    Receiving invoices and processing the payments.
+                  </li>
+                  <li>
+                    <span>
+                    <ChevronRightIcon/>
+                    </span>
+                    Record all expenses and review those expenses & keep the
+                    track of expenses every month..
+                  </li>
+                  <li>
+                    <span>
+                    <ChevronRightIcon/>
+                    </span>
+                    Prepare and submit weekly/monthly reports.
+                  </li>
+                </div>
+              </div>
+
+              <div style={{ marginTop: "20px" }}>
+                <div className="subTitle">Qualification:</div>
+                <div className="content">
+                  <li>
+                    <span>
+                    <ChevronRightIcon/>
+                    </span>
+                    Periodic invoice reconciliation related to customer
+                    invoices.
+                  </li>
+                  <li>
+                    <span>
+                    <ChevronRightIcon/>
+                    </span>
+                    Receiving invoices and processing the payments.
+                  </li>
+                  <li>
+                    <span>
+                    <ChevronRightIcon/>
+                    </span>
+                    Record all expenses and review those expenses & keep the
+                    track of expenses every month..
+                  </li>
+                  <li>
+                    <span>
+                    <ChevronRightIcon/>
+                    </span>
+                    Prepare and submit weekly/monthly reports.
+                  </li>
+                </div>
+              </div>
+
+              <div
+                className="content"
+                style={{ marginTop: "30px", marginBottom: "30px" }}
+              >
+                <span style={{ paddingRight: "10px" }}>
+                  In order to submit your Job Application please
+                </span>
+                <Button
+                  size="Small"
+                  style={{ backgroundColor: "red", borderColor: "red" }}
+                >
+                  Click Here
+                </Button>
+              </div>
+            </div>
           </div>
         )}
       </div>
@@ -126,6 +468,7 @@ const items = [
       "Applicants to BA (Hons.) program at Woxsen University must have completed 12th Grade or 10+2 in any discipline from CBSE, ISC, State Boards, IB, Cambridge, other Government Recognized Boards or Equivalent with a minimum 60% aggregate For all specializations, must have English Language as a compulsory subject in 12th Grade",
   },
 ];
+
 
 const Eligibility = () => {
   const logo = require("../../Images/logo3.png");
@@ -327,7 +670,7 @@ const Eligibility = () => {
         <CustomAccordion items={items} />
       </Container>
 
-      <Container>
+      {/* <Container>
         <Row style={{ paddingTop: "3rem" }}>
           <Col>
             <h3
@@ -343,7 +686,12 @@ const Eligibility = () => {
           </Col>
         </Row>
         <CustomAccordion items={items} />
-      </Container>
+      </Container> */}
+
+       <div style={{ marginTop: "30px" }}>
+        <CustomAccordion items={items} />
+      </div>
+
 
       <div style={{ marginTop: 30 ,textAlign:"justify"}}>
         <Container>

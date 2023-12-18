@@ -43,3 +43,24 @@
 li{
     list-style: none;
 }
+
+
+.btnhover{
+    background: rgb(47,95,182);
+    background: linear-gradient(90deg, rgba(47,95,182,1) 31%, rgba(103,145,221,1) 90%);
+  }
+
+  .hover-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #f5f5f5;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: black;
+  }
+  
+  .hover-row:hover {
+    background: linear-gradient(90deg, rgba(47,95,182,1) 31%, rgba(103,145,221,1) 90%);
+    color: white !important;
+  }

@@ -1,6 +1,6 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography ,Card} from "@mui/material";
 import { React } from "react";
-import { Button, Image } from "react-bootstrap";
+import { Button, Image} from "react-bootstrap";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -20,336 +20,420 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import HomeIcon from '@mui/icons-material/Home';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-const AccordionItem = ({ title, content ,index}) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isSelected, setIsSelected] = useState(false);
+// const AccordionItem = ({ title, content ,index}) => {
 
-  const handleHover = (hoverState) => {
-    setIsHovered(hoverState);
-  };
 
-  const handleSelection = () => {
-    setIsSelected(!isSelected);
-  };
+  
 
-  const isGrayBackground = index === 2 || index === 4 || index === 6;
 
-  const borderColor = isSelected ? "solid 2px white" : "solid 2px #ddd";
-  const titleColor = isSelected ? "#ee495c" : "inherit";
 
-  return (
-    <Container>
-      <div>
-        <div
-            className="row"
-            style={{
-              width: "100%",
-              cursor: "pointer",
 
-              fontSize: "15px",
-              display: "flex",
-              justifyContent: "space-between",
-              paddingBottom: "20px",
-              paddingTop: "20px",
-              borderBottom: borderColor,
-              color: titleColor,
-              display: "flex",
-              justifyContent: "space-evenly",
-              alignItems: "center",
-              transition: "background-color 0.3s, color 0.3s",
-              backgroundColor: isSelected
-                ? "#0e2246"
-                : isHovered
-                ? "#0e2246"
-                : isGrayBackground
-                ? "gray"  
-                : "initial",
-              color: isSelected ? "white" : isHovered ? "white" : "#848494",
-            }}
-            onClick={handleSelection}
-            onMouseEnter={() => handleHover(true)}
-            onMouseLeave={() => handleHover(false)}
-        >
-          <div
-            className="col-12 col-md-4"
-            style={{ fontWeight: "700" }}
-          >
-            {title}
-          </div>
-          <div
-            style={{ textAlign: "end" }}
-            className="col-12 col-md-3"
-          >
-            <span style={{ fontWeight: "700" }}>Date of Posting:</span> 3rd
-            July,2023
-          </div>
-          <div
-            style={{ textAlign: "end" }}
-            className="col-12 col-md-3"
-          >
-            <span style={{ fontWeight: "700" }}>Location:</span> Bangalore
-          </div>
-          <div style={{ textAlign: "end" }} className="col-12 col-md-2">
-            {isSelected ? (
-              <FontAwesomeIcon icon={faMinus} size={"1x"} />
-            ) : (
-              <FontAwesomeIcon icon={faPlus} size={"1x"} />
-            )}
-          </div>
-        </div>
 
-        {isSelected && (
-          <div
-            style={{
-              paddingBottom: "10px",
-              paddingTop: "10px",
-            }}
-          >
-            <div>
-              <div>
-                <span className="headingTitle">Job Title:</span>
-                <span className="content">
-                  {" "}
-                  Asst Manager – Flight Operations (Crew Rostering)
-                </span>
-              </div>
-              <div>
-                <span className="headingTitle">Location:</span>
-                <span className="content"> Bengaluru</span>
-              </div>
-              <div>
-                <div className="headingTitle">Education Qualifications:</div>
-                <div className="content">
-                  <span>
-                  <ChevronRightIcon/>
-                  </span>
-                  Preferably Engineering Graduate
-                </div>
-              </div>
-            </div>
 
-            <div style={{ marginTop: "20px" }}>
-              <div className="headingTitle">Work Experience:</div>
-              <div className="content">
-                <span>
-                <ChevronRightIcon/>
-                </span>
-                2-5 years of Finance related experience– preferably from an
-                airline.
-              </div>
-            </div>
+//   const [isHovered, setIsHovered] = useState(false);
+//   const [isSelected, setIsSelected] = useState(false);
 
-            <div style={{ marginTop: "20px" }}>
-              <div className="headingTitle">Skills/ Special Requirements:</div>
-              <div className="content">
-                <span>
-                <ChevronRightIcon/>
-                </span>
-                Well versed with usage of various types of MS software, business
-                analysis and financial applications tools.
-              </div>
-            </div>
+//   const handleHover = (hoverState) => {
+//     setIsHovered(hoverState);
+//   };
 
-            <div style={{ marginTop: "20px" }}>
-              <div className="headingTitle">JOB DESCRIPTION</div>
-              <div className="content">
-                We are seeking a skilled and quick-learning individual who has
-                basic knowledge of Marketing and Sales. This position will
-                primarily focus on commercial activities, including invoice
-                reconciliation, communication management, record keeping, report
-                preparation, and expense tracking. Additionally, the Commercial
-                Executive will be responsible for maintaining brand integrity,
-                managing digital platforms, and supporting marketing and sales
-                efforts.
-              </div>
-            </div>
+//   const handleSelection = () => {
+//     setIsSelected(!isSelected);
+//   };
 
-            <div style={{ marginTop: "20px" }}>
-              <div className="headingTitle">RESPONSIBILITIES:</div>
-              <div>
-                <div className="subTitle">Commercial:</div>
-                <div className="content">
-                  <li>
-                    <span>
-                      <ChevronRightIcon/>
-                    </span>
-                    Periodic invoice reconciliation related to customer
-                    invoices.
-                  </li>
-                  <li>
-                    <span>
-                    <ChevronRightIcon/>
-                    </span>
-                    Receiving invoices and processing the payments.
-                  </li>
-                  <li>
-                    <span>
-                    <ChevronRightIcon/>
-                    </span>
-                    Record all expenses and review those expenses & keep the
-                    track of expenses every month..
-                  </li>
-                  <li>
-                    <span>
-                    <ChevronRightIcon/>
-                    </span>
-                    Prepare and submit weekly/monthly reports.
-                  </li>
-                </div>
-              </div>
+//   const isGrayBackground = index === 2 || index === 4 || index === 6;
 
-              <div style={{ marginTop: "20px" }}>
-                <div className="subTitle">Digital:</div>
-                <div className="content">
-                  <li>
-                    <span>
-                    <ChevronRightIcon/>
-                    </span>
-                    Periodic invoice reconciliation related to customer
-                    invoices.
-                  </li>
-                  <li>
-                    <span>
-                    <ChevronRightIcon/>
-                    </span>
-                    Receiving invoices and processing the payments.
-                  </li>
-                  <li>
-                    <span>
-                    <ChevronRightIcon/>
-                    </span>
-                    Record all expenses and review those expenses & keep the
-                    track of expenses every month..
-                  </li>
-                  <li>
-                    <span>
-                    <ChevronRightIcon/>
-                    </span>
-                    Prepare and submit weekly/monthly reports.
-                  </li>
-                </div>
-              </div>
+//   const borderColor = isSelected ? "solid 2px white" : "solid 2px #ddd";
+//   const titleColor = isSelected ? "#ee495c" : "inherit";
 
-              <div style={{ marginTop: "20px" }}>
-                <div className="subTitle">Qualification:</div>
-                <div className="content">
-                  <li>
-                    <span>
-                    <ChevronRightIcon/>
-                    </span>
-                    Periodic invoice reconciliation related to customer
-                    invoices.
-                  </li>
-                  <li>
-                    <span>
-                    <ChevronRightIcon/>
-                    </span>
-                    Receiving invoices and processing the payments.
-                  </li>
-                  <li>
-                    <span>
-                    <ChevronRightIcon/>
-                    </span>
-                    Record all expenses and review those expenses & keep the
-                    track of expenses every month..
-                  </li>
-                  <li>
-                    <span>
-                    <ChevronRightIcon/>
-                    </span>
-                    Prepare and submit weekly/monthly reports.
-                  </li>
-                </div>
-              </div>
+//   return (
+//     <Container>
+//       <div>
+//         <div
+//             className="row"
+//             style={{
+//               width: "100%",
+//               cursor: "pointer",
 
-              <div
-                className="content"
-                style={{ marginTop: "30px", marginBottom: "30px" }}
-              >
-                <span style={{ paddingRight: "10px" }}>
-                  In order to submit your Job Application please
-                </span>
-                <Button
-                  size="Small"
-                  style={{ backgroundColor: "red", borderColor: "red" }}
-                >
-                  Click Here
-                </Button>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-    </Container>
-  );
-};
+//               fontSize: "15px",
+//               display: "flex",
+//               justifyContent: "space-between",
+//               paddingBottom: "20px",
+//               paddingTop: "20px",
+//               borderBottom: borderColor,
+//               color: titleColor,
+//               display: "flex",
+//               justifyContent: "space-evenly",
+//               alignItems: "center",
+//               transition: "background-color 0.3s, color 0.3s",
+//               backgroundColor: isSelected
+//                 ? "#0e2246"
+//                 : isHovered
+//                 ? "#0e2246"
+//                 : isGrayBackground
+//                 ? "gray"  
+//                 : "initial",
+//               color: isSelected ? "white" : isHovered ? "white" : "#848494",
+//             }}
+//             onClick={handleSelection}
+//             onMouseEnter={() => handleHover(true)}
+//             onMouseLeave={() => handleHover(false)}
+//         >
+//           <div
+//             className="col-12 col-md-4"
+//             style={{ fontWeight: "700" }}
+//           >
+//             {title}
+//           </div>
+//           <div
+//             style={{ textAlign: "end" }}
+//             className="col-12 col-md-3"
+//           >
+//             <span style={{ fontWeight: "700" }}>Date of Posting:</span> 3rd
+//             July,2023
+//           </div>
+//           <div
+//             style={{ textAlign: "end" }}
+//             className="col-12 col-md-3"
+//           >
+//             <span style={{ fontWeight: "700" }}>Location:</span> Bangalore
+//           </div>
+//           <div style={{ textAlign: "end" }} className="col-12 col-md-2">
+//             {isSelected ? (
+//               <FontAwesomeIcon icon={faMinus} size={"1x"} />
+//             ) : (
+//               <FontAwesomeIcon icon={faPlus} size={"1x"} />
+//             )}
+//           </div>
+//         </div>
 
-const CustomAccordion = ({ items }) => {
-  const [expandedItems, setExpandedItems] = useState([]);
+//         {isSelected && (
+//           <div
+//             style={{
+//               paddingBottom: "10px",
+//               paddingTop: "10px",
+//             }}
+//           >
+//             <div>
+//               <div>
+//                 <span className="headingTitle">Job Title:</span>
+//                 <span className="content">
+//                   {" "}
+//                   Asst Manager – Flight Operations (Crew Rostering)
+//                 </span>
+//               </div>
+//               <div>
+//                 <span className="headingTitle">Location:</span>
+//                 <span className="content"> Bengaluru</span>
+//               </div>
+//               <div>
+//                 <div className="headingTitle">Education Qualifications:</div>
+//                 <div className="content">
+//                   <span>
+//                   <ChevronRightIcon/>
+//                   </span>
+//                   Preferably Engineering Graduate
+//                 </div>
+//               </div>
+//             </div>
 
-  const handleToggle = (index) => {
-    setExpandedItems((prevExpanded) => {
-      const isItemExpanded = prevExpanded.includes(index);
-      if (isItemExpanded) {
-        return prevExpanded.filter((item) => item !== index);
-      } else {
-        return [...prevExpanded, index];
-      }
-    });
-  };
+//             <div style={{ marginTop: "20px" }}>
+//               <div className="headingTitle">Work Experience:</div>
+//               <div className="content">
+//                 <span>
+//                 <ChevronRightIcon/>
+//                 </span>
+//                 2-5 years of Finance related experience– preferably from an
+//                 airline.
+//               </div>
+//             </div>
 
-  return (
-    <div>
-      {items.map((item, index) => (
-        <AccordionItem
-          key={index}
-          title={item.title}
-          content={item.content}
-          expanded={expandedItems.includes(index)}
-          onToggle={() => handleToggle(index)}
-        />
-      ))}
-    </div>
-  );
-};
+//             <div style={{ marginTop: "20px" }}>
+//               <div className="headingTitle">Skills/ Special Requirements:</div>
+//               <div className="content">
+//                 <span>
+//                 <ChevronRightIcon/>
+//                 </span>
+//                 Well versed with usage of various types of MS software, business
+//                 analysis and financial applications tools.
+//               </div>
+//             </div>
 
-const items = [
+//             <div style={{ marginTop: "20px" }}>
+//               <div className="headingTitle">JOB DESCRIPTION</div>
+//               <div className="content">
+//                 We are seeking a skilled and quick-learning individual who has
+//                 basic knowledge of Marketing and Sales. This position will
+//                 primarily focus on commercial activities, including invoice
+//                 reconciliation, communication management, record keeping, report
+//                 preparation, and expense tracking. Additionally, the Commercial
+//                 Executive will be responsible for maintaining brand integrity,
+//                 managing digital platforms, and supporting marketing and sales
+//                 efforts.
+//               </div>
+//             </div>
+
+//             <div style={{ marginTop: "20px" }}>
+//               <div className="headingTitle">RESPONSIBILITIES:</div>
+//               <div>
+//                 <div className="subTitle">Commercial:</div>
+//                 <div className="content">
+//                   <li>
+//                     <span>
+//                       <ChevronRightIcon/>
+//                     </span>
+//                     Periodic invoice reconciliation related to customer
+//                     invoices.
+//                   </li>
+//                   <li>
+//                     <span>
+//                     <ChevronRightIcon/>
+//                     </span>
+//                     Receiving invoices and processing the payments.
+//                   </li>
+//                   <li>
+//                     <span>
+//                     <ChevronRightIcon/>
+//                     </span>
+//                     Record all expenses and review those expenses & keep the
+//                     track of expenses every month..
+//                   </li>
+//                   <li>
+//                     <span>
+//                     <ChevronRightIcon/>
+//                     </span>
+//                     Prepare and submit weekly/monthly reports.
+//                   </li>
+//                 </div>
+//               </div>
+
+//               <div style={{ marginTop: "20px" }}>
+//                 <div className="subTitle">Digital:</div>
+//                 <div className="content">
+//                   <li>
+//                     <span>
+//                     <ChevronRightIcon/>
+//                     </span>
+//                     Periodic invoice reconciliation related to customer
+//                     invoices.
+//                   </li>
+//                   <li>
+//                     <span>
+//                     <ChevronRightIcon/>
+//                     </span>
+//                     Receiving invoices and processing the payments.
+//                   </li>
+//                   <li>
+//                     <span>
+//                     <ChevronRightIcon/>
+//                     </span>
+//                     Record all expenses and review those expenses & keep the
+//                     track of expenses every month..
+//                   </li>
+//                   <li>
+//                     <span>
+//                     <ChevronRightIcon/>
+//                     </span>
+//                     Prepare and submit weekly/monthly reports.
+//                   </li>
+//                 </div>
+//               </div>
+
+//               <div style={{ marginTop: "20px" }}>
+//                 <div className="subTitle">Qualification:</div>
+//                 <div className="content">
+//                   <li>
+//                     <span>
+//                     <ChevronRightIcon/>
+//                     </span>
+//                     Periodic invoice reconciliation related to customer
+//                     invoices.
+//                   </li>
+//                   <li>
+//                     <span>
+//                     <ChevronRightIcon/>
+//                     </span>
+//                     Receiving invoices and processing the payments.
+//                   </li>
+//                   <li>
+//                     <span>
+//                     <ChevronRightIcon/>
+//                     </span>
+//                     Record all expenses and review those expenses & keep the
+//                     track of expenses every month..
+//                   </li>
+//                   <li>
+//                     <span>
+//                     <ChevronRightIcon/>
+//                     </span>
+//                     Prepare and submit weekly/monthly reports.
+//                   </li>
+//                 </div>
+//               </div>
+
+//               <div
+//                 className="content"
+//                 style={{ marginTop: "30px", marginBottom: "30px" }}
+//               >
+//                 <span style={{ paddingRight: "10px" }}>
+//                   In order to submit your Job Application please
+//                 </span>
+//                 <Button
+//                   size="Small"
+//                   style={{ backgroundColor: "red", borderColor: "red" }}
+//                 >
+//                   Click Here
+//                 </Button>
+//               </div>
+//             </div>
+//           </div>
+//         )}
+//       </div>
+//     </Container>
+//   );
+// };
+
+// const CustomAccordion = ({ items }) => {
+//   const [expandedItems, setExpandedItems] = useState([]);
+
+//   const handleToggle = (index) => {
+//     setExpandedItems((prevExpanded) => {
+//       const isItemExpanded = prevExpanded.includes(index);
+//       if (isItemExpanded) {
+//         return prevExpanded.filter((item) => item !== index);
+//       } else {
+//         return [...prevExpanded, index];
+//       }
+//     });
+//   };
+
+//   return (
+//     <div>
+//       {items.map((item, index) => (
+//         <AccordionItem
+//           key={index}
+//           title={item.title}
+//           content={item.content}
+//           expanded={expandedItems.includes(index)}
+//           onToggle={() => handleToggle(index)}
+//         />
+//       ))}
+//     </div>
+//   );
+// };
+
+// const items = [
+//   {
+//     title: "Bachelor of Technology - B.Tech",
+//     content:
+//       "Applicants to BA (Hons.) program at Woxsen University must have completed 12th Grade or 10+2 in any discipline from CBSE, ISC, State Boards, IB, Cambridge, other Government Recognized Boards or Equivalent with a minimum 60% aggregate For all specializations, must have English Language as a compulsory subject in 12th Grade",
+//   },
+//   {
+//     title: "Bachelor of Business Administration - BBA (Hons.)",
+//     content: "Content for Item 2",
+//   },
+//   { title: "Bachelor of Architecture (B.Arch)", content: "Content for Item 3" },
+//   {
+//     title: "Bachelor of Arts - BA (Hons.)",
+//     content:
+//       "Applicants to BA (Hons.) program at Woxsen University must have completed 12th Grade or 10+2 in any discipline from CBSE, ISC, State Boards, IB, Cambridge, other Government Recognized Boards or Equivalent with a minimum 60% aggregate For all specializations, must have English Language as a compulsory subject in 12th Grade",
+//   },
+//   {
+//     title: "Bachelor of Arts & Bachelor of Legislative Law - BA-LLB (Hons.)",
+//     content:
+//       "Applicants to BA (Hons.) program at Woxsen University must have completed 12th Grade or 10+2 in any discipline from CBSE, ISC, State Boards, IB, Cambridge, other Government Recognized Boards or Equivalent with a minimum 60% aggregate For all specializations, must have English Language as a compulsory subject in 12th Grade",
+//   },
+//   {
+//     title:
+//       "Bachelor of Business Administration & Bachelor of Legislative Law - BBA-LLB (Hons.)",
+//     content:
+//       "Applicants to BA (Hons.) program at Woxsen University must have completed 12th Grade or 10+2 in any discipline from CBSE, ISC, State Boards, IB, Cambridge, other Government Recognized Boards or Equivalent with a minimum 60% aggregate For all specializations, must have English Language as a compulsory subject in 12th Grade",
+//   },
+//   {
+//     title: "Bachelor of Science - B.Sc (Hons.)",
+//     content:
+//       "Applicants to BA (Hons.) program at Woxsen University must have completed 12th Grade or 10+2 in any discipline from CBSE, ISC, State Boards, IB, Cambridge, other Government Recognized Boards or Equivalent with a minimum 60% aggregate For all specializations, must have English Language as a compulsory subject in 12th Grade",
+//   },
+// ];
+
+const items=[
   {
-    title: "Bachelor of Technology - B.Tech",
-    content:
-      "Applicants to BA (Hons.) program at Woxsen University must have completed 12th Grade or 10+2 in any discipline from CBSE, ISC, State Boards, IB, Cambridge, other Government Recognized Boards or Equivalent with a minimum 60% aggregate For all specializations, must have English Language as a compulsory subject in 12th Grade",
+      id:1,
+      period:"Full Time",
+      Role:"Back-end Developer",
+      Institute:"Creative IT Institute",
+      Price:"$1000-$1500/Month",
+      img:"https://www.digiphonics.in/job_listing/images/fill-time-img-logo2.jpg"
   },
   {
-    title: "Bachelor of Business Administration - BBA (Hons.)",
-    content: "Content for Item 2",
-  },
-  { title: "Bachelor of Architecture (B.Arch)", content: "Content for Item 3" },
-  {
-    title: "Bachelor of Arts - BA (Hons.)",
-    content:
-      "Applicants to BA (Hons.) program at Woxsen University must have completed 12th Grade or 10+2 in any discipline from CBSE, ISC, State Boards, IB, Cambridge, other Government Recognized Boards or Equivalent with a minimum 60% aggregate For all specializations, must have English Language as a compulsory subject in 12th Grade",
+      id:2,
+      period:"Full Time",
+      Role:"UI - UX Designer",
+      Institute:"Olympus City",
+      Price:"$1000-$1500/Month",
+      img:"https://www.digiphonics.in/job_listing/images/fill-time-img-logo3.jpg"
   },
   {
-    title: "Bachelor of Arts & Bachelor of Legislative Law - BA-LLB (Hons.)",
-    content:
-      "Applicants to BA (Hons.) program at Woxsen University must have completed 12th Grade or 10+2 in any discipline from CBSE, ISC, State Boards, IB, Cambridge, other Government Recognized Boards or Equivalent with a minimum 60% aggregate For all specializations, must have English Language as a compulsory subject in 12th Grade",
+      id:3,
+      period:"Full Time",
+      Role:"Graphic Designer",
+      Institute:"Seven Rings",
+      Price:"$1000-$1500/Month",
+      img:"https://www.digiphonics.in/job_listing/images/fill-time-img-logo4.jpg"
   },
   {
-    title:
-      "Bachelor of Business Administration & Bachelor of Legislative Law - BBA-LLB (Hons.)",
-    content:
-      "Applicants to BA (Hons.) program at Woxsen University must have completed 12th Grade or 10+2 in any discipline from CBSE, ISC, State Boards, IB, Cambridge, other Government Recognized Boards or Equivalent with a minimum 60% aggregate For all specializations, must have English Language as a compulsory subject in 12th Grade",
+      id:4,
+      period:"Full Time",
+      Role:"Motion Graphics",
+      Institute:"Quick Employment",
+      Price:"$1000-$1500/Month",
+      img:"https://www.digiphonics.in/job_listing/images/fill-time-img-logo5.jpg"
   },
   {
-    title: "Bachelor of Science - B.Sc (Hons.)",
-    content:
-      "Applicants to BA (Hons.) program at Woxsen University must have completed 12th Grade or 10+2 in any discipline from CBSE, ISC, State Boards, IB, Cambridge, other Government Recognized Boards or Equivalent with a minimum 60% aggregate For all specializations, must have English Language as a compulsory subject in 12th Grade",
+      id:5,
+      period:"Full Time",
+      Role:"Web Developer",
+      Institute:"Oval Techniques",
+      Price:"$1000-$1500/Month",
+      img:"https://www.digiphonics.in/job_listing/images/recent-job-page-oval-tecniq-img.jpg"
   },
-];
+  {
+      id:6,
+      period:"Full Time",
+      Role:"3D Animation & Visuals",
+      Institute:"Triangle Square",
+      Price:"$1000-$1500/Month",
+      img:"https://www.digiphonics.in/job_listing/images/recent-job-page-3d-animation-img.jpg"
+  },
+  {
+      id:7,
+      period:"Full Time",
+      Role:"Ethical Hacking",
+      Institute:"Crime Investigate",
+      Price:"$1000-$1500/Month",
+      img:"https://www.digiphonics.in/job_listing/images/recent-job-page-ethical-hacking.jpg"
+  },
+  {
+      id:8,
+      period:"Full Time",
+      Role:"Article Writing",
+      Institute:"Writers Club",
+      Price:"$1000-$1500/Month",
+      img:"https://www.digiphonics.in/job_listing/images/recent-job-page-artical-img-logo.jpg"
+  }
+]
 
 const JobOpportunities = () => {
   const logo = require("../../Images/logo3.png");
+
+
+
+  
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+const[data,setData]=useState(items)
+
 
   return (
     <div className="overall" style={{overflow:"hidden"}}>
@@ -489,9 +573,80 @@ const JobOpportunities = () => {
           </Col>
         </Row>
       </Container>
-      <div style={{ marginTop: "30px" }}>
+
+
+      {/* <div style={{ marginTop: "30px" }}>
         <CustomAccordion items={items} />
+      </div> */}
+
+
+<>
+      <div>
+        <Container>
+          {data.map((item, index) => (
+            <Card
+            key={item.id}
+            style={{ marginTop: "20px" }}
+            className="hover-card"
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background =
+                "linear-gradient(90deg, rgba(14,34,70,1) 13%, rgba(3,76,208,1) 36%, rgba(0,85,238,1) 66%, rgba(14,34,70,1) 90%)";
+              e.currentTarget.style.color = "white";
+              e.currentTarget.querySelector('.location').style.color = 'white';
+              e.currentTarget.querySelector('.Price').style.color = 'white';
+              e.currentTarget.querySelector('.period').style.color = 'white';
+              e.currentTarget.querySelector('.Role').style.color = 'white';
+              e.currentTarget.querySelector('.Institute').style.color = 'white';
+              e.currentTarget.querySelector('.btnhover').style.background = 'white';
+              e.currentTarget.querySelector('.btnhover').style.color = 'black';
+              
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "#f5f5f5";
+              e.currentTarget.style.color = "black";
+              e.currentTarget.querySelector('.location').style.color = '#444444';
+              e.currentTarget.querySelector('.Price').style.color = '#444444';
+              e.currentTarget.querySelector('.period').style.color = '#444444';
+              e.currentTarget.querySelector('.Role').style.color = '#444444';
+              e.currentTarget.querySelector('.Institute').style.color = '#444444';
+              e.currentTarget.querySelector('.btnhover').style.background = 'linear-gradient(90deg, rgba(47,95,182,1) 31%, rgba(103,145,221,1) 90%)';
+              e.currentTarget.querySelector('.btnhover').style.color = 'white';
+            }}
+          >
+            <Row className="hover-row">
+              <Col md={4} style={{ display: "flex", alignItems: "Center" }}>
+                <div>
+                  <img style={{ height: "100px", width: "100px" }} src={item.img} />
+                </div>
+                <div style={{ paddingLeft: "15px" }}>
+                  <h2 className="period" style={{ fontSize: "14px", color: "#00b8ef", fontWeight: "400" }}>{item.period}</h2>
+                  <h3  className="Role" style={{ fontSize: "20px", paddingBottom: "5px", fontWeight: "400", color: "#222222" }}>{item.Role}</h3>
+                  <h4  className="Institute" style={{ fontSize: "14px", fontWeight: "400", color: "#444444" }}>{item.Institute}</h4>
+                </div>
+              </Col>
+              <Col>
+                <div className="location" style={{ display: "flex", alignItems: "center", justifyContent: "center", fontSize: "16px", color: "#444444" }}>
+                  <LocationOnIcon />
+                  Chennai
+                </div>
+              </Col>
+              <Col style={{ textAlign: "center" }}>
+                <div className="Price" style={{ display: "flex", alignItems: "center", justifyContent: "center", fontSize: "16px", color: "#444444" }}>
+                  $1000-$2500/Month
+                </div>
+              </Col>
+              <Col style={{ textAlign: "center" }}>
+                <div>
+                  <Button  className="btnhover">View Job</Button>
+                </div>
+              </Col>
+            </Row>
+          </Card>          
+          ))}
+        </Container>
       </div>
+    </>
+
       <div style={{ marginTop: 30 }}>
         <Footer />
       </div>
