@@ -28,21 +28,11 @@ const Associate = () => {
   const logo = require("../../Images/logo3.png");
 
   return (
-    <>
+    <div style={{overflow:"hidden"}}>
       <Grid>
       <Header />
       <NavBar />
       </Grid>
-
-      {/* <Grid style={{ padding: 5 }}>
-      <Breadcrumb
-        style={{ backgroundColor: "#FFFFFF", textDecoration: "none" }}
-      >
-        <Breadcrumb.Item href="Home">Home</Breadcrumb.Item>
-        <Breadcrumb.Item href="#">AboutUs</Breadcrumb.Item>
-        <Breadcrumb.Item href="#">ASDHEC Logo</Breadcrumb.Item>
-      </Breadcrumb>
-    </Grid> */}
 
 <Row
   style={{
@@ -57,7 +47,6 @@ const Associate = () => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center", 
-    width: "100%"
   }}
 >
   <div
@@ -321,7 +310,7 @@ const Associate = () => {
       <div style={{ marginTop: 30 }}>
         <Footer />
       </div>
-    </>
+    </div>
   );
 };
 

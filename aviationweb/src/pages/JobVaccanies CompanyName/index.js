@@ -127,7 +127,7 @@ const CompanyName = () => {
   const logo = require("../../Images/logo3.png");
 
   return (
-    <>
+    <div style={{overflow:"hidden"}}>
       
       <Grid>
       <Header />
@@ -148,7 +148,6 @@ const CompanyName = () => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center", 
-    width: "100%"
   }}
 >
   <div
@@ -242,7 +241,7 @@ const CompanyName = () => {
         </Row>
     </Container>
 
-    <div style={{marginTop:"30px"}}>
+    {/* <div style={{marginTop:"30px"}}>
       <div id="header" className="header container-fluid">
         <div className="headerText">
           <div className="responsiveBox">
@@ -271,7 +270,7 @@ const CompanyName = () => {
         </div>
       </div>
 
-    </div>
+    </div> */}
 
     <Container>
         <Row>
@@ -285,7 +284,7 @@ const CompanyName = () => {
         <Row>
           <CardGroup>
             {imageUrls.map((imageUrl, index) => (
-              <Col key={index} md={1} style={{ marginBottom: "20px" }}>
+              <Col key={index} md={2} style={{ marginBottom: "20px" }}>
                 <Card style={{ margin: "10px", padding: "10px", borderRadius: "10px" }}>
                   <Card.Img variant="top" className="img-fluid" src={imageUrl.img} />
                 </Card>
@@ -297,7 +296,7 @@ const CompanyName = () => {
       <Grid style={{ paddingTop: 20 }}>
         <Footer/>
       </Grid>
-    </>
+    </div>
   );
 };
 

@@ -30,7 +30,7 @@ const DiplomaCourse = () => {
   const logo = require("../../Images/logo3.png");
 
   return (
-    <>
+    <div style={{overflow:"hidden"}}>
     <Grid>
       <Header />
       <NavBar />
@@ -38,7 +38,7 @@ const DiplomaCourse = () => {
 
 
       <Row
-  style={{
+     style={{
     position: "relative",
     backgroundImage:
       'url("https://chennaisamirta.com/wp-content/uploads/2019/05/chennais-amirta-affiliation1.jpg")',
@@ -50,7 +50,6 @@ const DiplomaCourse = () => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center", 
-    width: "100%"
   }}
 >
   <div
@@ -713,7 +712,7 @@ const DiplomaCourse = () => {
 <div>
 <Footer/>
 </div>
-</>
+</div>
   );
 };
 

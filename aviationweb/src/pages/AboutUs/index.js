@@ -19,22 +19,18 @@ import Link from "@mui/material/Link";
 import HomeIcon from "@mui/icons-material/Home";
 import Header from "../../components/Header";
 import "../../components/About.css";
-import { useState ,useEffect} from "react";
+import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import { MDBAnimation } from "mdbreact";
-
 const AboutUs = () => {
   const logo = require("../../Images/logo3.png");
 
-
-  const [animationClass, setAnimationClass] = useState('');
+  const [animationClass, setAnimationClass] = useState("");
 
   useEffect(() => {
     // Trigger the animation after the component has mounted
-    setAnimationClass('active');
+    setAnimationClass("active");
   }, []);
-
-
 
   const testimonials = [
     {
@@ -86,50 +82,30 @@ const AboutUs = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000, // Time between slides in milliseconds
+    autoplaySpeed: 2000,
   };
 
   return (
-    <>
+    <div style={{overflow:"hidden"}}>
       <Grid>
         <Header />
         <NavBar />
       </Grid>
 
+      
       <Row
-        // style={{
-        //   position: "relative",
-        //   backgroundImage: 'url("https://wallpapercave.com/wp/wp12535784.jpg")',
-        //   backgroundSize: "cover",
-        //   backgroundPosition: "center",
-        //   minHeight: "60vh", // Set the height to 100% of the viewport height
-        //   paddingLeft: "20px",
-        //   paddingRight: "20px",
-        //   overflow:"hidden",
-        //   display: "flex",
-        //   alignItems: "center",
-        //   justifyContent: "center",
-        //   width: "100%",
-        // }}
         style={{
           position: "relative",
-          backgroundImage: 'url("https://wallpapercave.com/wp/wp12535784.jpg")',
+          backgroundImage: 'url("https://wallpapercave.com/dwp1x/wp11828145.jpg")',
           backgroundSize: "cover",
           backgroundPosition: "center",
-          minHeight: "60vh", // Set the height to 60% of the viewport height
-          paddingLeft: "20px",
-          paddingRight: "20px",
-          // overflowX:"hidden",
+          minHeight: "60vh", 
+          paddingLeft: "40px",
+          paddingRight: "40px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          width: "auto",
-          // Responsive styles
-          "@media (max-width: 768px)": {
-            minHeight: "40vh", // Adjust the height for small devices
-            paddingLeft: "10px",
-            paddingRight: "10px",
-          },
+          // maxWidth: "100%",
         }}
       >
         <div
@@ -160,7 +136,7 @@ const AboutUs = () => {
                 fontWeight: "bold",
               }}
             >
-              About Us
+              About ASDHEC
             </h3>
           </div>
         </Col>
@@ -192,7 +168,7 @@ const AboutUs = () => {
               <Link
                 underline="hover"
                 color="inherit"
-                href="#Home"
+                href="Home"
                 style={{ display: "flex", alignItems: "center" }}
               >
                 <HomeIcon
@@ -217,7 +193,6 @@ const AboutUs = () => {
         </Col>
       </Row>
 
-      <div>
         <Container>
           <Row xs={1} md={2} style={{ marginTop: 30 }}>
             <Grid item xs={4} md={6}>
@@ -291,11 +266,9 @@ const AboutUs = () => {
             </Col>
           </Row>
         </Container>
-      </div>
-
-      <div style={{ backgroundColor: "#e6e6e6", marginTop: 25 }}>
-        <Container>
-          <Row style={{marginBottom:10}}>
+   
+        <Container style={{ backgroundColor: "#e6e6e6", marginTop: 25 }}>
+          <Row style={{ marginBottom: 10 }}>
             {/* <Col style={{  }}> */}
             <Box sx={{ padding: 1, textAlign: "justify" }}>
               <Typography
@@ -342,40 +315,22 @@ const AboutUs = () => {
                 has catalyzed enduring international alliances.
               </Typography>
             </Box>
-            {/* </Col> */}
-
-            {/* <Col>
-              <div
-                style={{
-                  display: "flex",
-                  // marginTop: { xs: 1, lg: 7 } ,
-                  textAlign: "center",
-                  backgroundPosition: "center",
-                }}
-              >
-                <Image
-                  src="https://keystoneacademic-res.cloudinary.com/image/upload/element/80/80673_USAviation2.jpg"
-                  style={{ marginTop:30 }}
-                  alt="Aviation"
-                  fluid
-                />
-              </div>
-            </Col> */}
+          
           </Row>
         </Container>
-      </div>
 
-      <div>
         <Container style={{ marginTop: 30 }}>
           <Row>
-            <Col className={`slide-in ${animationClass}`} style={{ marginLeft: 10 }}>
+            <Col
+              className={`slide-in ${animationClass}`}
+              style={{ marginLeft: 10 }}
+            >
               <Image
                 src="https://cdn-fdkig.nitrocdn.com/AywaxOjUfFsIziAItTGgLIIuUTWWuYxf/assets/images/optimized/rev-298d1aa/riainstitute.co.in/wp-content/uploads/2021/10/illustration-2.png"
                 style={{ height: "500px", width: "auto" }}
               />
             </Col>
 
-          
             <Col className={`slide-in ${animationClass}`}>
               <Typography style={{ marginTop: 20, fontWeight: "bold" }}>
                 Take A Step Towards Reaching Your Goals
@@ -397,115 +352,23 @@ const AboutUs = () => {
                 knowledge the job.
               </Typography>
 
-              <Typography style={{marginTop:10}}>
+              <Typography style={{ marginTop: 10 }}>
                 Whether it is gain knowledge or to enhance existing skill to
                 increase your credibility with a view to grow in your career,
                 choosing the right training institute is essential. You need a
                 Training Institute that will be a good investment for your
                 money, time, and reputation. In short, you need a Best IT & Non
                 IT Training Institute in Bangalore that will make you time spent
-                a safe proposition and RIA Institute of Technology 
-                is that name.
+                a safe proposition and RIA Institute of Technology is that name.
               </Typography>
             </Col>
-            
           </Row>
         </Container>
-      </div>
-
-      {/* <div
-        style={{
-          marginTop: 30,
-          display: "flex",
-          textAlign: "center",
-          justifyContent: "center",
-          alignItems: "center",
-          textAlign: "justify",
-        }}
-      >
-        <Typography>
-          <h2> Aviation Testimonial</h2>
-          <Divider style={{ backgroundColor: "gray" }} />
-        </Typography>
-      </div> */}
-
-      {/* <div>
-        <Container fluid
-          style={{ backgroundColor: "#c7d4e3", marginTop: 10, borderRadius: 5 }}
-        >
-          <Row >
-            <Typography style={{ marginTop: 20, textAlign: "justify" }}>
-              <p>
-                Montair’s experienced instructors and advanced aircraft were an
-                integral part in preparing me for a career as a professional
-                pilot. Their drive for perfection equipped me with the
-                fundamental skills and attitude required to take on just about
-                any job in the aviation industry. The meticulous standards to
-                which they maintain their aircraft always gave me peace-of-mind
-                knowing that I was safe, while the well-equipped classroom and
-                training facilities created an excellent environment in which to
-                learn. The camaraderie created by this welcoming environment led
-                to relationships and memories that will last a lifetime. I take
-                the skills and experience that I gained during my time at
-                Montair with me every day I go to work, making me a better and
-                safer pilot.
-              </p>
-              <div style={{ display: "flex" }}>
-                <img
-                  src="https://e7.pngegg.com/pngimages/901/285/png-clipart-airplane-computer-icons-avatar-pilot-smiley-airplane-thumbnail.png"
-                  style={{ borderRadius: 300, height: 50, width: 50 }}
-                />
-                <p style={{ marginTop: 14, marginLeft: 20 }}>
-                  The New Streamlined Launch and Reentry Licensing Process
-                  Advisory Circulars and Guidance
-                </p>
-              </div>
-            </Typography>
-          </Row>
-        </Container>
-      </div> */}
-
-      {/* <div>
-        <Container
-          style={{
-            backgroundColor: "#c7d4e3",
-            marginTop: 10,
-            borderRadius: 5,
-          }}
-        >
-          <Slider {...settings}>
-            {testimonials.map((testimonial, index) => (
-            
-              <div className="testimonial">
-             
-
-                <Row>
-                  <Typography style={{ marginTop: 20, textAlign: "justify" }}>
-                    <p style={{ textAlign: "justify" }}>
-                      {" "}
-                      {testimonial.comment}
-                    </p>
-                    <div style={{ display: "flex" }}>
-                      <CardMedia
-                        image={testimonial.image}
-                        style={{ borderRadius: 300, height: 50, width: 50 }}
-                      />
-                      <p style={{ marginTop: 14, marginLeft: 20 }}>
-                        {testimonial.role}
-                      </p>
-                    </div>
-                  </Typography>
-                </Row>
-              </div>
-            ))}
-          </Slider>
-        </Container>
-      </div> */}
 
       <Grid style={{ paddingTop: 20 }}>
         <Footer />
       </Grid>
-    </>
+    </div>
   );
 };
 

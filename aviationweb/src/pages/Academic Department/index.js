@@ -21,7 +21,7 @@ import HomeIcon from '@mui/icons-material/Home';
 const Department = () => {
   const logo = require("../../Images/logo3.png");
   return (
-    <>
+    <div style={{overflow:"hidden"}}>
        <Grid>
       <Header />
       <NavBar />
@@ -53,7 +53,6 @@ const Department = () => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center", 
-    width: "100%"
   }}
 >
   <div
@@ -459,7 +458,7 @@ const Department = () => {
       <div>
         <Footer />
       </div>
-    </>
+    </div>
   );
 };
 

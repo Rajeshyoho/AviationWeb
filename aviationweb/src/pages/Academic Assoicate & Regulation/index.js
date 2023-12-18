@@ -30,7 +30,7 @@ const AssociateRegulations = () => {
   const logo = require("../../Images/logo3.png");
 
   return (
-    <>
+    <div style={{overflow:"hidden"}}>
        <Grid>
       <Header />
       <NavBar />
@@ -50,7 +50,6 @@ const AssociateRegulations = () => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center", 
-    width: "100%"
   }}
 >
   <div
@@ -427,7 +426,7 @@ const AssociateRegulations = () => {
       <div style={{ marginTop: 20 }}>
         <Footer />
       </div>
-    </>
+    </div>
   );
 };
 

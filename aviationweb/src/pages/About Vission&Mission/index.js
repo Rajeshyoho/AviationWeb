@@ -96,7 +96,7 @@ const VisionMission = () => {
     transition: "all 0.7s",
   };
   return (
-    <Grid>
+    <Grid style={{overflow:"hidden"}}>
       {/* <Grid
         sx={{
           background: " #ddeef7f5",
@@ -118,16 +118,16 @@ const VisionMission = () => {
       <Row
         style={{
           position: "relative",
-          backgroundImage: 'url("https://wallpapercave.com/wp/wp12643319.jpg")',
+          backgroundImage: 'url("https://wallpapercave.com/dwp1x/wp11828145.jpg")',
           backgroundSize: "cover",
           backgroundPosition: "center",
-          minHeight: "60vh", // Set the height to 100% of the viewport height
+          minHeight: "60vh", 
           paddingLeft: "40px",
           paddingRight: "40px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          width: "100%",
+          // maxWidth: "100%",
         }}
       >
         <div

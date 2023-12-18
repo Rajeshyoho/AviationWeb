@@ -61,7 +61,7 @@ const AcademicsCouncil = () => {
       const[data,setData]=useState(Imgs)
 
   return (
-    <>
+    <div style={{overflow:"hidden"}}>
       <Grid>
       <Header />
       <NavBar />
@@ -81,7 +81,6 @@ const AcademicsCouncil = () => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center", 
-    width: "100%"
   }}
 >
   <div
@@ -322,7 +321,7 @@ const AcademicsCouncil = () => {
       <div>
         <Footer />
       </div>
-    </>
+    </div>
   );
 };
 

@@ -23,7 +23,7 @@ const HowToJoinCourse = () => {
   const logo = require("../../Images/logo3.png");
 
   return (
-    <>
+    <div style={{overflow:"hidden"}}>
 
     <Grid>
       <Header />
@@ -54,7 +54,6 @@ const HowToJoinCourse = () => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center", 
-    width: "100%"
   }}
 >
   <div
@@ -326,7 +325,7 @@ const HowToJoinCourse = () => {
       <div style={{marginTop:5}}>
         <Footer/>
       </div>
-    </>
+    </div>
   );
 };
 
