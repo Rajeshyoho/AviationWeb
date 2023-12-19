@@ -18,6 +18,7 @@ import Header from "../../components/Header";
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import HomeIcon from '@mui/icons-material/Home';
+import { GoDotFill } from "react-icons/go";
 
 const HowToJoinCourse = () => {
   const logo = require("../../Images/logo3.png");
@@ -168,7 +169,7 @@ const HowToJoinCourse = () => {
 
       <div>
         <Container>
-          <Typography style={{ marginTop: 15 }}>
+          <Typography style={{ marginTop: "20px" }}>
             The number of aircraft and airports is increasing rapidly in India
             as India is facing a shortage of well-skilled ground staff. There is
             a huge demand for ground staff who can deal with the functioning at
@@ -180,7 +181,7 @@ const HowToJoinCourse = () => {
       </div>
 
       <div>
-        <Container style={{ marginTop: 20, marginRight: 20 }}>
+        <Container style={{ marginTop: "40px", marginRight: 20 }}>
           <Row xs={1} md={2}>
             <Col>
               <ul>
@@ -254,29 +255,31 @@ const HowToJoinCourse = () => {
         <Container>
           <Typography
             style={{
-
+                marginTop:"30px",
               fontSize: "30px",
               fontWeight: "bold",
             }}
           >
             Ground Staff Course Admission Process
           </Typography>
-          <p>
+          <Typography  style={{ marginTop:"5px"}}>
             To become a ground staff, the candidate has to follow the following
-            Ground Staff Admission Process:-
-          </p>
-          <ul style={{ marginLeft: 20 }}>
-            <li>
+            Ground Staff Admission Process:
+          </Typography>
+          <Typography style={{ marginTop: "8px" }}>
+          <ul >
+            <li><GoDotFill />
               To join the ground staff Course a candidate should fill the form
               of Aircraft Maintenance Engineering Common Entrance Test (AME
               CET).
             </li>
-            <li>
+            <li><GoDotFill />
               After clearing AME CET Exam, based on the All India Rank (AIR) of
               AME CET students will get admission in one of top ground staff
               institutes.
             </li>
           </ul>
+          </Typography>
         </Container>
       </div>
 
@@ -284,45 +287,47 @@ const HowToJoinCourse = () => {
         <Container>
           <Typography
             style={{
- 
+              marginTop:"30px",
               fontSize: "30px",
               fontWeight: "bold",
             }}
           >
             Ground Staff Course Duration
           </Typography>
-          <p>
+          <Typography style={{textAlign:"justify",marginTop:"10px"}}>
             Ground staff course duration is tentatively 11 months certification
             course in the aviation sector. The cabin crew course covers various
             topics like checking, assisting disabled passengers, providing
             information, confirming reservations, etc.
-          </p>
+          </Typography>
 
-          <p>
+          <Typography style={{marginTop:"8px"}}>
             To get admission in ground staff certification course student must
             qualify the following eligibility criteria:-
-          </p>
+          </Typography>
 
-          <ul style={{ marginLeft: 20 }}>
-            <li>
+            <Typography style={{ marginTop:"8px" }}>
+          <ul >
+            <li><GoDotFill />
               A student must be appearing or passed 10+2 with any stream or 3
               year engineering diploma from any recognized board/university.
             </li>
 
-            <li>
+            <li><GoDotFill />
               Students who are searching for one of the top most institutes of
               Ground staff in India can qualify the National level Entrance Test
               of AME CET.
             </li>
           </ul>
+          </Typography>
         </Container>
       </div>
 
-      <div  style={{marginTop:5}}>
+      <div  style={{marginTop:"30px"}}>
         <HorizontalMarquee />
       </div>
 
-      <div style={{marginTop:5}}>
+      <div style={{marginTop:"50px"}}>
         <Footer/>
       </div>
     </div>

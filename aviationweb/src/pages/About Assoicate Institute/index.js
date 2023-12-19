@@ -180,13 +180,13 @@ const handleMouseLeave = () => {
         <Divider style={{ backgroundColor: "gray" }} />
       </Container>
 
-      <div style={{ textAlign: "center", marginTop: "20px" }}>
+      <div style={{ textAlign: "center", marginTop: "25px" }}>
         <Typography style={{ fontSize: 30, fontWeight: "bold" }}>
           Comprehensive solutions to elevate your aviation experience
         </Typography>
       </div>
 
-      <div style={{ marginTop: "30px" }}>
+      <div style={{ marginTop: "50px" }}>
         <Container>
           <Row>
             <Col>
@@ -229,7 +229,7 @@ const handleMouseLeave = () => {
       </div>
 
 
-      <Container style={{ marginTop: "50px" }}>
+      <Container style={{ marginTop: "60px" }}>
         <Row>
           <Col>
             <Card
