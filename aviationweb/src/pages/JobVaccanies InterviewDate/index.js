@@ -17,7 +17,7 @@ import HomeIcon from '@mui/icons-material/Home';
 const InterviewDate = () => {
   const logo = require("../../Images/logo3.png");
   return (
-    <>
+    <div style={{overflow:"hidden"}}>
       <Grid>
         <Header />
         <NavBar />
@@ -37,7 +37,6 @@ const InterviewDate = () => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center", 
-    width: "100%"
   }}
 >
   <div
@@ -121,10 +120,10 @@ const InterviewDate = () => {
       <Grid style={{ backgroundColor: "#f8f8f8" }}>
         <Container>
           <Typography style={{textAlign:"center",padding:20}}>
-            <h1 style={{color:"#114379" ,fontWeight:"bold",fontSize:"50px"}}>
+            <h1 style={{color:"#114379" ,fontWeight:"bold",fontSize:"40px"}}>
               GET PREPARED FOR YOUR AIRLINE PILOT INTERVIEW!
             </h1>
-            <h2 style={{fontWeight:"bold",fontSize:"25px"}}>
+            <h2 style={{fontWeight:"bold",fontSize:"23px"}}>
               WE'VE HELPED 200,000+ AVIATION PROFESSIONALS PREPARE FOR THEIR
               INTERVIEWS!
             </h2>
@@ -136,7 +135,7 @@ const InterviewDate = () => {
         </Container>
       </Grid>
 
-      <Container>
+      {/* <Container>
         <Row style={{ marginTop: "30px" }}>
           <Col>
             <h2
@@ -294,7 +293,9 @@ const InterviewDate = () => {
             </div>
           </Col>
         </Row>
-      </Container>
+      </Container> */}
+
+
       <Container>
         <Row style={{ marginTop: "30px" }}>
           <Col>
@@ -391,10 +392,10 @@ const InterviewDate = () => {
           </Col>
         </Row>
       </Container>
-      <Grid style={{ paddingTop: 20 }}>
+      <Grid style={{ marginTop: 30 }}>
         <Footer />
       </Grid>
-    </>
+    </div>
   );
 };
 

@@ -20,10 +20,6 @@ import Link from '@mui/material/Link';
 import HomeIcon from '@mui/icons-material/Home';
 
 
-// function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
-//   event.preventDefault();
-//   console.info('You clicked a breadcrumb.');
-// }
 
 const Colleges = () => {
   const logo = require("../../Images/logo3.png");
@@ -115,24 +111,12 @@ const Colleges = () => {
   };
 
   return (
-    <>
+    <div style={{overflow:"hidden"}}>
 
        <Grid>
       <Header />
       <NavBar style={{ zIndex: 1000 }}/>
       </Grid>
-
-      {/* <Grid style={{ padding: 10 }}>
-        <Breadcrumb
-          style={{ backgroundColor: "#FFFFFF", textDecoration: "none" }}
-        >
-          <Breadcrumb.Item href="Home">Home</Breadcrumb.Item>
-          <Breadcrumb.Item href="#">AboutUs</Breadcrumb.Item>
-          <Breadcrumb.Item href="#">ASDHEC Logo</Breadcrumb.Item>
-        </Breadcrumb>
-      </Grid> */}
-
-{/* breadcrumb Row */}
 
 
 <Row
@@ -148,7 +132,6 @@ const Colleges = () => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center", 
-    width: "100%"
   }}
 >
   <div
@@ -179,7 +162,7 @@ const Colleges = () => {
           fontWeight: "bold",
         }}
       >
-        Colleges
+       Colleges
       </h3>
     </div>
   </Col>
@@ -208,12 +191,12 @@ const Colleges = () => {
           alignItems:"center"
         }}
       >
-         <Link underline="hover" color="inherit" href="#Home" style={{display:"flex",alignItems:"center"}}>
+         <Link underline="hover" color="inherit" href="Home" style={{display:"flex",alignItems:"center"}}>
           <HomeIcon fontSize="medium" style={{marginRight:"5px",marginBottom:"2px"}}/>
          Home
         </Link>
         <Link underline="none"  color="inherit" href="/">
-          Carrer Guidance
+          Carrier Guidance
         </Link>
         <Link
           underline="none"
@@ -227,8 +210,6 @@ const Colleges = () => {
     </div>
   </Col>
 </Row>
-
-
 
       <Container>
         <Row style={{ marginTop: "40px" }}>
@@ -335,7 +316,7 @@ const Colleges = () => {
                     {card.type}
                   </Typography>
 
-                  <Typography
+                  {/* <Typography
                     variant="body2"
                     color="text.secondary"
                     style={{
@@ -350,7 +331,7 @@ const Colleges = () => {
                     onClick={toggleText}
                   >
                     {card.description}
-                  </Typography>
+                  </Typography> */}
                 </CardContent>
                 <CardActions>
                   <Button
@@ -375,7 +356,7 @@ const Colleges = () => {
       <div>
         <Footer />
       </div>
-    </>
+    </div>
   );
 };
 

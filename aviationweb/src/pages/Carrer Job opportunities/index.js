@@ -457,7 +457,7 @@ const[data,setData]=useState(items)
     display: "flex",
     alignItems: "center",
     justifyContent: "center", 
-    width: "100%"
+
   }}
 >
   <div
@@ -522,7 +522,7 @@ const[data,setData]=useState(items)
          Home
         </Link>
         <Link underline="none"  color="inherit" href="/">
-          Carrer
+          Carrier
         </Link>
         <Link
           underline="none"

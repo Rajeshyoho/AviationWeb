@@ -27,7 +27,7 @@ const Certificate = () => {
   };
 
   return (
-    <>
+    <div style={{overflow:"hidden"}}>
       <Grid>
       <Header />
       <NavBar />
@@ -48,7 +48,7 @@ const Certificate = () => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center", 
-    width: "100%",objectFit:"cover"
+ objectFit:"cover"
   }}
 >
   <div
@@ -796,7 +796,7 @@ const Certificate = () => {
       <div>
         <Footer/>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -97,7 +97,7 @@ const ActsStatus = () => {
   };
 
   return (
-    <>
+    <div style={{overflow:"hidden-"}}>
       <Grid>
         <Header />
         <NavBar />
@@ -106,17 +106,15 @@ const ActsStatus = () => {
       <Row
         style={{
           position: "relative",
-          backgroundImage:
-            'url("https://aviationweek.com/sites/default/files/inline-images/AD24-COMMTAKES-2_joepriesaviationDOTnet_1.jpg")',
+          backgroundImage: 'url("https://aviationweek.com/sites/default/files/inline-images/AD24-COMMTAKES-2_joepriesaviationDOTnet_1.jpg")',
           backgroundSize: "cover",
           backgroundPosition: "center",
-          minHeight: "60vh", // Set the height to 100% of the viewport height
+          minHeight: "60vh", 
           paddingLeft: "40px",
           paddingRight: "40px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          width: "100%",
         }}
       >
         <div
@@ -353,7 +351,7 @@ const ActsStatus = () => {
       <Grid style={{ marginTop: 30 }}>
         <Footer />
       </Grid>
-    </>
+    </div>
   );
 };
 

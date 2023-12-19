@@ -133,7 +133,7 @@ const TrainingProgram = () => {
   };
 
   return (
-    <>
+    <div style={{overflow:"hidden"}}>
 
 <Grid>
       <Header />
@@ -153,7 +153,6 @@ const TrainingProgram = () => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center", 
-    width: "100%"
   }}
 >
   <div
@@ -391,7 +390,7 @@ const TrainingProgram = () => {
       <div style={{marginTop:20}}>
       <Footer/>
       </div>  
-    </>
+    </div>
   );
 };
 
