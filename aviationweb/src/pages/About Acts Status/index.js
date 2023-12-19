@@ -202,12 +202,12 @@ const ActsStatus = () => {
         </Col>
       </Row>
 
-      <Grid style={{marginTop:30}}>
+      <Grid style={{marginTop:1}}>
         <Container
           fluid
           style={{
             background: "linear-gradient(90deg, #9464aa 0%, #f7f6fb 100%)",
-            padding: 10,
+            // padding: 1,
           }}
         >
           <Row xs={1} md={2}>
@@ -259,7 +259,7 @@ const ActsStatus = () => {
       </Grid>
 
       <Grid style={{marginTop:30}}>
-        <Container >
+        <Container fluid>
           <Row style={{ display: "flex", justifyContent: "space-between",marginTop:25 }}>
             <Typography
               sx={{
@@ -348,7 +348,7 @@ const ActsStatus = () => {
         </Container>
       </div>
 
-      <Grid style={{ marginTop: 30 }}>
+      <Grid style={{ marginTop: "50px" }}>
         <Footer />
       </Grid>
     </div>

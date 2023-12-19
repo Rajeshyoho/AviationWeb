@@ -24,6 +24,7 @@ import Header from "../../components/Header";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
 import HomeIcon from "@mui/icons-material/Home";
+import { GoDotFill } from "react-icons/go";
 
 const ExperienceFeatures = () => {
   const logo = require("../../Images/logo3.png");
@@ -137,10 +138,13 @@ const ExperienceFeatures = () => {
       </Row>
 
       <div>
-        <Container fluid style={{ marginTop: 30 }}>
-
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        <Grid item xs={6}>
+        <Container fluid style={{ marginTop: "30px" }}>
+          <Grid
+            container
+            rowSpacing={1}
+            columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+          >
+            <Grid item xs={6} md={6}>
               <div style={{ position: "relative", width: "100%" }}>
                 <video
                   width="100%"
@@ -154,7 +158,7 @@ const ExperienceFeatures = () => {
                     justifyContent: "center",
                     alignItems: "center",
                   }}
-                  className="img-fluid" 
+                  className="img-fluid"
                 >
                   <source
                     src="https://www.iata.org/globalassets/iata/training/subject-area/Hero_sa-law-regulation/"
@@ -178,9 +182,9 @@ const ExperienceFeatures = () => {
                   <p>Additional information or description here.</p>
                 </div>
               </div>
-              </Grid>
+            </Grid>
 
-              <Grid item xs={6}>
+            <Grid item xs={6}>
               <Typography
                 style={{
                   fontWeight: "bold",
@@ -189,7 +193,7 @@ const ExperienceFeatures = () => {
               >
                 Skills Required for a Career in Aviation
               </Typography>
-             
+
               <Typography style={{ marginTop: 10, textAlign: "justify" }}>
                 Soaring in the vast blue skies, the business of aviation is full
                 of adventure and curiosity. Whether you want to be an air
@@ -213,15 +217,13 @@ const ExperienceFeatures = () => {
                   <li>10. Politeness</li> */}
                 </ul>
               </Typography>
-              </Grid>
-
-              </Grid>
-              
+            </Grid>
+          </Grid>
         </Container>
       </div>
 
       <div>
-        <Container style={{ marginTop: 30 }}>
+        <Container style={{ marginTop: "30px" }}>
           <Row>
             <Typography
               style={{
@@ -243,17 +245,120 @@ const ExperienceFeatures = () => {
               which plays a crucial role in shaping its future:
             </Typography>
 
-            <Box style={{ display: "flex", marginTop: 10 }}>
-              <Typography variant="h6" style={{ fontWeight: "bold" }}>
-                1. Pilot:
+            <Box style={{ marginTop: 10 }}>
+              <Typography
+                variant="h6"
+                style={{ fontWeight: "bold", textDecoration: "underline" }}
+              >
+                Airline and Commercial Pilot
               </Typography>
               <Typography style={{ marginTop: 5, marginRight: 10 }}>
-                Take command of the skies as a pilot, operating and navigating
-                aircraft with precision and skill.
+                Becoming a pilot is one of the most popular choices to establish
+                a career in Aviation after the 12th standard. Apart from flying
+                a plane, ensuring the safety of the passengers and attendants
+                will be your responsibility.
+              </Typography>
+            </Box>
+
+            <Box style={{ marginTop: 10 }}>
+              <Typography
+                variant="h6"
+                style={{ fontWeight: "bold", textDecoration: "underline" }}
+              >
+                Air Traffic Controller
+              </Typography>
+              <Typography
+                style={{ marginTop: 5, marginRight: 10, textAlign: "justify" }}
+              >
+                The work of an air traffic controller is to regulate the whole
+                air navigation system. They are accountable for the safety of
+                all the air transports and the people who are flying it in the
+                air.
+              </Typography>
+            </Box>
+
+            <Box style={{ marginTop: 10 }}>
+              <Typography
+                variant="h6"
+                style={{ fontWeight: "bold", textDecoration: "underline" }}
+              >
+                Flight Attendant
+              </Typography>
+              <Typography
+                style={{ marginTop: 5, marginRight: 10, textAlign: "justify" }}
+              >
+                Flight attendants make sure that the passengers adhere to rules
+                & regulations so that the journey remains safe and comfortable
+                during the flight. If you want to start a career in this field,
+                you will have to pass a test to get a license before getting the
+                position of a flight attendant.
+              </Typography>
+            </Box>
+
+            <Box style={{ marginTop: 10 }}>
+              <Typography
+                variant="h6"
+                style={{ fontWeight: "bold", textDecoration: "underline" }}
+              >
+                Aviation Management
+              </Typography>
+              <Typography
+                style={{ marginTop: 5, marginRight: 10, textAlign: "justify" }}
+              >
+                This is a field where you can work in various roles and handle
+                tasks like airport operations, recruitment, managing accounts,
+                public relations, economics, etc. Apart from this, you will also
+                have to ensure the implementation of various laws, rules, and
+                regulations pertaining to the sector.
               </Typography>
             </Box>
           </Row>
         </Container>
+      </div>
+
+      <div>
+        <Container style={{marginTop:"30px"}}>
+          <Row>
+            <Col>
+            <Typography
+            style={{
+              fontWeight: "bold",
+              fontSize: "25px",
+            }}
+          >
+            Skills Required for a Career in Aviation
+          </Typography>
+
+            <Typography style={{marginTop:5}}>
+            <ul>
+                <li><GoDotFill /> Pleasant & friendly personality</li>
+                <li><GoDotFill /> Agility & good sense of balance</li>
+                <li><GoDotFill /> Good health & physical fitness</li>
+                <li><GoDotFill /> Clear speech and voice </li>
+                <li><GoDotFill /> Presence of mind</li>
+                <li><GoDotFill /> Team worker</li>
+                <li><GoDotFill /> Patience</li>
+                <li><GoDotFill /> Quality Control Officer</li>
+                <li><GoDotFill /> Total Quality Management</li>
+                <li><GoDotFill /> Aircraft General Knowledge</li>
+                <li><GoDotFill /> Human Performance and Limitations</li>
+                <li><GoDotFill /> Strategic Management</li>
+                <li><GoDotFill /> Aviation Law Management</li>
+
+            </ul>
+          </Typography>
+            </Col>
+
+            <Col>
+            <img src="https://assets-jb.fmg-services.co.uk/AJS/uploads/hub/advices/501_1000/GettyImages-925423998-1.jpg"/>
+            </Col>
+          </Row>
+         
+        </Container>
+      </div>
+
+      <div style={{marginTop:"50px"}}>
+        <Footer/>
       </div>
     </>
   );

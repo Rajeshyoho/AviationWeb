@@ -68,13 +68,13 @@ const Footer = () => {
           color: "white",
           // padding:2,
           // marginTop:5,
-          
+          // display:"flex",
           textAlign: { xs: "center", lg: "center" },
           alignItems: "center",
           justifyContent: "center",
         }}
       >
-        <Grid sx={{ marginTop: { xs: 3, md: 0 },textAlign:"start",marginTop:3,marginBottom:3}} item lg={2} xs={6}>
+        <Grid sx={{ marginTop: { xs: 3, md: 0 },textAlign:{xs:"center",lg:"start"},marginTop:3,marginBottom:3}} item lg={2} xs={6}>
           <Box>
             <Typography sx={{ color: " #ded283", fontSize: 15 }}>
               UNIVERSITY
@@ -145,7 +145,7 @@ const Footer = () => {
           color="#ffffff"
         /> */}
 
-        <Grid sx={{ marginTop: { xs: 3, md: 0 },textAlign:"start",marginTop:3,marginBottom:3}} item lg={2} xs={6}>
+        <Grid sx={{ marginTop: { xs: 3, md: 0 },textAlign:{xs:"center",lg:"start"},marginTop:3,marginBottom:3}} item lg={2} xs={6}>
           <Box>
             <Typography sx={{ color: " #ded283", fontSize: 15 }}>
               CENTERS
@@ -216,7 +216,7 @@ const Footer = () => {
           color="#ffffff"
         /> */}
 
-        <Grid  sx={{ marginTop: { xs: 3, md: 0 },textAlign:"start",marginTop:3,marginBottom:3}} item lg={2} xs={6}>
+        <Grid  sx={{ marginTop: { xs: 3, md: 0 },textAlign:{xs:"center",lg:"start"},marginTop:3,marginBottom:3}} item lg={2} xs={6}>
           <Box>
             <Typography sx={{ color: " #ded283", fontSize: 15 }}>
               CELLS
@@ -287,7 +287,7 @@ const Footer = () => {
           color="#ffffff"
         /> */}
 
-        <Grid sx={{ marginTop: { xs: 3, md: 0 },textAlign:"start",marginTop:3,marginBottom:3}} item lg={2} xs={6}>
+        <Grid sx={{ marginTop: { xs: 3, md: 0 },textAlign:{xs:"center",lg:"start"},marginTop:3,marginBottom:3}} item lg={2} xs={6}>
           <Box>
             <Typography sx={{ color: " #ded283", fontSize: 15 }}>
               STUDENTS
@@ -358,7 +358,7 @@ const Footer = () => {
           color="#ffffff"
         /> */}
 
-        <Grid sx={{ marginTop: { xs: 3, md: 0 },textAlign:"start",marginTop:3,marginBottom:3}} item lg={2} xs={12}>
+        <Grid sx={{ marginTop: { xs: 3, md: 0 },textAlign:{xs:"center",lg:"start"},marginTop:3,marginBottom:3}} item lg={2} xs={12}>
           <Box>
             <Typography sx={{ color: " #ded283", fontSize: 15 }}>
               OTHER LINKS
@@ -464,7 +464,7 @@ const Footer = () => {
 
         <Grid lg={4} xs={12}>
           <Box
-            sx={{ display: "flex", alignItems: "center", textAlign: "center" }}
+            sx={{ display: "flex",justifyContent:"space-between" }}
           >
             <Typography sx={{ fontSize: 14 }}>
               Designed & Developed by

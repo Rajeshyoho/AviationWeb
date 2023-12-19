@@ -26,7 +26,9 @@ import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
 import HomeIcon from "@mui/icons-material/Home";
 import { TbCertificate } from "react-icons/tb";
+import { FaAward } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import {
   faGift,
   faGraduationCap,
@@ -38,7 +40,7 @@ const AssociateRegulations = () => {
   const logo = require("../../Images/logo3.png");
 
   return (
-    <>
+    <div style={{ overflow: "hidden" }}>
       <Grid>
         <Header />
         <NavBar />
@@ -57,7 +59,7 @@ const AssociateRegulations = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          width: "100%",
+          // width: "100%",
         }}
       >
         <div
@@ -173,7 +175,7 @@ const AssociateRegulations = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            padding: 5,
+            padding: 2,
           }}
         >
           ​International air transportation is governed by a complex and
@@ -187,7 +189,7 @@ const AssociateRegulations = () => {
         </Typography>
       </div>
 
-      <div style={{ marginTop: 20 }}>
+      <div style={{ marginTop: "30px" }}>
         <Container>
           <Typography
             style={{
@@ -209,34 +211,8 @@ const AssociateRegulations = () => {
             for the diploma in Aviation course ranges from INR 60,000 to INR
             85,000 in a year depending on colleges.
           </Typography>
-          <Typography style={{ marginTop: 20, textAlign: "justify" }}>
-            <ul>
-              <li>
-                (1) Walking away from Paris Orly would be a lost opportunity
-              </li>
-              <li>(2) Air France-KLM chief on Transavia plan</li>
-              <li>
-                (3) Lufthansa Group carriers plan Tel Aviv return in January
-              </li>
-              <li>
-                (4) Heathrow airport braced for revenue hit in 2024 despite new
-                passenger high
-              </li>
-              <li>
-                (5) Air France-KLM chief sees flexibility to limit impact of any
-                Schiphol slot losses
-              </li>
-              <li>(6) WestJet plans to launch Calgary-Seoul flights in 2024</li>
-              <li>
-                (7) Cityflyer to re-open British Airways services from London
-                Stansted
-              </li>
-            </ul>
-          </Typography>
-        </Container>
-      </div>
 
-      <div
+          {/* <div
         style={{
           marginTop: 20,
           display: "flex",
@@ -281,14 +257,118 @@ const AssociateRegulations = () => {
         </div>
 
         <div className="responsiveBox">
-          <h3 style={{ margin: "0px", fontWeight: "bold" }}>
-            <TbCertificate />
-          </h3>
+          <h3 style={{ margin: "0px", fontWeight: "bold" }}><FaAward /></h3>
           <h1 style={{ margin: "0px", fontWeight: "bolder" }}>8501</h1>
           <p style={{ margin: "0px", fontWeight: "bold" }}>Students</p>
         </div>
+      </div> */}
+
+          <Typography style={{ marginTop: "30px", textAlign: "justify" }}>
+            <ul>
+              <li>
+                (1) Walking away from Paris Orly would be a lost opportunity
+              </li>
+              <li>(2) Air France-KLM chief on Transavia plan</li>
+              <li>
+                (3) Lufthansa Group carriers plan Tel Aviv return in January
+              </li>
+              <li>
+                (4) Heathrow airport braced for revenue hit in 2024 despite new
+                passenger high
+              </li>
+              <li>
+                (5) Air France-KLM chief sees flexibility to limit impact of any
+                Schiphol slot losses
+              </li>
+              <li>(6) WestJet plans to launch Calgary-Seoul flights in 2024</li>
+              <li>
+                (7) Cityflyer to re-open British Airways services from London
+                Stansted
+              </li>
+              <li>
+                (8) Police Certificate from home country and all countries lived
+                in for 6 months or more in last 5 years
+              </li>
+              <li>
+                (9) Forward your complete application with documents to the
+                flight training school with our comments
+              </li>
+              <li>
+                (10) The represent you throughout the visa service period until
+                receipt of visa decision.
+              </li>
+              <li>
+                (11) A provide list of documents required for your student visa
+                application
+              </li>
+              <li>
+                (12) Pass the online ADAPT Trainee Pilot Pre-screening Test with
+                Medium, Above Average or High result{" "}
+              </li>
+            </ul>
+          </Typography>
+        </Container>
       </div>
-      <Grid
+
+      <div>
+        <Container>
+          <Row
+            style={{
+              position: "relative",
+              backgroundImage:
+                'url("https://calaero.edu/wp-content/uploads/2016/05/classroom-wide.jpg")',
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              minHeight: "60vh", // Set the height to 100% of the viewport height
+              paddingLeft: "40px",
+              paddingRight: "40px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "100%",
+              marginTop: "30px",
+            }}
+          >
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                backgroundColor: "rgba(0, 0, 0, 0.4)",
+                zIndex: 1,
+              }}
+            ></div>
+            <div
+              md={6}
+              xs={12}
+              style={{
+                position: "relative",
+                zIndex: 2,
+                textAlign: "center",
+              }}
+            >
+              <div>
+                <h3
+                  style={{
+                    color: "white",
+                    fontSize: "36px",
+                    fontWeight: "bold",
+                  }}
+                >
+                  We All Succeed Together!
+                </h3>
+                <Typography style={{ marginTop: 5, color: "white" }}>
+                  We are here to help you find the path to a successful future.
+                </Typography>
+              </div>
+            </div>
+          </Row>
+        </Container>
+      </div>
+
+      {/* <Grid
         columnSpacing={{ xs: 1, sm: 2, md: 3 }}
         style={{ marginTop: 25, display: "flex" }}
       >
@@ -392,15 +472,25 @@ const AssociateRegulations = () => {
             </Col>
           </Row>
         </Container>
-      </Grid>
+      </Grid> */}
 
-      <Grid style={{ marginTop: 10 }}>
+      <Grid style={{ marginTop: "30px" }}>
         <Container>
           <Row>
             <Col>
-              <Card sx={{ maxWidth: 345 }}>
+              <Card
+                sx={{
+                  maxWidth: 345,
+                  transition: "transform 0.2s",
+                  "&:hover": {
+                    transform: "scale(1.05)", // You can adjust the scale factor
+                  },
+                }}
+              >
                 <CardMedia
-                  sx={{ height: 140 }}
+                  sx={{
+                    height: 140,
+                  }}
                   image="https://www.flyperkasa.com/wp-content/uploads/2023/06/Sabry-Libyan-student.png"
                   title="green iguana"
                 />
@@ -422,7 +512,15 @@ const AssociateRegulations = () => {
               </Card>
             </Col>
             <Col>
-              <Card sx={{ maxWidth: 345 }}>
+              <Card
+                sx={{
+                  maxWidth: 345,
+                  transition: "transform 0.2s",
+                  "&:hover": {
+                    transform: "scale(1.05)", // You can adjust the scale factor
+                  },
+                }}
+              >
                 <CardMedia
                   sx={{ height: 140 }}
                   image="https://www.flyperkasa.com/wp-content/uploads/2022/12/106-Perkasa04PortraitGroups_196-scaled.jpg"
@@ -435,7 +533,7 @@ const AssociateRegulations = () => {
                     component="div"
                     style={{ textAlign: "center" }}
                   >
-                    THE ROTARY CLUB
+                    THE ROTARY
                   </Typography>
                   <Typography variant="body2" style={{ textAlign: "justify" }}>
                     Former AOA trainees and CFIs, Capt. Rejaul Rajib and First
@@ -446,9 +544,19 @@ const AssociateRegulations = () => {
               </Card>
             </Col>
             <Col>
-              <Card sx={{ maxWidth: 345 }}>
+              <Card
+                sx={{
+                  maxWidth: 345,
+                  transition: "transform 0.2s",
+                  "&:hover": {
+                    transform: "scale(1.05)", // You can adjust the scale factor
+                  },
+                }}
+              >
                 <CardMedia
-                  sx={{ height: 140 }}
+                  sx={{
+                    height: 140,
+                  }}
                   image="https://www.flyperkasa.com/wp-content/uploads/2020/01/cancut.jpeg"
                   title="green iguana"
                 />
@@ -470,7 +578,15 @@ const AssociateRegulations = () => {
               </Card>
             </Col>
             <Col>
-              <Card sx={{ maxWidth: 345 }}>
+              <Card
+                sx={{
+                  maxWidth: 345,
+                  transition: "transform 0.2s",
+                  "&:hover": {
+                    transform: "scale(1.05)", // You can adjust the scale factor
+                  },
+                }}
+              >
                 <CardMedia
                   sx={{ height: 140 }}
                   image="https://www.flyperkasa.com/wp-content/uploads/2020/01/batch-12.jpg.webp"
@@ -483,7 +599,7 @@ const AssociateRegulations = () => {
                     component="div"
                     style={{ textAlign: "center" }}
                   >
-                    THE ROTARY CLUB
+                    THE ROTARY
                   </Typography>
                   <Typography variant="body2" style={{ textAlign: "justify" }}>
                     Former AOA trainees and CFIs, Capt. Rejaul Rajib and First
@@ -497,10 +613,10 @@ const AssociateRegulations = () => {
         </Container>
       </Grid>
 
-      <div style={{ marginTop: 20 }}>
+      <div style={{ marginTop: "50px" }}>
         <Footer />
       </div>
-    </>
+    </div>
   );
 };
 

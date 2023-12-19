@@ -25,12 +25,32 @@ import { MDBAnimation } from "mdbreact";
 const AboutUs = () => {
   const logo = require("../../Images/logo3.png");
 
-  const [animationClass, setAnimationClass] = useState("");
+  // const animationClassLeft = 'slide-in-left';
+  // const animationClassRight = 'slide-in-right';
+
+  // const [animationClass, setAnimationClass] = useState("");
+
+  // useEffect(() => {
+  //   // Trigger the animation after the component has mounted
+  //   setAnimationClass("active");
+  // }, []);
+
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
-    // Trigger the animation after the component has mounted
-    setAnimationClass("active");
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
+
+  const animationClassLeft = scrollPosition > 50 ? "slide-in-left" : "";
+  const animationClassRight = scrollPosition > 50 ? "slide-in-right" : "";
 
   const testimonials = [
     {
@@ -86,20 +106,20 @@ const AboutUs = () => {
   };
 
   return (
-    <div style={{overflow:"hidden"}}>
+    <div style={{ overflow: "hidden" }}>
       <Grid>
         <Header />
         <NavBar />
       </Grid>
 
-      
       <Row
         style={{
           position: "relative",
-          backgroundImage: 'url("https://wallpapercave.com/dwp1x/wp11828145.jpg")',
+          backgroundImage:
+            'url("https://wallpapercave.com/dwp1x/wp11828145.jpg")',
           backgroundSize: "cover",
           backgroundPosition: "center",
-          minHeight: "60vh", 
+          minHeight: "60vh",
           paddingLeft: "40px",
           paddingRight: "40px",
           display: "flex",
@@ -193,177 +213,179 @@ const AboutUs = () => {
         </Col>
       </Row>
 
-        <Container>
-          <Row xs={1} md={2} style={{ marginTop: 30 }}>
-            <Grid item xs={4} md={6}>
-              <Typography
-                sx={{
-                  fontWeight: "bold",
-                  fontSize: 18,
-                }}
-              >
-                Aviation Skill Development And Higher Educational Council
-              </Typography>
-
-              <Divider
-                style={{
-                  marginTop: 20,
-                  backgroundColor: "#0e2246",
-                }}
-              />
-
-              <div
-                style={{
-                  display: "flex",
-                  paddingTop: 20,
-                  textAlign: "center",
-                  backgroundPosition: "center",
-                }}
-              >
-                <Image
-                  src="https://www.lcc.edu/academics/areas-of-study/computers-engineering-technology/images/aviation-gallery/full-8.jpg"
-                  // style={{ objectFit: "cover" }}
-                  alt="Aviation"
-                  fluid
-                />
-              </div>
-            </Grid>
-
-            <Col
+      <Container fluid>
+        <Row xs={1} md={2} style={{ marginTop: 30 }}>
+          <Grid item xs={4} md={6}>
+            <Typography
               sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
+                fontWeight: "bold",
+                fontSize: 18,
               }}
             >
-              <Typography
-                sx={{ textAlign: "justify", marginTop: { xs: 1, lg: 7.5 } }}
-              >
-                <Typography>
-                  Aviation includes the activities surrounding mechanical flight
-                  and the aircraft industry. Aircraft includes fixed-wing and
-                  rotary-wing types, morphable wings, wing-less lifting bodies,
-                  as well as lighter-than-air craft such as hot air balloons and
-                  airships. Aviation began in the 18th century with the
-                  development of the hot air balloon, an apparatus capable of
-                  atmospheric displacement through buoyancy. Some of the most
-                  significant advancements in aviation technology came with the
-                  controlled gliding flying of Otto Lilienthal in 1896; then a
-                  large step in significance came with the construction of the
-                  first powered airplane by the Wright brothers in the early
-                  1900s. Since that time, aviation has been technologically
-                  revolutionized by the introduction of the jet which permitted
-                  a major form of transport throughout the world.
-                </Typography>
-                {/* <br /> */}
-                <Typography style={{ marginTop: 10 }}>
-                  For Native Americans, music is more than just sound, and each
-                  dance move has meaning. Art in every form whether totem poles,
-                  pottery, or literature—is a fact of life, ingrained into the
-                  culture.
-                </Typography>
-              </Typography>
-            </Col>
-          </Row>
-        </Container>
-   
-        <Container style={{ backgroundColor: "#e6e6e6", marginTop: 25 }}>
-          <Row style={{ marginBottom: 10 }}>
-            {/* <Col style={{  }}> */}
-            <Box sx={{ padding: 1, textAlign: "justify" }}>
-              <Typography
-                sx={{
-                  fontWeight: "bold",
-                  fontSize: 30,
-                  textAlign: "justify",
-                }}
-              >
-                Awards & Recognition
-              </Typography>
+              Aviation Skill Development And Higher Educational Council
+            </Typography>
 
-              <Typography style={{ marginTop: 10, textAlign: "justify" }}>
-                » Lifetime Achievement Award by Air Cargo Club of Bombay for
-                overall contribution to Industry, Feb 2020.
-              </Typography>
-              <Typography sx={{ textAlign: "justify" }}>
-                » Rashtriya Udyog Ratan Award in Delhi for contribution to
-                Aviation Industry, Feb 2021.
-              </Typography>
-              <Typography sx={{ textAlign: "justify" }}>
-                » General Sales Agent of the Year International for excellence
-                in Air Cargo, 5 times consecutively from 2012-2020, by Stat
-                Trade Times Leadership.
-              </Typography>
-              <Typography sx={{ textAlign: "justify" }}>
-                » Chairman of Plastics Export Promotion Council of India
-                (PLEXCONCIL).
-              </Typography>
-              <Typography sx={{ textAlign: "justify" }}>
-                » Nati Ratna Puraskar by Shree Ghoghari Lohana Mahajan – Mumbai,
-                Nov 2022.
-              </Typography>
-              <Typography sx={{ textAlign: "justify" }}>
-                » Recognized for distinguished services & contribution to ACAAI
-                Convention in Istanbul.
-              </Typography>
-              <Typography sx={{ textAlign: "justify" }}>
-                » Numerous awards from customer Airlines for outstanding
-                commitment & contribution.
-              </Typography>
-              <Typography sx={{ textAlign: "justify" }}>
-                » His enduring belief in the profound impact of human capital
-                has catalyzed enduring international alliances.
-              </Typography>
-            </Box>
-          
-          </Row>
-        </Container>
+            <Divider
+              style={{
+                marginTop: 20,
+                backgroundColor: "#0e2246",
+              }}
+            />
 
-        <Container style={{ marginTop: 30 }}>
-          <Row>
-            <Col
-              className={`slide-in ${animationClass}`}
-              style={{ marginLeft: 10 }}
+            <div
+              style={{
+                display: "flex",
+                paddingTop: 20,
+                textAlign: "center",
+                backgroundPosition: "center",
+              }}
             >
               <Image
-                src="https://cdn-fdkig.nitrocdn.com/AywaxOjUfFsIziAItTGgLIIuUTWWuYxf/assets/images/optimized/rev-298d1aa/riainstitute.co.in/wp-content/uploads/2021/10/illustration-2.png"
-                style={{ height: "500px", width: "auto" }}
+                src="https://www.lcc.edu/academics/areas-of-study/computers-engineering-technology/images/aviation-gallery/full-8.jpg"
+                // style={{ objectFit: "cover" }}
+                alt="Aviation"
+                fluid
               />
-            </Col>
+            </div>
+          </Grid>
 
-            <Col className={`slide-in ${animationClass}`}>
-              <Typography style={{ marginTop: 20, fontWeight: "bold" }}>
-                Take A Step Towards Reaching Your Goals
+          <Col
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Typography
+              sx={{ textAlign: "justify", marginTop: { xs: 1, lg: 7.5 } }}
+            >
+              <Typography>
+                Aviation includes the activities surrounding mechanical flight
+                and the aircraft industry. Aircraft includes fixed-wing and
+                rotary-wing types, morphable wings, wing-less lifting bodies, as
+                well as lighter-than-air craft such as hot air balloons and
+                airships. Aviation began in the 18th century with the
+                development of the hot air balloon, an apparatus capable of
+                atmospheric displacement through buoyancy. Some of the most
+                significant advancements in aviation technology came with the
+                controlled gliding flying of Otto Lilienthal in 1896; then a
+                large step in significance came with the construction of the
+                first powered airplane by the Wright brothers in the early
+                1900s. Since that time, aviation has been technologically
+                revolutionized by the introduction of the jet which permitted a
+                major form of transport throughout the world.
               </Typography>
+              {/* <br /> */}
+              <Typography style={{ marginTop: 10 ,textAlign: "justify"}}>
+                For Native Americans, music is more than just sound, and each
+                dance move has meaning. Art in every form whether totem poles,
+                pottery, or literature—is a fact of life, ingrained into the
+                culture.Air Traffic Controller applicants need to complete an
+                approved training course offered by the National Air Traffic
+                Services in order to obtain the air traffic control licence,
+                requirements that vary according to airlines.
+              </Typography>
+            </Typography>
+          </Col>
+        </Row>
+      </Container>
 
-              <Typography style={{ marginTop: 10 }}>
-                RIA Institute of Technology is a leader in providing Job
-                oriented IT, non IT, Academic and Language training courses in
-                Bangalore. Our Institute has helped 1000s of aspirants to get
-                the right job based on their career requirements.
-              </Typography>
+      <Container fluid style={{ backgroundColor: "#e6e6e6", marginTop: 25 }}>
+        <Row style={{ marginBottom: 10 }}>
+          {/* <Col style={{  }}> */}
+          <Box sx={{ padding: 1, textAlign: "justify" }}>
+            <Typography
+              sx={{
+                fontWeight: "bold",
+                fontSize: 30,
+                textAlign: "justify",
+              }}
+            >
+              Awards & Recognition
+            </Typography>
 
-              <Typography style={{ marginTop: 10 }}>
-                Our course curriculum is robustly designed to make students
-                ready for their dream job. All modules within each course are
-                carefully chosen and shortlisted to match respective industry
-                standards to ensure our students have higher chances of getting
-                access to online & offline courses, learn any skill and gain
-                knowledge the job.
-              </Typography>
+            <Typography style={{ marginTop: 10, textAlign: "justify" }}>
+              » Lifetime Achievement Award by Air Cargo Club of Bombay for
+              overall contribution to Industry, Feb 2020.
+            </Typography>
+            <Typography sx={{ textAlign: "justify" }}>
+              » Rashtriya Udyog Ratan Award in Delhi for contribution to
+              Aviation Industry, Feb 2021.
+            </Typography>
+            <Typography sx={{ textAlign: "justify" }}>
+              » General Sales Agent of the Year International for excellence in
+              Air Cargo, 5 times consecutively from 2012-2020, by Stat Trade
+              Times Leadership.
+            </Typography>
+            <Typography sx={{ textAlign: "justify" }}>
+              » Chairman of Plastics Export Promotion Council of India
+              (PLEXCONCIL).
+            </Typography>
+            <Typography sx={{ textAlign: "justify" }}>
+              » Nati Ratna Puraskar by Shree Ghoghari Lohana Mahajan – Mumbai,
+              Nov 2022.
+            </Typography>
+            <Typography sx={{ textAlign: "justify" }}>
+              » Recognized for distinguished services & contribution to ACAAI
+              Convention in Istanbul.
+            </Typography>
+            <Typography sx={{ textAlign: "justify" }}>
+              » Numerous awards from customer Airlines for outstanding
+              commitment & contribution.
+            </Typography>
+            <Typography sx={{ textAlign: "justify" }}>
+              » His enduring belief in the profound impact of human capital has
+              catalyzed enduring international alliances.
+            </Typography>
+          </Box>
+        </Row>
+      </Container>
 
-              <Typography style={{ marginTop: 10 }}>
-                Whether it is gain knowledge or to enhance existing skill to
-                increase your credibility with a view to grow in your career,
-                choosing the right training institute is essential. You need a
-                Training Institute that will be a good investment for your
-                money, time, and reputation. In short, you need a Best IT & Non
-                IT Training Institute in Bangalore that will make you time spent
-                a safe proposition and RIA Institute of Technology is that name.
-              </Typography>
-            </Col>
-          </Row>
-        </Container>
+      <Container style={{ marginTop: 30 }}>
+        <Row>
+          <Col
+            className={`slide-in ${animationClassLeft}`}
+            style={{ marginLeft: 10 }}
+          >
+            <Image
+              src="https://cdn-fdkig.nitrocdn.com/AywaxOjUfFsIziAItTGgLIIuUTWWuYxf/assets/images/optimized/rev-298d1aa/riainstitute.co.in/wp-content/uploads/2021/10/illustration-2.png"
+              style={{ height: "500px", width: "auto" }}
+            />
+          </Col>
+
+          <Col className={`slide-in ${animationClassRight}`}>
+            <Typography style={{ marginTop: 20, fontWeight: "bold" }}>
+              Take A Step Towards Reaching Your Goals
+            </Typography>
+
+            <Typography style={{ marginTop: 10,textAlign: "justify" }}>
+              RIA Institute of Technology is a leader in providing Job oriented
+              IT, non IT, Academic and Language training courses in Bangalore.
+              Our Institute has helped 1000s of aspirants to get the right job
+              based on their career requirements.
+            </Typography>
+
+            <Typography style={{ marginTop: 10,textAlign: "justify" }}>
+              Our course curriculum is robustly designed to make students ready
+              for their dream job. All modules within each course are carefully
+              chosen and shortlisted to match respective industry standards to
+              ensure our students have higher chances of getting access to
+              online & offline courses, learn any skill and gain knowledge the
+              job.
+            </Typography>
+
+            <Typography style={{ marginTop: 10, textAlign: "justify"}}>
+              Whether it is gain knowledge or to enhance existing skill to
+              increase your credibility with a view to grow in your career,
+              choosing the right training institute is essential. You need a
+              Training Institute that will be a good investment for your money,
+              time, and reputation. In short, you need a Best IT & Non IT
+              Training Institute in Bangalore that will make you time spent a
+              safe proposition and RIA Institute of Technology is that name.
+            </Typography>
+          </Col>
+        </Row>
+      </Container>
 
       <Grid style={{ paddingTop: 20 }}>
         <Footer />

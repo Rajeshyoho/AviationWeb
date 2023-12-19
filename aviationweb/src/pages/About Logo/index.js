@@ -23,9 +23,9 @@ import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
 import WeatherWidget from "../../components/Weather";
 import Header from "../../components/Header";
-import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Link from '@mui/material/Link';
-import HomeIcon from '@mui/icons-material/Home';
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+import Link from "@mui/material/Link";
+import HomeIcon from "@mui/icons-material/Home";
 
 const AboutLogo = () => {
   const Item = styled(Paper)(({ theme }) => ({
@@ -46,99 +46,106 @@ const AboutLogo = () => {
       </Grid>
 
       <Row
-  style={{
-    position: "relative",
-    backgroundImage:
-      'url("https://wallpapercave.com/wp/wp12435900.jpg")',
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    minHeight: "60vh", // Set the height to 100% of the viewport height
-    paddingLeft: "40px",
-    paddingRight: "40px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center", 
-    width: "100%"
-  }}
->
-  <div
-    style={{
-      position: "absolute",
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: "rgba(0, 0, 0, 0.8)",
-      zIndex: 1,
-    }}
-  ></div>
-  <Col
-    md={6}
-    xs={12}
-    style={{
-      position: "relative",
-      zIndex: 2,
-      // textAlign: "center", 
-    }}
-  >
-    <div>
-      <h3
         style={{
-          color: "white",
-          fontSize: "36px",
-          fontWeight: "bold",
-        }}
-      >
-        About Logo
-      </h3>
-    </div>
-  </Col>
-
-  <Col
-    className="banner"
-    md={6}
-    xs={12}
-    style={{
-      position: "relative",
-      zIndex: 2,
-      textAlign: "center", 
-    }}
-  >
-    <div role="presentation" >
-      <Breadcrumbs
-        aria-label="breadcrumb"
-        style={{
-          zIndex: 900,
+          position: "relative",
+          backgroundImage: 'url("https://wallpapercave.com/wp/wp12435900.jpg")',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          minHeight: "60vh", // Set the height to 100% of the viewport height
+          paddingLeft: "40px",
+          paddingRight: "40px",
           display: "flex",
           alignItems: "center",
-          margin: "10px",
-          fontSize: "20px",
-          color: "#ffffff",
-          justifyContent: "flex-end",
-          alignItems:"center"
+          justifyContent: "center",
+          width: "100%",
         }}
       >
-         <Link underline="hover" color="inherit" href="Home" style={{display:"flex",alignItems:"center"}}>
-          <HomeIcon fontSize="medium" style={{marginRight:"5px",marginBottom:"2px"}}/>
-         Home
-        </Link>
-        <Link underline="none"  color="inherit" href="/">
-          About Us
-        </Link>
-        <Link
-          underline="none"
-          color="inherit"
-          href="/material-ui/getting-started/installation/"
-          style={{color:"rgba(161,225,229,1)"}}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.8)",
+            zIndex: 1,
+          }}
+        ></div>
+        <Col
+          md={6}
+          xs={12}
+          style={{
+            position: "relative",
+            zIndex: 2,
+            // textAlign: "center",
+          }}
         >
-          About Logo
-        </Link>
-      </Breadcrumbs>
-    </div>
-  </Col>
-</Row>
+          <div>
+            <h3
+              style={{
+                color: "white",
+                fontSize: "36px",
+                fontWeight: "bold",
+              }}
+            >
+              About Logo
+            </h3>
+          </div>
+        </Col>
 
-      <Grid
+        <Col
+          className="banner"
+          md={6}
+          xs={12}
+          style={{
+            position: "relative",
+            zIndex: 2,
+            textAlign: "center",
+          }}
+        >
+          <div role="presentation">
+            <Breadcrumbs
+              aria-label="breadcrumb"
+              style={{
+                zIndex: 900,
+                display: "flex",
+                alignItems: "center",
+                margin: "10px",
+                fontSize: "20px",
+                color: "#ffffff",
+                justifyContent: "flex-end",
+                alignItems: "center",
+              }}
+            >
+              <Link
+                underline="hover"
+                color="inherit"
+                href="Home"
+                style={{ display: "flex", alignItems: "center" }}
+              >
+                <HomeIcon
+                  fontSize="medium"
+                  style={{ marginRight: "5px", marginBottom: "2px" }}
+                />
+                Home
+              </Link>
+              <Link underline="none" color="inherit" href="/">
+                About Us
+              </Link>
+              <Link
+                underline="none"
+                color="inherit"
+                href="/material-ui/getting-started/installation/"
+                style={{ color: "rgba(161,225,229,1)" }}
+              >
+                About Logo
+              </Link>
+            </Breadcrumbs>
+          </div>
+        </Col>
+      </Row>
+
+      {/* <Grid
         style={{
           textAlign: "center",
           marginTop: 20,
@@ -149,38 +156,16 @@ const AboutLogo = () => {
         }}
       >
         <h1>OUR POLICIES</h1>
-      </Grid>
+      </Grid> */}
 
       <Grid>
-        <Container fluid style={{padding:20,textAlign:"justify"}}>
-          {/* <Typography style={{ textAlign: "justify" }}>
-            The Global Group of Companies, a pan India conglomerate in its 48th
-            year, is the first General Sales Agent in India, with the core
-            business of airline representation for passenger & cargo and other
-            allied businesses. Besides servicing the travel trade industry all
-            through these years, the Founder Chairman, Mr H K Vithalani & the
-            Group have been involved in philanthropic activities since four
-            decades. Focus has been education, healthcare, environment,
-            inclusion with special focus on women & girls. They have done
-            several projects with Shivanand Mission at Virnagar. First was to
-            construct a girls school BHAKTI SADAN in 1991 for young girls from
-            neighbouring villages. Second was to construct and set up a hostel
-            for boarding & lodging hostel for girls in 1996 – called Dayaben
-            Karsandas Vithalani and also donated to set up a complete Eye Ward
-            under the name of Karsandas Raghavjee Vithalani at the 400 bed
-            hospital on campus of the Shivanand Mission. Free medical check ups
-            and cataract surgeries take place here for residents of 100
-            neighbouring villages by highly qualified doctors. Chaiman & Group
-            Companies are also affiliated with many works of social service and
-            charity. Notable among them are some of the charities &
-            organisations the Group is associated with on regular basis:
-          </Typography> */}
+        <Container fluid style={{ padding: 20, textAlign: "justify" }}>
           <Typography style={{ textAlign: "justify" }}>
             <h3
               style={{
                 fontSize: "30px",
                 fontWeight: "bold",
-
+                color:"#033263"
               }}
             >
               Best Pilot Training Institutes in the World 2023
@@ -196,9 +181,21 @@ const AboutLogo = () => {
         </Container>
       </Grid>
 
-              <img src={logo} style={{width:"100%",height:"auto",textAlign:"center"}}/>
-
-
+      <div style={{}}>
+        <Card
+          style={{border:"#033263",
+            transition: "transform 0.2s",
+            "&:hover": {
+              transform: "scale(1.05)", // You can adjust the scale factor
+            },
+          }}
+        >
+          <img
+            src={logo}
+            style={{ width: "100%", height: "auto", textAlign: "center" }}
+          />
+        </Card>
+      </div>
 
       {/* <div>
         <Container fluid >
