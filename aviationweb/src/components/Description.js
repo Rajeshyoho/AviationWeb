@@ -64,7 +64,7 @@ const Description = ({ cards }) => {
                       fontWeight: "bold",
                       fontSize: "25px",
                       textDecoration: "underline",
-                      fontFamily: "initial",
+                      fontFamily: "sans-serif",
                       marginTop: "10px",
                       textAlign: "center",
                     }}
@@ -149,7 +149,7 @@ const Description = ({ cards }) => {
                     />
                   </div>
 
-                  <p style={{ marginTop: "10px" }}>{card.description}</p>
+                  <p style={{ marginTop: "10px",textAlign:"justify" }}>{card.description}</p>
 
                   <div
                     style={{ display: "flex", justifyContent: "space-between" }}
