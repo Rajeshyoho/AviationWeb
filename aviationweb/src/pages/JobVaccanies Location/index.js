@@ -18,6 +18,7 @@ import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
 import HomeIcon from "@mui/icons-material/Home";
 import Footer from "../../components/Footer";
+import "../../components/Location.css"
 
 const AccordionItem = ({ title, content, index }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -400,6 +401,166 @@ const jobCards = [
       "Adherence to all SW processes including QAC, Polyspace, Code inspections, unit testing, and developer testing.",
     ],
   },
+  {
+    title: "Software Trainee",
+    company: "Zoho pvt Ltd",
+    salary: "$15000-20000",
+    employmentType: "Full-time",
+    shift: "Day Shift",
+    description:
+      "Experience parts programming and work experience preferable. Experience in handling night shift incharge to manage the team size of at least 10 people.",
+    locationCurrent: "Coimbatore",
+    descriptionDetail:
+      "ZF is a global technology company supplying systems for passenger cars, commercial vehicles and industrial technology, enabling the next generation of mobility. ZF allows vehicles to see, think and act. In the four technology domains of Vehicle Motion Control, Integrated Safety, Automated Driving, and Electric Mobility, ZF offers comprehensive product and software solutions for established vehicle manufacturers and newly emerging transport and mobility service providers. ZF electrifies a wide range of vehicle types. With its products, the company contributes to reducing emissions, protecting the climate and enhancing safe mobility.",
+    tasks: [
+      "Platform SW Integration for various AUTOSAR crypto modules such as CSM/Cryif/Crypto based on Customer milestones.",
+      "Integration of vHSM modules, vHSM updater, and Escrypt crypto driver.",
+      "Analyze Security Sys Requirement and derive PSW requirements.",
+      "Develop requirements, design, coding complying with coding guidelines.",
+      "Take accountability and interact with different stakeholders on demand.",
+      "Adherence to all SW processes including QAC, Polyspace, Code inspections, unit testing, and developer testing.",
+    ],
+  },
+  {
+    title: "Software Trainee",
+    company: "Zoho pvt Ltd",
+    salary: "$15000-20000",
+    employmentType: "Full-time",
+    shift: "Day Shift",
+    description:
+      "Experience parts programming and work experience preferable. Experience in handling night shift incharge to manage the team size of at least 10 people.",
+    locationCurrent: "Coimbatore",
+    descriptionDetail:
+      "ZF is a global technology company supplying systems for passenger cars, commercial vehicles and industrial technology, enabling the next generation of mobility. ZF allows vehicles to see, think and act. In the four technology domains of Vehicle Motion Control, Integrated Safety, Automated Driving, and Electric Mobility, ZF offers comprehensive product and software solutions for established vehicle manufacturers and newly emerging transport and mobility service providers. ZF electrifies a wide range of vehicle types. With its products, the company contributes to reducing emissions, protecting the climate and enhancing safe mobility.",
+    tasks: [
+      "Platform SW Integration for various AUTOSAR crypto modules such as CSM/Cryif/Crypto based on Customer milestones.",
+      "Integration of vHSM modules, vHSM updater, and Escrypt crypto driver.",
+      "Analyze Security Sys Requirement and derive PSW requirements.",
+      "Develop requirements, design, coding complying with coding guidelines.",
+      "Take accountability and interact with different stakeholders on demand.",
+      "Adherence to all SW processes including QAC, Polyspace, Code inspections, unit testing, and developer testing.",
+    ],
+  },
+  {
+    title: "Software Trainee",
+    company: "Zoho pvt Ltd",
+    salary: "$15000-20000",
+    employmentType: "Full-time",
+    shift: "Day Shift",
+    description:
+      "Experience parts programming and work experience preferable. Experience in handling night shift incharge to manage the team size of at least 10 people.",
+    locationCurrent: "Coimbatore",
+    descriptionDetail:
+      "ZF is a global technology company supplying systems for passenger cars, commercial vehicles and industrial technology, enabling the next generation of mobility. ZF allows vehicles to see, think and act. In the four technology domains of Vehicle Motion Control, Integrated Safety, Automated Driving, and Electric Mobility, ZF offers comprehensive product and software solutions for established vehicle manufacturers and newly emerging transport and mobility service providers. ZF electrifies a wide range of vehicle types. With its products, the company contributes to reducing emissions, protecting the climate and enhancing safe mobility.",
+    tasks: [
+      "Platform SW Integration for various AUTOSAR crypto modules such as CSM/Cryif/Crypto based on Customer milestones.",
+      "Integration of vHSM modules, vHSM updater, and Escrypt crypto driver.",
+      "Analyze Security Sys Requirement and derive PSW requirements.",
+      "Develop requirements, design, coding complying with coding guidelines.",
+      "Take accountability and interact with different stakeholders on demand.",
+      "Adherence to all SW processes including QAC, Polyspace, Code inspections, unit testing, and developer testing.",
+    ],
+  },
+  {
+    title: "Software Trainee",
+    company: "Zoho pvt Ltd",
+    salary: "$15000-20000",
+    employmentType: "Full-time",
+    shift: "Day Shift",
+    description:
+      "Experience parts programming and work experience preferable. Experience in handling night shift incharge to manage the team size of at least 10 people.",
+    locationCurrent: "Coimbatore",
+    descriptionDetail:
+      "ZF is a global technology company supplying systems for passenger cars, commercial vehicles and industrial technology, enabling the next generation of mobility. ZF allows vehicles to see, think and act. In the four technology domains of Vehicle Motion Control, Integrated Safety, Automated Driving, and Electric Mobility, ZF offers comprehensive product and software solutions for established vehicle manufacturers and newly emerging transport and mobility service providers. ZF electrifies a wide range of vehicle types. With its products, the company contributes to reducing emissions, protecting the climate and enhancing safe mobility.",
+    tasks: [
+      "Platform SW Integration for various AUTOSAR crypto modules such as CSM/Cryif/Crypto based on Customer milestones.",
+      "Integration of vHSM modules, vHSM updater, and Escrypt crypto driver.",
+      "Analyze Security Sys Requirement and derive PSW requirements.",
+      "Develop requirements, design, coding complying with coding guidelines.",
+      "Take accountability and interact with different stakeholders on demand.",
+      "Adherence to all SW processes including QAC, Polyspace, Code inspections, unit testing, and developer testing.",
+    ],
+  },
+  {
+    title: "Software Trainee",
+    company: "Zoho pvt Ltd",
+    salary: "$15000-20000",
+    employmentType: "Full-time",
+    shift: "Day Shift",
+    description:
+      "Experience parts programming and work experience preferable. Experience in handling night shift incharge to manage the team size of at least 10 people.",
+    locationCurrent: "Coimbatore",
+    descriptionDetail:
+      "ZF is a global technology company supplying systems for passenger cars, commercial vehicles and industrial technology, enabling the next generation of mobility. ZF allows vehicles to see, think and act. In the four technology domains of Vehicle Motion Control, Integrated Safety, Automated Driving, and Electric Mobility, ZF offers comprehensive product and software solutions for established vehicle manufacturers and newly emerging transport and mobility service providers. ZF electrifies a wide range of vehicle types. With its products, the company contributes to reducing emissions, protecting the climate and enhancing safe mobility.",
+    tasks: [
+      "Platform SW Integration for various AUTOSAR crypto modules such as CSM/Cryif/Crypto based on Customer milestones.",
+      "Integration of vHSM modules, vHSM updater, and Escrypt crypto driver.",
+      "Analyze Security Sys Requirement and derive PSW requirements.",
+      "Develop requirements, design, coding complying with coding guidelines.",
+      "Take accountability and interact with different stakeholders on demand.",
+      "Adherence to all SW processes including QAC, Polyspace, Code inspections, unit testing, and developer testing.",
+    ],
+  },
+  {
+    title: "Software Trainee",
+    company: "Zoho pvt Ltd",
+    salary: "$15000-20000",
+    employmentType: "Full-time",
+    shift: "Day Shift",
+    description:
+      "Experience parts programming and work experience preferable. Experience in handling night shift incharge to manage the team size of at least 10 people.",
+    locationCurrent: "Coimbatore",
+    descriptionDetail:
+      "ZF is a global technology company supplying systems for passenger cars, commercial vehicles and industrial technology, enabling the next generation of mobility. ZF allows vehicles to see, think and act. In the four technology domains of Vehicle Motion Control, Integrated Safety, Automated Driving, and Electric Mobility, ZF offers comprehensive product and software solutions for established vehicle manufacturers and newly emerging transport and mobility service providers. ZF electrifies a wide range of vehicle types. With its products, the company contributes to reducing emissions, protecting the climate and enhancing safe mobility.",
+    tasks: [
+      "Platform SW Integration for various AUTOSAR crypto modules such as CSM/Cryif/Crypto based on Customer milestones.",
+      "Integration of vHSM modules, vHSM updater, and Escrypt crypto driver.",
+      "Analyze Security Sys Requirement and derive PSW requirements.",
+      "Develop requirements, design, coding complying with coding guidelines.",
+      "Take accountability and interact with different stakeholders on demand.",
+      "Adherence to all SW processes including QAC, Polyspace, Code inspections, unit testing, and developer testing.",
+    ],
+  },
+  {
+    title: "Software Trainee",
+    company: "Zoho pvt Ltd",
+    salary: "$15000-20000",
+    employmentType: "Full-time",
+    shift: "Day Shift",
+    description:
+      "Experience parts programming and work experience preferable. Experience in handling night shift incharge to manage the team size of at least 10 people.",
+    locationCurrent: "Coimbatore",
+    descriptionDetail:
+      "ZF is a global technology company supplying systems for passenger cars, commercial vehicles and industrial technology, enabling the next generation of mobility. ZF allows vehicles to see, think and act. In the four technology domains of Vehicle Motion Control, Integrated Safety, Automated Driving, and Electric Mobility, ZF offers comprehensive product and software solutions for established vehicle manufacturers and newly emerging transport and mobility service providers. ZF electrifies a wide range of vehicle types. With its products, the company contributes to reducing emissions, protecting the climate and enhancing safe mobility.",
+    tasks: [
+      "Platform SW Integration for various AUTOSAR crypto modules such as CSM/Cryif/Crypto based on Customer milestones.",
+      "Integration of vHSM modules, vHSM updater, and Escrypt crypto driver.",
+      "Analyze Security Sys Requirement and derive PSW requirements.",
+      "Develop requirements, design, coding complying with coding guidelines.",
+      "Take accountability and interact with different stakeholders on demand.",
+      "Adherence to all SW processes including QAC, Polyspace, Code inspections, unit testing, and developer testing.",
+    ],
+  },
+  {
+    title: "Software Trainee",
+    company: "Zoho pvt Ltd",
+    salary: "$15000-20000",
+    employmentType: "Full-time",
+    shift: "Day Shift",
+    description:
+      "Experience parts programming and work experience preferable. Experience in handling night shift incharge to manage the team size of at least 10 people.",
+    locationCurrent: "Coimbatore",
+    descriptionDetail:
+      "ZF is a global technology company supplying systems for passenger cars, commercial vehicles and industrial technology, enabling the next generation of mobility. ZF allows vehicles to see, think and act. In the four technology domains of Vehicle Motion Control, Integrated Safety, Automated Driving, and Electric Mobility, ZF offers comprehensive product and software solutions for established vehicle manufacturers and newly emerging transport and mobility service providers. ZF electrifies a wide range of vehicle types. With its products, the company contributes to reducing emissions, protecting the climate and enhancing safe mobility.",
+    tasks: [
+      "Platform SW Integration for various AUTOSAR crypto modules such as CSM/Cryif/Crypto based on Customer milestones.",
+      "Integration of vHSM modules, vHSM updater, and Escrypt crypto driver.",
+      "Analyze Security Sys Requirement and derive PSW requirements.",
+      "Develop requirements, design, coding complying with coding guidelines.",
+      "Take accountability and interact with different stakeholders on demand.",
+      "Adherence to all SW processes including QAC, Polyspace, Code inspections, unit testing, and developer testing.",
+    ],
+  },
 ];
 
 const JobCard = ({
@@ -492,7 +653,7 @@ const Location = () => {
       style={{
         position: "relative",
         backgroundImage:
-          'url("https://scontent.fmaa2-3.fna.fbcdn.net/v/t1.6435-9/130299541_135298905052544_8308866746948375884_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=300f58&_nc_ohc=IVTMye_l6FcAX_1xLa7&_nc_ht=scontent.fmaa2-3.fna&oh=00_AfDyyJkCwdWFTyd3Pdmd7wk-TSrL2GpPnxEtFRHiq1qgHA&oe=659BD9C5")',
+          'url("https://images.unsplash.com/photo-1573068057232-fa17a193d54d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
         backgroundSize: "cover",
         backgroundPosition: "center",
         minHeight: "60vh", // Set the height to 100% of the viewport height
@@ -620,9 +781,10 @@ const Location = () => {
       </Container>
 
 {/* large screen */}
-      <Container>
+      <Container fluid>
       {isLargeScreen ? (
-        <Row  style={{ maxHeight: '100vh', overflowY: 'auto' }}>
+        <div style={{  }}>
+        <Row className="scrolling" style={{ maxHeight: '100vh', overflowY: 'auto' }}>
           <Col xs={6}>
             <div>
               {filteredJobs.map((job, index) => (
@@ -720,6 +882,7 @@ const Location = () => {
             )}
           </Col>
         </Row>
+        </div>
         ) : (
         // Small Screen
         <div style={{ border: "2px solid #0e2246" }}>

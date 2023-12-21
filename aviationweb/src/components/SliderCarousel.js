@@ -1,57 +1,73 @@
-import React from 'react'
-import {Carousel} from 'react-bootstrap'
+import React, { useEffect, useState } from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import './Slider.css';
 
-const SliderCarousel = () => {
-    return (
-        <>
-            <Carousel>
-                <Carousel.Item interval={1000}>
-                    <img
-                        className="d-block w-100"
-                        src="https://images.unsplash.com/20/cambridge.JPG?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dW5pdmVyc2l0eXxlbnwwfHwwfHx8MA%3D%3D"
-                        alt="First slide"
-                    />
-                    <Carousel.Caption>
-                        <h3>This is the first slide!</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item interval={500}>
-                    <img
-                        className="d-block w-100"
-                        src="https://images.squarespace-cdn.com/content/v1/5ea8788f81c9eb298ba83835/1588366108719-K42H0HBIX4SRG1CRS5SE/phoenix_architectural_photographer_8850.jpg"
-                        alt="Second slide"
-                    />
-                    <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src="https://media.gettyimages.com/id/173598452/photo/university-in-autumn.jpg?s=612x612&w=gi&k=20&c=yqefDkarUFdQCoMIHvs7PifmgeTdJ8F-3nGxLrN_8Eo="
-                        alt="Third slide"
-                    />
-                    <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src="https://www.usnews.com/object/image/00000189-30bd-d6f6-a99b-ffbd1f840000/gettyimages-1478520911.jpg?update-time=1688739913761&size=responsive640"
-                        alt="Third slide"
-                    />
-                    <Carousel.Caption>
-                        <h3>Fourth slide label</h3>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-            </Carousel>
-        </>
-    )
-}
+const YourSlider = () => {
+    const [progressBarWidth, setProgressBarWidth] = useState(0);
 
-export default SliderCarousel
+  const sliderTimer = 5000;
+  const beforeEnd = 500;
+
+  const progressBar = () => {
+    setProgressBarWidth(0);
+
+    setTimeout(() => {
+      setProgressBarWidth(100);
+    }, 100);
+  };
+
+  const titleAnim = () => {
+    const currentSlide = document.querySelector('.slick-current');
+    currentSlide.querySelector('h1').classList.add('show');
+    setTimeout(() => {
+      currentSlide.querySelector('h1').classList.remove('show');
+    }, sliderTimer - beforeEnd);
+  };
+
+  const settings = {
+    autoplay: true,
+    autoplaySpeed: sliderTimer,
+    speed: 1000,
+    arrows: true,
+    dots: false,
+    adaptiveHeight: true,
+    pauseOnFocus: false,
+    pauseOnHover: false,
+    beforeChange: () => {
+      progressBar();
+    },
+    afterChange: (index) => {
+      titleAnim(index);
+    },
+  };
+
+  useEffect(() => {
+    progressBar();
+    titleAnim();
+  }, []);
+  return (
+    <div className="slider-wrap">
+      <Slider className="image-slider" {...settings}>
+        <div className="img-wrap">
+          <h1></h1>
+          <img src="https://images.unsplash.com/photo-1627501691850-db08eb81199a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+        </div>
+        <div className="img-wrap">
+          <h1></h1>
+          <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+        </div>
+        <div className="img-wrap">
+          <h1></h1>
+          <img src="https://images.unsplash.com/photo-1623888676435-d3b01b4d1dc0?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+        </div>
+      </Slider>
+      <div className="slider-progress">
+        <span style={{ width: `${progressBarWidth}%` }}></span>
+      </div>
+    </div>
+  );
+};
+
+export default YourSlider;
