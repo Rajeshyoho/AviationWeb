@@ -5,12 +5,12 @@
   }
   
   .image-slider {
-    height: 75vh;
+    height: 70vh;
     overflow: hidden;
   }
   
   .img-wrap {
-    height: 75vh;
+    height: 70vh;
     position: relative;
     overflow: hidden;
   }

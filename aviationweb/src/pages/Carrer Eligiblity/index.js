@@ -30,7 +30,7 @@ const AccordionItem = ({ title, content, index }) => {
 
   const isGrayBackground = index === 2 || index === 4 || index === 6;
 
-  const borderColor = isSelected ? "solid 2px white" : "solid 2px #ddd";
+  // const borderColor = isSelected ? "solid 2px white" : "solid 2px #ddd";
   const titleColor = isSelected ? "#ee495c" : "inherit";
 
   return (
@@ -47,7 +47,7 @@ const AccordionItem = ({ title, content, index }) => {
             justifyContent: "space-between",
             paddingBottom: "20px",
             paddingTop: "20px",
-            borderBottom: borderColor,
+            // borderBottom: borderColor,
             color: titleColor,
             display: "flex",
             justifyContent: "space-evenly",

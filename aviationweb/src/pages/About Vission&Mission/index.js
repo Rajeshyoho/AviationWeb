@@ -1,32 +1,16 @@
-import React, { useState, useEffect } from "react";
 import Grid from "@mui/material/Grid";
+import React, { useEffect, useState } from "react";
 import "../../components/VisionMission.css";
-// import { Container } from "@mui/material";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { styled } from "@mui/system";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Carousel from "react-bootstrap/Carousel";
-// import NavBar from "../../components/NavBar"
-import Breadcrumb from "react-bootstrap/Breadcrumb";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import { Image } from "react-bootstrap";
-import Footer from "../../components/Footer";
-import NavBar from "../../components/NavBar";
-import WeatherWidget from "../../components/Weather";
-import Header from "../../components/Header";
+import HomeIcon from "@mui/icons-material/Home";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
-import HomeIcon from "@mui/icons-material/Home";
 import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import NavBar from "../../components/NavBar";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 const images = [
   "https://wallpapercave.com/dwp2x/wp12041609.jpg",
@@ -96,20 +80,7 @@ const VisionMission = () => {
     transition: "all 0.7s",
   };
   return (
-    <Grid style={{overflow:"hidden"}}>
-      {/* <Grid
-        sx={{
-          background: " #ddeef7f5",
-          overflowX: "hidden",
-        }}
-      >
-  <Grid className='linearHeader' sx={{display:"flex",justifyContent:"space-between",alignItems:"center",}}>
-      <Image className='img-fluid' style={{ height: 130,  }} src={logo} />
-      <WeatherWidget/>
-
-      </Grid>
-      </Grid> */}
-
+    <Grid style={{ overflow: "hidden" }}>
       <Grid>
         <Header />
         <NavBar />
@@ -118,10 +89,11 @@ const VisionMission = () => {
       <Row
         style={{
           position: "relative",
-          backgroundImage: 'url("https://wallpapercave.com/dwp1x/wp11828145.jpg")',
+          backgroundImage:
+            'url("https://wallpapercave.com/dwp1x/wp11828145.jpg")',
           backgroundSize: "cover",
           backgroundPosition: "center",
-          minHeight: "60vh", 
+          minHeight: "60vh",
           paddingLeft: "40px",
           paddingRight: "40px",
           display: "flex",
@@ -215,261 +187,143 @@ const VisionMission = () => {
         </Col>
       </Row>
 
-      <Grid container sx={{ padding: 3 }}>
-        <Grid item xs={12} md={6} sx={{ paddingX: { xs: 1, sm: 2, md: 3 } }}>
-          <div>
-            <h1
-              style={{
-                marginBottom: "15px",
-                padding: "0px",
-                fontSize: "30px",
-                fontWeight: "bold",
-                marginTop: "15px",
-              }}
-            >
-              Vision and Mission 
-            </h1>
-            <h2
-              style={{
-                marginBottom: "15px",
-                padding: "0px",
-                fontSize: "20px",
-                fontWeight: "bold",
-              }}
-            >
-              Defining the essence
-            </h2>
-            <p
-              style={{ padding: "0px", textAlign: "justify", fontSize: "19px" }}
-            >
-              CGI's Constitution is a reflection of our Culture. The
-              Constitution is made up of the common Dream, Vision, Mission and
-              Values that drive us as we strive together to build a global IT
-              and business consulting services leader. With frameworks and
-              programs founded upon this Constitution, CGI's consultants and
-              professionals have the opportunity to participate in the life and
-              development of their company, which, in turn, results in client
-              loyalty and shareholder growth, like a road map of how to achieve
-              the goals set in your vision statement.
-            </p>
-          </div>
-        </Grid>
-        <Grid item xs={12} md={6} sx={{ display: { xs: "none", md: "block" } }}>
-          <Carousel fade={true} pause={false}>
-            {images.map((imageUrl, index) => (
-              <Carousel.Item key={index} interval={1000}>
-                <Card>
-                  <CardMedia
-                    component="img"
-                    alt={`Image ${index + 1}`}
-                    height="400"
-                    image={imageUrl}
-                    style={{ objectFit: "cover" }} // Add this line
-                  />
-                  <Carousel.Caption>
-                    {/* <h3>{`Slide ${index + 1} label`}</h3> */}
-                    {/* <p>Some text related to the image</p> */}
-                  </Carousel.Caption>
-                </Card>
-              </Carousel.Item>
-            ))}
-          </Carousel>
-        </Grid>
-      </Grid>
-
-      <Grid container sx={{ padding: "30px", textAlign: "justify" }}>
-        <Grid item xs={12} md={6} sx={{ paddingX: { xs: 1, sm: 2, md: 3 } }}>
-          <div>
-            <h3 style={{ fontWeight: "bold", fontSize: "19px" }}>Our Dream</h3>
-            <p style={{ margin: "3px 0px 20px", fontSize: "17px" }}>
-              To create an environment in which we enjoy working together and,
-              as owners, contribute to building a company we can be proud of.
-            </p>
-          </div>
-          <div>
-            <h3 style={{ fontWeight: "bold", fontSize: "19px" }}>Our Vision</h3>
-            <p style={{ margin: "3px 0px 20px", fontSize: "17px" }}>
-              To create an environment in which we enjoy working together and,
-              as owners, contribute to building a company we can be proud of.
-            </p>
-          </div>
-          <div>
-            <h3 style={{ fontWeight: "bold", fontSize: "19px" }}>
-              Our Mission
-            </h3>
-            <p style={{ margin: "3px 0px 20px", fontSize: "17px" }}>
-              To help our clients succeed through outstanding quality,
-              competence and objectivity, providing thought leadership and
-              delivering the best services and solutions to fully satisfy client
-              objectives in information technology, business processes, and
-              management. In all we do, we are guided by our Dream, living by
-              our Values to foster trusted relationships and meet our
-              commitments now and in the future.
-            </p>
-          </div>
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <h3
-            style={{
-              paddingLeft: "10px",
-              fontWeight: "bold",
-              fontSize: "19px",
-            }}
-          >
-            Our Values
-          </h3>
-          <div
-            sx={{ paddingX: { xs: 1, sm: 2, md: 3 } }}
-            className="accordianBorder"
-          >
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography className="accordianHeader">Accordion 1</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography className="accordianText">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                  eget.
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel2a-content"
-                id="panel2a-header"
-              >
-                <Typography className="accordianHeader">Accordion 2</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography className="accordianText">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                  eget.
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel3a-content"
-                id="panel3a-header"
-              >
-                <Typography className="accordianHeader">Accordion 3</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography className="accordianText">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                  eget.
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel4a-content"
-                id="panel4a-header"
-              >
-                <Typography className="accordianHeader">Accordion 1</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography className="accordianText">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                  eget.
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel5a-content"
-                id="panel5a-header"
-              >
-                <Typography className="accordianHeader">Accordion 1</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography className="accordianText">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                  eget.
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-          </div>
-        </Grid>
-      </Grid>
-
-      <Grid container sx={{ padding: "30px", textAlign: "justify" }}>
-        <Grid item xs={12} md={6} sx={{ paddingX: { xs: 1, sm: 2, md: 3 } }}>
-          <div>
-            <h3 style={{ fontWeight: "bold", fontSize: "19px" }}>
-              The CGI Culture through the adherence of our Constitution
-            </h3>
-            <Typography
-              style={{
-                margin: "3px 0px 10px",
-                fontSize: "17px",
-                textAlign: "justify",
-              }}
-            >
-              Our Constitution is the foundation of our Culture, expressed in
-              words. To learn more—and to read a Word from Our Founder—visit the
-              CGI Culture page. This document explains the rationale of our
-              Constitution and how it is a reflection of our Culture. It aims to
-              guide all CGI consultants and professionals, whom we call members,
-              in their day-to-day actions to live the Dream.
-            </Typography>
-            <Typography
-              style={{
-                margin: "3px 0px 10px",
-                fontSize: "17px",
-                textAlign: "justify",
-              }}
-            >
-              The world will continue to change. CGI will have to remain close
-              to its clients and continue to evolve. Correspondingly, CGI
-              members will have to continue to evolve our Constitution through
-              the coming decades to support the continuous success of CGI and
-              ensure its perenniality.
-            </Typography>
-            <Typography
-              style={{
-                margin: "3px 0px 10px",
-                fontSize: "17px",
-                textAlign: "justify",
-              }}
-            >
-              All existing EOIs in the pool as on 12 October 2022 meeting the
-              old policy requirements were eligible for selection.The first EOI selection round under the new policy will be held in August 2023 and every three months thereafter
-            </Typography>
-          </div>
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          md={6}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div style={containerStyle}>
-            <div style={overlayStyle} className="overlay">
-              <div style={headStyle} className="head">
-                <h3>Product Name</h3>
-                <p style={{ borderTop: "1px solid", fontSize: "20px" }}>
-                  View Conent
-                </p>
+      <div style={{ backgroundColor: "#3c4b6a" }}>
+        <Container fluid>
+          <Row style={{ padding: "50px" }}>
+            <Col sm={12} md={6}>
+              <div style={{ color: "#ffffff" }}>
+                <div>
+                  <h2 style={{ fontWeight: "bold" }}>VISION</h2>
+                </div>
+                <strong style={{ fontSize: "18px", fontWeight: "bolder" }}>
+                  The Government College for Women stands to:
+                </strong>
+                <ul style={{ marginTop: "10px" }}>
+                  <li style={{ paddingTop: "10px", fontSize: "15px" }}>
+                    <ChevronRightIcon />
+                    Provide a sound education in basic science and humanities
+                  </li>
+                  <li style={{ paddingTop: "10px", fontSize: "15px" }}>
+                    <ChevronRightIcon />
+                    Inculcate high values through liberal education
+                  </li>
+                  <li style={{ paddingTop: "10px", fontSize: "15px" }}>
+                    <ChevronRightIcon /> Promote research and learning at the PG
+                    level and beyond
+                  </li>
+                  <li style={{ paddingTop: "10px", fontSize: "15px" }}>
+                    <ChevronRightIcon />
+                    Provide a broad range of non-formal educational services
+                  </li>
+                  <li style={{ paddingTop: "10px", fontSize: "15px" }}>
+                    <ChevronRightIcon />
+                    Transform society through the empowerment of women
+                  </li>
+                  <li style={{ paddingTop: "10px", display: "flex" }}>
+                    <span>
+                      <ChevronRightIcon />
+                    </span>
+                    <div style={{ fontSize: "15px" }}>
+                      Provide inexpensive educational services to the weaker
+                      sections of the society and reinvent itself in response to
+                      the changing demands of society
+                    </div>
+                  </li>
+                  <li style={{ paddingTop: "10px", fontSize: "15px" }}>
+                    <ChevronRightIcon />
+                    Develop responsible women leaders for the future
+                  </li>
+                </ul>
               </div>
-            </div>
+            </Col>
+            <Col sm={12} md={6}>
+              <img
+                style={{ width: "100%", objectFit: "cover" }}
+                src="https://images.unsplash.com/photo-1627501691850-db08eb81199a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              />
+            </Col>
+          </Row>
+        </Container>
+      </div>
+
+      <div>
+        <div
+          style={{
+            backgroundColor: "#d5e4ed",
+            margin: "40px",
+            padding: "30px",
+          }}
+        >
+          <div>
+            <h2 style={{ fontWeight: "bold" }}>MISSION</h2>
           </div>
-        </Grid>
-      </Grid>
+          <strong style={{ fontSize: "18px", fontWeight: "bolder" }}>
+            Our mission is
+          </strong>
+          <ul style={{ marginTop: "10px" }}>
+            <li style={{ paddingTop: "10px", display: "flex" }}>
+              <span>
+                <ChevronRightIcon />
+              </span>
+              <div style={{ fontSize: "15px" }}>
+                To provide quality higher education to girl students to enable
+                them to face the challenges of the world with courage and
+                confidence and mould them to be socially responsible citizens
+              </div>
+            </li>
+            <li style={{ paddingTop: "10px", fontSize: "15px" }}>
+              <ChevronRightIcon />
+              To impart knowledge and create intellectual power among the needy
+              and deserving community.
+            </li>
+            <li style={{ paddingTop: "10px", fontSize: "15px" }}>
+              <ChevronRightIcon /> To transform the student into a balanced
+              personality through a wide variety of curricular, co-curricular,
+              and extra-curricular activities.
+            </li>
+            <li style={{ paddingTop: "10px", fontSize: "15px" }}>
+              <ChevronRightIcon />
+              To impart ethical values for ensuring the harmonious functioning
+              of the society
+            </li>
+            <li style={{ paddingTop: "10px", fontSize: "15px" }}>
+              <ChevronRightIcon />
+              To develop courage, confidence, and competitiveness in the
+              changing global scenario.
+            </li>
+            <li style={{ paddingTop: "10px", display: "flex" }}>
+              <span>
+                <ChevronRightIcon />
+              </span>
+              <div style={{ fontSize: "15px" }}>
+                Provide inexpensive educational services to the weaker sections
+                of the society and reinvent itself in response to the changing
+                demands of society
+              </div>
+            </li>
+            <li style={{ paddingTop: "10px", display: "flex" }}>
+              <span>
+                <ChevronRightIcon />
+              </span>
+              <div style={{ fontSize: "15px" }}>
+                To provide quality higher education to girl students to enable
+                them to face the challenges of the world with courage and
+                confidence and mould them to be socially responsible citizens
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div  style={{
+            margin: "30px",
+            padding: "30px",}}>
+        <h4 style={{textAlign:"center",fontSize:"23px",fontWeight:"bold"}}>Performance of the institution in one area distinctive to its vision, priority and thrust</h4>
+        <div style={{marginTop:"20px"}}>
+          <p style={{fontSize:"14px"}}>With the motto of “For The Country and for The Home” Govt. College for Women, Thiruvananthapuram has a rich legacy of more than a century in providing quality higher education to girl students of the state. Women empowerment through education is the distinctive vision of the institution, which has been given emphasis in all the teaching, learning and research activities of our college. The college has emerged as a ‘centre of excellence’ in the state of Kerala offering 18 undergraduate programmes and 17 postgraduate programmes in various disciplines. Twelve of the departments have the research centre status. The four-storied central library with a large number of books, journals, periodicals, newspapers and other academic publications is the biggest resource to the academic community in the campus. Students are given the foremost importance and representation in the administrative, co-curricular and extracurricular activities in the college. College administration has taken all measures to facilitate admission, examinations and other student support services. Students of the college secure 30-35 ranks, every year in Kerala university examinations. A good number of students join for higher education and research on completion of the programmes. A reasonably good number of students qualify national level eligibility tests like UGC/CSIR-JRF-NET and GATE, every year.  Many of the faculty members of the college have been actively involved in pursuing research and regularly publishing research articles in reputed national and international research journals. Our students excel in arts, sports and other extracurricular activities.</p>
+          <p style={{fontSize:"14px"}}>Students of our college have become members in several national, state and university teams of sports events. Our college has been in the third position among the affiliated colleges in university youth festivals for the last several years. Various co-curricular ‘new initiative’ programmes like scholar support programmes (SSP); for giving special training to needy students, walk with a scholar (WWS); for mentoring a few students with the good academic record, additional skill acquisition programme (ASAP); for giving training on additional job skills etc. are undertaken by the college in its full spirit. NSS, NCC and various clubs like literary, debate, quiz, drama, health etc. fully functional in the campus. A continuing education sub-centre of the University of Kerala Centre for Adult Continuing Education & Extension is here in the campus offering nearly 300 courses to the students of the college as well as to people outside the campus without any age barrier for women. Activities in connection with central government initiatives like Unnat Bharat Abhiyan and Ek Bharath Shrestha Bharath are organized by the college. Under the Unnat Bharat Abhiyan programme, inspired by the vision of transformational change in rural development processes by leveraging knowledge institutions to help build the architecture of an inclusive India</p>
+        </div>
+      </div>
 
       <div>
         <Footer />

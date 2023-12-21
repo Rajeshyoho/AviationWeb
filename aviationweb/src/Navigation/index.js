@@ -38,8 +38,8 @@ const Navigation = () => {
   return (
     <>
       <Routes>
-      <Route path="/" element={<Home/>} />
-
+      <Route path="/" element={<VisionMission />} />
+      <Route path="/Home" element={<Home/>} />
       <Route path="/JobOpportunities" element={<JobOpportunities />} />
       <Route path="/InterviewDate" element={<InterviewDate/>} />
       <Route path="/CompanyName" element={<CompanyName/>} />
@@ -47,7 +47,6 @@ const Navigation = () => {
         <Route path="/Accademic" element={<Accademic />} />
         <Route path="/ActsStatus" element={<ActsStatus />} />
         <Route path="/AboutLogo" element={<AboutLogo />} />
-        <Route path="/VisionMission" element={<VisionMission />} />
         <Route path="/TrainingProgram" element={<TrainingProgram />} />
         <Route path="/Associate" element={<Associate />} />
         <Route path="/DiplomaCourse" element={<DiplomaCourse />} />
