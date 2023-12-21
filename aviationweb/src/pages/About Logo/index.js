@@ -1,31 +1,23 @@
+import HomeIcon from "@mui/icons-material/Home";
 import {
-  Divider,
-  Grid,
-  Typography,
-  Card,
-  CardActions,
-  CardMedia,
-  CardContent,
-  CardActionArea,
   Box,
+  Grid,
+  Typography
 } from "@mui/material";
-import React from "react";
-import { Image } from "react-bootstrap";
-import Breadcrumb from "react-bootstrap/Breadcrumb";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Footer from "../../components/Footer";
-import NavBar from "../../components/NavBar";
-import WeatherWidget from "../../components/Weather";
-import Header from "../../components/Header";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
-import HomeIcon from "@mui/icons-material/Home";
+import Paper from "@mui/material/Paper";
+import { styled } from "@mui/material/styles";
+import React from "react";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import NavBar from "../../components/NavBar";
+import { Image } from "react-bootstrap";
+// import { Card } from "react-bootstrap";
+// import "../../components/Logo.css"
 
 const AboutLogo = () => {
   const Item = styled(Paper)(({ theme }) => ({
@@ -39,7 +31,7 @@ const AboutLogo = () => {
   const logo = require("../../Images/logo3.png");
 
   return (
-    <>
+    <div style={{overflow:"hidden"}}>
       <Grid>
         <Header />
         <NavBar />
@@ -57,7 +49,6 @@ const AboutLogo = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          width: "100%",
         }}
       >
         <div
@@ -145,18 +136,7 @@ const AboutLogo = () => {
         </Col>
       </Row>
 
-      {/* <Grid
-        style={{
-          textAlign: "center",
-          marginTop: 20,
-          fontSize: "30px",
-          fontWeight: "bold",
-          textDecoration:"underline",
-          color:"#114379"
-        }}
-      >
-        <h1>OUR POLICIES</h1>
-      </Grid> */}
+     
 
       <Grid>
         <Container fluid style={{ padding: 20, textAlign: "justify" }}>
@@ -165,7 +145,7 @@ const AboutLogo = () => {
               style={{
                 fontSize: "30px",
                 fontWeight: "bold",
-                color:"#033263"
+                marginTop:"20px"
               }}
             >
               Best Pilot Training Institutes in the World 2023
@@ -180,159 +160,37 @@ const AboutLogo = () => {
           </Typography>
         </Container>
       </Grid>
+            
+            <Container>
+              {/* <Card style={{padding:"30px",borderRadius:"15px"}}> */}
+              {/* <Image
+              className="img-fluid"
+              style={{ width: "100%"}}
+              src={logo}
+              alt="Logo"
+            /> */}
 
-      <div style={{}}>
-        <Card
-          style={{border:"#033263",
-            transition: "transform 0.2s",
-            "&:hover": {
-              transform: "scale(1.05)", // You can adjust the scale factor
-            },
-          }}
-        >
-          <img
-            src={logo}
-            style={{ width: "100%", height: "auto", textAlign: "center" }}
-          />
-        </Card>
-      </div>
+<div className="col" style={{marginTop:"30px",marginBottom:"30px"}}>
+      <a href="#" className="card card-10 stacked--fan-right">
+        <div className="content">
+          <Image
+              className="img-fluid"
+              style={{ width: "100%"}}
+              src={logo}
+              alt="Logo"
+            /> 
+        </div>
+      </a>
+    </div>
+              {/* </Card>   */}
 
-      {/* <div>
-        <Container fluid >
-          <Row xs={1} md={2}>
-            <Col xs={6}>
-              <Image src="https://www.faa.gov/sites/faa.gov/files/images/ato/by-the-numbers/flights-handled.jpg" />
-            </Col>
+           
+            </Container>
 
-            <Col xs={6}>
-              <Image src="https://www.faa.gov/sites/faa.gov/files/images/ato/by-the-numbers/avg-flights.jpg" />
-            </Col>
-          </Row>
-        </Container>
-      </div> */}
-
-      {/* <Container>
-        <Grid sx={{ flexDirection: { xs: "column", lg: "row" } ,marginTop:2}}>
-          <Box
-            sx={{
-              flexDirection: { xs: "column", lg: "row" },
-              display: "flex",
-              justifyContent: "space-around",
-            }}
-          >
-            <Grid>
-              <img
-                src="https://www.faa.gov/sites/faa.gov/files/images/ato/by-the-numbers/flights-handled.jpg"
-                style={{ height: 300, width: "100%" }}
-              />
-            </Grid>
-            <Grid sx={{ marginTop: { xs: 3, lg: 0 } }}>
-              <img
-                src="https://www.faa.gov/sites/faa.gov/files/images/ato/by-the-numbers/avg-flights.jpg"
-                style={{ height: 300, width: "100%" }}
-              />
-            </Grid>
-          </Box>
-          <Box
-            sx={{
-              flexDirection: { xs: "column", lg: "row" },
-              display: "flex",
-              justifyContent: "space-around",
-              marginTop: 3,
-            }}
-          >
-            <Grid>
-              <img
-                src="https://www.faa.gov/sites/faa.gov/files/images/ato/by-the-numbers/sched-pax-flights.jpg"
-                style={{ height: 300, width: "100%" }}
-              />
-            </Grid>
-            <Grid sx={{ marginTop: { xs: 3, lg: 0 } }}>
-              <img
-                src="https://www.faa.gov/sites/faa.gov/files/images/ato/by-the-numbers/peak-ops.jpg"
-                style={{ height: 300, width: "100%" }}
-              />
-            </Grid>
-          </Box>
-          <Box
-            sx={{
-              flexDirection: { xs: "column", lg: "row" },
-              display: "flex",
-              justifyContent: "space-around",
-              marginTop: 3,
-            }}
-          >
-            <Grid>
-              <img
-                src="https://www.faa.gov/sites/faa.gov/files/images/ato/by-the-numbers/controllers.jpg"
-                style={{ height: 300, width: "100%" }}
-              />
-            </Grid>
-            <Grid sx={{ marginTop: { xs: 3, lg: 0 } }}>
-              <img
-                src="https://www.faa.gov/sites/faa.gov/files/images/ato/by-the-numbers/ga.jpg"
-                style={{ height: 300, width: "100%" }}
-              />
-            </Grid>
-          </Box>
-        </Grid>
-      </Container> */}
-
-      {/* <div
-        style={{
-          marginTop: 30,
-          display: "flex",
-          textAlign: "center",
-          justifyContent: "center",
-          alignItems: "center",
-          textAlign: "justify",
-        }}
-      >
-        <Typography>
-          <h2> Aviation Testimonial</h2>
-          <Divider style={{ backgroundColor: "gray" }} />
-        </Typography>
-      </div>
-      <div>
-        <Container 
-          style={{ backgroundColor: "#c7d4e3", marginTop: 10, borderRadius: 5 }}
-        >
-          <Row>
-            <Typography style={{ marginTop: 20, textAlign: "justify" }}>
-              <p>
-                Montair’s experienced instructors and advanced aircraft were an
-                integral part in preparing me for a career as a professional
-                pilot. Their drive for perfection equipped me with the
-                fundamental skills and attitude required to take on just about
-                any job in the aviation industry. The meticulous standards to
-                which they maintain their aircraft always gave me peace-of-mind
-                knowing that I was safe, while the well-equipped classroom and
-                training facilities created an excellent environment in which to
-                learn. The camaraderie created by this welcoming environment led
-                to relationships and memories that will last a lifetime. I take
-                the skills and experience that I gained during my time at
-                Montair with me every day I go to work, making me a better and
-                safer pilot.
-              </p>
-              <div style={{ display: "flex" }}>
-                <img
-                  src="https://e7.pngegg.com/pngimages/901/285/png-clipart-airplane-computer-icons-avatar-pilot-smiley-airplane-thumbnail.png"
-                  style={{ borderRadius: 300, height: 50, width: 50 }}
-                />
-                <p style={{ marginTop: 14, marginLeft: 20 }}>
-                  The New Streamlined Launch and Reentry Licensing Process
-                  Advisory Circulars and Guidance
-                </p>
-              </div>
-            </Typography>
-          </Row>
-        </Container>
-      </div> */}
-
-      <div style={{ marginTop: 15 }}>
+      <div style={{ marginTop: "40px" }}>
         <Footer />
       </div>
-    </>
+    </div>
   );
 };
 

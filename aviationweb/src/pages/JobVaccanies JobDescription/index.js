@@ -1,5 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Image } from "react-bootstrap";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Button from "react-bootstrap/Button";
@@ -28,9 +28,52 @@ import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
 import HomeIcon from "@mui/icons-material/Home";
 import { GoDotFill } from "react-icons/go";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+// import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Table from "react-bootstrap/Table";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Description from "../../components/Description";
+// import CardList from "../../components/Description";
+import { useParams } from "react-router-dom";
+import IndividualCard from "../../components/IndividualCard";
+import { Switch } from "@mui/material";
 
 const JobDescription = () => {
   const logo = require("../../Images/logo3.png");
+
+  const imageStyle = {
+    borderRadius: "50%", // for a circular shape
+    maxWidth: 300,
+    height: 300,
+    display: "block",
+    margin: "0 auto",
+  };
+
+  // Media query for small devices
+  const smallDeviceStyle = {
+    ...imageStyle,
+    maxWidth: "80%", // Adjust the value as needed
+  };
+
+  const cards = [
+    {
+      title: "Airline Ticketing Executive",
+      image:"https://aviationoutlook.com/wp-content/uploads/2021/05/Fractional-Jet-Ownership-vs.-Whole-Aircraft-Ownership-1024x573.jpg",
+      description:
+        "Airline Ticketing Executive / Travel Consultant / airport ground staff Flight and Fare enquiries emails Good Communication in English 6 days working and 1 week off Operate and control aircraft along planned routes and during takeoffs and landings. Monitor engines, fuel consumption, and other aircraft systems during flight.",
+    },
+
+    {
+      title: "Airline ground staff",
+      image:"https://20256628.fs1.hubspotusercontent-na1.net/hub/20256628/hubfs/Aviation%20Landing%20Page%20(1).jpg?width=2878&name=Aviation%20Landing%20Page%20(1).jpg",
+      description:
+        "An airline pilot, or aviator, transports passengers and cargo by airplane. Some commercial aviators perform other duties, such as dusting crops or monitoring traffic.commercial and airline pilots were earning a median annualemployment opportunities for airline and commercial pilots.",
+    },
+    // Add more cards as needed
+  ];
 
   return (
     <div style={{ overflow: "hidden" }}>
@@ -144,7 +187,6 @@ const JobDescription = () => {
         sx={{
           backgroundColor: "#f0f0fb",
           // marginTop: 5,
-          
         }}
       >
         <Box
@@ -174,9 +216,15 @@ const JobDescription = () => {
           }}
         >
           <br />
-          <Typography variant="h5">Flight Attendant job description</Typography>
+          <Typography variant="h5">Flight job description</Typography>
           <Container style={{ marginBottom: "25px" }}>
-            <Typography style={{ marginTop: "20px", textAlign: "justify" }}>
+            <Typography
+              style={{
+                marginTop: "20px",
+                textAlign: "justify",
+                marginBottom: "20px",
+              }}
+            >
               A Flight Attendant is a professional who is responsible for
               ensuring the safety, security, and comfort of passengers on board
               an airline. They provide customer service before, during, or at
@@ -185,10 +233,136 @@ const JobDescription = () => {
             </Typography>
           </Container>
         </Box>
-        <div style={{marginBottom:"10px"}}></div>
+        <div style={{ marginBottom: "10px" }}></div>
       </Grid>
 
-       
+      <Description cards={cards} />
+
+
+      {/* <div>
+        <Container>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography>Flight Technician</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                Flies on the aircraft and provides flight attendant services as
+                well as technician services as needed (combination flight
+                attendant and technician). Typically a licensed FCC Avionics
+                Repairman. (BDO Code 440)
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel2a-content"
+              id="panel2a-header"
+            >
+              <Typography>Flight Coordinator/Office Manager</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                Schedules aircraft and records flight times, maintains aircraft
+                schedule changes as well as manages the day-to-day
+                administrative duties of the departmental office. (BDO Code 500)
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel2a-content"
+              id="panel2a-header"
+            >
+              <Typography>Flight Coordinator/Office Manager</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                Schedules aircraft and records flight times, maintains aircraft
+                schedule changes as well as manages the day-to-day
+                administrative duties of the departmental office. (BDO Code 500)
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel2a-content"
+              id="panel2a-header"
+            >
+              <Typography>Flight Coordinator/Scheduler </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                Schedules aircraft and records flight times, maintains aircraft
+                schedule changes as well as other administrative duties. (BDO
+                Code 520)
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel2a-content"
+              id="panel2a-header"
+            >
+              <Typography>Senior Flight Attendant</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                Most seasoned member of flight attendant staff. May manage
+                flight attendants schedule and/or supervise other flight
+                attendants. Provides safety assurance as well as ensuring a
+                cabin environment that is conducive to passenger needs.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel2a-content"
+              id="panel2a-header"
+            >
+              <Typography>Line Service Personnel</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                Responsible for refueling, moving aircraft in and out of hangar,
+                cleans and restocks aircraft. Assists in routine maintenance,
+                pre-flights, meeting of arriving and dispatching departing
+                aircraft, etc.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel2a-content"
+              id="panel2a-header"
+            >
+              <Typography>Manager of Maintenance</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                A licensed A&P who supervises other A&P maintenance technicians
+                and helpers directly or through a lead maintenance technician or
+                maintenance foreman.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        </Container>
+      </div> */}
 
       <div>
         <Container>
@@ -196,21 +370,101 @@ const JobDescription = () => {
             variant="h5"
             style={{
               fontWeight: "bold",
-              marginTop: 25,
+              marginTop: "30px",
             }}
           >
-            Aviation job description responsibilities Post Job
+            Aviation job description Salaries information
           </Typography>
-          <Typography style={{ marginTop: 10,textAlign:"justify" }}>
+          {/* <Typography style={{ marginTop: 10, textAlign: "justify" }}>
             An aviation engineer provides an essential service by working to
             maintain or build a particular type of aircraft. Those working in
             this field are usually employed by an airline or maintenance company
             on either a contract or long term basis. To be a properly licensed
             aviation engineer, many months of study are required, followed by
             practical experience to gain company approval.
-          </Typography>
+          </Typography> */}
+          <Row style={{ marginTop: "20px" }}>
+            <Col>
+              <Table
+                striped
+                bordered
+                hover
+                responsive="lg"
+                className="text-center table-design"
+              >
+                <thead>
+                  <tr>
+                    <th>Schedule Date</th>
+                    <th>Starting Time</th>
+                    <th>Ending Time</th>
+                    <th>Applicant Name</th>
+                    <th>Applied position</th>
+                    <th>Interviewer Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>02.01.2023</td>
+                    <td>10.35 am</td>
+                    <td>11.40 am</td>
+                    <td>Candiate</td>
+                    <td>Research Associate</td>
+                    <td>John Foe</td>
+                  </tr>
+                  <tr>
+                    <td>02.01.2023</td>
+                    <td>10.35 am</td>
+                    <td>11.40 am</td>
+                    <td>Candiate</td>
+                    <td>Research Associate</td>
+                    <td>John Foe</td>
+                  </tr>
+                  <tr>
+                    <td>02.01.2023</td>
+                    <td>10.35 am</td>
+                    <td>11.40 am</td>
+                    <td>Candiate</td>
+                    <td>Research Associate</td>
+                    <td>John Foe</td>
+                  </tr>
+                  <tr>
+                    <td>02.01.2023</td>
+                    <td>10.35 am</td>
+                    <td>11.40 am</td>
+                    <td>Candiate</td>
+                    <td>Research Associate</td>
+                    <td>John Foe</td>
+                  </tr>
+                  <tr>
+                    <td>02.01.2023</td>
+                    <td>10.35 am</td>
+                    <td>11.40 am</td>
+                    <td>Candiate</td>
+                    <td>Research Associate</td>
+                    <td>John Foe</td>
+                  </tr>
+                  <tr>
+                    <td>02.01.2023</td>
+                    <td>10.35 am</td>
+                    <td>11.40 am</td>
+                    <td>Candiate</td>
+                    <td>Research Associate</td>
+                    <td>John Foe</td>
+                  </tr>
+                  <tr>
+                    <td>02.01.2023</td>
+                    <td>10.35 am</td>
+                    <td>11.40 am</td>
+                    <td>Candiate</td>
+                    <td>Research Associate</td>
+                    <td>John Foe</td>
+                  </tr>
+                </tbody>
+              </Table>
+            </Col>
+          </Row>
 
-          <Typography style={{ marginTop: 10 }}>
+          {/* <Typography style={{ marginTop: 10 }}>
             <ul>
               <li>
                 (1) A small Montana-based airport was looking for a part-time
@@ -227,11 +481,11 @@ const JobDescription = () => {
               </li>
               <li>
                 (4) A career in aviation may seem like an excellent idea, Aside
-                romantic of being in the clouds, transportation form for
-                travel and cargo shipping.
+                romantic of being in the clouds, transportation form for travel
+                and cargo shipping.
               </li>
             </ul>
-          </Typography>
+          </Typography> */}
         </Container>
       </div>
 
@@ -288,11 +542,11 @@ const JobDescription = () => {
         </Container>
       </div> */}
 
-      <div>
+      {/* <div>
         <Container>
           <Row
             style={{
-              marginTop: "30px",
+              marginTop: "50px",
               textAlign: "center",
               textAlign: "justify",
             }}
@@ -353,7 +607,49 @@ const JobDescription = () => {
             </Col>
           </Row>
         </Container>
-      </div>
+      </div> */}
+
+      {/* <div>
+        <Container>
+          <Row>
+            <Typography
+              style={{
+                marginTop: "30px",
+                fontSize: "20px",
+                fontWeight: "bold",
+                textAlign: "center",
+                marginBottom: "30px",
+              }}
+            >
+              Ready To Take Flight.!
+            </Typography>
+
+            <Col>
+              <Image
+                src="https://s.yimg.com/ny/api/res/1.2/zoLMtpg1Xp5x_4H1O5owOg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTcyMDtjZj13ZWJw/https://media.zenfs.com/en/accesswire.ca/6738905601446b84f03296a7b7c66c5d"
+                alt="Rounded Image"
+                style={imageStyle}
+              />
+            </Col>
+
+            <Col>
+              <Image
+                src="https://calaero.edu/wp-content/uploads/2019/08/3.png"
+                alt="Rounded Image"
+                style={imageStyle}
+              />
+            </Col>
+
+            <Col>
+              <Image
+                src="https://res.cloudinary.com/highereducation/image/upload/w_740,c_fill,f_auto,fl_lossy,q_auto/v1536349659/TheBestSchools.org/aviation-jobs.jpg"
+                alt="Rounded Image"
+                style={imageStyle}
+              />
+            </Col>
+          </Row>
+        </Container>
+      </div> */}
 
       <Grid style={{ marginTop: "50px" }}>
         <Footer />

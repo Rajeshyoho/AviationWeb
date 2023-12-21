@@ -38,8 +38,8 @@ const NavBar = () => {
           </label>
           {/* <Button htmlFor="cancel_btn" className="btn cancel_btn" style={{ backgroundColor: "white", color: "black" }}>Close</Button> */}
           <li>
-            <a class="desktop_item">
-              <Link to="/AboutUs">About Us</Link>
+            <a href="#AboutUs" class="desktop_item">
+              About Us
             </a>
             <input type="checkbox" id="showMegaAboutUs" />
             <label
@@ -90,7 +90,7 @@ const NavBar = () => {
           </li>
           <li>
             <a href="#Accademic" class="desktop_item">
-              Academic
+              Accademic
             </a>
             <input type="checkbox" id="showMegaAcademic" />
             <label for="showMegaAcademic" class="mobile_item">
@@ -246,14 +246,14 @@ const NavBar = () => {
                 <div class="row">
                   <ul class="mega_links first_links">
                     <li>
-                      <a href="#">Location</a>
+                      <a href="#Location">Location</a>
                     </li>
                     <li>
-                      <a href="#">Designation / Position</a>
+                      <a href="#DesignationPosition">Designation / Position</a>
                     </li>
 
                     <li>
-                      <a href="#">Role & Responsiblites</a>
+                      <a href="#RolesResponsibilites">Role & Responsiblites</a>
                     </li>
                   </ul>
                 </div>

@@ -24,6 +24,9 @@ import JobDescription from "./JobVaccanies JobDescription";
 import CompanyName from "./JobVaccanies CompanyName";
 import InterviewDate from "./JobVaccanies InterviewDate";
 import ExperienceFeatures from "./JobVaccanies Experiences";
+import DesignationPosition from "./JobVaccanies Designation";
+import RolesResponsibilites from "./JobVaccanies Roles&Responsibility";
+import Location from "./JobVaccanies Location";
 export {
     Home,
     AboutUs,
@@ -50,5 +53,8 @@ export {
     JobDescription,
     CompanyName,
     InterviewDate,
-    ExperienceFeatures
+    ExperienceFeatures,
+    DesignationPosition,
+    RolesResponsibilites,
+    Location,
 }

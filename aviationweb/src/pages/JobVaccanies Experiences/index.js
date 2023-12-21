@@ -25,6 +25,12 @@ import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
 import HomeIcon from "@mui/icons-material/Home";
 import { GoDotFill } from "react-icons/go";
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+// import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 
 const ExperienceFeatures = () => {
   const logo = require("../../Images/logo3.png");
@@ -137,6 +143,12 @@ const ExperienceFeatures = () => {
         </Col>
       </Row>
 
+
+
+
+
+
+
       <div>
         <Container fluid style={{ marginTop: "30px" }}>
           <Grid
@@ -245,7 +257,7 @@ const ExperienceFeatures = () => {
               which plays a crucial role in shaping its future:
             </Typography>
 
-            <Box style={{ marginTop: 10 }}>
+            <Box style={{ marginTop: "20px" }}>
               <Typography
                 variant="h6"
                 style={{ fontWeight: "bold", textDecoration: "underline" }}
@@ -260,7 +272,7 @@ const ExperienceFeatures = () => {
               </Typography>
             </Box>
 
-            <Box style={{ marginTop: 10 }}>
+            <Box style={{marginTop: "20px"}}>
               <Typography
                 variant="h6"
                 style={{ fontWeight: "bold", textDecoration: "underline" }}
@@ -277,7 +289,7 @@ const ExperienceFeatures = () => {
               </Typography>
             </Box>
 
-            <Box style={{ marginTop: 10 }}>
+            <Box style={{ marginTop: "20px"}}>
               <Typography
                 variant="h6"
                 style={{ fontWeight: "bold", textDecoration: "underline" }}
@@ -295,7 +307,7 @@ const ExperienceFeatures = () => {
               </Typography>
             </Box>
 
-            <Box style={{ marginTop: 10 }}>
+            <Box style={{ marginTop: "20px"}}>
               <Typography
                 variant="h6"
                 style={{ fontWeight: "bold", textDecoration: "underline" }}
@@ -317,7 +329,7 @@ const ExperienceFeatures = () => {
       </div>
 
       <div>
-        <Container style={{marginTop:"30px"}}>
+        <Container style={{marginTop:"40px"}}>
           <Row>
             <Col>
             <Typography

@@ -24,7 +24,10 @@ import {
   JobDescription,
   CompanyName,
   InterviewDate,
-  ExperienceFeatures
+  ExperienceFeatures,
+  DesignationPosition,
+  RolesResponsibilites,
+  Location,
 } from "../pages";
 
 import { Routes, Route } from "react-router-dom";
@@ -62,9 +65,13 @@ const Navigation = () => {
         <Route path="/AcademicCounsellingRegistration" element={<AcademicCounsellingRegistration />} />
         <Route path="/JobDescription" element={<JobDescription />} />
         <Route path="/ExperienceFeatures" element={<ExperienceFeatures />} />
+        <Route path="/DesignationPosition" element={<DesignationPosition />} />
+        <Route path="/RolesResponsibilites" element={<RolesResponsibilites />} />
+        <Route path="/Location" element={<Location />} />
       </Routes>
     </>
   );
 };
 
 export default Navigation;
+

@@ -134,12 +134,11 @@ const HowToJoinCourse = () => {
   </Col>
 </Row>
 
-      <div style={{ marginTop: 30 }}>
+      <div style={{ marginTop: "30px" }}>
         <Container>
           <Typography
             style={{
               fontWeight: "bold",
-
               fontSize: "30px",
               textAlign: "center",
             }}
@@ -266,7 +265,7 @@ const HowToJoinCourse = () => {
             To become a ground staff, the candidate has to follow the following
             Ground Staff Admission Process:
           </Typography>
-          <Typography style={{ marginTop: "8px" }}>
+          <p style={{ marginTop: "8px" }}>
           <ul >
             <li><GoDotFill />
               To join the ground staff Course a candidate should fill the form
@@ -279,7 +278,7 @@ const HowToJoinCourse = () => {
               institutes.
             </li>
           </ul>
-          </Typography>
+          </p>
         </Container>
       </div>
 
@@ -306,7 +305,7 @@ const HowToJoinCourse = () => {
             qualify the following eligibility criteria:-
           </Typography>
 
-            <Typography style={{ marginTop:"8px" }}>
+            <p style={{ marginTop:"8px" }}>
           <ul >
             <li><GoDotFill />
               A student must be appearing or passed 10+2 with any stream or 3
@@ -319,11 +318,11 @@ const HowToJoinCourse = () => {
               of AME CET.
             </li>
           </ul>
-          </Typography>
+          </p>
         </Container>
       </div>
 
-      <div  style={{marginTop:"30px"}}>
+      <div  style={{marginTop:"40px"}}>
         <HorizontalMarquee />
       </div>
 
