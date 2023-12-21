@@ -72,116 +72,142 @@ const JobDescription = () => {
       description:
         "An airline pilot, or aviator, transports passengers and cargo by airplane. Some commercial aviators perform other duties, such as dusting crops or monitoring traffic.commercial and airline pilots were earning a median annualemployment opportunities for airline and commercial pilots.",
     },
+    {
+      title: "Airline Aerospace Engineer",
+      image:"https://unnathi.careers/wp-content/uploads/2022/02/960x0.jpg",
+      description:
+        "Airline Ticketing Executive / Travel Consultant / airport ground staff Flight and Fare enquiries emails Good Communication in English 6 days working and 1 week off Operate and control aircraft along planned routes and during takeoffs and landings. Monitor engines, fuel consumption, and other aircraft systems during flight.",
+    },
+    {
+      title: "Quality Control Officer",
+      image:"https://dreamskyaviation.com/wp-content/uploads/2021/11/OTP.jpg",
+      description:
+        "Airline Ticketing Executive / Travel Consultant / airport ground staff Flight and Fare enquiries emails Good Communication in English 6 days working and 1 week off Operate and control aircraft along planned routes and during takeoffs and landings. Monitor engines, fuel consumption, and other aircraft systems during flight.",
+    },
+
+    {
+      title: "Airline and Commercial Pilot",
+      image:"https://orientflights.com/wp-content/uploads/2023/05/silhouette-air-plane-landing-illuminated-track-sunset-with-beautiful-red-sky-sun-background-scaled.jpg",
+      description:
+        "Airline Ticketing Executive / Travel Consultant / airport ground staff Flight and Fare enquiries emails Good Communication in English 6 days working and 1 week off Operate and control aircraft along planned routes and during takeoffs and landings. Monitor engines, fuel consumption, and other aircraft systems during flight.",
+    },
+
+    {
+      title: "Flight Attendant Officer",
+      image:"https://pilotinstitute.com/wp-content/uploads/2022/02/runway-incursion.jpeg",
+      description:
+        "Airline Ticketing Executive / Travel Consultant / airport ground staff Flight and Fare enquiries emails Good Communication in English 6 days working and 1 week off Operate and control aircraft along planned routes and during takeoffs and landings. Monitor engines, fuel consumption, and other aircraft systems during flight.",
+    },
     // Add more cards as needed
   ];
 
   return (
     <div style={{ overflow: "hidden" }}>
-      <Grid>
-        <Header />
-        <NavBar />
-      </Grid>
+    <Grid>
+      <Header />
+      <NavBar />
+    </Grid>
 
-      <Row
+    <Row
+      style={{
+        position: "relative",
+        backgroundImage:
+          'url("https://scontent.fmaa2-3.fna.fbcdn.net/v/t1.6435-9/130299541_135298905052544_8308866746948375884_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=300f58&_nc_ohc=IVTMye_l6FcAX_1xLa7&_nc_ht=scontent.fmaa2-3.fna&oh=00_AfDyyJkCwdWFTyd3Pdmd7wk-TSrL2GpPnxEtFRHiq1qgHA&oe=659BD9C5")',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        minHeight: "60vh", // Set the height to 100% of the viewport height
+        paddingLeft: "40px",
+        paddingRight: "40px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        // width: "100%",
+      }}
+    >
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: "rgba(0, 0, 0, 0.8)",
+          zIndex: 1,
+        }}
+      ></div>
+      <Col
+        md={6}
+        xs={12}
         style={{
           position: "relative",
-          backgroundImage:
-            'url("https://scontent.fmaa2-3.fna.fbcdn.net/v/t1.6435-9/130299541_135298905052544_8308866746948375884_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=300f58&_nc_ohc=IVTMye_l6FcAX_1xLa7&_nc_ht=scontent.fmaa2-3.fna&oh=00_AfDyyJkCwdWFTyd3Pdmd7wk-TSrL2GpPnxEtFRHiq1qgHA&oe=659BD9C5")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          minHeight: "60vh", // Set the height to 100% of the viewport height
-          paddingLeft: "40px",
-          paddingRight: "40px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          // width: "100%",
+          zIndex: 2,
+          // textAlign: "center",
         }}
       >
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: "rgba(0, 0, 0, 0.8)",
-            zIndex: 1,
-          }}
-        ></div>
-        <Col
-          md={6}
-          xs={12}
-          style={{
-            position: "relative",
-            zIndex: 2,
-            // textAlign: "center",
-          }}
-        >
-          <div>
-            <h3
-              style={{
-                color: "white",
-                fontSize: "36px",
-                fontWeight: "bold",
-              }}
+        <div>
+          <h3
+            style={{
+              color: "white",
+              fontSize: "36px",
+              fontWeight: "bold",
+            }}
+          >
+            Job Description
+          </h3>
+        </div>
+      </Col>
+
+      <Col
+        className="banner"
+        md={6}
+        xs={12}
+        style={{
+          position: "relative",
+          zIndex: 2,
+          textAlign: "center",
+        }}
+      >
+        <div role="presentation">
+          <Breadcrumbs
+            aria-label="breadcrumb"
+            style={{
+              zIndex: 900,
+              display: "flex",
+              alignItems: "center",
+              margin: "10px",
+              fontSize: "20px",
+              color: "#ffffff",
+              justifyContent: "flex-end",
+              alignItems: "center",
+            }}
+          >
+            <Link
+              underline="hover"
+              color="inherit"
+              href="Home"
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <HomeIcon
+                fontSize="medium"
+                style={{ marginRight: "5px", marginBottom: "2px" }}
+              />
+              Home
+            </Link>
+            <Link underline="none" color="inherit" href="/">
+              Job Vaccanies
+            </Link>
+            <Link
+              underline="none"
+              color="inherit"
+              href="/material-ui/getting-started/installation/"
+              style={{ color: "rgba(161,225,229,1)" }}
             >
               Job Description
-            </h3>
-          </div>
-        </Col>
-
-        <Col
-          className="banner"
-          md={6}
-          xs={12}
-          style={{
-            position: "relative",
-            zIndex: 2,
-            textAlign: "center",
-          }}
-        >
-          <div role="presentation">
-            <Breadcrumbs
-              aria-label="breadcrumb"
-              style={{
-                zIndex: 900,
-                display: "flex",
-                alignItems: "center",
-                margin: "10px",
-                fontSize: "20px",
-                color: "#ffffff",
-                justifyContent: "flex-end",
-                alignItems: "center",
-              }}
-            >
-              <Link
-                underline="hover"
-                color="inherit"
-                href="Home"
-                style={{ display: "flex", alignItems: "center" }}
-              >
-                <HomeIcon
-                  fontSize="medium"
-                  style={{ marginRight: "5px", marginBottom: "2px" }}
-                />
-                Home
-              </Link>
-              <Link underline="none" color="inherit" href="/">
-                Job Vaccanies
-              </Link>
-              <Link
-                underline="none"
-                color="inherit"
-                href="/material-ui/getting-started/installation/"
-                style={{ color: "rgba(161,225,229,1)" }}
-              >
-                Job Description
-              </Link>
-            </Breadcrumbs>
-          </div>
-        </Col>
-      </Row>
+            </Link>
+          </Breadcrumbs>
+        </div>
+      </Col>
+    </Row>
 
       <Grid
         sx={{

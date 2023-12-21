@@ -143,12 +143,165 @@ const DesignationPosition = () => {
       </Row>
 
       <div style={{ marginTop: "30px", textAlign: "center" }}>
-        <h2>
+        <Typography
+          variant="h2"
+          style={{
+            fontSize: "30px",
+            fontFamily: "sans-serif",
+            fontWeight: "bold",
+            textAlign: "center",
+          }}
+        >
           Aviation supporting the new success Sustainable Development Goals
-        </h2>
+        </Typography>
       </div>
 
       <div>
+        <Container fluid style={{ marginTop: "30px" }}>
+          <Row>
+            <Col>
+              <img
+                src="https://blogassets.leverageedu.com/blog/wp-content/uploads/2019/09/23164814/Aeronautical-Engineering.jpg"
+                style={{ height: "450px", width: "100%" }}
+              />
+            </Col>
+
+            <Col>
+              <Typography
+                variant="h5"
+                style={{
+                  fontSize: "25px",
+                  fontFamily: "sans-serif",
+                  fontWeight: "bold",
+                  textAlign: "center",
+                  color: "rgb(161 225 229)",
+                }}
+              >
+                Airline Employment opportunities
+              </Typography>
+              <Container>
+                <p style={{ textAlign: "justify", marginTop: "20px" }}>
+                  Aviation maintenance to air traffic control, there is no limit
+                  to the bounds that humans are willing to go to keep the skies
+                  safe. However, there are a few different types of aviation,
+                  with three being the main pillars that uphold the aviation
+                  industry as a whole: commercial, general, and military
+                  aviation.
+                </p>
+                <Typography
+                  style={{
+                    fontSize: "20px",
+                    fontFamily: "sans-serif",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Aviation industry offers a wide range of career options and
+                  Designation :
+                </Typography>
+                <Row
+                  style={{
+                    marginTop: "20px",
+                    textAlign: "center",
+                    textAlign: "start",
+                  }}
+                >
+                  <Col>
+                    <Typography>
+                      <ul>
+                        <li>
+                          {" "}
+                          <GoDotFill style={{ color: "#f8560c" }} /> Aircraft
+                          design
+                        </li>
+                        <li>
+                          {" "}
+                          <GoDotFill style={{ color: "#f8560c" }} /> Piloting
+                        </li>
+                        <li>
+                          {" "}
+                          <GoDotFill style={{ color: "#f8560c" }} /> Air traffic
+                          control
+                        </li>
+                        <li>
+                          {" "}
+                          <GoDotFill style={{ color: "#f8560c" }} /> Airport
+                          management
+                        </li>
+                        <li>
+                          {" "}
+                          <GoDotFill style={{ color: "#f8560c" }} /> Jet
+                          mechanics
+                        </li>
+                        <li>
+                          {" "}
+                          <GoDotFill style={{ color: "#f8560c" }} /> Space
+                          exploration
+                        </li>
+                        <li>
+                          {" "}
+                          <GoDotFill style={{ color: "#f8560c" }} /> Flight
+                          attendant
+                        </li>
+                        <li>
+                          {" "}
+                          <GoDotFill style={{ color: "#f8560c" }} /> Ground crew
+                        </li>
+                      </ul>
+                    </Typography>
+                  </Col>
+                  <Col>
+                    <Typography>
+                      <ul>
+                        <li>
+                          {" "}
+                          <GoDotFill style={{ color: "#f8560c" }} /> Aircraft
+                          design
+                        </li>
+                        <li>
+                          {" "}
+                          <GoDotFill style={{ color: "#f8560c" }} /> Piloting
+                        </li>
+                        <li>
+                          {" "}
+                          <GoDotFill style={{ color: "#f8560c" }} /> Air traffic
+                          control
+                        </li>
+                        <li>
+                          {" "}
+                          <GoDotFill style={{ color: "#f8560c" }} /> Flight
+                          service manager{" "}
+                        </li>
+                        <li>
+                          {" "}
+                          <GoDotFill style={{ color: "#f8560c" }} /> Aerospace
+                          engineering
+                        </li>
+                        <li>
+                          {" "}
+                          <GoDotFill style={{ color: "#f8560c" }} /> Business
+                          administration
+                        </li>
+                        <li>
+                          {" "}
+                          <GoDotFill style={{ color: "#f8560c" }} /> cabin
+                          service director
+                        </li>
+                        <li>
+                          {" "}
+                          <GoDotFill style={{ color: "#f8560c" }} /> Aviation
+                          Safety
+                        </li>
+                      </ul>
+                    </Typography>
+                  </Col>
+                </Row>
+              </Container>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+
+      {/* <div>
         <Container fluid style={{ marginTop: "30px" }}>
           <Typography
             className="p"
@@ -168,16 +321,14 @@ const DesignationPosition = () => {
             well as excitement and fantastic benefits.
           </Typography>
         </Container>
-      </div>
+      </div> */}
 
       <Grid
         container
-        spacing={{ xs: 2, sm: 3 }}
+        spacing={{ xs: 1, sm: 3 }}
         columns={{ xs: 12, sm: 8, md: 12 }}
         style={{ marginTop: "15px" }}
       >
-        {/* <Container fluid style={{ marginTop: "30px" }}> */}
-        {/* <Row style={{marginTop:"30px",padding:10}}> */}
         <Grid item xs={12} sm={4} md={4}>
           <div style={{}}>
             <Typography
@@ -191,9 +342,9 @@ const DesignationPosition = () => {
               }}
             >
               <Typography style={{ textAlign: "center", marginTop: "10px" }}>
-                Economic growth
+              High Demand For Skilled Professionals
               </Typography>
-              <Typography
+              <p
                 style={{
                   marginTop: "20px",
                   padding: "0px 35px",
@@ -207,7 +358,7 @@ const DesignationPosition = () => {
                 billion of world trade. On Airline Job Finder we break down many
                 different kinds of airline careers. Each of the following types
                 of airline jobs is discussed in great detail.
-              </Typography>
+              </p>
 
               <div
                 style={{
@@ -248,7 +399,7 @@ const DesignationPosition = () => {
               <Typography style={{ textAlign: "center", marginTop: "10px" }}>
                 Social Development growth
               </Typography>
-              <Typography
+              <p
                 style={{
                   marginTop: "20px",
                   padding: "0px 35px",
@@ -263,7 +414,7 @@ const DesignationPosition = () => {
                 tickets. Calibration of the equipment may also be required.
                 general questions regarding directions, terminal services, or
                 arranging wheelchair access.
-              </Typography>
+              </p>
 
               <div
                 style={{
@@ -304,7 +455,7 @@ const DesignationPosition = () => {
               <Typography style={{ textAlign: "center", marginTop: "10px" }}>
                 Enviromental Efficiency growth
               </Typography>
-              <Typography
+              <p
                 style={{
                   marginTop: "20px",
                   padding: "0px 35px",
@@ -318,7 +469,7 @@ const DesignationPosition = () => {
                 nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
                 in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 Excepteur sint occaecat cupidatat non proident."
-              </Typography>
+              </p>
 
               <div
                 style={{
@@ -347,9 +498,9 @@ const DesignationPosition = () => {
         {/* </Container> */}
       </Grid>
 
-      <div>
+      <div style={{ backgroundColor: "#e6e7e8" }}>
         <Container fluid style={{ marginTop: "30px" }}>
-          <Row>
+          <Row style={{ padding: "20px" }}>
             <Col>
               <Typography variant="h6" style={{ fontWeight: "bold" }}>
                 Some common benefits Position:
@@ -396,11 +547,14 @@ const DesignationPosition = () => {
                   <li>
                     <GoDotFill /> Aviation Law Management
                   </li>
+                  <li>
+                    <GoDotFill /> Aviation Safety Management
+                  </li>
                 </ul>
               </Typography>
             </Col>
 
-            <Col>
+            <Col md={8}>
               <Typography style={{ fontSize: "18px", textAlign: "justify" }}>
                 According to U.S. Department of Labor Bureau of Labor
                 Statistics, Flight crewmembers make up 33 percent of air
@@ -421,9 +575,13 @@ const DesignationPosition = () => {
                 description, pay details, and educational requirements. You
                 won’t want to miss our interviews with industry veterans either.
                 Their insights are invaluable. Some aviation attorneys work for
-                the FAA, while others may be on staff or on retainer
-                our Members section there’s a description by large
-                corporations who own aircraft or deal with airlines.
+                the FAA, while others may be on staff or on retainer our Members
+                section there’s a description by large corporations who own
+                aircraft or deal with airlines. Graduates and professionals can
+                get employment in prime areas like airports, airlines, Flight
+                schools, Airline insurance companies, Sales & advertising
+                companies, educational institutes, etc. Areas of recruitment in
+                Aviation are Air Traffic Control. Aviation Safety.
               </Typography>
 
               <div
@@ -433,7 +591,6 @@ const DesignationPosition = () => {
                   justifyContent: "center",
                   textAlign: "center",
                   paddingTop: "20px",
-
                 }}
               >
                 <Button
@@ -444,7 +601,8 @@ const DesignationPosition = () => {
                     marginBottom: "30px",
                   }}
                 >
-                  Learn More about Airline and Aviation Industry Job <WiDirectionRight />
+                  Learn More about Airline and Aviation Industry Job{" "}
+                  <WiDirectionRight />
                 </Button>
               </div>
             </Col>
