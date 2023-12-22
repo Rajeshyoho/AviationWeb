@@ -25,12 +25,13 @@ import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
 import HomeIcon from "@mui/icons-material/Home";
 import { GoDotFill } from "react-icons/go";
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
 // import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import "../../components/Experience.css";
+import SkillBar from "../../components/SkillBar";
 
 const ExperienceFeatures = () => {
   const logo = require("../../Images/logo3.png");
@@ -143,12 +144,6 @@ const ExperienceFeatures = () => {
         </Col>
       </Row>
 
-
-
-
-
-
-
       <div>
         <Container fluid style={{ marginTop: "30px" }}>
           <Grid
@@ -215,7 +210,11 @@ const ExperienceFeatures = () => {
                 and prepare for an exciting journey as you demonstrate the
                 essential skills needed for a career in aviation.
               </Typography>
-              <Typography style={{ marginTop: 10, textAlign: "justify" }}>
+              <Container>
+
+                <Row>
+                    <Col>
+                    <Typography style={{ marginTop: 10, textAlign: "justify" }}>
                 <ul>
                   <li> 1. Pleasant & friendly personality</li>
                   <li> 2. Agility & good sense of balance</li>
@@ -223,12 +222,23 @@ const ExperienceFeatures = () => {
                   <li> 4. Clear speech and voice </li>
                   <li> 5. Presence of mind </li>
                   <li> 6. Team worker </li>
-                  {/* <li> 7. Presence of mind </li>
-                  <li> 8. Punctuality </li> */}
-                  {/* <li> 9. Patience </li>
-                  <li>10. Politeness</li> */}
                 </ul>
               </Typography>
+                    </Col>
+                    <Col>
+                    <div>
+      {/* <SkillBar  percentage={80} />
+      <SkillBar  percentage={90} />
+      <SkillBar  percentage={70} />
+      <SkillBar  percentage={60} />
+      <SkillBar  percentage={50} /> */}
+
+      {/* Add more skill bars as needed */}
+    </div>
+                    </Col>
+                </Row>
+              </Container>
+             
             </Grid>
           </Grid>
         </Container>
@@ -272,7 +282,7 @@ const ExperienceFeatures = () => {
               </Typography>
             </Box>
 
-            <Box style={{marginTop: "20px"}}>
+            <Box style={{ marginTop: "20px" }}>
               <Typography
                 variant="h6"
                 style={{ fontWeight: "bold", textDecoration: "underline" }}
@@ -289,7 +299,7 @@ const ExperienceFeatures = () => {
               </Typography>
             </Box>
 
-            <Box style={{ marginTop: "20px"}}>
+            <Box style={{ marginTop: "20px" }}>
               <Typography
                 variant="h6"
                 style={{ fontWeight: "bold", textDecoration: "underline" }}
@@ -307,7 +317,7 @@ const ExperienceFeatures = () => {
               </Typography>
             </Box>
 
-            <Box style={{ marginTop: "20px"}}>
+            <Box style={{ marginTop: "20px" }}>
               <Typography
                 variant="h6"
                 style={{ fontWeight: "bold", textDecoration: "underline" }}
@@ -329,48 +339,91 @@ const ExperienceFeatures = () => {
       </div>
 
       <div>
-        <Container style={{marginTop:"40px"}}>
+        <Container style={{ marginTop: "40px" }}>
           <Row>
             <Col>
-            <Typography
-            style={{
-              fontWeight: "bold",
-              fontSize: "25px",
-            }}
-          >
-            Skills Required for a Career in Aviation
-          </Typography>
+              <Typography
+                style={{
+                  fontWeight: "bold",
+                  fontSize: "25px",
+                }}
+              >
+                Skills Required for a Career in Aviation
+              </Typography>
 
-            <Typography style={{marginTop:5}}>
-            <ul>
-                <li><GoDotFill /> Pleasant & friendly personality</li>
-                <li><GoDotFill /> Agility & good sense of balance</li>
-                <li><GoDotFill /> Good health & physical fitness</li>
-                <li><GoDotFill /> Clear speech and voice </li>
-                <li><GoDotFill /> Presence of mind</li>
-                <li><GoDotFill /> Team worker</li>
-                <li><GoDotFill /> Patience</li>
-                <li><GoDotFill /> Quality Control Officer</li>
-                <li><GoDotFill /> Total Quality Management</li>
-                <li><GoDotFill /> Aircraft General Knowledge</li>
-                <li><GoDotFill /> Human Performance and Limitations</li>
-                <li><GoDotFill /> Strategic Management</li>
-                <li><GoDotFill /> Aviation Law Management</li>
-
-            </ul>
-          </Typography>
+              <Typography style={{ marginTop: 5 }}>
+                <ul>
+                  <li>
+                    <GoDotFill /> Pleasant & friendly personality
+                  </li>
+                  <li>
+                    <GoDotFill /> Agility & good sense of balance
+                  </li>
+                  <li>
+                    <GoDotFill /> Good health & physical fitness
+                  </li>
+                  <li>
+                    <GoDotFill /> Clear speech and voice{" "}
+                  </li>
+                  <li>
+                    <GoDotFill /> Presence of mind
+                  </li>
+                  <li>
+                    <GoDotFill /> Team worker
+                  </li>
+                  <li>
+                    <GoDotFill /> Patience
+                  </li>
+                  <li>
+                    <GoDotFill /> Quality Control Officer
+                  </li>
+                  <li>
+                    <GoDotFill /> Total Quality Management
+                  </li>
+                  <li>
+                    <GoDotFill /> Aircraft General Knowledge
+                  </li>
+                  <li>
+                    <GoDotFill /> Human Performance and Limitations
+                  </li>
+                  <li>
+                    <GoDotFill /> Strategic Management
+                  </li>
+                  <li>
+                    <GoDotFill /> Aviation Law Management
+                  </li>
+                </ul>
+              </Typography>
             </Col>
 
             <Col>
-            <img src="https://assets-jb.fmg-services.co.uk/AJS/uploads/hub/advices/501_1000/GettyImages-925423998-1.jpg"/>
+              <img src="https://assets-jb.fmg-services.co.uk/AJS/uploads/hub/advices/501_1000/GettyImages-925423998-1.jpg" />
             </Col>
           </Row>
-         
         </Container>
       </div>
 
-      <div style={{marginTop:"50px"}}>
-        <Footer/>
+      
+
+      {/* <div class="canvas-wrap">
+  <canvas id="canvas"></canvas>
+</div> */}
+
+
+      {/* <div style="height: 100%; width: 100%;">
+		<h1>Progress Bar (Light)</h1>
+		<hr />
+		<h2>Large Progress Bar with Text</h2>
+		<div class="progress progress-striped active">
+			<div class="progress-bar"  role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+				<span class="sr-only">75% Complete</span>
+			</div>
+		</div>
+        </div> */}
+
+
+      <div style={{ marginTop: "50px" }}>
+        <Footer />
       </div>
     </>
   );

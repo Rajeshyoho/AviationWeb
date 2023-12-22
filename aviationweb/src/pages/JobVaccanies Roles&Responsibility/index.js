@@ -30,7 +30,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import { GoDotFill } from "react-icons/go";
 import "../../components/DesignationPosition.css";
 import { WiDirectionRight } from "react-icons/wi";
-import {TiTickOutline} from "react-icons/ti";
+import { TiTickOutline } from "react-icons/ti";
 
 const RolesResponsibilites = () => {
   const logo = require("../../Images/logo3.png");
@@ -205,18 +205,87 @@ const RolesResponsibilites = () => {
         </Container>
       </div>
 
-      <div style={{ marginTop: "30px" }}>
-        <Container fluid>
-          <Typography
-            style={{
-              fontWeight: "bold",
-              textAlign: "center",
-              fontSize: "30px",
-              color: "#5ce2d7",
-            }}
-          >
-            WHAT ARE THE DIFFERENT ROLES AND RESPONSIBILITIES
-          </Typography>
+      <div>
+        <Container>
+          <Row>
+            <Col xs={6} md={6}>
+              <div style={{ marginTop: "30px" }}>
+                <img
+                  src="https://aviationbenefits.org/media/166621/safety-culture.png"
+                  style={{}}
+                />
+              </div>
+            </Col>
+
+            <Col xs={6} md={6}>
+              <div style={{ marginTop: "40px" }}>
+                <Container fluid>
+                  <Typography
+                    style={{
+                      fontWeight: "bold",
+                      textAlign: "center",
+                      fontSize: "30px",
+                      color: "#5ce2d7",
+                    }}
+                  >
+                    WHAT ARE THE DIFFERENT ROLES AND RESPONSIBILITIES
+                  </Typography>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <p style={{ marginTop: "15px", textAlign: "start" }}>
+                      <ul>
+                        <li>
+                          {" "}
+                          <TiTickOutline /> Capability to patrol an area, notes
+                          of what you see it.{" "}
+                        </li>
+                        <li>
+                          {" "}
+                          <TiTickOutline /> Ability to move as part of a team{" "}
+                        </li>
+                        <li>
+                          {" "}
+                          <TiTickOutline /> Physical fitness
+                        </li>
+                        <li>
+                          {" "}
+                          <TiTickOutline /> Common sense, courage, and integrity
+                        </li>
+                        <li>
+                          {" "}
+                          <TiTickOutline /> Ability to react competently
+                          peacefully to situations
+                        </li>
+                        <li>
+                          {" "}
+                          <TiTickOutline /> Self-confidence and self-reliance
+                        </li>
+                        <li>
+                          {" "}
+                          <TiTickOutline /> General public against actions{" "}
+                        </li>
+                        <li>
+                          {" "}
+                          <TiTickOutline /> Domestic security and aviation
+                          security.{" "}
+                        </li>
+                        <li>
+                          {" "}
+                          <TiTickOutline /> Aviation security services satisfy
+                          people{" "}
+                        </li>
+                      </ul>
+                    </p>
+                  </div>
+                </Container>
+              </div>
+            </Col>
+          </Row>
         </Container>
       </div>
 
@@ -312,33 +381,28 @@ const RolesResponsibilites = () => {
       </div>
 
       <div>
-        <Container fluid style={{marginTop:"30px"}}>
+        <Container fluid style={{ marginTop: "30px" }}>
           <Row>
             <Col>
               <img src="https://www.centralprotection.ca/wp-content/uploads/2022/12/1000-Aviation-1.webp" />
             </Col>
 
             <Col>
-              <p style={{fontSize:"16px",textAlign:"justify"}}>
+              <p style={{ fontSize: "16px", textAlign: "justify" }}>
                 The personal abilities for which people are designated, and
                 which are then established during training, are highly relevant.
                 Most aviation people will possess many of the skills that
-                security use the technologies that support the reinforcement knowledge
-                companies look for, and that is easily convenient to
+                security use the technologies that support the reinforcement
+                knowledge companies look for, and that is easily convenient to
                 this sector:
               </p>
-              <p style={{marginTop:"20px"}}>
-                <ul>
-                    <li> <TiTickOutline /> Capability to patrol an area, notes of what you see it.   </li>
-                    <li> <TiTickOutline /> Ability to move as part of a team </li>
-                    <li> <TiTickOutline /> Physical fitness</li>
-                    <li> <TiTickOutline /> Common sense, courage, and integrity</li>
-                    <li> <TiTickOutline /> Ability to react competently peacefully to situations</li>
-                    <li> <TiTickOutline /> Self-confidence and self-reliance</li>
-                    <li> <TiTickOutline/>  General public against actions </li>
-                    <li> <TiTickOutline/>  Domestic security and aviation security. </li>
-                    <li> <TiTickOutline/>  Aviation security services satisfy people </li>
-            </ul>
+              <p style={{ fontSize: "16px", textAlign: "justify" }}>
+                Being able to evaluate information to establish certain facts
+                and principles are key strengths for anyone within the aviation
+                industry. Though tragic, the Tenerife airport disaster did lead
+                experts on to review all their procedures, including the
+                importance of standardized phraseology in radio communications
+                being emphasised. 
               </p>
             </Col>
           </Row>
