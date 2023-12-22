@@ -31,7 +31,7 @@ const InterviewDate = () => {
       'url("https://i.ytimg.com/vi/46RuAJHrSmk/maxresdefault.jpg")',
     backgroundSize: "cover",
     backgroundPosition: "center",
-    minHeight: "60vh", // Set the height to 100% of the viewport height
+    minHeight: "60vh",
     paddingLeft: "40px",
     paddingRight: "40px",
     display: "flex",
@@ -120,9 +120,9 @@ const InterviewDate = () => {
       <Grid style={{ backgroundColor: "#f8f8f8" }}>
         <Container>
           <Typography style={{textAlign:"center",padding:20}}>
-            <h1 style={{color:"#114379" ,fontWeight:"bold",fontSize:"40px"}}>
+            <h2 style={{color:"#114379" ,fontWeight:"bold",fontSize:"40px"}}>
               GET PREPARED FOR YOUR AIRLINE PILOT INTERVIEW!
-            </h1>
+            </h2>
             <h2 style={{fontWeight:"bold",fontSize:"23px"}}>
               WE'VE HELPED 200,000+ AVIATION PROFESSIONALS PREPARE FOR THEIR
               INTERVIEWS!

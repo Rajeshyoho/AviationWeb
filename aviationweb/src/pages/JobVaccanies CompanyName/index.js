@@ -234,7 +234,7 @@ const CompanyName = () => {
     <Container style={{marginTop:"30px"}}>
         <Row>
             <Col>
-            <h1 style={{textAlign:"center",fontWeight:"bold"}}>Placements</h1>
+            <h3 style={{textAlign:"center",fontWeight:"bold"}}>Placements</h3>
             <p style={{fontWeight:"500",opacity:0.8,marginTop:"20px",textAlign:"justify"}}>
             Karunya has a creditable record of placement of its final year students and graduates. A good number of final year students plan to go for higher studies in India or abroad or turn entrepreneurs. As per recent trends about 80% of eligible final year students, who seek a placement, are placed with reputed organizations at the initiative of the institution prior to their leaving the campus.
             </p>
