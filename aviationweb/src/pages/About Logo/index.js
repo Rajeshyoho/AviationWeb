@@ -162,22 +162,18 @@ const AboutLogo = () => {
       </Grid>
             
             <Container>
-              {/* <Card style={{padding:"30px",borderRadius:"15px"}}> */}
-              {/* <Image
-              className="img-fluid"
-              style={{ width: "100%"}}
-              src={logo}
-              alt="Logo"
-            /> */}
-
 <div className="col" style={{marginTop:"30px",marginBottom:"30px"}}>
       <a href="#" className="card card-10 stacked--fan-right">
         <div className="content">
           <Image
               className="img-fluid"
-              style={{ width: "100%"}}
+              style={{ width: "100%",marginLeft:"10px", transition: "transform 0.9s"}}
               src={logo}
               alt="Logo"
+              onMouseOver={(e) => (e.currentTarget.style.transform = "scale(0.9)")}
+              onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+              onTouchStart={(e) => (e.currentTarget.style.transform = "scale(0.9)")}
+              onTouchEnd={(e) => (e.currentTarget.style.transform = "scale(1)")}
             /> 
         </div>
       </a>

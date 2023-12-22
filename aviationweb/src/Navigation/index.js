@@ -38,8 +38,8 @@ const Navigation = () => {
   return (
     <>
       <Routes>
-      <Route path="/" element={<VisionMission />} />
-      <Route path="/Home" element={<Home/>} />
+      <Route path="/VisionMission" element={<VisionMission />} />
+      <Route path="/" element={<Home/>} />
       <Route path="/JobOpportunities" element={<JobOpportunities />} />
       <Route path="/InterviewDate" element={<InterviewDate/>} />
       <Route path="/CompanyName" element={<CompanyName/>} />

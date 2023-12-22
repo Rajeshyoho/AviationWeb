@@ -155,18 +155,20 @@ const DesignationPosition = () => {
           Aviation supporting the new success Sustainable Development Goals
         </Typography>
       </div>
+      
 
       <div>
         <Container fluid style={{ marginTop: "30px" }}>
           <Row>
-            <Col>
+            <Col lg={6} xs={12}>
               <img
                 src="https://blogassets.leverageedu.com/blog/wp-content/uploads/2019/09/23164814/Aeronautical-Engineering.jpg"
                 style={{ height: "450px", width: "100%" }}
+                alt="Aeronautical Engineering"
               />
             </Col>
 
-            <Col>
+            <Col lg={6} xs={12}>
               <Typography
                 variant="h5"
                 style={{
@@ -196,7 +198,7 @@ const DesignationPosition = () => {
                   }}
                 >
                   Aviation industry offers a wide range of career options and
-                  Designation :
+                  Designation:
                 </Typography>
                 <Row
                   style={{
@@ -325,7 +327,7 @@ const DesignationPosition = () => {
 
       <Grid
         container
-        spacing={{ xs: 1, sm: 3 }}
+        spacing={{ xs: 1, sm: 1 }}
         columns={{ xs: 12, sm: 8, md: 12 }}
         style={{ marginTop: "15px" }}
       >
@@ -339,10 +341,11 @@ const DesignationPosition = () => {
                 marginBottom: "20px",
                 paddingTop: "10px",
                 opacity: 0.8,
+                borderRadius: "70px",
               }}
             >
               <Typography style={{ textAlign: "center", marginTop: "10px" }}>
-              High Demand For Skilled Professionals
+                High Demand For Skilled Professionals
               </Typography>
               <p
                 style={{
@@ -394,6 +397,7 @@ const DesignationPosition = () => {
                 marginBottom: "20px",
                 paddingTop: "10px",
                 opacity: 0.8,
+                borderRadius: "70px",
               }}
             >
               <Typography style={{ textAlign: "center", marginTop: "10px" }}>
@@ -450,6 +454,7 @@ const DesignationPosition = () => {
                 marginBottom: "20px",
                 paddingTop: "10px",
                 opacity: 0.8,
+                borderRadius: "70px",
               }}
             >
               <Typography style={{ textAlign: "center", marginTop: "10px" }}>

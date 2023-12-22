@@ -15,42 +15,106 @@ import Breadcrumb from "react-bootstrap/Breadcrumb";
 import NavBar from "../../components/NavBar";
 import WeatherWidget from "../../components/Weather";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
-import Link from "@mui/material/Link";
+// import Link from "@mui/material/Link";
 import HomeIcon from "@mui/icons-material/Home";
 import Header from "../../components/Header";
 import "../../components/About.css";
 import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import { MDBAnimation } from "mdbreact";
+import styled, { keyframes } from 'styled-components';
+import { Link } from 'react-scroll';
+
+
+const slideInLeft = keyframes`
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+
+const slideInRight = keyframes`
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+
+const AnimatedCol = styled(Col)`
+  &.slide-in-left {
+    animation: ${slideInLeft} 1s ease-in-out;
+  }
+
+  &.slide-in-right {
+    animation: ${slideInRight} 1s ease-in-out;
+  }
+`;
+
+
 const AboutUs = () => {
   const logo = require("../../Images/logo3.png");
 
-  // const animationClassLeft = 'slide-in-left';
-  // const animationClassRight = 'slide-in-right';
-
-  // const [animationClass, setAnimationClass] = useState("");
+  // const [animationClassLeft, setAnimationClassLeft] = useState('');
+  // const [animationClassRight, setAnimationClassRight] = useState('');
 
   // useEffect(() => {
-  //   // Trigger the animation after the component has mounted
-  //   setAnimationClass("active");
+  //   // Trigger animation after component mounts
+  //   setAnimationClassLeft('slide-in-left');
+  //   setAnimationClassRight('slide-in-right');
   // }, []);
 
-  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const [animationClassLeft, setAnimationClassLeft] = useState('');
+  const [animationClassRight, setAnimationClassRight] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollPosition(window.scrollY);
+      const scrollPosition = window.scrollY + window.innerHeight;
+
+      // Adjust this value based on your desired trigger point
+      const triggerPoint = 500;
+
+      if (scrollPosition > triggerPoint) {
+        setAnimationClassLeft('slide-in-left');
+        setAnimationClassRight('slide-in-right');
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    // Attach the scroll event listener
+    window.addEventListener('scroll', handleScroll);
 
+    // Cleanup the event listener on component unmount
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
-  const animationClassLeft = scrollPosition > 50 ? "slide-in-left" : "";
-  const animationClassRight = scrollPosition > 50 ? "slide-in-right" : "";
+
+
+  // const [scrollPosition, setScrollPosition] = useState(0);
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setScrollPosition(window.scrollY);
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
+
+  // const animationClassLeft = scrollPosition > 50 ? "slide-in-left" : "";
+  // const animationClassRight = scrollPosition > 50 ? "slide-in-right" : "";
 
   const testimonials = [
     {
@@ -231,7 +295,7 @@ const AboutUs = () => {
                 backgroundColor: "#0e2246",
               }}
             />
-
+             <AnimatedCol className={` ${animationClassLeft}`} >
             <div
               style={{
                 display: "flex",
@@ -247,9 +311,10 @@ const AboutUs = () => {
                 fluid
               />
             </div>
+            </AnimatedCol>
           </Grid>
 
-          <Col
+            <AnimatedCol className={` ${animationClassRight}`}
             sx={{
               display: "flex",
               justifyContent: "center",
@@ -282,15 +347,14 @@ const AboutUs = () => {
                 pottery, or literature—is a fact of life, ingrained into the
                 culture.Air Traffic Controller applicants need to complete an
                 approved training course offered by the National Air Traffic
-                Services in order to obtain the air traffic control licence,
-                requirements that vary according to airlines.
+                Services in order to obtain the air traffic control.
               </Typography>
             </Typography>
-          </Col>
+     </AnimatedCol>
         </Row>
       </Container>
 
-      <Container fluid style={{ backgroundColor: "#e6e6e6", marginTop: 25 }}>
+      <Container fluid style={{ backgroundColor: "#e6e6e6", marginTop: 25,padding:"10px 25px" }}>
         <Row style={{ marginBottom: 10 }}>
           {/* <Col style={{  }}> */}
           <Box sx={{ padding: 1, textAlign: "justify" }}>
@@ -343,17 +407,14 @@ const AboutUs = () => {
 
       <Container style={{ marginTop: 30 }}>
         <Row>
-          <Col
-            className={`slide-in ${animationClassLeft}`}
-            style={{ marginLeft: 10 }}
-          >
+           <AnimatedCol className={` ${animationClassLeft}`} style={{ marginLeft: 10 }}>
             <Image
               src="https://cdn-fdkig.nitrocdn.com/AywaxOjUfFsIziAItTGgLIIuUTWWuYxf/assets/images/optimized/rev-298d1aa/riainstitute.co.in/wp-content/uploads/2021/10/illustration-2.png"
               style={{ height: "500px", width: "auto" }}
             />
-          </Col>
+          </AnimatedCol>
 
-          <Col className={`slide-in ${animationClassRight}`}>
+         <AnimatedCol className={` ${animationClassRight}`}>
             <Typography style={{ marginTop: 20, fontWeight: "bold" }}>
               Take A Step Towards Reaching Your Goals
             </Typography>
@@ -383,7 +444,7 @@ const AboutUs = () => {
               Training Institute in Bangalore that will make you time spent a
               safe proposition and RIA Institute of Technology is that name.
             </Typography>
-          </Col>
+       </AnimatedCol>
         </Row>
       </Container>
 
