@@ -1,490 +1,304 @@
-import { Grid, Typography } from "@mui/material";
-import * as formik from "formik";
-import React, { useRef } from "react";
-import { Image } from "react-bootstrap";
-import Breadcrumb from "react-bootstrap/Breadcrumb";
-import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import Row from "react-bootstrap/Row";
-import SignatureCanvas from 'react-signature-canvas';
-import * as yup from "yup";
-import Footer from "../../components/Footer";
-import NavBar from "../../components/NavBar";
-import WeatherWidget from "../../components/Weather";
+import HomeIcon from "@mui/icons-material/Home";
+import { Container, Grid } from "@mui/material";
+import Box from "@mui/material/Box";
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+import Button from "@mui/material/Button";
+import Link from "@mui/material/Link";
+import Step from "@mui/material/Step";
+import StepLabel from "@mui/material/StepLabel";
+import Stepper from "@mui/material/Stepper";
+import Typography from "@mui/material/Typography";
+import { React, useState } from "react";
+import { Col, Row } from "react-bootstrap";
+import AddressDetailsForm from "../../components/AddressDetailsForm";
+import Courses from "../../components/Courses";
+import DocumentsForm from "../../components/DocumentsForm";
+import EducationalQualification from "../../components/EducationalQualification";
 import Header from "../../components/Header";
+import NavBar from "../../components/NavBar";
+import PersonalDetailsForm from "../../components/PersonalDetailsForm";
 
-const { Formik } = formik;
+const steps = [
+  "Courses",
+  "Personal Details",
+  "Address",
+  "Education Details",
+  "Documents",
+];
 
-const schema = yup.object().shape({
-  firstName: yup.string().required(),
-  lastName: yup.string().required(),
-  username: yup.string().required(),
-  city: yup.string().required(),
-  state: yup.string().required(),
-  zip: yup.string().required(),
-  file: yup.mixed().required(),
-  terms: yup.bool().required().oneOf([true], "terms must be accepted"),
-});
+export default function HorizontalLinearStepper() {
+  const [activeStep, setActiveStep] = useState(0);
+  const [skipped, setSkipped] = useState(new Set());
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    fathersName: "",
+    mothersName: "",
+    fathersOccupation: "",
+    heightCms: "",
+    weightKgs: "",
+    bloodGroup: "",
+    dob: "",
+    age: "",
+    gender: "",
+    category: "",
+    maritalStatus: "",
+    language1: { name: "", read: false, write: false, study: false },
+    language2: { name: "", read: false, write: false, study: false },
+    language3: { name: "", read: false, write: false, study: false },
+    educationalQualifications: [
+      { degree: "", "school/college": "", percentage: "", yearOfPassing: "" },
+      { degree: "", "school/college": "", percentage: "", yearOfPassing: "" },
+      { degree: "", "school/college": "", percentage: "", yearOfPassing: "" },
+    ],
+    passport: false,
+    passportNumber: "",
+    passportValidity: "",
+  });
 
-const MembershipRegistration = () => {
-  const logo = require("../../Images/logo3.png");
+  const isStepOptional = (step) => {
+    return step === 1;
+  };
 
-    const signatureRef = useRef();
-  
-    const handleClear = () => {
-      signatureRef.current.clear();
-    };
-  
-    const handleSave = () => {
-      const signatureImage = signatureRef.current.toDataURL();
-      // Now you can save or use the signatureImage data as needed.
-      console.log(signatureImage);
-    };
+  const isStepSkipped = (step) => {
+    return skipped.has(step);
+  };
 
+  const handleNext = () => {
+    let newSkipped = skipped;
+    if (isStepSkipped(activeStep)) {
+      newSkipped = new Set(newSkipped.values());
+      newSkipped.delete(activeStep);
+    }
+
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    setSkipped(newSkipped);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleSkip = () => {
+    if (!isStepOptional(activeStep)) {
+      throw new Error("You can't skip a step that isn't optional.");
+    }
+
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    setSkipped((prevSkipped) => {
+      const newSkipped = new Set(prevSkipped.values());
+      newSkipped.add(activeStep);
+      return newSkipped;
+    });
+  };
+
+  const handleReset = () => {
+    setActiveStep(0);
+  };
+
+  const handleFormChange = (field, value) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [field]: value,
+    }));
+  };
+
+  const getStepContent = (step) => {
+    switch (step) {
+      case 0:
+        return <Courses />;
+      case 1:
+        return (
+          <PersonalDetailsForm
+            formData={formData}
+            onChange={handleFormChange}
+          />
+        );
+      case 2:
+        return (
+          <AddressDetailsForm formData={formData} onChange={handleFormChange} />
+        );
+      case 3:
+        return (
+          <EducationalQualification
+            formData={formData}
+            onChange={handleFormChange}
+          />
+        );
+      case 4:
+        return (
+          <DocumentsForm formData={formData} onChange={handleFormChange} />
+        );
+      default:
+        return (
+          <Typography  sx={{
+            mt: 2,
+            mb: 1,
+            fontSize: {
+              xs: '16px',
+              sm: '18px',
+              md: '20px',
+            },
+          }}>
+            All steps completed - you&apos;re finished
+          </Typography>
+        );
+    }
+  };
 
   return (
-    <>
-       <Grid>
-      <Header />
-      <NavBar />
+    <div>
+      <Grid>
+        <Header />
+        <NavBar />
       </Grid>
 
-
-      {/* <Grid style={{ marginLeft: 5 }}>
-        <Breadcrumb
-          style={{ backgroundColor: "#FFFFFF", textDecoration: "none" }}
+      <Row
+        style={{
+          position: "relative",
+          backgroundImage:
+            'url("https://images.unsplash.com/photo-1573068057232-fa17a193d54d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          minHeight: "60vh", // Set the height to 100% of the viewport height
+          paddingLeft: "40px",
+          paddingRight: "40px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          // width: "100%",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.8)",
+            zIndex: 1,
+          }}
+        ></div>
+        <Col
+          md={6}
+          xs={12}
+          style={{
+            position: "relative",
+            zIndex: 2,
+            // textAlign: "center",
+          }}
         >
-          <Breadcrumb.Item href="Home">Home</Breadcrumb.Item>
-          <Breadcrumb.Item href="#">AboutUs</Breadcrumb.Item>
-          <Breadcrumb.Item href="#">ASDHEC Logo</Breadcrumb.Item>
-        </Breadcrumb>
-      </Grid> */}
-
-      <Container style={{marginTop:2}}>
-        <Row style={{ backgroundColor: "#0e2246" }}>
-          <Col>
-            <h1
+          <div>
+            <h3
               style={{
-                
-                fontSize: "35px",
                 color: "white",
-                height: "100px",
+                fontSize: "36px",
+                fontWeight: "bold",
+              }}
+            >
+              Student Registration
+            </h3>
+          </div>
+        </Col>
+
+        <Col
+          className="banner"
+          md={6}
+          xs={12}
+          style={{
+            position: "relative",
+            zIndex: 2,
+            textAlign: "center",
+          }}
+        >
+          <div role="presentation">
+            <Breadcrumbs
+              aria-label="breadcrumb"
+              style={{
+                zIndex: 900,
                 display: "flex",
-                justifyContent: "center",
+                alignItems: "center",
+                margin: "10px",
+                fontSize: "20px",
+                color: "#ffffff",
+                justifyContent: "flex-end",
                 alignItems: "center",
               }}
             >
-             Membership Application Form
-            </h1>
-          </Col>
-        </Row>
-      </Container>
-
-      <Container style={{ marginTop: "40px" }}>
-        <Formik
-          validationSchema={schema}
-          onSubmit={console.log}
-          initialValues={{
-            firstName: "",
-            lastName: "",
-            username: "",
-            city: "",
-            state: "",
-            zip: "",
-            file: null,
-            terms: false,
-          }}
-        >
-          {({ handleSubmit, handleChange, values, touched, errors }) => (
-            <Form noValidate onSubmit={handleSubmit}>
-              <Row className="mb-3">
-                <Form.Group
-                  style={{ display: "flex" }}
-                  controlId="validationFormik101"
-                  className="position-relative"
-                >
-                  <Col>
-                    <Form.Label>Name</Form.Label>
-                  </Col>
-                  <Col md={8}>
-                    <Form.Control
-                      type="text"
-                      name="firstName"
-                      value={values.firstName}
-                      onChange={handleChange}
-                      isValid={touched.firstName && !errors.firstName}
-                    />
-                    <Form.Control.Feedback tooltip>
-                      Looks good!
-                    </Form.Control.Feedback>
-                  </Col>
-                </Form.Group>
-              </Row>
-
-              <Row className="mb-3">
-                <Form.Group
-                  style={{ display: "flex" }}
-                  controlId="validationFormik101"
-                  className="position-relative"
-                >
-                  <Col>
-                    <Form.Label>Qualifications</Form.Label>
-                  </Col>
-                  <Col md={8}>
-                    <Form.Control
-                      type="text"
-                      name="firstName"
-                      value={values.firstName}
-                      onChange={handleChange}
-                      isValid={touched.firstName && !errors.firstName}
-                    />
-                    <Form.Control.Feedback tooltip>
-                      Looks good!
-                    </Form.Control.Feedback>
-                  </Col>
-                </Form.Group>
-              </Row>
-
-              <Row className="mb-3">
-                <Form.Group
-                  style={{ display: "flex" }}
-                  controlId="validationFormik101"
-                  className="position-relative"
-                >
-                  <Col>
-                    <Form.Label>Designation</Form.Label>
-                  </Col>
-                  <Col md={8}>
-                    <Form.Control
-                      type="text"
-                      name="firstName"
-                      value={values.firstName}
-                      onChange={handleChange}
-                      isValid={touched.firstName && !errors.firstName}
-                    />
-                    <Form.Control.Feedback tooltip>
-                      Looks good!
-                    </Form.Control.Feedback>
-                  </Col>
-                </Form.Group>
-              </Row>
-
-              <Row className="mb-3">
-                <Form.Group
-                  style={{ display: "flex" }}
-                  controlId="validationFormik101"
-                  className="position-relative"
-                >
-                  <Col>
-                    <Form.Label>Institute</Form.Label>
-                  </Col>
-                  <Col md={8}>
-                    <Form.Control
-                      type="text"
-                      name="firstName"
-                      value={values.firstName}
-                      onChange={handleChange}
-                      isValid={touched.firstName && !errors.firstName}
-                    />
-                    <Form.Control.Feedback tooltip>
-                      Looks good!
-                    </Form.Control.Feedback>
-                  </Col>
-                </Form.Group>
-              </Row>
-
-              <Row className="mb-3">
-                <Form.Group
-                  style={{ display: "flex" }}
-                  controlId="validationFormik101"
-                  className="position-relative"
-                >
-                  <Col>
-                    <Form.Label>Postal Address</Form.Label>
-                  </Col>
-                  <Col md={8}>
-                    <Form.Control
-                      type="text"
-                      name="firstName"
-                      value={values.firstName}
-                      onChange={handleChange}
-                      isValid={touched.firstName && !errors.firstName}
-                    />
-                    <Form.Control.Feedback tooltip>
-                      Looks good!
-                    </Form.Control.Feedback>
-                  </Col>
-                </Form.Group>
-              </Row>
-
-              <Row className="mb-3">
-                <Form.Group
-                  style={{ display: "flex" }}
-                  controlId="validationFormik101"
-                  className="position-relative"
-                >
-                  <Col>
-                    <Form.Label>Telephone No. (Res)</Form.Label>
-                  </Col>
-                  <Col md={8}>
-                    <Form.Control
-                      type="text"
-                      name="firstName"
-                      value={values.firstName}
-                      onChange={handleChange}
-                      isValid={touched.firstName && !errors.firstName}
-                    />
-                    <Form.Control.Feedback tooltip>
-                      Looks good!
-                    </Form.Control.Feedback>
-                  </Col>
-                </Form.Group>
-              </Row>
-
-              <Row className="mb-3">
-                <Form.Group
-                  style={{ display: "flex" }}
-                  controlId="validationFormik101"
-                  className="position-relative"
-                >
-                  <Col>
-                    <Form.Label>Mobile No.</Form.Label>
-                  </Col>
-                  <Col md={8}>
-                    <Form.Control
-                      type="text"
-                      name="firstName"
-                      value={values.firstName}
-                      onChange={handleChange}
-                      isValid={touched.firstName && !errors.firstName}
-                    />
-                    <Form.Control.Feedback tooltip>
-                      Looks good!
-                    </Form.Control.Feedback>
-                  </Col>
-                </Form.Group>
-              </Row>
-
-              <Row className="mb-3">
-                <Form.Group
-                  style={{ display: "flex" }}
-                  controlId="validationFormik101"
-                  className="position-relative"
-                >
-                  <Col>
-                    <Form.Label>Email ID</Form.Label>
-                  </Col>
-                  <Col md={8}>
-                    <Form.Control
-                      type="text"
-                      name="firstName"
-                      value={values.firstName}
-                      onChange={handleChange}
-                      isValid={touched.firstName && !errors.firstName}
-                    />
-                    <Form.Control.Feedback tooltip>
-                      Looks good!
-                    </Form.Control.Feedback>
-                  </Col>
-                </Form.Group>
-              </Row>
-
-              <Row className="mb-3">
-                <Form.Group
-                  style={{ display: "flex" }}
-                  controlId="validationFormik101"
-                  className="position-relative"
-                >
-                  <Col>
-                    <Form.Label>Membership Type</Form.Label>
-                  </Col>
-                  <Col md={8}>
-                    <Form.Control
-                      type="text"
-                      name="firstName"
-                      value={values.firstName}
-                      onChange={handleChange}
-                      isValid={touched.firstName && !errors.firstName}
-                    />
-                    <Form.Control.Feedback tooltip>
-                      Looks good!
-                    </Form.Control.Feedback>
-                  </Col>
-                </Form.Group>
-              </Row>
-
-              <Row className="mb-3">
-                <Form.Group
-                  style={{ display: "flex" }}
-                  controlId="validationFormik101"
-                  className="position-relative"
-                >
-                  <Col>
-                    <Form.Label>Create Password</Form.Label>
-                  </Col>
-                  <Col md={8}>
-                    <Form.Control
-                      type="text"
-                      name="firstName"
-                      value={values.firstName}
-                      onChange={handleChange}
-                      isValid={touched.firstName && !errors.firstName}
-                    />
-                    <Form.Control.Feedback tooltip>
-                      Looks good!
-                    </Form.Control.Feedback>
-                  </Col>
-                </Form.Group>
-              </Row>
-
-              <Row className="mb-3">
-                <Form.Group
-                  style={{ display: "flex" }}
-                  controlId="validationFormik101"
-                  className="position-relative"
-                >
-                  <Col>
-                    <p style={{ fontWeight: "600" }}>Fee</p>
-                  </Col>
-                  <Col md={8}>
-                    <p>
-                      Price (10000/-INR + Handling Charges (300/-)): ₹10,300.00
-                    </p>
-                  </Col>
-                </Form.Group>
-              </Row>
-
-              <Form.Group className="position-relative mb-3">
-                <Form.Check
-                  required
-                  name="terms"
-                  label="Agree to terms and conditions"
-                  onChange={handleChange}
-                  //   isInvalid={!!errors.terms}
-                  feedback={errors.terms}
-                  feedbackType="invalid"
-                  id="validationFormik106"
-                  feedbackTooltip
+              <Link
+                underline="hover"
+                color="inherit"
+                href="Home"
+                style={{ display: "flex", alignItems: "center" }}
+              >
+                <HomeIcon
+                  fontSize="medium"
+                  style={{ marginRight: "5px", marginBottom: "2px" }}
                 />
-              </Form.Group>
+                Home
+              </Link>
+              <Link underline="none" color="inherit" href="/">
+                Students
+              </Link>
+              <Link
+                underline="none"
+                color="inherit"
+                href="/material-ui/getting-started/installation/"
+                style={{ color: "rgba(161,225,229,1)" }}
+              >
+                Student Registration
+              </Link>
+            </Breadcrumbs>
+          </div>
+        </Col>
+      </Row>
 
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <Button type="submit">Submit</Button>
-
-                <Button style={{}} type="Clear">
-                  Clear
+      <Container style={{padding:"30px",backgroundColor:"#EEF5FF",marginTop:"20px",borderRadius:"15px"}}>
+        <Box sx={{ width: "100%" }} xs={12} sm={10} md={8} lg={6}>
+          <Stepper activeStep={activeStep}  style={{ width: '100%', overflowX: 'auto' }}>
+            {steps.map((label, index) => {
+              const stepProps = {};
+              const labelProps = {};
+              if (isStepOptional(index)) {
+                // labelProps.optional = (
+                // <Typography variant="caption">Optional</Typography>
+                // );
+              }
+              if (isStepSkipped(index)) {
+                stepProps.completed = false;
+              }
+              return (
+                <Step key={label} {...stepProps}>
+                  <StepLabel {...labelProps}>{label}</StepLabel>
+                </Step>
+              );
+            })}
+          </Stepper>
+          <Box>
+            {getStepContent(activeStep)}
+            <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+              <Button
+                color="inherit"
+                disabled={activeStep === 0}
+                onClick={handleBack}
+                sx={{ mr: 1 }}
+              >
+                Back
+              </Button>
+              <Box sx={{ flex: "1 1 auto" }} />
+              {isStepOptional(activeStep) && (
+                <Button color="inherit" onClick={handleSkip} sx={{ mr: 1 }}>
+                  Skip
                 </Button>
-              </div>
-            </Form>
-          )}
-        </Formik>
+              )}
+              <Button onClick={handleNext}>
+                {activeStep === steps.length - 1 ? "Finish" : "Next"}
+              </Button>
+            </Box>
+          </Box>
+        </Box>
       </Container>
-
-      {/* <div>
-        <Container>
-          <Typography
-            style={{
-              fontWeight: "bold",
-              fontSize: "20px",
-              
-              marginTop: 20,
-            }}
-          >
-            Services provided:
-          </Typography>
-          <p>
-            An outline of the officiant's duties and responsibilities, including
-            the creation and delivery of the ceremony script. Whether the
-            officiant will participate in rehearsals, if applicable.
-          </p>
-        </Container>
-      </div> */}
-
-      {/* <div>
-        <Container>
-          <Typography
-            style={{
-              fontWeight: "bold",
-              fontSize: "20px",
-              
-              marginTop: 20,
-            }}
-          >
-            Legal requirements and licenses:
-          </Typography>
-          <p>
-            Information about obtaining the necessary marriage licenses or
-            permits. Confirmation of the officiant's legal authority to perform
-            the ceremony (if required by local laws).
-          </p>
-        </Container>
-      </div> */}
-
-      {/* <div>
-        <Container>
-          <Typography
-            style={{
-              fontWeight: "bold",
-              fontSize: "20px",
-              
-              marginTop: 20,
-            }}
-          >
-            Liability and indemnification:
-          </Typography>
-          <p>
-            Clauses related to indemnifying the officiant from any liabilities.
-            Responsibility for damages or injury during the ceremony.
-          </p>
-        </Container>
-      </div> */}
-
-      {/* <div>
-        <Container>
-          <Typography
-            style={{
-              fontWeight: "bold",
-              fontSize: "20px",
-              
-              marginTop: 20,
-            }}
-          >
-            Terms of Agreement 
-          </Typography>
-        </Container>
-      </div> */}
-{/* 
-            <div>
-                <Container>
-                    <Typography>
-                    Client Signature :
-                    </Typography>
-                </Container>
-            </div>
-
-            <div >
-                <Container style={{border:"2px solid red",borderRadius:5}}>
-      <SignatureCanvas
-        ref={signatureRef}
-        canvasProps={{ width: 900, height: 200, className: 'sigCanvas'}}style={{border:"2px solid red"}}
-      />
-      <div style={{display:"flex",justifyContent:"space-between"}}>
-      <Button style={{marginBottom:5}} onClick={handleClear}>Clear</Button>
-      <Button style={{marginBottom:5}} onClick={handleSave}>Save</Button>
-      </div>
-      </Container>
-    </div> */}
-
-
-      <div style={{marginTop:30}}>
-        <Footer />
-      </div>
-    </>
+    </div>
   );
-};
-
-export default MembershipRegistration;
+}

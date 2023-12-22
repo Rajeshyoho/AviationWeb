@@ -69,7 +69,7 @@ const CarrerGuidanceRegistration = () => {
     <Container style={{marginTop:2}}>
       <Row style={{ backgroundColor: "#0e2246" }}>
         <Col>
-          <h1
+          <h3
             style={{
               fontSize: "35px",
               color: "white",
@@ -80,7 +80,7 @@ const CarrerGuidanceRegistration = () => {
             }}
           >
             Carrer Guidance Registration Application Form
-          </h1>
+          </h3>
         </Col>
       </Row>
     </Container>

@@ -191,7 +191,7 @@ const NavBar = () => {
                   <ul class="mega_links first_links">
                     <li>
                       <a href="#MembershipRegistration">
-                        Membership Registration
+                        Students Registration
                       </a>
                     </li>
                     <li>
@@ -201,7 +201,7 @@ const NavBar = () => {
                     </li>
                     <li>
                       <a href="#AcademicCounsellingRegistration">
-                        Academic Counselling Registration
+                        Academic Registration
                       </a>
                     </li>
                   </ul>
