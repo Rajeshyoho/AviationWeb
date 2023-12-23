@@ -16,6 +16,8 @@ import Checkbox from '@mui/material/Checkbox';
 import { useState } from 'react';
 
 const genderOptions = ['Male', 'Female', 'Other'];
+const smallFontStyle = { fontSize: '0.5rem' };
+
 
 const initialFormData = {
   firstName: '',
@@ -59,7 +61,6 @@ const PersonalDetailsForm = ({  onChange }) => {
   };
   
   
-
 const [formData, setFormData] = useState(initialFormData);
 
   return (
@@ -193,6 +194,7 @@ const [formData, setFormData] = useState(initialFormData);
         <FormControlLabel
           control={
             <Checkbox
+            sx={{ '& .MuiTypography-root': { fontSize: 8 }}}
               checked={formData.language1.read}
               onChange={() => handleCheckboxChange('language1', 'read')}
               color="primary"

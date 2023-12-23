@@ -147,7 +147,7 @@ export default function HorizontalLinearStepper() {
   };
 
   return (
-    <div>
+    <div style={{backgroundColor:"#27395a"}}>
       <Grid>
         <Header />
         <NavBar />
@@ -254,7 +254,7 @@ export default function HorizontalLinearStepper() {
         </Col>
       </Row>
 
-      <Container style={{padding:"30px",backgroundColor:"#EEF5FF",marginTop:"20px",borderRadius:"15px"}}>
+      <Container style={{padding:"40px",backgroundColor:"white",marginTop:"20px",borderRadius:"15px"}}>
         <Box sx={{ width: "100%" }} xs={12} sm={10} md={8} lg={6}>
           <Stepper activeStep={activeStep}  style={{ width: '100%', overflowX: 'auto' }}>
             {steps.map((label, index) => {
